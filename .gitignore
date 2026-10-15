@@ -1,0 +1,22 @@
+__pycache__/
+*.py[cod]
+*.log
+*.aux
+*.bbl
+*.blg
+*.synctex.gz
+*.pcap*
+*.zip
+*.rar
+UNSW_NB15*.csv
+CICIDS2017/
+paired_predictions.csv
+command*.txt
+console_numeric_lines.csv
+results/reproduction.*/
+
+# Locally generated outputs
+/manuscript/
+/submission/
+/results/unsw_reproduction/
+/results/*_reproduction.csv
