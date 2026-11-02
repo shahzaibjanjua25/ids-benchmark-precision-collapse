@@ -1,0 +1,11 @@
+class,training_rows,test_rows
+Normal,56000,37000
+Generic,40000,18871
+Exploits,33393,11132
+Fuzzers,18184,6062
+DoS,12264,4089
+Reconnaissance,10491,3496
+Shellcode,1133,378
+Worms,130,44
+Analysis,0,677
+Backdoor,0,583
