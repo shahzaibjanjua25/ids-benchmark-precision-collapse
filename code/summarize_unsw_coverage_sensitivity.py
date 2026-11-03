@@ -19,8 +19,7 @@ summary = runs.groupby("pair", sort=False).agg(
 supports = pd.read_csv(args.results / "unsw_official_label_counts.csv").set_index("class").test_rows
 for pair, row in summary.iterrows():
     seen_support = supports.drop(row.withheld.split(" + "))
-    # With all covered rows correct, assigning every unseen row to the largest
-    # seen test class minimizes the macro-F1 loss among simplex vertices.
+    # best case: send unseen rows to the biggest seen class
     largest = seen_support.max()
     unavoidable = row.unseen / (2 * largest + row.unseen) / len(supports)
     oracle_ceiling = .8 - unavoidable
