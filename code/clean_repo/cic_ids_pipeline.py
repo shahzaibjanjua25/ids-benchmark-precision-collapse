@@ -1,4 +1,3 @@
-# cic_ids_pipeline.py
 """
 CIC-IDS2017 end-to-end detection-evaluation pipeline.
 Usage:
@@ -33,9 +32,7 @@ import seaborn as sns
 
 warnings.filterwarnings("ignore", category=FutureWarning)
 
-# ---------------------------------------------------------------------------
-# 1. Load and concatenate
-# ---------------------------------------------------------------------------
+# load and concatenate
 
 def load_cicids(data_dir: Path) -> pd.DataFrame:
     files = sorted(data_dir.glob("*.csv"))
@@ -54,9 +51,7 @@ def load_cicids(data_dir: Path) -> pd.DataFrame:
     print(f"concatenated: {len(full):,} rows, {len(full.columns)} columns")
     return full
 
-# ---------------------------------------------------------------------------
-# 2. Clean and split features / labels
-# ---------------------------------------------------------------------------
+# clean and split features / labels
 
 def clean_and_split(df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.Series, pd.Series]:
     df.columns = [c.strip() for c in df.columns]
@@ -80,9 +75,7 @@ def clean_and_split(df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.Series, pd.Serie
     X = X.replace([np.inf, -np.inf], np.nan)
     return X, y_raw, pd.Series(y_raw)
 
-# ---------------------------------------------------------------------------
-# 3. Encode labels
-# ---------------------------------------------------------------------------
+# encode labels
 
 def encode_labels(y: pd.Series) -> Tuple[np.ndarray, LabelEncoder]:
     le = LabelEncoder()
@@ -90,9 +83,7 @@ def encode_labels(y: pd.Series) -> Tuple[np.ndarray, LabelEncoder]:
     print(f"label classes ({len(le.classes_)}): {list(le.classes_)}")
     return y_enc, le
 
-# ---------------------------------------------------------------------------
-# 4. Build model and cross-validate
-# ---------------------------------------------------------------------------
+# build model and cross-validate
 
 def build_model(n_estimators: int = 200, random_state: int = 42) -> Pipeline:
     return Pipeline([
@@ -114,9 +105,7 @@ def evaluate_cv(model, X: pd.DataFrame, y: np.ndarray, n_splits: int = 5):
     y_prob = cross_val_predict(model, X, y, cv=skf, n_jobs=-1, method="predict_proba")
     return y_pred, y_prob
 
-# ---------------------------------------------------------------------------
-# 5. Metrics and figures
-# ---------------------------------------------------------------------------
+# metrics and figures
 
 def save_metrics(y_true, y_pred, y_prob, le, out: Path):
     acc = accuracy_score(y_true, y_pred)
@@ -158,9 +147,7 @@ def save_metrics(y_true, y_pred, y_prob, le, out: Path):
     (out / "metrics.json").write_text(json.dumps(metrics, indent=2, default=str))
     print(f"metrics saved to {out / 'metrics.json'}")
 
-# ---------------------------------------------------------------------------
-# 6. Feature importance
-# ---------------------------------------------------------------------------
+# feature importance
 
 def plot_feature_importance(model: Pipeline, feature_names: list, out: Path, top_n: int = 20):
     rf = model.named_steps["rf"]
@@ -177,9 +164,7 @@ def plot_feature_importance(model: Pipeline, feature_names: list, out: Path, top
     plt.close(fig)
     print("feature-importance plot saved")
 
-# ---------------------------------------------------------------------------
-# 7. Main
-# ---------------------------------------------------------------------------
+# main
 
 def main():
     ap = argparse.ArgumentParser()
