@@ -77,7 +77,7 @@ def split_xy(df):
     for c in num:
         X[c] = pd.to_numeric(X[c], errors="coerce")
     X[num] = X[num].replace([np.inf, -np.inf], np.nan)
-    # categorical first so SMOTENC indices are 0,1,2
+    # keep categories first for SMOTENC
     X = X[CAT_COLS + num]
     return X, y, num
 
@@ -198,7 +198,7 @@ def main():
                 weighted_f1=f1_score(yt, yp, average="weighted", labels=classes, zero_division=0)))
             print(f"[{arm} seed={seed}] acc={agg_rows[-1]['accuracy']:.4f} "
                   f"macroF1={agg_rows[-1]['macro_f1']:.4f} ({time.time()-t0:.0f}s)", flush=True)
-            # write incrementally so a crash on mobile/Colab doesn't lose everything
+            # save each run as it finishes
             pd.DataFrame(long_rows).to_csv(os.path.join(args.out, "per_class_long.csv"), index=False)
             pd.DataFrame(agg_rows).to_csv(os.path.join(args.out, "aggregate.csv"), index=False)
 
