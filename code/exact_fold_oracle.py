@@ -2,6 +2,8 @@
 import argparse
 import itertools
 import math
+import time
+import tracemalloc
 from pathlib import Path
 import numpy as np
 import pandas as pd
@@ -51,7 +53,18 @@ def main():
         "UNSW-NB15 mixed":pd.read_csv(p/"unsw_partial_coverage/fold_label_counts.csv").assign(fold=0),
         "Digits partial":pd.read_csv(p/"digits_fractional_coverage/fold_label_counts.csv"),
     }
-    results = pd.DataFrame([{"case":name,**oracle(counts)} for name,counts in cases.items()])
+    rows = []
+    for name, counts in cases.items():
+        tracemalloc.start()
+        start = time.perf_counter()
+        result = oracle(counts)
+        elapsed = time.perf_counter() - start
+        _, peak = tracemalloc.get_traced_memory()
+        tracemalloc.stop()
+        uncovered = counts.loc[counts.training_rows.eq(0) & counts.test_rows.gt(0), "fold"].nunique()
+        rows.append({"case":name, **result, "uncovered_folds":uncovered,
+                     "runtime_seconds":elapsed, "traced_peak_bytes":peak})
+    results = pd.DataFrame(rows)
     results.to_csv(p/"exact_fold_oracles.csv",index=False)
     print(results.to_string(index=False))
 
