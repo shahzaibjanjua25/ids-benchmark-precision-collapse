@@ -1,0 +1,2 @@
+"dataset","variant","protocol","model","arm","seed","n_eval","accuracy","macro_f1","weighted_f1"
+"cic","raw","cv","rf","none","42","2830743","0.9987702875181533","0.8534673267640162","0.9987292740053436"
