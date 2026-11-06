@@ -1,0 +1,16 @@
+class,test_rows,covered_rows,coverage,f1_ceiling
+BENIGN,2273097,2273097,1.0,1.0
+Bot,1966,0,0.0,0.0
+DDoS,128027,0,0.0,0.0
+DoS GoldenEye,10293,0,0.0,0.0
+DoS Hulk,231073,0,0.0,0.0
+DoS Slowhttptest,5499,0,0.0,0.0
+DoS slowloris,5796,0,0.0,0.0
+FTP-Patator,7938,0,0.0,0.0
+Heartbleed,11,0,0.0,0.0
+Infiltration,36,0,0.0,0.0
+PortScan,158930,0,0.0,0.0
+SSH-Patator,5897,0,0.0,0.0
+Web Attack-Brute Force,1507,0,0.0,0.0
+Web Attack-SQL Injection,21,0,0.0,0.0
+Web Attack-XSS,652,0,0.0,0.0
