@@ -53,7 +53,7 @@ def log(*a):
     print(*a, flush=True)
 
 
-# ----------------------------------------------------------------------------- statistics
+# statistics
 def wilson(k, n, z=Z):
     if n <= 0:
         return (np.nan, np.nan)
@@ -131,7 +131,7 @@ def cluster_bootstrap(y_true, y_pred, clusters, classes, B, seed):
     return out
 
 
-# ----------------------------------------------------------------------------- data
+# data
 class DS:
     def __init__(self, name, X, y, cat_cols, num_cols, meta, is_train=None):
         self.name, self.X, self.y = name, X, np.asarray(y)
@@ -285,7 +285,7 @@ def dedup(ds):
     return ds.subset(np.where(keep)[0])
 
 
-# ----------------------------------------------------------------------------- models
+# models
 def build(model, arm, seed, n_est, ds, quick=False):
     num_steps = [("imp", SimpleImputer(strategy="median"))]
     if model == "lr":
@@ -374,7 +374,7 @@ def threshold_eval(model, arm, seed, args, ds, tr, te, classes, meta, prevs):
     return rows
 
 
-# ----------------------------------------------------------------------------- runner
+# runner
 def append_csv(df, path):
     df.to_csv(path, mode="a", header=not os.path.exists(path), index=False)
 
@@ -485,7 +485,7 @@ def run_dataset(ds_raw, args, out, prevs, done):
                     log(f"done {key} in {time.time() - t0:.0f}s")
 
 
-# ----------------------------------------------------------------------------- summary / report
+# summary / report
 def make_summary(out, prevs, thr):
     p = os.path.join(out, "per_class_long.csv")
     if not os.path.exists(p):
