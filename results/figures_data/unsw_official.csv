@@ -1,0 +1,9 @@
+dataset,variant,protocol,model,arm,count,mean,std
+unsw,dedup,official,rf,balanced,5,0.5298597123494281,0.0018677540338705066
+unsw,dedup,official,rf,balanced_subsample,5,0.5466157909251643,0.0011004603678304058
+unsw,dedup,official,rf,none,5,0.4956964629268672,0.002039858094424486
+unsw,dedup,official,rf,smote_none,5,0.5170325153439312,0.0022028559811285513
+unsw,raw,official,rf,balanced,5,0.4968801151621337,0.0025436472380162742
+unsw,raw,official,rf,balanced_subsample,5,0.5139803960361996,0.000762641219036899
+unsw,raw,official,rf,none,5,0.471442766437644,0.0009400329370871739
+unsw,raw,official,rf,smote_none,5,0.4929576461823533,0.002363381820800536
