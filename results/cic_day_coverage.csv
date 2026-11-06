@@ -1,0 +1,20 @@
+day,class,test_rows,training_rows_other_days
+friday,BENIGN,414322,1858775
+friday,Bot,1966,0
+friday,DDoS,128027,0
+friday,PortScan,158930,0
+monday,BENIGN,529918,1743179
+thursday,BENIGN,456752,1816345
+thursday,Infiltration,36,0
+thursday,Web Attack-Brute Force,1507,0
+thursday,Web Attack-SQL Injection,21,0
+thursday,Web Attack-XSS,652,0
+tuesday,BENIGN,432074,1841023
+tuesday,FTP-Patator,7938,0
+tuesday,SSH-Patator,5897,0
+wednesday,BENIGN,440031,1833066
+wednesday,DoS GoldenEye,10293,0
+wednesday,DoS Hulk,231073,0
+wednesday,DoS Slowhttptest,5499,0
+wednesday,DoS slowloris,5796,0
+wednesday,Heartbleed,11,0
