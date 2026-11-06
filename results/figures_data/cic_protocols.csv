@@ -1,0 +1,5 @@
+dataset,variant,protocol,model,arm,count,mean,std
+cic,raw,cv,rf,balanced_subsample,1,0.8752740003831297,
+cic,raw,cv,rf,none,1,0.8534673267640162,
+cic,raw,lodo,rf,balanced_subsample,1,0.059633786541658365,
+cic,raw,lodo,rf,none,1,0.06030428416256101,
