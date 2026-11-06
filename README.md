@@ -98,3 +98,12 @@ This command regenerates the distribution chart and percentile-bootstrap summari
     python -B code/run_digits_fractional_coverage.py results/digits_fractional_coverage
 
 The original 20 seed-42 runs and 80 additional runs form the balanced grid. The new runs include aggregate unseen prediction destinations. Confidence rejection uses a fixed 0.5 threshold and is scored under both fine-grained and coarse unknown conventions. The digits example uses the data bundled with scikit-learn. Finite-population intervals use exact order-statistic coverage under the declared simple random pair sample at seed 42.
+
+## Published NSL-KDD split
+
+Obtain KDDTrain+.txt and KDDTest+.txt from the [NSL-KDD mirror](https://github.com/jmnwong/NSL-KDD-Dataset). The audit keeps the original fine-grained labels and does not train a model.
+
+    python -B code/audit_nsl_kdd_coverage.py PATH_TO_NSL_KDD results/nsl_kdd_official
+    python -B code/bootstrap_pair_correlation.py results
+
+The archive includes input checksums, label counts, and the resampled correlation interval.
