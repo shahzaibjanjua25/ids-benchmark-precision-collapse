@@ -107,3 +107,10 @@ Obtain KDDTrain+.txt and KDDTest+.txt from the [NSL-KDD mirror](https://github.c
     python -B code/bootstrap_pair_correlation.py results
 
 The archive includes input checksums, label counts, and the resampled correlation interval.
+
+## Exact fold-vocabulary oracle and NSL-KDD forest
+
+    python -B code/run_nsl_kdd_forest.py PATH_TO_NSL_KDD results/nsl_kdd_official
+    python -B code/exact_fold_oracle.py results
+
+The forest retains the original attack-label granularity, fits categorical encoding on training, and exports seen and unseen confusion matrices. The oracle enumerates fold destinations when the product is small and uses only the fold counts. It does not fit a classifier. The code was checked against exhaustive row-by-row prediction on a small two-fold example.
