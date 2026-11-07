@@ -1,116 +1,104 @@
 # Label coverage bounds for pooled macro F1
 
-Reproduction code and aggregate evidence for an audit of fold-level label coverage and pooled macro F1. The research manuscript is handled through journal submission.
+Code and aggregate evidence for auditing fold-dependent prediction vocabularies.
+The manuscript and bibliography are in the accompanying submission package.
+Code is MIT-licensed. Dataset owners retain their original data terms.
 
-## Setup
+## Install
 
-Use Python 3.13. From this repository root, install dependencies with:
+Use Python 3.13. Fit replication uses the pinned experimental environment.
 
     python -m pip install -r code/requirements.txt
+    python -m pip install --no-deps .
+    python -m label_availability results/nsl_kdd_official/label_counts.csv --oracle --convention union
 
-Download the official benchmark data separately. Place the UNSW training and testing CSVs in your data directory and the CIC machine-learning CSVs beneath its CICIDS2017 subdirectory.
+The small package requires NumPy and pandas. Its array interface is
+coverage_ceiling(train_labels_per_fold, test_labels_per_fold).
+The count interfaces are metric_bounds, oracle_sandwich, union_ceiling and
+exact_oracle. See code/label_availability for their implementations.
 
-- [CICIDS2017](https://www.unb.ca/cic/datasets/ids-2017.html) and its [dataset paper](https://doi.org/10.5220/0006639801080116)
-- [UNSW-NB15](https://research.unsw.edu.au/projects/unsw-nb15-dataset) and its [dataset paper](https://doi.org/10.1109/MilCIS.2015.7348942)
+Count input has one row per fold/class with fold, class, training_rows and
+test_rows columns. A missing fold column means one fold. Include every
+train-only label with zero test support. Otherwise a missing row means the
+vocabulary entry is absent. An optional boolean allowed column restricts outputs
+within training labels. Minimum-support diagnostics are hard ceilings only for
+classifiers enforcing that vocabulary restriction.
 
-## Verify the archived scores
+## Verify and reproduce
 
-    python -B code/verify_cic_archive.py results
+    python code/check_availability.py
+    python code/check_branch_oracle.py results
+    python code/verify_cic_archive.py results
+    python code/audit_scoring_conventions.py results
+    python code/run_solver_shapes.py results/solver_shapes.csv
 
-The verifier recomputes six archived CICIDS2017 results from their confusion matrices. The fresh unweighted CICIDS2017 cross-validation replication is in results/cic_cv_unweighted_replication.csv.
+The row-level check compares both solvers and scoring conventions to exhaustive
+legal predictions. The varied-vocabulary solver cases are synthetic, with
+recorded node limits and MILP timeouts. A node-budget exception certifies no
+optimum. Identical vocabularies are collapsed before search. The sandwich remains
+available for valid counts.
 
-## Rerun and audit
+    python code/run_unsw_extended.py PATH_TO_DATA results
+    python code/summarize_revision.py results
+    python code/run_gas_models.py PATH_TO_GAS_ZIP results/gas_model_comparison
+    python code/run_nsl_kdd_forest.py PATH_TO_NSL_DIRECTORY results/nsl_model_comparison --seeds 42 43 44 45 46
+    python code/summarize_nsl_seeds.py results/nsl_model_comparison
+    python code/build_revision_figures.py results PATH_TO_FIGURE_DIRECTORY
 
-Replace PATH_TO_DATA with the directory containing the official CSVs.
+PATH_TO_DATA contains the original official UNSW train/test CSVs. The extended
+runner reuses 115 recorded fits and resumes missing conditions. The current
+36-pair grid is results/unsw_complete_pairs/runs.csv. Original sampled-pair
+folders remain historical evidence. New routing fields exist only for freshly
+fitted conditions. Oracle-assisted routing uses true availability and is a
+counterfactual. The separate confidence policy uses a fixed threshold of 0.5.
 
-    python -B code/rerun_unsw_official.py PATH_TO_DATA results/unsw_reproduction
-    python -B code/audit_unsw_overlap.py PATH_TO_DATA results/unsw_overlap_reproduction.csv
-    python -B code/audit_cic_day_coverage.py PATH_TO_DATA/CICIDS2017 results/cic_coverage_reproduction.csv
-    bash code/run_all.sh PATH_TO_DATA
+All six CICIDS2017 configurations were refitted and are recorded separately in
+results/cic_full_replication.csv. Archived aggregates are RESULTS_PARSED.csv.
+cic_cv_replication.csv and cic_cv_unweighted_replication.csv are historical
+two-arm and one-arm subsets. The fitting entry point is
+code/clean_repo/ids_full_study.py. code/reproduce_tbench.py verifies saved
+aggregates; it does not refit those forests.
 
-The standalone figure script can regenerate charts from the archived aggregate data.
+make verify runs core checks. make reproduce DATA=PATH_TO_DATA also regenerates
+audits, solver checks and missing UNSW conditions. The Dockerfile is an
+environment recipe. Docker was unavailable for a build in this session.
 
-    python -B code/release_figures.py
+## Evidence boundaries
 
-The aggregate results directory excludes raw datasets, console transcripts, and row-level predictions. Two official UNSW-NB15 forests were refitted. All six CICIDS2017 configurations were also refitted. Their fresh scores are in results/cic_full_replication.csv, separate from the archived scores in results/RESULTS_PARSED.csv. The files cic_cv_replication.csv and cic_cv_unweighted_replication.csv are historical two-arm and one-arm subsets.
+CLAIMS.md maps manuscript numbers to scripts and files. EXTERNAL-AUDIT.md
+documents the targeted source audit and unresolved scoring conventions.
 
-## Fixed-test overlap experiment and split manifests
+CICIDS2017 uses the local MachineLearningCVE files, which have no timestamps.
+No corrected Engelen/Lanvin release was found in the research folder, Documents,
+Downloads or Research.rar. A last-30-percent within-day/class row-order split is
+retained as historical evidence and has no verified temporal cutoff. Input
+hashes and split memberships are in results.
 
-    python -B code/run_unsw_overlap_control.py PATH_TO_DATA results/overlap_reproduction
-    python -B code/dataset_manifest.py PATH_TO_DATA
-    python -B code/export_cic_membership.py PATH_TO_DATA/CICIDS2017 results/cic_membership_reproduction
+Numeric NaN/Inf values receive training-only median imputation. CIC web-label
+spelling variants are normalized. UNSW nominal inputs use ordinal encoding,
+whereas NSL-KDD uses one-hot encoding. Comparisons across datasets therefore
+retain their original preprocessing differences.
 
-The two removal arms retain the same training row count within each class and use the same official test rows. Results and zero-based membership indices are under results/unsw_overlap_control. The CIC test fold arrays are in results/cic_split_manifest and are aligned to the ordered file list in that directory. A fold value of -1 denotes a row used for training only in the single within-day holdout. Benchmark input SHA-256 checksums and archived CIC per-class results are also included.
+Gas uses adjacent batches. CORAL uses unlabeled target features for covariance
+alignment and still predicts only source labels. Row-bootstrap intervals
+condition on fixed predictions and the selected batches. Pair fits share test
+rows and withheld labels, so they are dependent. Oracle-normalized scores are
+not comparable across different inventories or test cohorts.
 
-## CICIDS2017 label-coverage decomposition
+Permanent DOI, external anonymous hosting and independent reproduction remain
+pending. The public repository and MIT copyright identify the author.
+Historical forced_assignment_gap fields mean the covered-row-first combined destination penalty C-R. New summaries name it explicitly.
 
-    python -B code/decompose_cic_lodo.py results
+Dataset owner pages:
+- [CICIDS2017](https://www.unb.ca/cic/datasets/ids-2017.html)
+- [UNSW-NB15](https://research.unsw.edu.au/projects/unsw-nb15-dataset)
+- [NSL-KDD](https://www.unb.ca/cic/datasets/nsl.html)
+- [Gas sensor drift](https://doi.org/10.24432/C5RP6W)
 
-This splits the pooled archived confusion matrices into test rows whose true labels were seen or unseen in their corresponding training folds. Coverage membership can be reconstructed from the pooled matrix here because no label appears in both groups.
+To refit the entire UNSW grid independently of archived predictions, use a new
+output folder:
 
-## Five-seed fixed-test experiment
+    python code/run_unsw_extended.py PATH_TO_DATA results --fresh --outdir fresh_unsw
 
-Run code/run_unsw_overlap_control.py with --seed 42 through --seed 46. Use the output folders results/unsw_overlap_seed_42 through results/unsw_overlap_seed_46.
-
-    python -B code/summarize_unsw_overlap_seeds.py results results/unsw_overlap_multiseed
-    python -B code/plot_unsw_overlap_seeds.py results/unsw_overlap_multiseed/paired_seed_scores.csv results/overlap_figures
-
-The committed summary includes the seed-paired contrasts, seed-conditional intervals and sign-flip sensitivity calculations. The package includes per-class results and compressed training membership for every seed. The fixed test membership is in results/unsw_overlap_control/test_membership.csv. Both fresh CICIDS2017 cross-validation arms are recorded in results/cic_cv_replication.csv.
-
-## Compute the pre-fit ceiling
-
-    python -B code/label_coverage_bound.py results/cic_lodo_label_counts.csv results/cic_ceiling.csv
-    python -B code/label_coverage_bound.py results/unsw_official_label_counts.csv results/unsw_ceiling.csv
-
-The input has one record per fold and class, with class, training_rows and test_rows columns. The output lists pooled support, covered support and the F1 ceiling for each test class. The printed mean is the ceiling for pooled macro F1 with a closed-set classifier.
-
-## Mixed label coverage
-
-    python -B code/run_unsw_partial_coverage.py PATH_TO_DATA results/partial_coverage_reproduction
-
-The demonstration withholds Analysis and Backdoor from official training and preserves the original test rows. The archive includes label counts, test support by coverage stratum, the confusion matrix, and training membership. Use the official test membership already supplied in results/unsw_overlap_control/test_membership.csv. The fresh metrics for all six CICIDS2017 configurations are in results/cic_full_replication.csv. The five-seed overlap study is retained as separate exploratory evidence.
-
-## Withheld-label sensitivity and score shortfall
-
-    python -B code/run_unsw_coverage_sensitivity.py PATH_TO_DATA results/unsw_coverage_sensitivity
-    python -B code/summarize_unsw_coverage_sensitivity.py results
-
-The experiment fits 15 forests on the same test partition. It varies the withheld label pair and seed. The run table includes a majority-label reference and a covered-row repair that preserves unseen-row predictions. The summary also computes a single-fold oracle ceiling under unrestricted allocation of unseen false positives to seen labels.
-
-## Additional sampled withheld pairs
-
-    python -B code/run_unsw_coverage_sensitivity.py PATH_TO_DATA results/unsw_coverage_random_pairs --random-pairs
-    python -B code/summarize_unsw_coverage_random_pairs.py results
-
-The sampler draws 20 distinct pairs without replacement from the 33 remaining after excluding the three deterministic pairs. Pair-selection seed 2026 and forest seed 42 are fixed. Run records include the selected pair, test support and both shortfall components.
-
-## Pair distribution and repair order
-
-    python -B code/plot_unsw_pair_distribution.py results results/pair_figures
-
-This command regenerates the distribution chart and percentile-bootstrap summaries for the 20 observed pairs. It also verifies the two repair orders on the archived Analysis and Backdoor seed-42 confusion matrix.
-
-## Full sampled grid, rejection scores and digits
-
-    python -B code/run_unsw_coverage_sensitivity.py PATH_TO_DATA results/unsw_random_pairs_extra_seeds --random-pairs --forest-seeds 43 44 45 46
-    python -B code/run_unsw_coverage_sensitivity.py PATH_TO_DATA results/unsw_deterministic_rejection --forest-seeds 42
-    python -B code/summarize_pair_variation.py results
-    python -B code/run_digits_fractional_coverage.py results/digits_fractional_coverage
-
-The original 20 seed-42 runs and 80 additional runs form the balanced grid. The new runs include aggregate unseen prediction destinations. Confidence rejection uses a fixed 0.5 threshold and is scored under both fine-grained and coarse unknown conventions. The digits example uses the data bundled with scikit-learn. Finite-population intervals use exact order-statistic coverage under the declared simple random pair sample at seed 42.
-
-## Published NSL-KDD split
-
-Obtain KDDTrain+.txt and KDDTest+.txt from the [NSL-KDD mirror](https://github.com/jmnwong/NSL-KDD-Dataset). The audit keeps the original fine-grained labels and does not train a model.
-
-    python -B code/audit_nsl_kdd_coverage.py PATH_TO_NSL_KDD results/nsl_kdd_official
-    python -B code/bootstrap_pair_correlation.py results
-
-The archive includes input checksums, label counts, and the resampled correlation interval.
-
-## Exact fold-vocabulary oracle and NSL-KDD forest
-
-    python -B code/run_nsl_kdd_forest.py PATH_TO_NSL_KDD results/nsl_kdd_official
-    python -B code/exact_fold_oracle.py results
-
-The forest retains the original attack-label granularity, fits categorical encoding on training, and exports seen and unseen confusion matrices. The oracle enumerates fold destinations when the product is small and uses only the fold counts. It does not fit a classifier. The code was checked against exhaustive row-by-row prediction on a small two-fold example.
+Equivalently, make refit DATA=PATH_TO_DATA REFIT_OUT=fresh_unsw starts every fit.
+An existing output folder is rejected in fresh mode.
