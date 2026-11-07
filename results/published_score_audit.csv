@@ -1,0 +1,5 @@
+source,source_type,protocol,reported_metric,reported_value,positive_support_ceiling,status,evidence
+https://www.pcboss.me/projects/network-intrusion-detection/,technical report,CICIDS2017 Monday through Thursday to Friday,macro F1,0.0435,0.25,conservative comparison,"Day based evaluation section: 5688 covered benign rows and 30704 rows across three uncovered attack labels; macro denominator unconfirmed"
+https://doi.org/10.3390/math14183357,journal article,CICIDS2017 day-level holdout,binary macro F1,,,excluded,"Section 3.1 defines benign versus attack; Table 9 reports day holdout"
+https://doi.org/10.1007/s44443-026-01098-3,journal article,CIC-IDS2018 chronological holdout,binary F1 mean across three seeds,0.9079,,excluded,"Abstract reports score; task and aggregation differ from fine-grained pooled macro F1"
+https://doi.org/10.3389/frai.2026.1928858,journal article,CIC-IDS2017 and CSE-CIC-IDS2018 cross-year transfer,macro F1,0.21-0.44,1.0,full coverage,"Methods: seven harmonized classes and stratified source split; Results section 4.1 reports score range"
