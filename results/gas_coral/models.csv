@@ -1,0 +1,2 @@
+model,seed,macro_f1,covered_only_macro_f1,row_bootstrap_low,row_bootstrap_high
+coral_logistic,42,0.6375988136608156,0.6538213950454775,0.6308748905559493,0.6447428460152692
