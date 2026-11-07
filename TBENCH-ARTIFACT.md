@@ -1,12 +1,32 @@
+# Current revision entry points
+
+The current claim map is CLAIMS.md. Run the following from the repository root.
+
+    python code/check_availability.py
+    python code/audit_scoring_conventions.py results
+    python code/summarize_revision.py results
+    python code/summarize_nsl_seeds.py results/nsl_model_comparison
+    python code/build_revision_figures.py results regenerated_figures
+
+The complete grid has 36 withheld attack pairs and five forest seeds. Historical
+pair subsets remain for provenance. The exact oracle handles positive-support
+and inferred-union scoring. Current count audits include fold averages, weighted,
+micro and balanced-accuracy ceilings, and restricted-vocabulary thresholds.
+Primary normalized input files are under results/availability_counts.
+
+The additional model-family results are results/gas_model_comparison,
+results/gas_coral and results/nsl_model_comparison. EXTERNAL-AUDIT.md records
+the illustrative source screen. The MIT license covers research code, while
+the separately supplied TBench class retains its own submission-only terms.
 # TBench artifact
 
-## Fast path
+## Historical aggregate verification
 
 Extract the code archive into a clean directory. Use Python 3.13 with the packages pinned in code/requirements.txt. From the repository root run:
 
     python -B code/reproduce_tbench.py regenerated_figures
 
-This recomputes the gas-model macro F1 from per-fold confusion marginals, the NSL-KDD score from both coverage strata, the exact oracles, the UNSW three-part gaps, and the archived CIC confusion-matrix metrics. It checks all six fresh CIC score records against the archive. It also regenerates both main figures. Run in a disposable checkout because the checks regenerate some result CSVs in place, including machine-specific timings.
+This recomputes the gas-model macro F1 from per-fold confusion marginals, the NSL-KDD score from both coverage strata, the exact oracles, the UNSW three-part gaps, and the archived CIC confusion-matrix metrics. It checks all six fresh CIC score records against the archive. It also regenerates two historical figures. Run in a disposable checkout because the checks regenerate some result CSVs in place, including machine-specific timings.
 
 | Manuscript item | Command in fast path or source | Main output or input |
 |---|---|---|
@@ -34,4 +54,4 @@ No external clean-room replication is claimed. Only the documented fixed-cohort 
 
 The external audit records source links, evaluated tasks, scores, and comparison status in results/published_score_audit.csv. The Friday technical report uses a different scoring denominator or leaves it unspecified, so 0.25 is a conservative upper bound and the artifact does not claim an exact normalized comparison.
 
-Run python code/check_branch_oracle.py results to compare branch-and-bound against enumeration on fixed-seed count cases and the archived gas and digits counts, and regenerate results/oracle_solver_checks.csv. Times are machine-dependent. The synthetic repeated-vocabulary case checks pruning on one constructed instance. Use python code/exact_fold_oracle.py results --method branch to exercise the standard cases. A node-budget error means the run did not certify an optimum.
+Run python code/check_branch_oracle.py results to compare branch-and-bound against enumeration on fixed-seed count cases and the archived gas and digits counts, and regenerate results/oracle_solver_checks.csv. Times are machine-dependent. The repeated-vocabulary case now uses the closed form and supplies no evidence about difficult search. Varied-vocabulary checks and MILP status are in results/solver_shapes.csv. Use python code/exact_fold_oracle.py results --method branch to exercise the standard cases. A node-budget error means the run did not certify an optimum.
