@@ -1,6 +1,6 @@
-# IDS benchmark precision collapse
+# Label coverage bounds for pooled macro F1
 
-Reproduction code and aggregate evidence for a study of evaluation protocol and class imbalance on CICIDS2017 and UNSW-NB15. The research manuscript is handled through journal submission.
+Reproduction code and aggregate evidence for an audit of fold-level label coverage and pooled macro F1. The research manuscript is handled through journal submission.
 
 ## Setup
 
@@ -32,7 +32,7 @@ The standalone figure script can regenerate charts from the archived aggregate d
 
     python -B code/release_figures.py
 
-The aggregate results directory excludes raw datasets, console transcripts, and row-level predictions. Two UNSW-NB15 official random forest configurations and one CICIDS2017 shuffled-CV configuration have been reproduced from scratch. Other CICIDS2017 rows are archive results.
+The aggregate results directory excludes raw datasets, console transcripts, and row-level predictions. Two official UNSW-NB15 forests were refitted. All six CICIDS2017 configurations were also refitted. Their fresh scores are in results/cic_full_replication.csv, separate from the archived scores in results/RESULTS_PARSED.csv. The files cic_cv_replication.csv and cic_cv_unweighted_replication.csv are historical two-arm and one-arm subsets.
 
 ## Fixed-test overlap experiment and split manifests
 
