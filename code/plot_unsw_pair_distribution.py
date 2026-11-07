@@ -28,7 +28,7 @@ pd.DataFrame({"component": columns, "median": np.median(vals, axis=0),
               "bootstrap_low": bounds[0], "bootstrap_high": bounds[1]}).to_csv(root / "bootstrap_medians.csv", index=False)
 pd.concat([runs.assign(group="sampled"), reference.assign(group="deterministic")])[["withheld", "seed", "group", *columns]].to_csv(root / "distribution_figure_data.csv", index=False)
 fig, axes = plt.subplots(1, 2, figsize=(8.2, 3.4), sharex=True, sharey=True, layout="constrained")
-for ax, col, title in zip(axes, columns, ["Total macro-F1 shortfall", "Forced-assignment component"]):
+for ax, col, title in zip(axes, columns, ["Total macro-F1 shortfall", "Combined destination penalty"]):
     ax.boxplot(runs[col], positions=[0], widths=.42, orientation="horizontal", showfliers=False)
     ax.scatter(runs[col], np.linspace(-.13, .13, len(runs)), s=13, alpha=.60, color="#24678a")
     for j, row in enumerate(reference.itertuples(index=False), 1):
