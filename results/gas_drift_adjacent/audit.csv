@@ -1,0 +1,2 @@
+coverage_ceiling,exact_oracle,vertex_assignments,test_rows,covered_rows,uncovered_folds,global_label_fraction,runtime_seconds,traced_peak_bytes
+0.9744892385010379,0.962222361695154,5,13465,12998,1,1.0,0.024220999999670312,34143
