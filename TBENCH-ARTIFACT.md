@@ -29,3 +29,9 @@ This recomputes the gas-model macro F1 from per-fold confusion marginals, the NS
 - Run code/run_digits_fractional_coverage.py results/digits_fractional_coverage on a fresh output path for the controlled digits demonstration. The scikit-learn version is pinned in code/requirements.txt.
 
 No external clean-room replication is claimed. Only the documented fixed-cohort comparisons are inferred from these results.
+
+## External audit and exact search
+
+The external audit records source links, evaluated tasks, scores, and comparison status in results/published_score_audit.csv. The Friday technical report uses a different scoring denominator or leaves it unspecified, so 0.25 is a conservative upper bound and the artifact does not claim an exact normalized comparison.
+
+Run python code/check_branch_oracle.py results to compare branch-and-bound against enumeration on fixed-seed count cases and the archived gas and digits counts, and regenerate results/oracle_solver_checks.csv. Times are machine-dependent. The synthetic repeated-vocabulary case checks pruning on one constructed instance. Use python code/exact_fold_oracle.py results --method branch to exercise the standard cases. A node-budget error means the run did not certify an optimum.
