@@ -8,7 +8,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-def oracle(counts, max_choices=1_000_000):
+def oracle(counts, max_choices=1_000_000, method='enumerate'):
     # Include train-only labels in the vocabulary.
     labels = sorted(counts["class"].unique())
     label_index = {label: i for i, label in enumerate(labels)}
@@ -25,22 +25,68 @@ def oracle(counts, max_choices=1_000_000):
         free = [i for i in allowed if m[i] == 0]
         active.append((unseen, free[:1] or allowed))
     choices = math.prod(len(allowed) for _, allowed in active)
-    if choices > max_choices:
-        raise ValueError(f"Oracle would require {choices} assignments")
     scored = n > 0
+    def score(fp):
+        return float(np.mean(2 * m[scored] / (n[scored] + m[scored] + fp[scored])))
+
+    fp = np.zeros(len(labels), dtype=int)
+    bound = score(fp)
     best = 0.0
-    for route in itertools.product(*(allowed for _, allowed in active)):
-        fp = np.zeros(len(labels), dtype=int)
-        for (unseen, _), dest in zip(active, route):
-            fp[dest] += unseen
-        score = np.mean(2 * m[scored] / (n[scored] + m[scored] + fp[scored]))
-        best = max(best, float(score))
-    bound = float(np.mean(2*m[scored]/(n[scored]+m[scored])))
-    return {"coverage_ceiling":bound,"exact_oracle":best,"vertex_assignments":choices}
+    visited = pruned = 0
+    if method == "enumerate":
+        if choices > max_choices:
+            raise ValueError(f"Oracle would require {choices} assignments")
+        for route in itertools.product(*(allowed for _, allowed in active)):
+            fp.fill(0)
+            for (unseen, _), dest in zip(active, route):
+                fp[dest] += unseen
+            best = max(best, score(fp))
+            visited += 1
+    elif method == "branch":
+        active.sort(key=lambda item: (-item[0], len(item[1])))
+        for unseen, allowed in active:
+            def loss(dest):
+                if m[dest] == 0:
+                    return 0.0
+                denominator = int(n[dest]) + int(m[dest]) + int(fp[dest])
+                return 2 * int(m[dest]) * unseen / (denominator * (denominator + unseen))
+            fp[min(allowed, key=loss)] += unseen
+        best = score(fp)
+        fp.fill(0)
+        memo = set()
+        def visit(depth):
+            nonlocal best, visited, pruned
+            visited += 1
+            if visited > max_choices:
+                raise ValueError(f"Branch-and-bound exceeded {max_choices} visited nodes")
+            # Further assignments only add false positives.
+            upper = score(fp)
+            if upper <= best:
+                pruned += 1
+                return
+            if depth == len(active):
+                best = upper
+                return
+            key = (depth, tuple(fp[m > 0]))
+            if key in memo:
+                pruned += 1
+                return
+            memo.add(key)
+            unseen, allowed = active[depth]
+            for dest in allowed:
+                fp[dest] += unseen
+                visit(depth + 1)
+                fp[dest] -= unseen
+        visit(0)
+    else:
+        raise ValueError(f"Unknown solver: {method}")
+    return {"coverage_ceiling":bound,"exact_oracle":best,"vertex_assignments":choices,
+            "visited":visited,"pruned":pruned}
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("results", type=Path)
+    parser.add_argument("--method", choices=["enumerate","branch"], default="enumerate")
     args = parser.parse_args()
     p = args.results
     day = pd.read_csv(p/"cic_day_coverage.csv").pivot(index="day",columns="class",values="test_rows").fillna(0).astype(int)
@@ -57,7 +103,7 @@ def main():
     for name, counts in cases.items():
         tracemalloc.start()
         start = time.perf_counter()
-        result = oracle(counts)
+        result = oracle(counts, method=args.method)
         elapsed = time.perf_counter() - start
         _, peak = tracemalloc.get_traced_memory()
         tracemalloc.stop()
@@ -65,9 +111,9 @@ def main():
         rows.append({"case":name, **result, "uncovered_folds":uncovered,
                      "runtime_seconds":elapsed, "traced_peak_bytes":peak})
     results = pd.DataFrame(rows)
-    results.to_csv(p/"exact_fold_oracles.csv",index=False)
+    filename = "exact_fold_oracles_branch.csv" if args.method == "branch" else "exact_fold_oracles.csv"
+    results.to_csv(p / filename, index=False)
     print(results.to_string(index=False))
 
 if __name__ == "__main__":
     main()
-
