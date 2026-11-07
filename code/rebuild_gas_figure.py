@@ -29,12 +29,15 @@ from matplotlib.colors import ListedColormap
 ax.imshow(np.where(support.eq(0),0,np.where(available,1,2)),cmap=ListedColormap(["#f2f3f4","#cce6ec","#f2a68c"]),vmin=0,vmax=2,aspect="auto")
 for i,row in enumerate(support.to_numpy()):
     for j,n in enumerate(row):
+        if n and not available.iloc[i, j]:
+            from matplotlib.patches import Rectangle
+            ax.add_patch(Rectangle((j-.5, i-.5), 1, 1, fill=False, hatch="///", edgecolor="#666666", linewidth=.3))
         ax.text(j,i,f"{n:,}" if n else "—",ha="center",va="center",fontsize=9)
 ax.set_xticks(range(6),["Ethanol","Ethylene","Ammonia","Acetaldehyde","Acetone","Toluene"],rotation=22,ha="right")
 ax.set_yticks(range(9),support.index)
 ax.set_ylabel("Test batch (training uses the previous batch)")
 from matplotlib.patches import Patch
-ax.legend(handles=[Patch(facecolor="#cce6ec",label="Label available"),Patch(facecolor="#f2a68c",label="Label unavailable"),Patch(facecolor="#f2f3f4",label="No test rows")],loc="upper center",bbox_to_anchor=(.5,1.13),ncol=3,frameon=False)
+ax.legend(handles=[Patch(facecolor="#cce6ec",label="Label available"),Patch(facecolor="#f2a68c",hatch="///",label="Label unavailable"),Patch(facecolor="#f2f3f4",label="No test rows")],loc="upper center",bbox_to_anchor=(.5,1.13),ncol=3,frameon=False)
 for ext in ("pdf","png"):
     fig.savefig(args.out/f"gas_fold_coverage.{ext}",dpi=300)
 print(scores.to_string())
