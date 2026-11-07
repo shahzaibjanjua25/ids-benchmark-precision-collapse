@@ -1,0 +1,56 @@
+dataset,original,family
+CIC,BENIGN,BENIGN
+CIC,Bot,Bot
+CIC,DDoS,DoS
+CIC,DoS GoldenEye,DoS
+CIC,DoS Hulk,DoS
+CIC,DoS Slowhttptest,DoS
+CIC,DoS slowloris,DoS
+CIC,FTP-Patator,Credential brute force
+CIC,Heartbleed,Heartbleed
+CIC,Infiltration,Infiltration
+CIC,PortScan,PortScan
+CIC,SSH-Patator,Credential brute force
+CIC,Web Attack-Brute Force,Web attack
+CIC,Web Attack-SQL Injection,Web attack
+CIC,Web Attack-XSS,Web attack
+NSL,normal,Normal
+NSL,neptune,DoS
+NSL,smurf,DoS
+NSL,back,DoS
+NSL,teardrop,DoS
+NSL,pod,DoS
+NSL,land,DoS
+NSL,apache2,DoS
+NSL,processtable,DoS
+NSL,mailbomb,DoS
+NSL,udpstorm,DoS
+NSL,satan,Probe
+NSL,ipsweep,Probe
+NSL,portsweep,Probe
+NSL,nmap,Probe
+NSL,mscan,Probe
+NSL,saint,Probe
+NSL,warezclient,R2L
+NSL,guess_passwd,R2L
+NSL,warezmaster,R2L
+NSL,imap,R2L
+NSL,ftp_write,R2L
+NSL,multihop,R2L
+NSL,phf,R2L
+NSL,spy,R2L
+NSL,snmpguess,R2L
+NSL,snmpgetattack,R2L
+NSL,httptunnel,R2L
+NSL,named,R2L
+NSL,sendmail,R2L
+NSL,xlock,R2L
+NSL,xsnoop,R2L
+NSL,worm,R2L
+NSL,buffer_overflow,U2R
+NSL,rootkit,U2R
+NSL,loadmodule,U2R
+NSL,perl,U2R
+NSL,ps,U2R
+NSL,xterm,U2R
+NSL,sqlattack,U2R
