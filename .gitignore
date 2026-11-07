@@ -20,3 +20,5 @@ results/reproduction.*/
 /submission/
 /results/unsw_reproduction/
 /results/*_reproduction.csv
+build/
+*.egg-info/
