@@ -1,0 +1,3 @@
+case,policy,covered_macro_f1,full_macro_f1,oracle
+constructed,perfect covered; unavailable to B,1.0,0.3398692810457516,0.5555555555555555
+constructed,one covered error; unavailable to A,0.830820770519263,0.44295800817539943,0.5555555555555555
