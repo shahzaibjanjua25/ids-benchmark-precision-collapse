@@ -52,3 +52,25 @@ kNN first on both metrics.
 The external referee also identified that the literature pilot did not
 establish a published score conflict. No incompatible published result was
 added or inferred; the revised paper states this as an unresolved impact gap.
+
+# 2026-11-08: Target-resolution example and paired NSL reanalysis
+
+In response to the significance concern, a targeted primary-source search was
+conducted after the frozen 50-record literature sample had been coded. This
+search is supplementary and is not counted as another sampled or eligible
+study. Ayantayo et al. (2023), *Journal of Big Data*, DOI
+10.1186/s40537-023-00834-0, explicitly describe test-only fine attack
+subtypes in NSL-KDD, map the task to five broad categories, and construct an
+additional test subset without those subtypes. All five category outputs occur
+in training, so this is not an incompatible-score case.
+
+To quantify what the taxonomy choice does, code/audit_nsl_granularity.py maps
+both true and predicted labels in each of the existing five forest confusion
+matrices to those five categories. No model was fit and no test cohort changed.
+The paired scores and ceilings are saved in
+results/nsl_kdd_official/granularity_reanalysis*.csv and are included in saved
+release verification. Fine-label macro F1 is 0.23953 (sample SD 0.00878) with
+ceiling 0.55263; the five-category projection is 0.48349 (sample SD 0.00549)
+with ceiling 1. This is a target-resolution illustration on one fixed split,
+not an estimate of field prevalence, a claim of model improvement, or proof
+that published conclusions are generally invalid.

@@ -19,6 +19,7 @@ def run(script,*params):
     subprocess.run(command,cwd=root,check=True)
 if args.mode=='saved':
     run('audit_nsl_destinations.py')
+    run('audit_nsl_granularity.py')
     run('verify_release_evidence.py')
     run('verify_cic_archive.py',root/'results')
     run('build_main_tables.py')
