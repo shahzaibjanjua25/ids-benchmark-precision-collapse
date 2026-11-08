@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\begin{document}
+\section*{Supplementary replication notes}
+The main manuscript states the score limits, vocabulary grouping result and headline experiments. This supplement contains repair accounting, solver details and optional controls. Current results are mapped in the artifact's CLAIMS.md. Raw datasets follow their owners' distribution terms; aggregate confusion matrices and fold manifests accompany the code.
+
+\section*{Historical protocols}
+The archived CICIDS2017 within-day protocol takes a last-30-percent row-order holdout separately within each day and label. It has no verified clock-time cutoff in the local MachineLearningCVE release. Its unweighted forest macro F1 is 0.78692. It is retained for archive verification and is not interpreted as future-traffic performance. The archive also contains shuffled UNSW-NB15 CV and deduplicated versions. Their test cohorts differ, preventing causal attribution by raw score subtraction.
+
+\section*{Optional confidence rejection}
+The seed-42 forests for three deterministic UNSW pairs replace predictions with maximum class probability below 0.5 by rejection. This threshold was fixed without test tuning. In fine-grained scoring, rejection misses the true class without adding a false positive to a scored class. The ceiling remains 0.8. When the two withheld true labels merge to one unknown class and rejection predicts that class, nine labels are scored and the ceiling becomes one.
+
+\begin{table}[h]\centering
+\caption{Seed-42 rejection controls. The unknown column scores a different target.}
+\begin{tabular}{lrrr}
+Withheld labels & Closed set & Abstention & Unknown\\
+Analysis + Backdoor & 0.47067 & 0.45535 & 0.52624\\
+Exploits + Generic & 0.31378 & 0.32332 & 0.42663\\
+Shellcode + Worms & 0.40321 & 0.39132 & 0.43927\\
+\end{tabular}\end{table}
+Rejection improves fine-grained macro F1 in one condition and lowers it in two. A deployable confidence rule can reject covered rows and accept unavailable rows, unlike a counterfactual that knows exactly which rows are unavailable.
+
+\section*{Uncertainty targets}
+Five forest seeds describe variation in fitting on the same training and test partitions. Pair-grid summaries exhaust the 36 pairs of nine attack labels and describe that finite population. They share test rows and are not independent network samples. Gas and NSL row-bootstrap intervals use 500 multinomial resamples of fixed-prediction confusion counts, keeping the original scored label inventory. This resampling assumes exchangeable rows and does not correct within-batch temporal dependence. The intervals condition on the selected batches or partition and do not estimate uncertainty across independent networks. Very rare classes can be absent from a bootstrap draw and retain zero F1 under this fixed-inventory calculation.
+
+\section*{Artifact boundaries}
+The count API accepts an optional allowed-output flag specifying the legal vocabulary, which may include labels absent from training. Threshold summaries are hard ceilings only when that output restriction is enforced. Train-only labels must be included for exact and union oracles. The Dockerfile is a build recipe, not a verified container image. Public hosting, a permanent DOI, an external anonymous mirror and independent reproduction require separate verification.
+
+\section*{Repair accounting}
+Let F be the observed full score. Let R repair all available rows while preserving the model's destinations for unavailable rows. Let Q remove false positives contributed by unavailable rows while preserving covered-row errors; unavailable rows still contribute misses for their true labels. With C the coverage ceiling and O the vocabulary oracle,
+\[
+C-F=(C-O)+(O-R)+(R-F).
+\]
+C-O is the unavoidable vocabulary loss. O-R is excess destination loss after available rows are made correct. R-F is the recoverable score from repairing those rows at the original unavailable destinations. We call C-R the combined destination penalty; it includes unavoidable and model-dependent parts. It is not all forced by the split. Repairing in the opposite order gives
+\[
+C-F=(C-Q)+(Q-F).
+\]
+In general Q-F differs from C-R. Both are exact accounting identities, not order-free causal attributions. The released three-part table retains its seed and withholding condition. Historical forced\_assignment\_gap fields mean C-R only. Covered-only macro F1 is a separate quantity: it removes unavailable rows and uses the covered subset's positive-support inventory. It is neither R nor Q.
+
+\section*{MILP and numerical checks}
+Binary variables x(f,k) choose one destination per unavailable fold. Set a(k) equal to the sum of U(f)x(f,k). Binary variables z(k,t) select a total t from zero through the maximum possible false-positive count at k. Enforce one selected total and equality between that total and a(k). Minimize the sum of g(k,t)z(k,t)/|S|. This count-grid formulation is pseudo-polynomial in row totals and implemented for positive-support scoring. It is not a scalable claim for arbitrary large traffic datasets.
+
+The grouped solver checks use synthetic shapes with 6, 30, 60 and 100 unavailable folds, six destination labels, three choices per fold, and counts from one to five. At 10,000 nodes, branch-and-bound certifies the six-fold case and stops uncertified on the larger inputs. The independent MILP certifies the 30-fold value 0.67337 within solver tolerance. Ten-second runs on larger inputs retain feasible/dual bounds when available; a missing incumbent is not an optimum. Current statuses and runtimes are in results/solver\_shapes\_grouped.csv. Enumeration and branch scores use floating-point arithmetic; exhaustive checks compare at tolerance 1e-12. They do not supply arbitrary-precision certificates.
+
+\section*{Digits fractional-coverage control}
+The supplementary digits control uses scikit-learn's 1,797 images, five stratified folds with shuffle seed 42 and a 100-tree forest. Digits zero and one are withheld from training in the first two folds while retaining every test row. Their covered fractions are 106/178 and 110/182. The other eight labels are fully covered. Coverage ceiling 0.94999 and exact oracle 0.92176 differ by 0.02824 when rounded from full precision; observed macro F1 is 0.89253. This is a constructed protocol check rather than a natural benchmark claim.
+
+\section*{External source compatibility checks}
+The historical targeted audit is separate from the frozen candidate sample. Nuako's public project report \cite{nuako2026} uses a capped CICIDS2017 Friday cohort with 5,688 benign and 30,704 unavailable attack rows. Its support-scored ceiling is 0.25. Reported macro F1 of 0.0435 cannot be assigned to that convention from the displayed counts and benign recall; a larger scored inventory is possible. This is unresolved scorer compatibility, not a verified score violation. Yang et al.'s day-holdout study \cite{yang2026} and Alnattaf and Mahmood's chronological study \cite{alnattaf2026} use binary targets. Ahmed et al. \cite{ahmed2026} harmonize seven shared labels in cross-year evaluation, giving legal ceiling one. These verified 2026 publisher records are identified in audit/reference\_verification.csv. Web project pages are labeled as technical reports, not peer-reviewed articles. A gas-protocol comparison with target calibration and the CICDDoS2019 schedule remain unresolved; neither is counted as a violation.
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+\end{document}
