@@ -1,0 +1,20 @@
+seed,held_out_day,fine_label,test_support,attack_detection_recall,benign_false_positive_rate
+42,friday,BENIGN,414322,,0.00024135817069815264
+42,friday,Bot,1966,0.0,
+42,friday,DDoS,128027,0.6282190475446585,
+42,friday,PortScan,158930,0.0010319008368464104,
+42,monday,BENIGN,529918,,0.00018116010401609305
+42,thursday,BENIGN,456752,,0.0024499071706308895
+42,thursday,Infiltration,36,0.0,
+42,thursday,Web Attack-Brute Force,1507,0.015925680159256803,
+42,thursday,Web Attack-SQL Injection,21,0.09523809523809523,
+42,thursday,Web Attack-XSS,652,0.015337423312883436,
+42,tuesday,BENIGN,432074,,0.0031869540865685046
+42,tuesday,FTP-Patator,7938,0.00012597631645250694,
+42,tuesday,SSH-Patator,5897,0.0008478887569950823,
+42,wednesday,BENIGN,440031,,9.090268640163989e-06
+42,wednesday,DoS GoldenEye,10293,0.0010686874574953851,
+42,wednesday,DoS Hulk,231073,0.007711848636578051,
+42,wednesday,DoS Slowhttptest,5499,0.0003637024913620658,
+42,wednesday,DoS slowloris,5796,0.0005175983436853002,
+42,wednesday,Heartbleed,11,0.0,

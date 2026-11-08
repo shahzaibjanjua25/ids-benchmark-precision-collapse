@@ -4,11 +4,11 @@ These targeted checks are separate from the release-0.5.0 frozen 50-candidate
 screening pilot in audit/crossref_20261108. They are retained as source-specific
 compatibility notes and are not the denominator of that pilot.
 
-Access date: 2026-11-08, Asia/Karachi. This is a targeted compatibility audit,
+Access dates: 2026-11-08 and 2026-11-09, Asia/Karachi. This is a targeted compatibility audit,
 not a systematic review and not a prevalence estimate. Four sources were carried
-forward from the preceding revision. The new search inspected the gas protocol
-and official CICDDoS2019 documentation. Six sources are retained in the coding
-sheet, including excluded and unresolved cases.
+forward from the preceding revision. The new search inspected the gas protocol,
+official CICDDoS2019 documentation, and published CICIDS2017 target definitions.
+The coding sheet includes excluded and unresolved cases.
 
 Search service: available web search, followed by publisher, author or dataset-owner
 pages. The search covered source material available on the access date. There was
@@ -81,3 +81,45 @@ This is a post-hoc change of target on the same predictions, not a refit or a
 comparison between models trained for different taxonomies. It demonstrates
 that label resolution can materially change both score and attainable ceiling,
 while leaving the absent published-score conflict unresolved.
+
+## Published CICIDS2017 day-holdout score: binary target
+
+Source: Alsaadi et al., *Dataset-Calibrated Perturbation Budgets for Adversarial
+Robustness Evaluation of Machine-Learning Network Intrusion Detection Systems*,
+Technologies 14(10), 647 (2026), Table 2,
+https://doi.org/10.3390/technologies14100647.
+
+Table 2 reports macro F1 = 0.619 for a random forest under whole-day holdout.
+The table explicitly identifies the task as binary. The article's discussion
+notes that the held-out day's fine-grained attack types are absent from training,
+but the binary output labels (BENIGN and ATTACK) both occur in training. The
+positive-support ceiling for this reported target is therefore 1, so the score
+is compatible with the target's legal vocabulary. It is not a score for exact
+attack-type attribution and is not a violation of the 15-label CICIDS2017
+ceiling.
+
+The companion follow-up fit in this release trains a 100-tree random forest on
+the same MachineLearningCVE cohort, maps all non-BENIGN labels to ATTACK, trains
+on Monday through Thursday and tests on Friday. It yields macro F1 = 0.61754
+and attack recall = 0.27894 for seed 42. The close value is a cross-study
+consistency check, not an exact reproduction: the original paper's complete
+preprocessing and hyperparameters are not asserted to match this pipeline.
+This case shows why protocol reports must name both the split and output target.
+
+## Published CICIDS2017 leave-one-family-out result: unresolved label inventory
+
+Source: Biyouki et al., *An Enhanced Deep Learning Framework for Intrusion
+Classification Enterprise Network Using Multi-Branch CNN-Attention Architecture*,
+Scientific Reports 16, 3962 (2026), https://doi.org/10.1038/s41598-025-34166-1.
+
+The article says that Web Attack is excluded from training in a CICIDS2017
+leave-one-family-out experiment and reports 98.55% macro F1 in Table 4. Its
+methods identify the main CICIDS task as binary, while the LOFO table does not
+state the score's label inventory or whether the held-out family is included in
+the macro average. Conditional on a pooled 15-label closed-set macro F1 that
+includes the held-out label, the ceiling is at most 14/15 = 0.9333; 0.9855 would
+then be incompatible. If the score averages only seen labels, or the experiment
+uses a binary target, that inference does not apply. We retain this as an
+unresolved target-definition ambiguity and do not allege a score violation.
+The case demonstrates which missing reporting choice determines whether a
+headline score evaluates known-family recognition or the withheld family.

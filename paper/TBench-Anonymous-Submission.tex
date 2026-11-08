@@ -10,9 +10,10 @@
 \title[Label coverage bounds]{Label Coverage Bounds Pooled Macro F1: A Reporting Diagnostic for Closed-Set IDS Benchmarks}
 \author{Author withheld for review}
 \authormark{Anonymous submission}
-\abstract{We give a pre-fit check for pooled macro F1 under a declared legal output vocabulary. On the original-label NSL-KDD split, 17 of 38 test labels are absent from training and the training-restricted ceiling is 0.55263. Reaggregating the same five forest prediction matrices, including true and predicted labels, to five attack categories changes mean F1 from 0.23953 (SD 0.00878) to 0.48349 (SD 0.00549) and raises the ceiling to 1; this changes the target rather than the model. A published NSL-KDD study likewise evaluates five categories while describing test-only attack subtypes. CICIDS2017 leave-one-day-out scores 0.06030, 90.5% of its 0.06667 fine-label ceiling. Binary re-scoring gives macro F1 0.57972 but attack recall is 0.14690. No verified published score conflicts with its declared output vocabulary. Code, confusion counts and split manifests accompany the analysis.}
-\keywords{Macro F1, vocabulary coverage, evaluation protocols, intrusion detection}
+\abstract{We give a pre-fit check for pooled macro F1 under a declared legal output vocabulary. On the original-label NSL-KDD split, 17 of 38 test labels are absent from training and the training-restricted ceiling is 0.55263. Reaggregating the same five forest prediction matrices, including true and predicted labels, to five attack categories changes mean F1 from 0.23953 (SD 0.00878) to 0.48349 (SD 0.00549) and raises the ceiling to 1; this changes the target rather than the model. A published NSL-KDD study likewise evaluates five categories while describing test-only attack subtypes. CICIDS2017 leave-one-day-out scores 0.06030, 90.5\% of its 0.06667 fine-label ceiling. Binary re-scoring gives macro F1 0.57972 but attack recall is 0.14690. A published Friday-holdout macro F1 of 0.619 is explicitly binary; our matching binary refit scores 0.61754, with attack recall 0.27894. A published CICIDS2017 leave-one-family-out report gives 0.9855 macro F1; if its score includes all 15 labels, the ceiling is 14/15, but its scoring vocabulary is unspecified, so we cannot classify it as incompatible. Code, confusion counts and split manifests accompany the analysis.}
+\keywords{Macro F1, label coverage, benchmark protocols, intrusion detection, reproducibility}
 \maketitle
+
 \section{Introduction}
 A low benchmark score can describe two different failures: a model misclassifies a label it can output, or the evaluation asks it to name a label outside its output vocabulary. These failures have different remedies. Better features or fitting might address the first. They cannot address the second without changing the model's permitted decisions.
 
@@ -141,6 +142,25 @@ Fine attack labels & 15 & 0.06667 & 0.06030 & 0.90456 \\
 Declared attack families & 8 & 0.25000 & 0.15630 & 0.62518 \\
 Benign versus attack & 2 & 1.00000 & 0.57972 & 0.57972 \\
 \end{tabular}\end{table}
+
+The task distinction matters in a published result. Alsaadi et al. report macro F1 = 0.619 for a CICIDS2017 whole-day holdout, and their Table 2 explicitly labels the task as binary \cite{alsaadi2026binary}. The legal outputs are BENIGN and ATTACK, both present in training, so the ceiling for that reported task is 1 even though fine-grained attack names on the held-out day are absent. On the matching Monday-through-Thursday-to-Friday split, our seed-42 100-tree binary forest scores 0.61754, with attack recall 0.27894. This close result is a cross-study check, not an exact reproduction: we do not claim identical preprocessing or hyperparameters. Neither binary score measures attack-type attribution, and neither conflicts with the 15-label ceiling above.
+
+The five-day binary refit makes a different point. Its pooled macro F1 is 0.58063 and attack recall is 0.14782, nearly the same as post-hoc binary scoring of the original multiclass predictions (0.57972 and 0.14690). The pooled ceiling is now 1, but the binary forest still misses most attacks. Per-day scores also vary sharply; the published Friday result should not be read as evidence for all five held-out days.
+
+A second published example shows why naming the scored vocabulary is part of the result. Biyouki et al. describe a CICIDS2017 leave-one-family-out (LOFO) experiment in which Web Attack is excluded from training and report macro F1 = 98.55\% \cite{biyouki2026}. The article describes its main CICIDS task as binary, but Table 4 does not specify the LOFO label inventory or whether the withheld family is included in the macro average. If that score were a pooled 15-label closed-set macro F1 including the held-out label, the label-coverage ceiling would be at most 14/15 = 0.9333, below the reported value. If the label is excluded from scoring, or the experiment is binary, this contradiction does not follow; however, those alternatives answer a different question about unseen-family identification. We therefore code this as an unresolved target-definition ambiguity, not as evidence of an incompatible published score.
+
+\begin{table}[h]\centering
+\caption{Binary random-forest results for the CICIDS2017 capture-day folds, seed 42. Each row holds out one day and trains on the others. Macro F1 uses positive-test-support classes.}
+\begin{tabular}{lrrr}
+Held-out day & Attack support & Macro F1 & Attack recall \\
+Friday & 288923 & 0.61754 & 0.27894 \\
+Monday & 0 & 0.99991 & -- \\
+Thursday & 2216 & 0.50888 & 0.01625 \\
+Tuesday & 13835 & 0.49172 & 0.00043 \\
+Wednesday & 252672 & 0.39615 & 0.00712 \\
+Pooled LODO & 557646 & 0.58063 & 0.14782 \\
+\end{tabular}\end{table}
+Monday contains no attack rows, so its near-one macro F1 is a benign-only score and says nothing about attack detection.
 
 \subsection{Fixed-cohort withholding and rankings}
 The official UNSW-NB15 split has complete coverage. The unweighted forest's five-seed mean is 0.47144, with seed SD 0.00094. Training-label availability cannot explain that shortfall. Withholding two labels creates \(C=0.8\), but its oracle depends on their support and legal destinations. For Analysis plus Backdoor at seed 42, \(O=0.79833\) and \(F=0.47067\).
