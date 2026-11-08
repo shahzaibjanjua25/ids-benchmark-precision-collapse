@@ -1,9 +1,10 @@
 # Historical revision v4 status (superseded)
 
-This file preserves the v4 roadmap and is historical. Current release 0.6.0 is
+This file preserves the v4 roadmap and is historical. Current release 0.7.0 is
 documented in README.md, CLAIMS.md, SELF-REVIEW.md and VALIDATION.json. It adds
-five-seed NSL pipeline results under both scoring conventions and withdraws the
-seed-42 pipeline leader-change claim. The statements below about absent natural
+five-seed NSL pipeline results under both scoring conventions, adds a verified
+published target-resolution example and a same-prediction NSL granularity audit,
+and withdraws the seed-42 pipeline leader-change claim. The statements below about absent natural
 inversions and main-paper layout describe v4 only. The current literature pilot
 is under audit/crossref_20261108.
 
