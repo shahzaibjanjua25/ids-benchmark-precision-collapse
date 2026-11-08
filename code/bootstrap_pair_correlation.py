@@ -1,4 +1,4 @@
-"""Resample the observed seed-42 pairs for the support/penalty correlation."""
+"""Historical exploratory resampling; overlapping pairs are not independent."""
 import argparse
 from pathlib import Path
 import numpy as np
@@ -6,6 +6,7 @@ import pandas as pd
 from scipy.stats import rankdata, spearmanr
 
 parser = argparse.ArgumentParser(description=__doc__)
+print('Historical exploratory output only: this resampling does not give an iid interval for overlapping pairs.')
 parser.add_argument("results", type=Path)
 args = parser.parse_args()
 root = args.results / "unsw_coverage_random_pairs"
