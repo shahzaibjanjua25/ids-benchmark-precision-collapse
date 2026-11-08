@@ -1,6 +1,4 @@
 comparison,n,spearman,kendall,discordant,concordant,tied
-NSL-KDD five forest seeds,5,0.39999999999999997,0.39999999999999997,3,7,0
-NSL-KDD six pipelines,6,0.8285714285714287,0.7333333333333333,2,13,0
 gas all fitted models,19,1.0,1.0,0,161,10
 UNSW pair-seed conditions,180,0.8486208422070641,0.6800744878957169,2577,13533,0
 UNSW pair means,36,0.8517374517374519,0.6920634920634922,97,533,0

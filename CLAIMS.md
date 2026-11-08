@@ -1,16 +1,16 @@
-# Manuscript-to-evidence map, release 0.5.0
+# Manuscript-to-evidence map, release 0.6.0
 
 Run from the repository root with the pinned Python environment. The single
 saved-evidence command is `python code/reproduce_release.py --mode saved`.
 
 | Item | Regeneration/check | Released evidence |
 | --- | --- | --- |
-| Table 1: NSL seed rankings | code/summarize_rank_audit.py | results/nsl_model_comparison/confusion_seen_*.csv and confusion_unseen_*.csv; results/manuscript_tables/table_1_nsl_seed_rankings.csv |
-| Table 2: NSL pipeline ranking/winner change | code/run_nsl_families.py DATA OUT; code/build_main_tables.py | audit/nsl_family_plan.md; results/nsl_families/*.npz and *_fit.json; results/manuscript_tables/table_2_nsl_families.csv |
-| Same-cohort NSL routing winner change with unchanged TP counts | code/audit_nsl_destinations.py | results/nsl_destination_audit/*.npz and scores.csv; both support and inferred-union scoring |
+| Table 1: NSL forest seed variation on a fixed cohort | code/summarize_rank_audit.py | results/nsl_model_comparison/confusion_seen_*.csv and confusion_unseen_*.csv; results/manuscript_tables/table_1_nsl_seed_scores.csv |
+| Table 2: NSL pipeline scores over five declared seeds and both scoring conventions | code/run_nsl_family_seeds.py DATA OUT; code/build_main_tables.py | audit/nsl_family_plan.md; results/nsl_families/by_seed/*.npz, seed_metrics.csv and seed_summary.csv; results/manuscript_tables/table_2_nsl_families.csv |
+| NSL train-only routing score-convention control | code/audit_nsl_destinations.py | results/nsl_destination_audit/*.npz and scores.csv; supplementary discussion only |
 | Table 3: natural protocol scores and ceilings | code/build_main_tables.py | results/manuscript_tables/table_3_natural_protocols.csv; original count files and fresh CIC/NSL/gas metrics |
 | Figure 1: CIC observed/ceiling contrast | code/plot_cic_hero.py OUT | results/cic_full_replication.csv; figures/cic_hero.pdf in paper package |
-| 180-fit UNSW rank correlation and reversals | code/run_rank_audit.py DATA OUT; code/summarize_rank_audit.py | results/rank_audit/confusion/*.npz, runs.csv, rank_summary.csv; matches results/unsw_complete_pairs/runs.csv |
+| 180-fit UNSW full/covered score grid | code/run_rank_audit.py DATA OUT; code/summarize_rank_audit.py | results/rank_audit/confusion/*.npz, runs.csv, rank_summary.csv; matches results/unsw_complete_pairs/runs.csv |
 | Gas null ranking result across 19 fits | code/run_gas_models.py ZIP OUT; code/summarize_rank_audit.py | results/gas_model_comparison, results/gas_coral, results/rank_audit/gas_ranks.csv |
 | Natural NSL 21/38 and union oracle | code/audit_scoring_conventions.py results; code/exact_fold_oracle.py results | results/nsl_kdd_official/label_counts.csv; results/metric_conventions.csv |
 | All six CIC archive/fresh matches | code/verify_cic_archive.py results | results/cic_full_replication.csv; results/RESULTS_PARSED.csv; results/confusion |
@@ -37,8 +37,9 @@ supplementary/historical controls, individual commands are:
     python code/audit_scoring_conventions.py results
 
 Consult `--help` for paths and supported flags. Rejection scoring and
-repair-order summaries remain historical controls; they are not used as evidence
-for the natural pipeline winner change. Conditional bootstrap intervals in the
+repair-order summaries remain historical controls. NSL covered-row scores use a
+different target inventory from full scores; their differences are not treated
+as evidence that either ranking is wrong. Conditional bootstrap intervals in the
 supplement condition on fixed predictions and assume exchangeable rows.
 
 The Dockerfile is an environment recipe, not a verified image. No Zenodo DOI,

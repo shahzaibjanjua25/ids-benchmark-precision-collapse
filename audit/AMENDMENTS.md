@@ -33,3 +33,22 @@ launch and preceded inspection of its first result. The destination rerouting
 analysis is explicitly post hoc and was not part of that baseline plan.
 
 Public CSV line endings were canonicalized to LF before release so Git checkouts preserve the frozen frame checksum across operating systems. Selected DOIs and coding decisions are unchanged.
+
+# 2026-11-08: NSL pipeline seed expansion
+
+After an external referee questioned the seed-42-only comparison, the five
+additional prespecified pipelines were evaluated on the same official NSL-KDD
+train/test files with seeds 42--46. The existing forest's five seed outputs
+were retained. The parameters and preprocessing were not retuned; the added
+pipelines remain complete-pipeline comparisons because their preprocessing
+differs from the forest. GaussianNB was refit for each seed and produced
+identical scores. kNN is deterministic under its specified settings; its one
+saved prediction matrix is reused for the other seed labels rather than
+refitting an identical estimator. Full-cohort and covered-row results are
+reported under both positive-test-support and inferred-union scoring. The
+original seed-42 leader-change claim was removed after the mean results showed
+kNN first on both metrics.
+
+The external referee also identified that the literature pilot did not
+establish a published score conflict. No incompatible published result was
+added or inferred; the revised paper states this as an unresolved impact gap.

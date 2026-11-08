@@ -1,16 +1,18 @@
 # Label Coverage Bounds Pooled Macro F1 in Closed-Set Benchmarks
 
-Release 0.5.0: code, manuscript source and evidence for auditing fold-dependent
+Release 0.6.0: code, manuscript source and evidence for auditing fold-dependent
 legal prediction vocabularies. The repository URL retains its historical name.
-The research question concerns attainable scores and conditional rankings.
+The reporting check concerns score attainability; the comparisons are tied to
+their declared fixed test cohorts.
 
 On the official original-label NSL-KDD split, 21 of 38 test labels are available
-to a training-restricted model. Across six prespecified pipelines, the forest
-leads full macro F1 while kNN leads covered-row scoring. Rerouting unavailable
-rows alone reverses the forest/kNN full-score order too, without adding true
-positives; this is an oracle-assisted diagnostic. CICIDS2017 day holdout has
-ceiling 1/15. Gas model-family rankings are unchanged. These outcomes concern
-declared fixed cohorts and targets; covered scoring is a conditional task.
+to a training-restricted model. Across the five-seed pipeline comparison, kNN
+has the highest mean full and covered-row score; the forest's seed-42 full-score
+lead does not persist at its five-seed mean. Positive-test-support and inferred-union
+scores are both reported. CICIDS2017 day holdout has ceiling 1/15. The frozen
+literature pilot found no verified incompatible published score, so field-level
+impact remains unestablished. These outcomes concern fixed cohorts and declared
+targets; covered scoring is a separate conditional task.
 
 ## Install and use
 
@@ -61,12 +63,12 @@ groups are collapsed before search. The polynomial sandwich remains available.
 
 To refit every fitted comparison in the main manuscript into a new directory:
 
-    python code/reproduce_release.py --mode refit --out fresh_v5 --data PATH_TO_UNSW --cic PATH_TO_CIC --nsl PATH_TO_NSL --gas PATH_TO_GAS_ZIP
+    python code/reproduce_release.py --mode refit --out fresh_v6 --data PATH_TO_UNSW --cic PATH_TO_CIC --nsl PATH_TO_NSL --gas PATH_TO_GAS_ZIP
 
 This can take many hours. It starts from raw data and keeps new results separate
-from the frozen evidence. It fits the six CIC configurations, NSL five forest
-seeds and five additional pipelines, the UNSW official reference and complete
-36-pair/five-seed grid, and all gas baselines. The optional digits control is also
+from the frozen evidence. It fits the six CIC configurations, NSL forest seeds
+42--46 and five additional pipelines over the same seed set, the UNSW official
+reference and complete 36-pair/five-seed grid, and all gas baselines. The optional digits control is also
 rerun. Historical withholding paths and rejection controls have separate entry
 points documented in CLAIMS.md. Read the source flags before a large refit.
 
@@ -76,7 +78,8 @@ points documented in CLAIMS.md. Read the source flags before a large refit.
 - paper/TBench-Submission.tex and paper/TBench-Anonymous-Submission.tex use the publisher class.
 - All six CIC configurations have fresh records in results/cic_full_replication.csv; RESULTS_PARSED.csv contains the corresponding archived aggregates.
 - results/unsw_complete_pairs/runs.csv contains the 180 pair/seed scores plus official/path controls. results/rank_audit adds newly refitted covered/unavailable matrices for all 180 pair/seed conditions; full scores match the earlier grid to 1e-12.
-- results/nsl_families and results/nsl_model_comparison support natural-split pipeline and seed comparisons.
+- results/nsl_families/seed_metrics.csv and by_seed contain five outputs for each of five additional pipelines, with both scoring conventions. Forest confusion matrices for seeds 42--46 are under results/nsl_model_comparison. The added pipeline comparison uses different preprocessing and is descriptive, not an estimator-only experiment.
+- The seed-42 routing control is a scoring-convention illustration in the supplement, not evidence that model rankings change in practice.
 - audit/protocol.md was locally frozen before collecting the literature frame. audit/crossref_20261108 contains 385 candidates, the fixed sample of 50, coding and checksums. This is a screening pilot: 3 eligible, 14 excluded, 33 unresolved. It does not estimate field prevalence or document a verified incompatible published score.
 - audit/nsl_family_plan.md fixes the additional pipelines before their results were examined. audit/AMENDMENTS.md records screening boundaries. audit/reference_verification.csv checks the cited 2026 records and distinguishes a web report from journal articles.
 
