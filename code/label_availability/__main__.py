@@ -17,6 +17,8 @@ def main():
     result = {**metric_bounds(counts), **oracle_sandwich(counts)}
     result["scoring_convention"] = args.convention
     result["union_ceiling"] = union_ceiling(counts)
+    if result['coverage_ceiling'] < 1:
+        result['warning'] = 'Some true labels are unavailable under the declared legal outputs; interpret the score with its ceiling.'
     if args.oracle:
         result.update(exact_oracle(counts, method="branch", convention=args.convention,
                                    max_choices=args.max_nodes))
