@@ -1,4 +1,4 @@
-# Manuscript-to-evidence map, release 0.7.0
+# Manuscript-to-evidence map, release 0.8.0
 
 Run from the repository root with the pinned Python environment. The single
 saved-evidence command is `python code/reproduce_release.py --mode saved`.
@@ -10,6 +10,7 @@ saved-evidence command is `python code/reproduce_release.py --mode saved`.
 | NSL train-only routing score-convention control | code/audit_nsl_destinations.py | results/nsl_destination_audit/*.npz and scores.csv; supplementary discussion only |
 | Table 3: natural protocol scores and ceilings | code/build_main_tables.py | results/manuscript_tables/table_3_natural_protocols.csv; original count files and fresh CIC/NSL/gas metrics |
 | NSL label-resolution analysis: same five forest matrices, fine labels and five categories | code/audit_nsl_granularity.py | results/nsl_kdd_official/granularity_reanalysis.csv and granularity_reanalysis_summary.csv; code/verify_release_evidence.py |
+| CICIDS2017 day-holdout target-resolution analysis: the same prediction matrix at 15 labels, eight families and binary detection | code/audit_cic_target_resolution.py | results/cic_lodo_target_resolution.csv and cic_lodo_target_class_scores.csv; code/verify_release_evidence.py |
 | Figure 1: CIC observed/ceiling contrast | code/plot_cic_hero.py OUT | results/cic_full_replication.csv; figures/cic_hero.pdf in paper package |
 | 180-fit UNSW full/covered score grid | code/run_rank_audit.py DATA OUT; code/summarize_rank_audit.py | results/rank_audit/confusion/*.npz, runs.csv, rank_summary.csv; matches results/unsw_complete_pairs/runs.csv |
 | Gas null ranking result across 19 fits | code/run_gas_models.py ZIP OUT; code/summarize_rank_audit.py | results/gas_model_comparison, results/gas_coral, results/rank_audit/gas_ranks.csv |

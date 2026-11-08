@@ -4,7 +4,7 @@
   "description": "Code, fold-count audits, confusion matrices and manuscript sources for a pre-fit label-coverage check. Includes five-seed NSL-KDD pipeline comparisons, a same-prediction fine-label/five-category reanalysis under two scoring conventions, and the full UNSW pair grid. This metadata file does not establish a deposited record or DOI.",
   "creators": [{"name": "Shah Zaib Sajid", "affiliation": "Independent Researcher"}],
   "license": "MIT",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "publication_date": "2026-11-08",
   "access_right": "open"
 }

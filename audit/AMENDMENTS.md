@@ -74,3 +74,18 @@ ceiling 0.55263; the five-category projection is 0.48349 (sample SD 0.00549)
 with ceiling 1. This is a target-resolution illustration on one fixed split,
 not an estimate of field prevalence, a claim of model improvement, or proof
 that published conclusions are generally invalid.
+
+# 2026-11-08: CICIDS2017 target-resolution analysis
+
+To answer the protocol-selection question without changing the fitted model,
+code/audit_cic_target_resolution.py aggregates both axes of the saved
+unweighted CICIDS2017 day-holdout forest confusion matrix under the released
+fine-label, eight-family and benign-versus-attack maps. Fold-level mapped
+support is reconstructed from the retained day/class counts. The three
+ceilings are 0.06667, 0.25 and 1; the same predictions score macro F1 0.06030,
+0.15630 and 0.57972, respectively. Binary attack recall is 0.14690. These are
+different targets, not a score ranking or binary refit. Fine-label F1 is
+90.5% of its ceiling because it is supported almost entirely by the benign
+term; all attack-class F1 terms are zero. The binary result is included to
+show that removing a structural ceiling does not guarantee useful detection.
+Reproduction and assertions are in the saved release command.
