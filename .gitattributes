@@ -1,13 +1,2 @@
-* text=auto
-*.py text eol=lf
-*.md text eol=lf
-*.tex text eol=lf
-*.csv text eol=lf
-*.json text eol=lf
-*.cff text eol=lf
-*.sh text eol=lf
-*.yml text eol=lf
-Makefile text eol=lf
-*.pdf binary
-*.png binary
-*.npz binary
+code/run_all.sh text eol=lf
+audit/crossref_20261108/candidate_frame.csv -text
