@@ -47,6 +47,10 @@ This reconstructs scores from released confusion counts, verifies the frozen
 results/manuscript_tables, and exports the CIC hero figure. It does not refit
 models. CLAIMS.md maps each table and substantive claim to evidence.
 
+Saved mode rewrites derived CSV tables and may change floating-point serialization.
+Use a disposable checkout when preserving the exact frozen file formatting matters.
+Primary confusion counts and the frozen sampling frame are retained.
+
     python code/reproduce_release.py --mode solvers
 
 This exercises both scoring conventions and solvers against exhaustive legal
