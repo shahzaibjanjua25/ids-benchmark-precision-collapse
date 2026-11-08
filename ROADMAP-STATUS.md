@@ -1,6 +1,6 @@
 # Historical revision v4 status (superseded)
 
-This file preserves the v4 roadmap and is historical. Current release 0.8.0 is
+This file preserves the v4 roadmap and is historical. Current release 0.9.1 is
 documented in README.md, CLAIMS.md, SELF-REVIEW.md and VALIDATION.json. It adds
 five-seed NSL pipeline results under both scoring conventions, adds a verified
 published target-resolution example and a same-prediction NSL granularity audit,
