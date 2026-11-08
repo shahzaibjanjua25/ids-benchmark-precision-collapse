@@ -43,7 +43,18 @@ for row in families.itertuples():
     assert covered.sum()==18794 and unavailable.sum()==3750 and np.trace(unavailable)==0
     assert abs(macro(covered+unavailable)-row.full_macro_f1)<1e-12
     assert abs(macro(covered)-row.covered_macro_f1)<1e-12
-print('Frozen 50-record sample, 180 pair/seed matrices and five new NSL pipelines verified')
+seeded=pd.read_csv(r/'nsl_families/seed_metrics.csv')
+assert len(seeded)==25 and set(seeded.seed)=={42,43,44,45,46}
+for row in seeded.itertuples():
+    data=np.load(r/'nsl_families/by_seed'/f'{row.model}_{row.seed}.npz',allow_pickle=False)
+    covered,unavailable=data['covered'],data['unavailable']
+    assert covered.sum()==18794 and unavailable.sum()==3750 and np.trace(unavailable)==0
+    assert abs(macro(covered+unavailable)-row.full_macro_f1)<1e-12
+    assert abs(macro(covered)-row.covered_macro_f1)<1e-12
+    union=lambda cm: float(np.divide(2*np.diag(cm),cm.sum(axis=1)+cm.sum(axis=0),out=np.zeros(len(cm)),where=(cm.sum(axis=1)+cm.sum(axis=0))>0)[(cm.sum(axis=1)+cm.sum(axis=0))>0].mean())
+    assert abs(union(covered+unavailable)-row.full_union_macro_f1)<1e-12
+    assert abs(union(covered)-row.covered_union_macro_f1)<1e-12
+print('Frozen 50-record sample, 180 pair/seed matrices and 25 NSL pipeline/seed outputs verified')
 for path in (r/'nsl_destination_audit').glob('*.npz'):
     data=np.load(path,allow_pickle=False)
     np.testing.assert_array_equal(data['original'].sum(axis=1),data['rerouted'].sum(axis=1))
