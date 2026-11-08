@@ -6,20 +6,31 @@ import numpy as np
 import pandas as pd
 
 
-def count_folds(train_labels_per_fold, test_labels_per_fold):
+def count_folds(train_labels_per_fold, test_labels_per_fold, vocabularies=None):
     train = list(train_labels_per_fold)
     test = list(test_labels_per_fold)
     if len(train) != len(test):
         raise ValueError("Training and test fold lists must have equal length")
+    vocabularies = [None] * len(train) if vocabularies is None else list(vocabularies)
+    if len(vocabularies) != len(train):
+        raise ValueError("One legal output vocabulary is required per fold")
     rows = []
     for fold, (training, testing) in enumerate(zip(train, test)):
         tr = pd.Series(list(training), dtype=object).value_counts(dropna=False)
         te = pd.Series(list(testing), dtype=object).value_counts(dropna=False)
-        for label in tr.index.union(te.index):
-            rows.append({"fold": fold, "class": label,
+        vocab = vocabularies[fold]
+        labels = tr.index.union(te.index)
+        if vocab is not None:
+            vocab = list(vocab)
+            labels = labels.union(pd.Index(vocab, dtype=object))
+        for label in labels:
+            row = {"fold": fold, "class": label,
                          "training_rows": int(tr.get(label, 0)),
-                         "test_rows": int(te.get(label, 0))})
-    return pd.DataFrame(rows, columns=["fold", "class", "training_rows", "test_rows"])
+                         "test_rows": int(te.get(label, 0))}
+            if any(v is not None for v in vocabularies):
+                row["allowed"] = label in vocab if vocab is not None else tr.get(label, 0) > 0
+            rows.append(row)
+    return pd.DataFrame(rows)
 
 
 def _prepare(counts):
@@ -39,7 +50,7 @@ def _prepare(counts):
     if "allowed" in counts:
         if not counts.allowed.isin([0, 1, False, True]).all():
             raise ValueError("allowed must contain boolean values")
-        permitted &= counts.allowed.astype(bool)
+        permitted = counts.allowed.astype(bool)
     counts["covered_rows"] = counts.test_rows.where(permitted, 0)
     labels = list(pd.unique(counts["class"]))
     index = {label: i for i, label in enumerate(labels)}
@@ -72,8 +83,8 @@ def metric_bounds(counts):
             "harmonic_macro_pr_ceiling": float(2 * rho.mean() / (1 + rho.mean()))}
 
 
-def coverage_ceiling(train_labels_per_fold, test_labels_per_fold):
-    return metric_bounds(count_folds(train_labels_per_fold, test_labels_per_fold))["coverage_ceiling"]
+def coverage_ceiling(train_labels_per_fold, test_labels_per_fold, vocabularies=None):
+    return metric_bounds(count_folds(train_labels_per_fold, test_labels_per_fold, vocabularies))["coverage_ceiling"]
 
 
 def oracle_sandwich(counts):
@@ -96,7 +107,7 @@ def union_ceiling(counts):
     support = {label for label, amount in zip(labels, n) if amount > 0}
     allowed = prepared.training_rows.gt(0)
     if "allowed" in prepared:
-        allowed &= prepared.allowed.astype(bool)
+        allowed = prepared.allowed.astype(bool)
     outside = allowed & ~prepared["class"].isin(support)
     restricted = prepared.assign(allowed=allowed & prepared["class"].isin(support))
     try:
@@ -130,10 +141,13 @@ def exact_oracle(counts, max_choices=1_000_000, method="enumerate", convention="
         return float((2 * m[scored] / (n[scored] + m[scored] + fp[scored])).sum() / denominator)
     ceiling = score()
     visited = pruned = 0
-    # One common vocabulary reduces to a single simplex.
-    if active and all(set(vocab) == set(active[0][1]) for _, vocab in active):
-        unseen = sum(amount for amount, _ in active)
-        active = [(unseen, active[0][1])]
+    # Identical destination sets can share one allocation.
+    groups = {}
+    for unseen, vocab in active:
+        key = tuple(sorted(vocab))
+        groups[key] = groups.get(key, 0) + unseen
+    active = [(amount, list(vocab)) for vocab, amount in groups.items()]
+    grouped_choices = math.prod(len(vocab) for _, vocab in active)
     best = 0.0
     if method == "enumerate":
         search_choices = math.prod(len(allowed) for _, allowed in active)
@@ -184,4 +198,5 @@ def exact_oracle(counts, max_choices=1_000_000, method="enumerate", convention="
     else:
         raise ValueError("method must be enumerate or branch")
     return {"coverage_ceiling": ceiling, "exact_oracle": best,
-            "vertex_assignments": choices, "visited": visited, "pruned": pruned}
+            "vertex_assignments": choices, "grouped_assignments": grouped_choices,
+            "vocabulary_types": len(active), "visited": visited, "pruned": pruned}
