@@ -1,10 +1,10 @@
 {
-  "title": "Label Coverage Bounds Pooled Macro F1 in Closed-Set Benchmarks: Reproducibility Artifact",
+  "title": "Label Coverage Bounds Pooled Macro F1: A Reporting Diagnostic for Closed-Set IDS Benchmarks: Reproducibility Artifact",
   "upload_type": "software",
-  "description": "Code, fold-count audits, confusion matrices and manuscript sources for a reporting check on vocabulary-constrained pooled scoring. Includes five-seed NSL-KDD pipeline comparisons under positive-test-support and inferred-union scoring, plus the full UNSW pair grid. This metadata file does not establish a deposited record or DOI.",
+  "description": "Code, fold-count audits, confusion matrices and manuscript sources for a pre-fit label-coverage check. Includes five-seed NSL-KDD pipeline comparisons, a same-prediction fine-label/five-category reanalysis under two scoring conventions, and the full UNSW pair grid. This metadata file does not establish a deposited record or DOI.",
   "creators": [{"name": "Shah Zaib Sajid", "affiliation": "Independent Researcher"}],
   "license": "MIT",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "publication_date": "2026-11-08",
   "access_right": "open"
 }

@@ -1,5 +1,5 @@
 {
-  "release": "0.6.0",
+  "release": "0.7.0",
   "date": "2026-11-08",
   "saved_evidence_regeneration": "passed",
   "evidence_checks": {
@@ -11,7 +11,10 @@
     "unsw_pair_seed_matrices": 180,
     "nsl_pipeline_seed_records": 25,
     "nsl_additional_pipelines": 5,
-    "nsl_pipelines_total": 6
+    "nsl_pipelines_total": 6,
+    "nsl_granularity_seeds": 5,
+    "nsl_granularity_test_rows": 22544,
+    "nsl_unavailable_fine_label_rows": 3750
   },
   "nsl_pipeline_review_revision": {
     "seed_set": [
@@ -74,10 +77,10 @@
     }
   ],
   "wheel": {
-    "filename": "label_availability-0.6.0-py3-none-any.whl",
-    "sha256": "e4ff5f650ec5ba608a26b59a2a468457b9a8581585214ee7ce6e21a04c7ab7b7",
-    "build": "passed",
-    "installed_api_smoke": "passed"
+    "filename": null,
+    "sha256": null,
+    "build": "not rebuilt: local setuptools build backend unavailable; network install blocked",
+    "installed_api_smoke": "not rerun for 0.7.0"
   },
   "reading_pdf_qa": {
     "main": {
@@ -87,21 +90,36 @@
     },
     "anonymous": {
       "pages": 12,
+      "contribution_paragraph_present": true,
       "author_present": false,
-      "email_present": false,
-      "pipeline_tables_present": true
+      "title_present": true
     },
     "supplement": {
       "pages": 5,
       "routing_note_occurrences": 1
     },
-    "native_publisher_class_compiled": false
+    "native_publisher_class_compiled": false,
+    "manuscript": {
+      "pages": 12,
+      "contribution_paragraph_present": true,
+      "author_present": true,
+      "title": "Label Coverage Bounds Pooled Macro F1: A Reporting Diagnostic for Closed-Set IDS Benchmarks"
+    }
   },
   "remote_ci_run_verified": false,
   "permanent_doi": null,
   "paper_sha256": {
-    "manuscript.pdf": "d7ecfcdc098e310f9f11a6603e54c7fd840f6c51250c24eec56d35ef2890e844",
-    "anonymous.pdf": "e30ef3946d9c1b8951aef7c739c028a885f50e63d28c20ac2747a730e65d0104",
-    "supplement.pdf": "26830fcc4e48fb9c6a27e2be622eb7d1bab055faa4e8691c5b38a21116fbf468"
+    "manuscript.pdf": "77c025ed50eff7ca8d62be9b3bb043a07133dcd10acd2ef9f8b828b5e531429c",
+    "anonymous.pdf": "bcce7c9061043ca8078efac4910b5c99a3bc30fef9aa68d250d321fa594b761c",
+    "supplement.pdf": "cdabeeb15a96c5eee46de4539a8cf08051573762d178d8e5b2024f634318fe56"
+  },
+  "nsl_granularity_reanalysis": {
+    "fine_label_ceiling": 0.5526315789473685,
+    "fine_label_f1_mean": 0.23952666185118515,
+    "fine_label_f1_sample_sd": 0.008778840059952478,
+    "five_category_ceiling": 1.0,
+    "five_category_f1_mean": 0.4834893073427818,
+    "five_category_f1_sample_sd": 0.00549371978691572,
+    "same_predictions_reaggregated": true
   }
 }

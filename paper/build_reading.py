@@ -23,7 +23,7 @@ for text,name in [(main,'manuscript'),(anonymous,'anonymous'),((folder/'suppleme
              '--citeproc','--csl=ieee.csl','--bibliography=references.bib','--resource-path=.',
              '-M','reference-section-title=References','-V','papersize=us-letter',
              '-o',name+'.pdf']
-    title='Supplementary replication notes' if name=='supplement' else 'Label Coverage Bounds Pooled Macro F1 in Closed-Set Benchmarks'
+    title='Supplementary replication notes' if name=='supplement' else 'Label Coverage Bounds Pooled Macro F1: A Reporting Diagnostic for Closed-Set IDS Benchmarks'
     command.extend(['-M','title='+title])
     if name=='manuscript': command.extend(['-M','author=Shah Zaib Sajid'])
     subprocess.run(command,input=text,encoding='utf8',cwd=folder,check=True)

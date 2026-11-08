@@ -1,4 +1,4 @@
-# Manuscript sources for release 0.6.0
+# Manuscript sources for release 0.7.0
 
 main.tex is an IEEEtran source. TBench-Submission.tex and
 TBench-Anonymous-Submission.tex contain the same body using the native publisher

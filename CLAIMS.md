@@ -1,4 +1,4 @@
-# Manuscript-to-evidence map, release 0.6.0
+# Manuscript-to-evidence map, release 0.7.0
 
 Run from the repository root with the pinned Python environment. The single
 saved-evidence command is `python code/reproduce_release.py --mode saved`.
@@ -9,6 +9,7 @@ saved-evidence command is `python code/reproduce_release.py --mode saved`.
 | Table 2: NSL pipeline scores over five declared seeds and both scoring conventions | code/run_nsl_family_seeds.py DATA OUT; code/build_main_tables.py | audit/nsl_family_plan.md; results/nsl_families/by_seed/*.npz, seed_metrics.csv and seed_summary.csv; results/manuscript_tables/table_2_nsl_families.csv |
 | NSL train-only routing score-convention control | code/audit_nsl_destinations.py | results/nsl_destination_audit/*.npz and scores.csv; supplementary discussion only |
 | Table 3: natural protocol scores and ceilings | code/build_main_tables.py | results/manuscript_tables/table_3_natural_protocols.csv; original count files and fresh CIC/NSL/gas metrics |
+| NSL label-resolution analysis: same five forest matrices, fine labels and five categories | code/audit_nsl_granularity.py | results/nsl_kdd_official/granularity_reanalysis.csv and granularity_reanalysis_summary.csv; code/verify_release_evidence.py |
 | Figure 1: CIC observed/ceiling contrast | code/plot_cic_hero.py OUT | results/cic_full_replication.csv; figures/cic_hero.pdf in paper package |
 | 180-fit UNSW full/covered score grid | code/run_rank_audit.py DATA OUT; code/summarize_rank_audit.py | results/rank_audit/confusion/*.npz, runs.csv, rank_summary.csv; matches results/unsw_complete_pairs/runs.csv |
 | Gas null ranking result across 19 fits | code/run_gas_models.py ZIP OUT; code/summarize_rank_audit.py | results/gas_model_comparison, results/gas_coral, results/rank_audit/gas_ranks.csv |
@@ -18,7 +19,7 @@ saved-evidence command is `python code/reproduce_release.py --mode saved`.
 | Both score conventions and bounds | code/check_availability.py | 80 seeded exhaustive row-level cases |
 | Grouped exact search/MILP | code/run_solver_shapes.py OUT.csv; code/oracle_milp.py | results/solver_shapes_grouped.csv; exact or bounds with explicit status |
 | Literature sample and coding totals | code/build_literature_frame.py OUT; code/verify_release_evidence.py | audit/protocol.md; audit/crossref_20261108/raw, candidate_frame.csv, selected_sample.csv, coding.csv, summary.json |
-| Additional source compatibility checks | manual primary-source reading | EXTERNAL-AUDIT.md; audit/reference_verification.csv; supplement |
+| Additional source compatibility checks, including the Ayantayo et al. NSL-KDD label-resolution case | manual primary-source reading | EXTERNAL-AUDIT.md; results/published_score_audit.csv; audit/reference_verification.csv; supplement |
 
 The sampling builder reuses cached responses and preserves an existing coding
 sheet. Publisher abstracts/reference lists are redacted from public snapshots;

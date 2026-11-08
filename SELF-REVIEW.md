@@ -1,49 +1,49 @@
-# Internal critical review, release 0.6.0
+# Internal review, release 0.7.0
 
-Assessment: **5.5/10**. Recommendation: major revision; I would not accept this
-as a full research article at a Q1 venue in its current form. This is an
-internal referee-style assessment, not an independent peer review or a TBench
-editorial decision. No official TBench scoring rubric is assumed.
+Assessment: **6/10**. Recommendation: major revision at a selective Q1 venue;
+borderline for a correctness-focused journal. This is an internal assessment,
+not an independent peer review or a TBench decision.
 
-The mathematical statement is correct and easy to verify: if a legal output
-cannot name a test label, its recall is zero, and the class-level F1 term is
-bounded accordingly. NSL-KDD's official fine-grained split has natural partial
-coverage, while CICIDS2017 leave-one-day-out gives an extreme, already-known
-case. The paper now treats the inequality as a reporting corollary rather than
-a new method.
+The main improvement is a reproducible label-resolution analysis on NSL-KDD.
+Using the same five saved forest confusion matrices, mapping both true and
+predicted labels to five broad categories changes mean macro F1 from 0.23953
+(SD 0.00878) to 0.48349 (SD 0.00549); the ceiling changes from 0.55263 to 1.
+This quantifies how a published score's target taxonomy can change its
+interpretation without any new fit. The analysis is explicitly a post-hoc
+projection, not a comparison of separately trained models.
 
-The revised NSL pipeline comparison fits the randomized pipelines over seeds
-42--46, reports seed SDs, and includes both positive-test-support and
-inferred-union scoring. The original seed-42 forest/kNN leader-change claim was
-withdrawn: kNN has the highest mean under both scoring conventions, and the
-forest is third on full positive-support F1. The fixed-test comparisons remain
-descriptive; they do not establish model-family ranking stability or a
-statistically significant advantage. The deterministic GaussianNB/kNN rows
-have zero seed variation by construction.
+A primary-source check of Ayantayo et al. (2023) verified a published NSL-KDD
+evaluation that describes 17 test-only fine attack subtypes, reports a five-
+category task, and creates a second test set without those subtypes. Under its
+five-category output vocabulary, the ceiling is one; its score is not a
+verified violation. The literature screen still has no confirmed published
+score incompatible with its declared outputs. This improves the practical
+positioning, but does not establish field-wide prevalence or impact.
 
-The main paper now separates the full cohort from the covered-row task, moves
-the oracle complexity proofs into the supplement, removes the unexplained
-65-condition routing headline, and calls the routing example a scoring
-convention control. The gas denominator and test-row wording are explicit. The
-pipeline table shows both scoring conventions. The repository claim map and
-README describe the current experiments.
+The five-seed pipeline comparison remains descriptive across complete
+pipelines with different preprocessing. kNN has the highest point estimate;
+its full-score margin over the decision tree is smaller than the tree's seed
+SD. The manuscript now states that explicitly. Both scoring conventions are
+shown, the natural NSL table uses the five-seed mean, the oracle and sandwich
+bounds are defined in the main text, and the UNSW disagreement counts are
+restored with their denominators.
 
-Reproducibility remains a strength: source hashes, fold manifests, confusion
-matrices, claim-to-file mapping and saved verification are included. The
-complete literature evidence is still a 50-candidate screening pilot: three
-eligible, fourteen excluded and thirty-three unresolved. It found **no
-verified incompatible published score** and cannot establish field-level
-impact. No such case is asserted.
+| Criterion | Internal score |
+|---|---:|
+| Mathematical soundness | 8/10 |
+| Novelty and significance | 4/10 |
+| Empirical evidence | 6/10 |
+| Reproducibility | 9/10 |
+| Clarity | 7/10 |
 
-Indicative sub-scores: mathematical soundness 8/10, novelty 3/10, empirical
-significance 5/10, reproducibility 9/10, writing/focus 6/10. The ceiling is an
-elementary but useful reporting check; its practical adoption and effect on
-published conclusions have not been demonstrated. A confirmed external case
-and a broader, independently coded literature audit remain the main scientific
-gaps.
+The central inequality remains elementary, and the main contribution remains
+a reporting diagnostic. The external published example supports the relevance
+of target resolution but is not an incompatible-score case. A broader
+independently coded audit or a natural published example where the ceiling
+changes a substantive conclusion is still needed for a stronger Q1 novelty
+case.
 
-Native TBench-class compilation and final journal pagination, a permanent DOI,
-external anonymous artifact hosting and independent reproduction remain
-pending. The reading PDFs verify content and layout only for the Pandoc/Typst
-reading format. These materials do not imply journal acceptance or guarantee a
-9/10 rating.
+Native TBench-class compilation, final journal pagination, permanent DOI,
+external anonymous artifact hosting, and independent reproduction remain
+pending. The reading PDFs check content and layout only in the Pandoc/Typst
+format. These files do not imply acceptance or guarantee an external score.

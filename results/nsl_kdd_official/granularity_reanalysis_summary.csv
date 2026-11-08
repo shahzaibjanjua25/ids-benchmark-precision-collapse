@@ -1,0 +1,2 @@
+seeds,test_rows,test_rows_with_unavailable_fine_label,fine_label_ceiling,fine_label_f1_mean,fine_label_f1_sd,five_category_ceiling,five_category_f1_mean,five_category_f1_sd,prediction_reaggregation_only
+5,22544,3750,0.5526315789473685,0.23952666185118515,0.008778840059952478,1.0,0.4834893080881512,0.00549371978691572,True

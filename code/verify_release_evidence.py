@@ -54,7 +54,16 @@ for row in seeded.itertuples():
     union=lambda cm: float(np.divide(2*np.diag(cm),cm.sum(axis=1)+cm.sum(axis=0),out=np.zeros(len(cm)),where=(cm.sum(axis=1)+cm.sum(axis=0))>0)[(cm.sum(axis=1)+cm.sum(axis=0))>0].mean())
     assert abs(union(covered+unavailable)-row.full_union_macro_f1)<1e-12
     assert abs(union(covered)-row.covered_union_macro_f1)<1e-12
+granularity=pd.read_csv(r/'nsl_kdd_official/granularity_reanalysis.csv')
+assert len(granularity)==5 and set(granularity.seed)=={42,43,44,45,46}
+assert set(granularity.test_rows)=={22544} and set(granularity.test_rows_with_unavailable_fine_label)=={3750}
+assert np.allclose(granularity.fine_label_ceiling,21/38,rtol=0,atol=1e-12)
+assert np.allclose(granularity.five_category_ceiling,1,rtol=0,atol=1e-12)
+summary=pd.read_csv(r/'nsl_kdd_official/granularity_reanalysis_summary.csv').iloc[0]
+assert abs(summary.fine_label_f1_mean-granularity.fine_label_macro_f1.mean())<1e-12
+assert abs(summary.five_category_f1_mean-granularity.five_category_macro_f1.mean())<1e-12
 print('Frozen 50-record sample, 180 pair/seed matrices and 25 NSL pipeline/seed outputs verified')
+print('NSL-KDD fine-label and five-category scores verified from the same five confusion matrices')
 for path in (r/'nsl_destination_audit').glob('*.npz'):
     data=np.load(path,allow_pickle=False)
     np.testing.assert_array_equal(data['original'].sum(axis=1),data['rerouted'].sum(axis=1))

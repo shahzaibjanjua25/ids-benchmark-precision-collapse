@@ -1,18 +1,18 @@
-# Label Coverage Bounds Pooled Macro F1 in Closed-Set Benchmarks
+# Label Coverage Bounds Pooled Macro F1: A Reporting Diagnostic for Closed-Set IDS Benchmarks
 
-Release 0.6.0: code, manuscript source and evidence for auditing fold-dependent
+Release 0.7.0: code, manuscript source and evidence for auditing fold-dependent
 legal prediction vocabularies. The repository URL retains its historical name.
 The reporting check concerns score attainability; the comparisons are tied to
 their declared fixed test cohorts.
 
 On the official original-label NSL-KDD split, 21 of 38 test labels are available
-to a training-restricted model. Across the five-seed pipeline comparison, kNN
-has the highest mean full and covered-row score; the forest's seed-42 full-score
-lead does not persist at its five-seed mean. Positive-test-support and inferred-union
-scores are both reported. CICIDS2017 day holdout has ceiling 1/15. The frozen
-literature pilot found no verified incompatible published score, so field-level
-impact remains unestablished. These outcomes concern fixed cohorts and declared
-targets; covered scoring is a separate conditional task.
+to a training-restricted model. Reaggregating the same five forest prediction
+matrices to five categories raises mean macro F1 from 0.23953 (SD 0.00878) to
+0.48349 (SD 0.00549) while the ceiling rises from 0.55263 to 1. This changes
+the target; it does not improve the model. A targeted review verified a
+published NSL-KDD evaluation that maps fine attack types to five categories,
+but found no incompatible published score. The broader frozen screen also
+found no score conflict, so field-level impact is still unestablished.
 
 ## Install and use
 
@@ -21,7 +21,7 @@ targets; covered scoring is a separate conditional task.
     python -m label_availability results/nsl_kdd_official/label_counts.csv --oracle --convention union
 
 The small package needs NumPy and pandas. Python 3.13 and the pinned environment
-are used for the experiments. A wheel is included in the local release package.
+are used for the experiments. Install from source with the command above. The 0.7.0 wheel was not rebuilt in this environment because its setuptools build backend was unavailable and package downloads were blocked; see VALIDATION.json.
 
 ```python
 from label_availability import coverage_ceiling, count_folds, exact_oracle
@@ -45,7 +45,8 @@ labels; scikit-learn's inferred true/predicted union is a separate option.
     python code/reproduce_release.py --mode saved
 
 This reconstructs scores from released confusion counts, verifies the frozen
-50-candidate sample and 180-fit grid, regenerates all three main tables in
+50-candidate sample and 180-fit grid, verifies the five-seed NSL label-granularity
+reanalysis, regenerates all main tables in
 results/manuscript_tables, and exports the CIC hero figure. It does not refit
 models. CLAIMS.md maps each table and substantive claim to evidence.
 
@@ -79,8 +80,10 @@ points documented in CLAIMS.md. Read the source flags before a large refit.
 - All six CIC configurations have fresh records in results/cic_full_replication.csv; RESULTS_PARSED.csv contains the corresponding archived aggregates.
 - results/unsw_complete_pairs/runs.csv contains the 180 pair/seed scores plus official/path controls. results/rank_audit adds newly refitted covered/unavailable matrices for all 180 pair/seed conditions; full scores match the earlier grid to 1e-12.
 - results/nsl_families/seed_metrics.csv and by_seed contain five outputs for each of five additional pipelines, with both scoring conventions. Forest confusion matrices for seeds 42--46 are under results/nsl_model_comparison. The added pipeline comparison uses different preprocessing and is descriptive, not an estimator-only experiment.
+- code/audit_nsl_granularity.py reaggregates the same forest confusion matrices to five broad NSL-KDD categories; results/nsl_kdd_official/granularity_reanalysis*.csv retains per-seed and summary scores. This is a target-resolution analysis, not a refit.
 - The seed-42 routing control is a scoring-convention illustration in the supplement, not evidence that model rankings change in practice.
 - audit/protocol.md was locally frozen before collecting the literature frame. audit/crossref_20261108 contains 385 candidates, the fixed sample of 50, coding and checksums. This is a screening pilot: 3 eligible, 14 excluded, 33 unresolved. It does not estimate field prevalence or document a verified incompatible published score.
+- EXTERNAL-AUDIT.md records a separate verified published protocol example (Ayantayo et al., 2023) where NSL-KDD attack subtypes are mapped to five categories. It illustrates target resolution and does not establish a score violation.
 - audit/nsl_family_plan.md fixes the additional pipelines before their results were examined. audit/AMENDMENTS.md records screening boundaries. audit/reference_verification.csv checks the cited 2026 records and distinguishes a web report from journal articles.
 
 The public repository identifies the author. The anonymous manuscript omits the

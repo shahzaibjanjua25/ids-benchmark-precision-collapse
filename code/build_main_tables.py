@@ -22,7 +22,8 @@ nsl[['seed','full_macro_f1','covered_macro_f1']].to_csv(out/'table_1_nsl_seed_sc
 old_seed_table=out/'table_1_nsl_seed_rankings.csv'
 if old_seed_table.exists(): old_seed_table.unlink()
 natural=[
-    dict(case='NSL original forest',coverage_ceiling=21/38,oracle=21/38,observed=nsl.loc[nsl.seed.eq(42),'full_macro_f1'].item()),
+    dict(case='NSL original forest',coverage_ceiling=21/38,oracle=21/38,
+         observed_mean=nsl.full_macro_f1.mean(),observed_sd=nsl.full_macro_f1.std(ddof=1)),
     dict(case='CIC day forest',coverage_ceiling=1/15,oracle=1/15,observed=np.nan),
     dict(case='Gas forest',coverage_ceiling=np.nan,oracle=np.nan,observed=np.nan),
     dict(case='Gas logistic',coverage_ceiling=np.nan,oracle=np.nan,observed=np.nan),
@@ -38,6 +39,10 @@ for i,name in [(2,'forest'),(3,'logistic')]:
     oracle=exact_oracle(counts)
     natural[i]['coverage_ceiling']=oracle['coverage_ceiling']
     natural[i]['oracle']=oracle['exact_oracle']
+for row in natural:
+    if 'observed_mean' not in row:
+        row['observed_mean']=row.pop('observed')
+        row['observed_sd']=np.nan
 pd.DataFrame(natural).to_csv(out/'table_3_natural_protocols.csv',index=False)
 seeded=pd.read_csv(r/'nsl_families/seed_metrics.csv')
 if not args.partial: assert len(seeded)==25
