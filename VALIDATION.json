@@ -1,62 +1,50 @@
 {
-  "release": "0.5.0",
+  "release": "0.6.0",
   "date": "2026-11-08",
   "saved_evidence_regeneration": "passed",
-  "exhaustive_default_vocabulary_cases": 80,
-  "exhaustive_explicit_head_cases": 100,
-  "repeated_vocabulary_case": "300 folds; two grouped assignments",
-  "unsw_pair_seed_conditions": 180,
-  "archive_agreement_absolute_tolerance": 1e-12,
-  "nsl_new_pipeline_fits": 5,
-  "nsl_total_compared_pipelines": 6,
-  "nsl_route_controls_preserve_true_positives": true,
-  "wheel_build_and_installed_api_check": "passed",
-  "native_source_bodies_match_main": true,
-  "reading_pdf_qa": {
-    "main": {
-      "pages": 13,
-      "outside_page": [],
-      "corrupted_ones": false,
-      "own_identity_present": true,
-      "own_identity_in_metadata": true
-    },
-    "tbench-anonymous": {
-      "pages": 13,
-      "outside_page": [],
-      "corrupted_ones": false,
-      "own_identity_present": false,
-      "own_identity_in_metadata": false
-    },
-    "supplementary": {
-      "pages": 3,
-      "outside_page": [],
-      "corrupted_ones": false,
-      "own_identity_present": false,
-      "own_identity_in_metadata": false
-    }
+  "evidence_checks": {
+    "frozen_literature_sample": 50,
+    "eligible": 3,
+    "excluded": 14,
+    "unresolved": 33,
+    "verified_incompatible_published_scores": 0,
+    "unsw_pair_seed_matrices": 180,
+    "nsl_pipeline_seed_records": 25,
+    "nsl_additional_pipelines": 5,
+    "nsl_pipelines_total": 6
   },
-  "native_publisher_class_compiled": false,
-  "remote_ci_run_verified": false,
-  "permanent_doi": null,
+  "nsl_pipeline_review_revision": {
+    "seed_set": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "stochastic_pipelines": [
+      "forest",
+      "extra_trees",
+      "decision_tree",
+      "sgd_logistic"
+    ],
+    "deterministic_pipelines": [
+      "gaussian_nb",
+      "knn"
+    ],
+    "knn_matrix_reused_for_seeds": [
+      43,
+      44,
+      45,
+      46
+    ],
+    "forest_full_positive_support_mean": 0.23952666185118515,
+    "forest_full_positive_support_sd": 0.008778840059952478,
+    "knn_full_positive_support_mean": 0.2516042316034043,
+    "knn_covered_positive_support_mean": 0.5399468069226107,
+    "knn_rank_is_first_under_both_conventions": true,
+    "seed42_leader_change_claim": "withdrawn after five-seed comparison"
+  },
   "rank_summaries": [
-    {
-      "comparison": "NSL-KDD five forest seeds",
-      "n": 5,
-      "spearman": 0.3999999999999999,
-      "kendall": 0.3999999999999999,
-      "discordant": 3,
-      "concordant": 7,
-      "tied": 0
-    },
-    {
-      "comparison": "NSL-KDD six pipelines",
-      "n": 6,
-      "spearman": 0.8285714285714287,
-      "kendall": 0.7333333333333333,
-      "discordant": 2,
-      "concordant": 13,
-      "tied": 0
-    },
     {
       "comparison": "gas all fitted models",
       "n": 19,
@@ -85,9 +73,35 @@
       "tied": 0
     }
   ],
+  "wheel": {
+    "filename": "label_availability-0.6.0-py3-none-any.whl",
+    "sha256": "e4ff5f650ec5ba608a26b59a2a468457b9a8581585214ee7ce6e21a04c7ab7b7",
+    "build": "passed",
+    "installed_api_smoke": "passed"
+  },
+  "reading_pdf_qa": {
+    "main": {
+      "pages": 12,
+      "author_present": true,
+      "pipeline_tables_present": true
+    },
+    "anonymous": {
+      "pages": 12,
+      "author_present": false,
+      "email_present": false,
+      "pipeline_tables_present": true
+    },
+    "supplement": {
+      "pages": 5,
+      "routing_note_occurrences": 1
+    },
+    "native_publisher_class_compiled": false
+  },
+  "remote_ci_run_verified": false,
+  "permanent_doi": null,
   "paper_sha256": {
-    "anonymous.pdf": "ff75107368f0e0c24a775c0ad794ea35d859c48832f030c195a00246bf10ea94",
-    "manuscript.pdf": "d0d06e317d3ab61d6b7c276bdddfe12145f6de5d9f728ff804e19810304a34cb",
-    "supplement.pdf": "b716cfce6710174b61e2f61533d15bb905621153519aff94101f83a979263c6b"
+    "manuscript.pdf": "d7ecfcdc098e310f9f11a6603e54c7fd840f6c51250c24eec56d35ef2890e844",
+    "anonymous.pdf": "e30ef3946d9c1b8951aef7c739c028a885f50e63d28c20ac2747a730e65d0104",
+    "supplement.pdf": "26830fcc4e48fb9c6a27e2be622eb7d1bab055faa4e8691c5b38a21116fbf468"
   }
 }

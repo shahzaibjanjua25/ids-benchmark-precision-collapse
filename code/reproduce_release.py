@@ -37,7 +37,7 @@ else:
         '--out',args.out/'cic','--cic-seeds',42,'--cic-n-estimators',100,
         '--rf-arms','none','balanced_subsample','--no-threshold')
     run('run_nsl_kdd_forest.py',args.nsl,args.out/'nsl_forest','--seeds',42,43,44,45,46)
-    run('run_nsl_families.py',args.nsl,args.out/'nsl_families')
+    run('run_nsl_family_seeds.py',args.nsl,args.out/'nsl_families')
     run('clean_repo/ids_full_study.py','--datasets','unsw','--unsw-dir',args.data,
         '--out',args.out/'unsw_official','--unsw-models','rf','--unsw-protocols','official',
         '--unsw-variants','raw','--rf-arms','none','--seeds',42,43,44,45,46,'--no-threshold')

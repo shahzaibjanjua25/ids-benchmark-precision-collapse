@@ -27,7 +27,55 @@ Five forest seeds describe variation in fitting on the same training and test pa
 \section*{Artifact boundaries}
 The count API accepts an optional allowed-output flag specifying the legal vocabulary, which may include labels absent from training. Threshold summaries are hard ceilings only when that output restriction is enforced. Train-only labels must be included for exact and union oracles. The Dockerfile is a build recipe, not a verified container image. Public hosting, a permanent DOI, an external anonymous mirror and independent reproduction require separate verification.
 
+\section*{Exact vocabulary-oracle results}
+\section*{Vocabulary oracle}
+Correcting a wrong prediction on a row whose true label is legal cannot reduce macro F1: it adds a true positive to that class and removes a false positive from the old destination. After these repairs, let \(U_f=\sum_{k\notin V_f}n_{fk}\) be the unavailable rows and \(a_{fk}\) their destination counts. They satisfy \(a_{fk}\ge0\), \(a_{fk}=0\) outside \(V_f\), and \(\sum_ka_{fk}=U_f\). With \(a_k=\sum_fa_{fk}\), the maximum legal score is
+\[
+O=\max_a\frac{1}{|S|}\sum_{k\in S}\frac{2m_k}{n_k+m_k+a_k}.
+\]
+The oracle knows test truth and can choose destinations freely. It bounds a score; it does not estimate achievable deployment performance. The gap \(O-F\) is the remaining score shortfall, not a causal estimate of model quality.
+
+\paragraph{Theorem 1. Vertex allocation.}
+An optimum repairs all available rows and sends all unavailable rows in each fold to one legal destination. For \(m_k>0\), the second derivative of \(2m_k/(n_k+m_k+a)\) is \(4m_k/(n_k+m_k+a)^3>0\); a zero-\(m_k\) term is constant. The objective is convex on a product of allocation simplexes. A maximum has a vertex representative, and each such vertex assigns an integer number of rows to one destination per fold.
+
+Let \(g_k(a)=2m_k/(n_k+m_k)-2m_k/(n_k+m_k+a)\) on \(S\), and zero outside \(S\). A fold can avoid any loss from \(C\) exactly when it permits a destination outside \(S\) or with \(m_k=0\). Consequently \(O=C\) exactly when every unavailable fold has such a destination. For a single unavailable fold,
+\[
+O=C-\min_{k\in V_f}g_k(U_f)/|S|.
+\]
+This also applies to any number of unavailable folds with one common vocabulary after summing their row counts. For a general input, set \(c_f=\min_{k\in V_f}g_k(U_f)/|S|\). Concavity, monotonicity and \(g_k(0)=0\) give
+\[
+\max(0,C-\sum_fc_f)\le O\le C-\max_fc_f.
+\]
+Sending each fold to its own minimum-loss destination proves the lower bound by subadditivity; any allocation incurs at least each individual minimum loss. These polynomial-time bounds remain available when exact search reaches its budget.
+
+\subsection{Complexity and repeated vocabularies}
+\paragraph{Theorem 2. General hardness.}
+Computing the exact oracle for arbitrary vocabularies is NP-hard. Reduce from Set Cover with \(K\) candidate sets. Give each set a destination label and one coverable anchor row. For each element create \(L=2K+1\) rows of an unavailable label in a fold permitting exactly the sets containing that element. Assume each element belongs to a set. Theorem 1 assigns each element to one set. Occupied destinations form a cover. If their number is \(q\), the unaveraged loss is \(\sum_{a_k>0}a_k/(2+a_k)\), and
+\[
+q-1<qL/(L+2)\le\sum_{a_k>0}a_k/(2+a_k)<q.
+\]
+The intervals are disjoint, so the exact optimum identifies the minimum cover size. The construction is polynomial. This is a worst-case result, not a claim about difficulty on a named benchmark.
+
+\paragraph{Theorem 3. Parameterization by destination labels.}
+If no row is unavailable, \(O=C=1\). Otherwise, if the union of legal destinations in unavailable folds contains \(q\) labels, there is an exact algorithm using at most
+\[
+\prod_{j=1}^{q}j^{\binom{q}{j}}\le q^{2^q-1}
+\]
+candidate allocations and polynomial work per candidate. Group folds by identical vocabulary \(V\) and sum their unavailable counts. The Minkowski sum of their simplexes is the simplex with that summed mass. Convexity again gives an optimum placing the whole group at one destination. There are at most \(2^q-1\) nonempty vocabularies, proving the bound and fixed-parameter tractability in \(q\). The candidate bounds for \(q=2,3,4\) are 2, 24 and 20,736. The growth is rapid; this result does not promise efficient exact search for large \(q\).
+
+Both enumeration and branch-and-bound implement grouping. Branch-and-bound uses the partial score before remaining false positives are charged as a completion upper bound, starts from a feasible greedy assignment and merges equivalent states. A node-budget exception certifies no optimum. Fixed uncovered-fold count instead gives an XP enumeration bound; it is a different parameterization. An independent pseudo-polynomial count-grid MILP and solver checks are in the supplement.
+
+\subsection{Other scoring conventions}
+If a scorer infers the union of true and predicted labels, let \(W\) be the activated outputs outside \(S\). Its denominator is \(|S|+|W|\), while those additional classes contribute zero. The coverage ceiling remains valid. Vertex allocation and vocabulary grouping still admit an optimum: fix the outside labels used by an optimum, maximize its convex numerator over those decisions, and take a vertex. Activating a subset of those outside labels can only improve the denominator.
+
+If \(U_S\) bounds the oracle after restricting vocabularies to \(S\), use zero when this restriction is infeasible. With outside outputs available, a valid bound is \(\max\{U_S,C|S|/(|S|+1)\}\). Otherwise use \(U_S\). The software offers exact support and union objectives. A weighted average of fold scores instead has ceiling \(\sum_f\alpha_fC_f\) using each fold's scored inventory. For CICIDS2017 the equal-fold ceiling is 0.39000, distinct from pooled 0.06667.
+
+Abstention scored as a miss without a false positive reaches \(C\): repair available rows and abstain on the rest. A scored unknown class changes both the target and the allowed decisions and needs a new audit. Neither convention permits exact recognition of an unavailable fine-grained label.
+
 \section*{Repair accounting}
+
+The seed-42 NSL forest destination-routing control illustrates a scoring-convention effect. Routing unavailable rows to the train-only label \texttt{spy} changes positive-test-support macro F1 from 0.25456 to 0.26914 and inferred-union macro F1 from 0.24804 to 0.25569; the true-positive count remains 16,287. The \texttt{spy} destination does not add a false positive to a positive-test-support class, while it is an extra zero-F1 class under inferred-union scoring. This counterfactual uses true availability and does not represent improved recognition or a deployable unknown-attack rule.
+
 Let F be the observed full score. Let R repair all available rows while preserving the model's destinations for unavailable rows. Let Q remove false positives contributed by unavailable rows while preserving covered-row errors; unavailable rows still contribute misses for their true labels. With C the coverage ceiling and O the vocabulary oracle,
 \[
 C-F=(C-O)+(O-R)+(R-F).

@@ -1,0 +1,9 @@
+{
+  "seed": 46,
+  "seconds": 2.397060399998736,
+  "parameters": {
+    "priors": null,
+    "var_smoothing": 1e-09
+  },
+  "warnings": []
+}

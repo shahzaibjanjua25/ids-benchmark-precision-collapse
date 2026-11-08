@@ -1,54 +1,49 @@
-# Internal critical review, release 0.5.0
+# Internal critical review, release 0.6.0
 
-Assessment: approximately 8/10. Recommendation: major revision as a full research
-article. This is an internal assessment of work revised in this session, not an
-independent peer review or a TBench editorial decision. No journal acceptance
-threshold or official scoring rubric is assumed.
+Assessment: **5.5/10**. Recommendation: major revision; I would not accept this
+as a full research article at a Q1 venue in its current form. This is an
+internal referee-style assessment, not an independent peer review or a TBench
+editorial decision. No official TBench scoring rubric is assumed.
 
-The strongest addition is a natural, consequential comparison on the official
-fine-grained NSL-KDD split. The forest leads full macro F1, while kNN leads the
-covered-row target. A post-hoc counterfactual also reverses their full-score order
-on unchanged test rows without adding true positives: forest 0.25456 -> 0.26914;
-kNN 0.25160 -> 0.29839. The reversal survives inferred-union scoring. These are
-six declared local pipelines, not a reversal of an already-published comparison.
-Preprocessing differences and the oracle's use of true availability are explicit.
+The mathematical statement is correct and easy to verify: if a legal output
+cannot name a test label, its recall is zero, and the class-level F1 term is
+bounded accordingly. NSL-KDD's official fine-grained split has natural partial
+coverage, while CICIDS2017 leave-one-day-out gives an extreme, already-known
+case. The paper now treats the inequality as a reporting corollary rather than
+a new method.
 
-The full UNSW experiment now saves covered and unavailable confusion matrices
-for every one of 36 pairs and five seeds. All 180 full scores match the previous
-grid within 1e-12. Rank correlations, within-pair reversals and pair means are
-descriptive; no iid confidence interval is attached to dependent fits. The gas
-comparison retains its null result: all 19 fitted-model rankings agree.
+The revised NSL pipeline comparison fits the randomized pipelines over seeds
+42--46, reports seed SDs, and includes both positive-test-support and
+inferred-union scoring. The original seed-42 forest/kNN leader-change claim was
+withdrawn: kNN has the highest mean under both scoring conventions, and the
+forest is third on full positive-support F1. The fixed-test comparisons remain
+descriptive; they do not establish model-family ranking stability or a
+statistically significant advantage. The deterministic GaussianNB/kNN rows
+have zero seed variation by construction.
 
-Theory includes the general NP-hardness result and an implemented grouping
-algorithm that is fixed-parameter tractable in the number of destination labels.
-The elementary recall ceiling is identified as such. The legal-vocabulary API
-accepts global heads without falsely excluding training-absent labels. Minimum
-training support remains sensitivity analysis unless enforced as an output rule.
+The main paper now separates the full cohort from the covered-row task, moves
+the oracle complexity proofs into the supplement, removes the unexplained
+65-condition routing headline, and calls the routing example a scoring
+convention control. The gas denominator and test-row wording are explicit. The
+pipeline table shows both scoring conventions. The repository claim map and
+README describe the current experiments.
 
-The main manuscript is substantially shorter, with three data tables and one
-hero figure. Repair accounting, optional controls and solver detail are in the
-included supplement. All headline interpretation is present in the main text.
-MIT code licensing, citation metadata, CI checks and one-command evidence/table
-regeneration are supplied. The wheel builds and its installed interfaces work.
+Reproducibility remains a strength: source hashes, fold manifests, confusion
+matrices, claim-to-file mapping and saved verification are included. The
+complete literature evidence is still a 50-candidate screening pilot: three
+eligible, fourteen excluded and thirty-three unresolved. It found **no
+verified incompatible published score** and cannot establish field-level
+impact. No such case is asserted.
 
-Remaining acceptance concerns:
+Indicative sub-scores: mathematical soundness 8/10, novelty 3/10, empirical
+significance 5/10, reproducibility 9/10, writing/focus 6/10. The ceiling is an
+elementary but useful reporting check; its practical adoption and effect on
+published conclusions have not been demonstrated. A confirmed external case
+and a broader, independently coded literature audit remain the main scientific
+gaps.
 
-1. The literature work is a 50-candidate screening pilot: three confirmed
-   eligible, fourteen excluded and thirty-three unresolved. It is not the
-   requested survey of 40--60 verified eligible temporal IDS studies, and yields
-   no field prevalence estimate or verified incompatible published score.
-2. The natural winner reversal is demonstrated on local baseline pipelines and
-   one established split. Broader independent networks, contemporary protocols
-   and externally published conclusions remain unverified.
-3. The theoretical oracle correction is small in the natural cases; the grouping
-   bound still grows quickly with destination-label count. No approximation
-   guarantee, deployment benefit, sharp MCC/kappa extension or adoption evidence
-   is claimed.
-4. Native publisher-class compilation and final journal pagination, a permanent
-   DOI, external anonymous artifact hosting and independent reproduction remain
-   pending. Readable PDF layout verification is not native-template verification.
-
-Indicative sub-scores: correctness 9, novelty 7, empirical evidence 8,
-reproducibility 8.5, writing/focus 8.5. The improvements support a substantially
-stronger methodology note. They do not justify a guaranteed 9/10 rating or an
-acceptance claim for a full journal article.
+Native TBench-class compilation and final journal pagination, a permanent DOI,
+external anonymous artifact hosting and independent reproduction remain
+pending. The reading PDFs verify content and layout only for the Pandoc/Typst
+reading format. These materials do not imply journal acceptance or guarantee a
+9/10 rating.

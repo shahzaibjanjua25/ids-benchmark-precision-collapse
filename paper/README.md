@@ -1,8 +1,9 @@
-# Manuscript sources for release 0.5.0
+# Manuscript sources for release 0.6.0
 
 main.tex is an IEEEtran source. TBench-Submission.tex and
 TBench-Anonymous-Submission.tex contain the same body using the native publisher
-class. supplementary.tex contains the repair accounting, solver details and
+class. supplementary.tex contains the vocabulary-oracle proofs, repair accounting,
+solver details and
 optional historical controls. The public repository and its main source identify
 the author; the anonymous manuscript needs a separate anonymous artifact host
 for blind review.

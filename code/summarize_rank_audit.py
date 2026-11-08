@@ -37,20 +37,11 @@ for seed in range(42,47):
     unseen = pd.read_csv(folder/f'confusion_unseen_{seed}.csv', index_col=0).to_numpy()
     nsl.append(dict(seed=seed, full_macro_f1=macro(seen+unseen), covered_macro_f1=macro(seen)))
 nsl = pd.DataFrame(nsl)
-nsl['full_rank'] = nsl.full_macro_f1.rank(ascending=False)
-nsl['covered_rank'] = nsl.covered_macro_f1.rank(ascending=False)
 expected = pd.read_csv(root/'results/nsl_model_comparison/forest_metrics.csv')
 np.testing.assert_allclose(nsl.full_macro_f1,expected.macro_f1,rtol=0,atol=1e-12)
 nsl.to_csv(out/'nsl_ranks.csv', index=False)
-summaries.append(stats(nsl, 'NSL-KDD five forest seeds'))
-if (root/'results/nsl_families/models.csv').exists():
-    families=pd.read_csv(root/'results/nsl_families/models.csv')
-    if not args.partial: assert len(families)==5
-    families=pd.concat([nsl.loc[nsl.seed.eq(42)].assign(model='forest'),families],ignore_index=True)
-    families['full_rank']=families.full_macro_f1.rank(ascending=False)
-    families['covered_rank']=families.covered_macro_f1.rank(ascending=False)
-    families.to_csv(out/'nsl_family_ranks.csv',index=False)
-    summaries.append(stats(families, 'NSL-KDD six pipelines'))
+legacy = out/'nsl_family_ranks.csv'
+if legacy.exists(): legacy.unlink()
 gas = pd.concat([pd.read_csv(root/'results/gas_model_comparison/models.csv'),
                  pd.read_csv(root/'results/gas_coral/models.csv')], ignore_index=True)
 gas = gas.rename(columns={'macro_f1':'full_macro_f1','covered_only_macro_f1':'covered_macro_f1'})
