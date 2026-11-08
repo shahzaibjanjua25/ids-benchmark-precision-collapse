@@ -1,0 +1,17 @@
+{
+  "sample_size": 50,
+  "eligibility": {
+    "unresolved": 33,
+    "ineligible": 14,
+    "eligible": 3
+  },
+  "audit_status": {
+    "unresolved_eligibility": 33,
+    "ineligible": 14,
+    "unresolved_vocabulary_support_scoring": 2,
+    "verified_ceiling_one_score_convention_unresolved": 1
+  },
+  "verified_below_one": 0,
+  "verified_incompatible_score": 0,
+  "interpretation": "Candidate-screening pilot, not a survey of 50 confirmed temporal IDS papers or a field prevalence estimate."
+}
