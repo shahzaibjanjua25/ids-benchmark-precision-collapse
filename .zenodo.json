@@ -1,0 +1,10 @@
+{
+  "title": "Label Coverage Bounds Pooled Macro F1 in Closed-Set Benchmarks: Reproducibility Artifact",
+  "upload_type": "software",
+  "description": "Code, fold-count audits, confusion matrices and manuscript sources for vocabulary-constrained pooled scoring and conditional rankings. Includes the full UNSW pair grid and NSL-KDD pipeline comparison. This metadata file does not establish a deposited record or DOI.",
+  "creators": [{"name": "Shah Zaib Sajid", "affiliation": "Independent Researcher"}],
+  "license": "MIT",
+  "version": "0.5.0",
+  "publication_date": "2026-11-08",
+  "access_right": "open"
+}

@@ -1,0 +1,93 @@
+{
+  "release": "0.5.0",
+  "date": "2026-11-08",
+  "saved_evidence_regeneration": "passed",
+  "exhaustive_default_vocabulary_cases": 80,
+  "exhaustive_explicit_head_cases": 100,
+  "repeated_vocabulary_case": "300 folds; two grouped assignments",
+  "unsw_pair_seed_conditions": 180,
+  "archive_agreement_absolute_tolerance": 1e-12,
+  "nsl_new_pipeline_fits": 5,
+  "nsl_total_compared_pipelines": 6,
+  "nsl_route_controls_preserve_true_positives": true,
+  "wheel_build_and_installed_api_check": "passed",
+  "native_source_bodies_match_main": true,
+  "reading_pdf_qa": {
+    "main": {
+      "pages": 13,
+      "outside_page": [],
+      "corrupted_ones": false,
+      "own_identity_present": true,
+      "own_identity_in_metadata": true
+    },
+    "tbench-anonymous": {
+      "pages": 13,
+      "outside_page": [],
+      "corrupted_ones": false,
+      "own_identity_present": false,
+      "own_identity_in_metadata": false
+    },
+    "supplementary": {
+      "pages": 3,
+      "outside_page": [],
+      "corrupted_ones": false,
+      "own_identity_present": false,
+      "own_identity_in_metadata": false
+    }
+  },
+  "native_publisher_class_compiled": false,
+  "remote_ci_run_verified": false,
+  "permanent_doi": null,
+  "rank_summaries": [
+    {
+      "comparison": "NSL-KDD five forest seeds",
+      "n": 5,
+      "spearman": 0.3999999999999999,
+      "kendall": 0.3999999999999999,
+      "discordant": 3,
+      "concordant": 7,
+      "tied": 0
+    },
+    {
+      "comparison": "NSL-KDD six pipelines",
+      "n": 6,
+      "spearman": 0.8285714285714287,
+      "kendall": 0.7333333333333333,
+      "discordant": 2,
+      "concordant": 13,
+      "tied": 0
+    },
+    {
+      "comparison": "gas all fitted models",
+      "n": 19,
+      "spearman": 1.0,
+      "kendall": 1.0,
+      "discordant": 0,
+      "concordant": 161,
+      "tied": 10
+    },
+    {
+      "comparison": "UNSW pair-seed conditions",
+      "n": 180,
+      "spearman": 0.8486208422070641,
+      "kendall": 0.6800744878957169,
+      "discordant": 2577,
+      "concordant": 13533,
+      "tied": 0
+    },
+    {
+      "comparison": "UNSW pair means",
+      "n": 36,
+      "spearman": 0.8517374517374519,
+      "kendall": 0.6920634920634922,
+      "discordant": 97,
+      "concordant": 533,
+      "tied": 0
+    }
+  ],
+  "paper_sha256": {
+    "anonymous.pdf": "ff75107368f0e0c24a775c0ad794ea35d859c48832f030c195a00246bf10ea94",
+    "manuscript.pdf": "d0d06e317d3ab61d6b7c276bdddfe12145f6de5d9f728ff804e19810304a34cb",
+    "supplement.pdf": "b716cfce6710174b61e2f61533d15bb905621153519aff94101f83a979263c6b"
+  }
+}

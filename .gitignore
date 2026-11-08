@@ -22,3 +22,4 @@ results/reproduction.*/
 /results/*_reproduction.csv
 build/
 *.egg-info/
+/regenerated_figures/
