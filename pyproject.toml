@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "label-availability"
-version = "0.4.0"
+version = "0.5.0"
 description = "Vocabulary ceilings for pooled classification metrics"
 license = {file = "LICENSE"}
 requires-python = ">=3.10"
