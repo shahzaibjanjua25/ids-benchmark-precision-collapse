@@ -11,7 +11,7 @@
     python -m label_availability results/nsl_kdd_official/label_counts.csv --oracle --convention union
 
 The small package needs NumPy and pandas. Python 3.13 and the pinned environment
-are used for the experiments. Install from source with the command above. The 0.8.0 wheel was not rebuilt in this environment because its setuptools build backend was unavailable and package downloads were blocked; see VALIDATION.json.
+are used for the experiments. Install from source with the command above. The 0.9.1 wheel was not rebuilt in this environment because its setuptools build backend was unavailable and package downloads were blocked; see VALIDATION.json.
 
 ```python
 from label_availability import coverage_ceiling, count_folds, exact_oracle
@@ -56,6 +56,11 @@ To refit every fitted comparison in the main manuscript into a new directory:
 
     python code/reproduce_release.py --mode refit --out fresh_v6 --data PATH_TO_UNSW --cic PATH_TO_CIC --nsl PATH_TO_NSL --gas PATH_TO_GAS_ZIP
 
+To refit the binary CICIDS2017 capture-day result separately:
+
+    python code/run_cic_binary_lodo.py --cic-dir PATH_TO_CIC_MACHINELEARNINGCVE --out NEW_BINARY_RUN --seeds 42
+    python code/verify_cic_binary_lodo.py
+
 This can take many hours. It starts from raw data and keeps new results separate
 from the frozen evidence. It fits the six CIC configurations, NSL forest seeds
 42--46 and five additional pipelines over the same seed set, the UNSW official
@@ -72,9 +77,10 @@ points documented in CLAIMS.md. Read the source flags before a large refit.
 - results/nsl_families/seed_metrics.csv and by_seed contain five outputs for each of five additional pipelines, with both scoring conventions. Forest confusion matrices for seeds 42--46 are under results/nsl_model_comparison. The added pipeline comparison uses different preprocessing and is descriptive, not an estimator-only experiment.
 - code/audit_nsl_granularity.py reaggregates the same forest confusion matrices to five broad NSL-KDD categories; results/nsl_kdd_official/granularity_reanalysis*.csv retains per-seed and summary scores. This is a target-resolution analysis, not a refit.
 - code/audit_cic_target_resolution.py re-scores the saved CICIDS2017 day-holdout matrix at fine-label, eight-family and binary target resolutions. Fine-label F1 reaches 90.5% of its 0.06667 ceiling because only benign contributes; binary projection has ceiling 1 and macro F1 0.57972, with 0.14690 attack recall. These are the existing multiclass model's post-hoc scores, not a result for a separately trained binary model. Results are in results/cic_lodo_target_resolution.csv and results/cic_lodo_target_class_scores.csv.
+- code/run_cic_binary_lodo.py refits a binary forest on the same five held-out-day folds. Seed 42 gives pooled macro F1 0.58063 and attack recall 0.14782; its Friday fold is 0.61754 macro F1 with attack recall 0.27894. Tuesday, Wednesday and Thursday attack recall is at most 0.0163; Monday has no attack support. Outputs and dataset hashes are in results/cic_binary_lodo_seed42; code/verify_cic_binary_lodo.py checks these saved results.
 - The seed-42 routing control is a scoring-convention illustration in the supplement, not evidence that model rankings change in practice.
 - audit/protocol.md was locally frozen before collecting the literature frame. audit/crossref_20261108 contains 385 candidates, the fixed sample of 50, coding and checksums. This is a screening pilot: 3 eligible, 14 excluded, 33 unresolved. It does not estimate field prevalence or document a verified incompatible published score.
-- EXTERNAL-AUDIT.md records a separate verified published protocol example (Ayantayo et al., 2023) where NSL-KDD attack subtypes are mapped to five categories. It illustrates target resolution and does not establish a score violation.
+- EXTERNAL-AUDIT.md records published target-resolution examples for NSL-KDD and CICIDS2017. Alsaadi et al. explicitly report 0.619 for a binary CICIDS2017 whole-day task. Biyouki et al. report 0.9855 macro F1 for leave-one-family-out but do not state the scored vocabulary; `code/verify_published_score_audit.py` checks the conditional 14/15 ceiling and retains the case as unresolved, not a verified violation.
 - audit/nsl_family_plan.md fixes the additional pipelines before their results were examined. audit/AMENDMENTS.md records screening boundaries. audit/reference_verification.csv checks the cited 2026 records and distinguishes a web report from journal articles.
 
 The public repository identifies the author. The anonymous manuscript omits the
