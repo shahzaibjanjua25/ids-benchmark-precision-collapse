@@ -1,4 +1,4 @@
-# Manuscript sources for release 0.7.0
+# Manuscript sources for release 0.8.0
 
 main.tex is an IEEEtran source. TBench-Submission.tex and
 TBench-Anonymous-Submission.tex contain the same body using the native publisher
@@ -16,7 +16,9 @@ original notices are retained in the local submission package.
 
 manuscript.pdf, anonymous.pdf and supplement.pdf are reading copies converted
 through Pandoc/Typst. Native publisher-class compilation and journal pagination
-have not been verified. To rebuild reading copies with Pandoc and Typst on PATH:
+have not been verified. The latest PDFs pass text extraction and hash checks, but
+pixel-level page inspection was not available because this environment has no
+local PDF rasterizer. To rebuild reading copies with Pandoc and Typst on PATH:
 
     python paper/build_reading.py
 

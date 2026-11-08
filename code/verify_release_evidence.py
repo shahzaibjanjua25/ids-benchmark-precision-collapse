@@ -62,8 +62,16 @@ assert np.allclose(granularity.five_category_ceiling,1,rtol=0,atol=1e-12)
 summary=pd.read_csv(r/'nsl_kdd_official/granularity_reanalysis_summary.csv').iloc[0]
 assert abs(summary.fine_label_f1_mean-granularity.fine_label_macro_f1.mean())<1e-12
 assert abs(summary.five_category_f1_mean-granularity.five_category_macro_f1.mean())<1e-12
+target_resolution=pd.read_csv(r/'cic_lodo_target_resolution.csv').set_index('resolution')
+assert set(target_resolution.index)=={'fine attack label','eight-family mapping','binary benign/attack'}
+assert set(target_resolution.test_rows)=={2830743}
+assert np.allclose(target_resolution.loc['fine attack label',['coverage_ceiling','macro_f1']].to_numpy(dtype=float),[1/15,0.06030428],atol=1e-8,rtol=0)
+assert np.allclose(target_resolution.loc['eight-family mapping',['coverage_ceiling','macro_f1']].to_numpy(dtype=float),[0.25,0.15629612],atol=1e-8,rtol=0)
+assert np.allclose(target_resolution.loc['binary benign/attack',['coverage_ceiling','macro_f1','attack_recall']].to_numpy(dtype=float),[1,0.57972301,0.14690144],atol=1e-8,rtol=0)
+assert abs(target_resolution.loc['fine attack label','ceiling_attainment']-0.90456427)<1e-8
 print('Frozen 50-record sample, 180 pair/seed matrices and 25 NSL pipeline/seed outputs verified')
 print('NSL-KDD fine-label and five-category scores verified from the same five confusion matrices')
+print('CICIDS2017 day-holdout fine, family and binary scores verified from the same prediction matrix')
 for path in (r/'nsl_destination_audit').glob('*.npz'):
     data=np.load(path,allow_pickle=False)
     np.testing.assert_array_equal(data['original'].sum(axis=1),data['rerouted'].sum(axis=1))

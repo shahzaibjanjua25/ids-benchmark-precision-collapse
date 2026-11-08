@@ -1,6 +1,6 @@
 # Label Coverage Bounds Pooled Macro F1: A Reporting Diagnostic for Closed-Set IDS Benchmarks
 
-Release 0.7.0: code, manuscript source and evidence for auditing fold-dependent
+Release 0.8.0: code, manuscript source and evidence for auditing fold-dependent
 legal prediction vocabularies. The repository URL retains its historical name.
 The reporting check concerns score attainability; the comparisons are tied to
 their declared fixed test cohorts.
@@ -21,7 +21,7 @@ found no score conflict, so field-level impact is still unestablished.
     python -m label_availability results/nsl_kdd_official/label_counts.csv --oracle --convention union
 
 The small package needs NumPy and pandas. Python 3.13 and the pinned environment
-are used for the experiments. Install from source with the command above. The 0.7.0 wheel was not rebuilt in this environment because its setuptools build backend was unavailable and package downloads were blocked; see VALIDATION.json.
+are used for the experiments. Install from source with the command above. The 0.8.0 wheel was not rebuilt in this environment because its setuptools build backend was unavailable and package downloads were blocked; see VALIDATION.json.
 
 ```python
 from label_availability import coverage_ceiling, count_folds, exact_oracle
@@ -81,6 +81,7 @@ points documented in CLAIMS.md. Read the source flags before a large refit.
 - results/unsw_complete_pairs/runs.csv contains the 180 pair/seed scores plus official/path controls. results/rank_audit adds newly refitted covered/unavailable matrices for all 180 pair/seed conditions; full scores match the earlier grid to 1e-12.
 - results/nsl_families/seed_metrics.csv and by_seed contain five outputs for each of five additional pipelines, with both scoring conventions. Forest confusion matrices for seeds 42--46 are under results/nsl_model_comparison. The added pipeline comparison uses different preprocessing and is descriptive, not an estimator-only experiment.
 - code/audit_nsl_granularity.py reaggregates the same forest confusion matrices to five broad NSL-KDD categories; results/nsl_kdd_official/granularity_reanalysis*.csv retains per-seed and summary scores. This is a target-resolution analysis, not a refit.
+- code/audit_cic_target_resolution.py re-scores the saved CICIDS2017 day-holdout matrix at fine-label, eight-family and binary target resolutions. Fine-label F1 reaches 90.5% of its 0.06667 ceiling because only benign contributes; binary projection has ceiling 1 and macro F1 0.57972, with 0.14690 attack recall. These are the existing multiclass model's post-hoc scores, not a result for a separately trained binary model. Results are in results/cic_lodo_target_resolution.csv and results/cic_lodo_target_class_scores.csv.
 - The seed-42 routing control is a scoring-convention illustration in the supplement, not evidence that model rankings change in practice.
 - audit/protocol.md was locally frozen before collecting the literature frame. audit/crossref_20261108 contains 385 candidates, the fixed sample of 50, coding and checksums. This is a screening pilot: 3 eligible, 14 excluded, 33 unresolved. It does not estimate field prevalence or document a verified incompatible published score.
 - EXTERNAL-AUDIT.md records a separate verified published protocol example (Ayantayo et al., 2023) where NSL-KDD attack subtypes are mapped to five categories. It illustrates target resolution and does not establish a score violation.

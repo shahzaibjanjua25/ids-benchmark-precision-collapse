@@ -1,4 +1,4 @@
-# Release 0.7.0 artifact entry point
+# Release 0.8.0 artifact entry point
 
 README.md gives installation and one-command saved-table, solver and raw-data
 refit modes. CLAIMS.md maps the three result datasets (the NSL pipeline table is
@@ -22,6 +22,15 @@ the same five forest confusion matrices to the five broad categories. It raises
 mean macro F1 from 0.23953 to 0.48349 while the ceiling changes from 0.55263 to
 1. This is a paired change in the scoring target, not a refit or a claim of
 improved fine-grained recognition.
+
+The CICIDS2017 day-holdout analysis likewise reaggregates a fixed forest
+prediction matrix at fine-label, eight-family, and binary resolution. Its
+macro-F1 values are 0.06030, 0.15630, and 0.57972 against ceilings 0.06667,
+0.25, and 1. The fine-label score is 90.5% of its ceiling because benign F1 is
+0.90456 and the 14 attack-class F1 terms are zero. Binary attack recall is
+0.14690. This identifies an attainable binary task, but it does not turn the
+existing multiclass model into a useful attack detector or stand in for a
+separately trained binary model.
 
 The 50-record literature artifact is a candidate-screening pilot. It contains
 three confirmed eligible studies, not fifty eligible temporal IDS papers. No

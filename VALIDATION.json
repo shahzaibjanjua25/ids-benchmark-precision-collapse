@@ -1,5 +1,5 @@
 {
-  "release": "0.7.0",
+  "release": "0.8.0",
   "date": "2026-11-08",
   "saved_evidence_regeneration": "passed",
   "evidence_checks": {
@@ -14,7 +14,8 @@
     "nsl_pipelines_total": 6,
     "nsl_granularity_seeds": 5,
     "nsl_granularity_test_rows": 22544,
-    "nsl_unavailable_fine_label_rows": 3750
+    "nsl_unavailable_fine_label_rows": 3750,
+    "cic_lodo_target_resolutions": 3
   },
   "nsl_pipeline_review_revision": {
     "seed_set": [
@@ -79,39 +80,48 @@
   "wheel": {
     "filename": null,
     "sha256": null,
-    "build": "not rebuilt: local setuptools build backend unavailable; network install blocked",
-    "installed_api_smoke": "not rerun for 0.7.0"
+    "build": "not rebuilt for 0.8.0: local setuptools build backend unavailable; network install blocked",
+    "installed_api_smoke": "not rerun for 0.8.0"
   },
   "reading_pdf_qa": {
     "main": {
-      "pages": 12,
+      "pages": 13,
       "author_present": true,
-      "pipeline_tables_present": true
+      "pipeline_tables_present": true,
+      "sha256": "f1a23026a7c970dd87fbf15fa119869ae6b0ff3024e721a0703820b36449ea44",
+      "new_cic_target_table": true
     },
     "anonymous": {
-      "pages": 12,
+      "pages": 13,
       "contribution_paragraph_present": true,
       "author_present": false,
-      "title_present": true
+      "title_present": true,
+      "sha256": "1cbca35bf204a06dca65a281931633637c372e41d84fd81cecec3fdea173a91b"
     },
     "supplement": {
       "pages": 5,
-      "routing_note_occurrences": 1
+      "routing_note_occurrences": 1,
+      "sha256": "fc8be4a7702edbc9b7ec0b5ea87cd24a96dfb70424770089e4e8736d8ea25c9f"
     },
     "native_publisher_class_compiled": false,
     "manuscript": {
-      "pages": 12,
+      "pages": 13,
       "contribution_paragraph_present": true,
       "author_present": true,
       "title": "Label Coverage Bounds Pooled Macro F1: A Reporting Diagnostic for Closed-Set IDS Benchmarks"
+    },
+    "pixel_page_inspection": {
+      "status": "not performed",
+      "reason": "No local PDF rasterizer (Poppler or PDFium) was available. Text extraction, page counts, required-claim checks and SHA-256 integrity checks passed.",
+      "native_publisher_class_compiled": false
     }
   },
   "remote_ci_run_verified": false,
   "permanent_doi": null,
   "paper_sha256": {
-    "manuscript.pdf": "77c025ed50eff7ca8d62be9b3bb043a07133dcd10acd2ef9f8b828b5e531429c",
-    "anonymous.pdf": "bcce7c9061043ca8078efac4910b5c99a3bc30fef9aa68d250d321fa594b761c",
-    "supplement.pdf": "cdabeeb15a96c5eee46de4539a8cf08051573762d178d8e5b2024f634318fe56"
+    "manuscript.pdf": "f1a23026a7c970dd87fbf15fa119869ae6b0ff3024e721a0703820b36449ea44",
+    "anonymous.pdf": "1cbca35bf204a06dca65a281931633637c372e41d84fd81cecec3fdea173a91b",
+    "supplement.pdf": "fc8be4a7702edbc9b7ec0b5ea87cd24a96dfb70424770089e4e8736d8ea25c9f"
   },
   "nsl_granularity_reanalysis": {
     "fine_label_ceiling": 0.5526315789473685,
@@ -121,5 +131,15 @@
     "five_category_f1_mean": 0.4834893073427818,
     "five_category_f1_sample_sd": 0.00549371978691572,
     "same_predictions_reaggregated": true
+  },
+  "cic_lodo_target_resolution": {
+    "fine_label_ceiling": 0.06666666666666667,
+    "fine_label_macro_f1": 0.06030428,
+    "eight_family_ceiling": 0.25,
+    "eight_family_macro_f1": 0.15629612,
+    "binary_ceiling": 1.0,
+    "binary_macro_f1": 0.5797230148533083,
+    "binary_attack_recall": 0.14690143926433616,
+    "same_saved_predictions": true
   }
 }

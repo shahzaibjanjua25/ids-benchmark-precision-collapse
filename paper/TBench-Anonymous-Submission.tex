@@ -10,7 +10,7 @@
 \title[Label coverage bounds]{Label Coverage Bounds Pooled Macro F1: A Reporting Diagnostic for Closed-Set IDS Benchmarks}
 \author{Author withheld for review}
 \authormark{Anonymous submission}
-\abstract{We give a pre-fit check for pooled macro F1 under a declared legal output vocabulary. On the original-label NSL-KDD split, 17 of 38 test labels are absent from training and the training-restricted ceiling is 0.55263. Reaggregating the same five forest prediction matrices, including true and predicted labels, to five attack categories changes mean F1 from 0.23953 (SD 0.00878) to 0.48349 (SD 0.00549) and raises the ceiling to 1; this changes the target rather than the model. A published NSL-KDD study likewise evaluates five categories while describing test-only attack subtypes. CICIDS2017 leave-one-day-out has a ceiling of 0.06667 and an observed score of 0.06030. We find no verified published score incompatible with its stated output vocabulary. Code, confusion counts and split manifests accompany the analysis.}
+\abstract{We give a pre-fit check for pooled macro F1 under a declared legal output vocabulary. On the original-label NSL-KDD split, 17 of 38 test labels are absent from training and the training-restricted ceiling is 0.55263. Reaggregating the same five forest prediction matrices, including true and predicted labels, to five attack categories changes mean F1 from 0.23953 (SD 0.00878) to 0.48349 (SD 0.00549) and raises the ceiling to 1; this changes the target rather than the model. A published NSL-KDD study likewise evaluates five categories while describing test-only attack subtypes. CICIDS2017 leave-one-day-out scores 0.06030, 90.5% of its 0.06667 fine-label ceiling. Binary re-scoring gives macro F1 0.57972 but attack recall is 0.14690. No verified published score conflicts with its declared output vocabulary. Code, confusion counts and split manifests accompany the analysis.}
 \keywords{Macro F1, vocabulary coverage, evaluation protocols, intrusion detection}
 \maketitle
 \section{Introduction}
@@ -131,6 +131,17 @@ Every attack class appears on one day. Benign traffic remains available whenever
 
 The day-held-out unweighted forest has benign recall 0.99858. Of the 557,646 unavailable attack rows, 475,727 are sent to benign and the remainder to other attack labels. Those other attack labels have zero covered support in the pooled score, so they provide free oracle destinations. This explains why the exact oracle equals the coverage ceiling here. The micro ceiling is 0.80300 because benign dominates the cohort. Merging web labels gives a 13-label ceiling of 0.07692; the declared eight-family mapping gives 0.25; binary attack detection has ceiling one. These are different evaluation targets.
 
+To show what that target choice changes on the saved day-holdout predictions, we map both truth and predicted labels to the declared eight-family taxonomy and to benign-versus-attack. The same matrix scores 0.06030 at 15 fine labels, 0.15630 at eight families, and 0.57972 as a binary task; the corresponding ceilings are 0.06667, 0.25, and 1. The fine-label score is 90.5\% of its ceiling because benign F1 is 0.90456 while all 14 attack-class F1 terms are zero. This attainment ratio is not a measure of attack detection. Binary attack recall is 0.14690, so collapsing labels removes the structural ceiling but does not make this fitted multiclass forest a useful detector. This post-hoc reaggregation is a task comparison on fixed predictions, not a refit or an estimate for a separately trained binary model.
+
+\begin{table}[h]\centering
+\caption{CICIDS2017 day-holdout predictions re-scored at three label resolutions. The same pooled confusion matrix is reaggregated on both axes.}
+\begin{tabular}{lrrrr}
+Target & Classes & Ceiling & Macro F1 & $F/C$ \\
+Fine attack labels & 15 & 0.06667 & 0.06030 & 0.90456 \\
+Declared attack families & 8 & 0.25000 & 0.15630 & 0.62518 \\
+Benign versus attack & 2 & 1.00000 & 0.57972 & 0.57972 \\
+\end{tabular}\end{table}
+
 \subsection{Fixed-cohort withholding and rankings}
 The official UNSW-NB15 split has complete coverage. The unweighted forest's five-seed mean is 0.47144, with seed SD 0.00094. Training-label availability cannot explain that shortfall. Withholding two labels creates \(C=0.8\), but its oracle depends on their support and legal destinations. For Analysis plus Backdoor at seed 42, \(O=0.79833\) and \(F=0.47067\).
 
@@ -171,7 +182,7 @@ The simple ceiling is a scoring corollary of legal-output constraints. It does n
 
 The literature screening has a bounded search frame and unresolved sources. It cannot support a field-wide prevalence claim, and no verified incompatible published score is established. The Ayantayo et al. example confirms that label aggregation and unseen subtype handling occur in a published NSL-KDD evaluation, but its five-category task is internally attainable and does not validate a fine-grained claim. The same-prediction reaggregation shows why this distinction changes reported F1, while remaining an illustration on one fixed split. Timestamped CIC files and corrected label releases are absent locally, and a file-verified CICDDoS2019 study is not supplied. A permanent DOI, an externally hosted anonymous artifact and independent reproduction also remain pending.
 
-The practical contribution is a pre-fit audit that records the task the score actually measures: the label resolution, legal outputs, scoring convention, and resulting ceiling. On NSL-KDD, changing from subtype labels to five categories changes both the bound and the same-prediction macro F1; on CICIDS2017 day holdout the fine-grained ceiling is 0.06667; the gas case shows that a ceiling can also explain little. These cases demonstrate what the audit can and cannot resolve. They do not establish that published scores are generally invalid.
+The practical contribution is a pre-fit audit that records the task the score actually measures: the label resolution, legal outputs, scoring convention, and resulting ceiling. On NSL-KDD, changing from subtype labels to five categories changes both the bound and the same-prediction macro F1. On CICIDS2017 day holdout, binary reaggregation removes the fine-label ceiling but the existing model recalls only 14.69\% of attacks; the gas case shows that a ceiling can also explain little. These cases demonstrate what the audit can and cannot resolve. They do not establish that published scores are generally invalid.
 
 \section*{Data availability}
 Dataset sources are cited above. The accompanying code release contains aggregate results, split manifests, hashes, source coding and commands mapped to the manuscript. Original data terms continue to apply.

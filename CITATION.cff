@@ -5,7 +5,7 @@ type: software
 authors:
   - family-names: "Sajid"
     given-names: "Shah Zaib"
-version: 0.7.0
+version: 0.8.0
 date-released: 2026-11-08
 license: MIT
 repository-code: "https://github.com/shahzaibjanjua25/ids-benchmark-precision-collapse"
