@@ -1,104 +1,110 @@
-# Label coverage bounds for pooled macro F1
+# Label Coverage Bounds Pooled Macro F1 in Closed-Set Benchmarks
 
-Code and aggregate evidence for auditing fold-dependent prediction vocabularies.
-The manuscript and bibliography are in the accompanying submission package.
-Code is MIT-licensed. Dataset owners retain their original data terms.
+Release 0.5.0: code, manuscript source and evidence for auditing fold-dependent
+legal prediction vocabularies. The repository URL retains its historical name.
+The research question concerns attainable scores and conditional rankings.
 
-## Install
+On the official original-label NSL-KDD split, 21 of 38 test labels are available
+to a training-restricted model. Across six prespecified pipelines, the forest
+leads full macro F1 while kNN leads covered-row scoring. Rerouting unavailable
+rows alone reverses the forest/kNN full-score order too, without adding true
+positives; this is an oracle-assisted diagnostic. CICIDS2017 day holdout has
+ceiling 1/15. Gas model-family rankings are unchanged. These outcomes concern
+declared fixed cohorts and targets; covered scoring is a conditional task.
 
-Use Python 3.13. Fit replication uses the pinned experimental environment.
+## Install and use
 
     python -m pip install -r code/requirements.txt
     python -m pip install --no-deps .
     python -m label_availability results/nsl_kdd_official/label_counts.csv --oracle --convention union
 
-The small package requires NumPy and pandas. Its array interface is
-coverage_ceiling(train_labels_per_fold, test_labels_per_fold).
-The count interfaces are metric_bounds, oracle_sandwich, union_ceiling and
-exact_oracle. See code/label_availability for their implementations.
+The small package needs NumPy and pandas. Python 3.13 and the pinned environment
+are used for the experiments. A wheel is included in the local release package.
 
-Count input has one row per fold/class with fold, class, training_rows and
-test_rows columns. A missing fold column means one fold. Include every
-train-only label with zero test support. Otherwise a missing row means the
-vocabulary entry is absent. An optional boolean allowed column restricts outputs
-within training labels. Minimum-support diagnostics are hard ceilings only for
-classifiers enforcing that vocabulary restriction.
+```python
+from label_availability import coverage_ceiling, count_folds, exact_oracle
 
-## Verify and reproduce
+coverage_ceiling([[0]], [[0, 1]])                # 0.5: training-restricted outputs
+coverage_ceiling([[0]], [[0, 1]], [[0, 1]])      # 1.0: explicit global head
+counts = count_folds([[0]], [[0, 1]], [[0, 1]])
+exact_oracle(counts, convention="union")
+```
 
-    python code/check_availability.py
-    python code/check_branch_oracle.py results
-    python code/verify_cic_archive.py results
-    python code/audit_scoring_conventions.py results
-    python code/run_solver_shapes.py results/solver_shapes.csv
+Count CSVs use fold, class, training_rows and test_rows. Include every legal
+output, including output-only labels with zero training and test support. With
+no allowed column, positive training support defines the vocabulary. An optional
+boolean allowed column defines legal outputs directly, including training-absent
+labels. It is not intersected with training support. CLI output warns when the
+coverage ceiling is below one. The main convention averages positive-test-support
+labels; scikit-learn's inferred true/predicted union is a separate option.
 
-The row-level check compares both solvers and scoring conventions to exhaustive
-legal predictions. The varied-vocabulary solver cases are synthetic, with
-recorded node limits and MILP timeouts. A node-budget exception certifies no
-optimum. Identical vocabularies are collapsed before search. The sandwich remains
-available for valid counts.
+## Reproduce current tables and figure
 
-    python code/run_unsw_extended.py PATH_TO_DATA results
-    python code/summarize_revision.py results
-    python code/run_gas_models.py PATH_TO_GAS_ZIP results/gas_model_comparison
-    python code/run_nsl_kdd_forest.py PATH_TO_NSL_DIRECTORY results/nsl_model_comparison --seeds 42 43 44 45 46
-    python code/summarize_nsl_seeds.py results/nsl_model_comparison
-    python code/build_revision_figures.py results PATH_TO_FIGURE_DIRECTORY
+    python code/reproduce_release.py --mode saved
 
-PATH_TO_DATA contains the original official UNSW train/test CSVs. The extended
-runner reuses 115 recorded fits and resumes missing conditions. The current
-36-pair grid is results/unsw_complete_pairs/runs.csv. Original sampled-pair
-folders remain historical evidence. New routing fields exist only for freshly
-fitted conditions. Oracle-assisted routing uses true availability and is a
-counterfactual. The separate confidence policy uses a fixed threshold of 0.5.
+This reconstructs scores from released confusion counts, verifies the frozen
+50-candidate sample and 180-fit grid, regenerates all three main tables in
+results/manuscript_tables, and exports the CIC hero figure. It does not refit
+models. CLAIMS.md maps each table and substantive claim to evidence.
 
-All six CICIDS2017 configurations were refitted and are recorded separately in
-results/cic_full_replication.csv. Archived aggregates are RESULTS_PARSED.csv.
-cic_cv_replication.csv and cic_cv_unweighted_replication.csv are historical
-two-arm and one-arm subsets. The fitting entry point is
-code/clean_repo/ids_full_study.py. code/reproduce_tbench.py verifies saved
-aggregates; it does not refit those forests.
+    python code/reproduce_release.py --mode solvers
 
-make verify runs core checks. make reproduce DATA=PATH_TO_DATA also regenerates
-audits, solver checks and missing UNSW conditions. The Dockerfile is an
-environment recipe. Docker was unavailable for a build in this session.
+This exercises both scoring conventions and solvers against exhaustive legal
+predictions, checks explicit global heads and vocabulary grouping, and reruns
+the branch/MILP shape comparison. Exact-search budgets and MILP timeouts are
+recorded; an unfinished search does not certify an optimum. Repeated vocabulary
+groups are collapsed before search. The polynomial sandwich remains available.
 
-## Evidence boundaries
+To refit every fitted comparison in the main manuscript into a new directory:
 
-CLAIMS.md maps manuscript numbers to scripts and files. EXTERNAL-AUDIT.md
-documents the targeted source audit and unresolved scoring conventions.
+    python code/reproduce_release.py --mode refit --out fresh_v5 --data PATH_TO_UNSW --cic PATH_TO_CIC --nsl PATH_TO_NSL --gas PATH_TO_GAS_ZIP
 
-CICIDS2017 uses the local MachineLearningCVE files, which have no timestamps.
-No corrected Engelen/Lanvin release was found in the research folder, Documents,
-Downloads or Research.rar. A last-30-percent within-day/class row-order split is
-retained as historical evidence and has no verified temporal cutoff. Input
-hashes and split memberships are in results.
+This can take many hours. It starts from raw data and keeps new results separate
+from the frozen evidence. It fits the six CIC configurations, NSL five forest
+seeds and five additional pipelines, the UNSW official reference and complete
+36-pair/five-seed grid, and all gas baselines. The optional digits control is also
+rerun. Historical withholding paths and rejection controls have separate entry
+points documented in CLAIMS.md. Read the source flags before a large refit.
 
-Numeric NaN/Inf values receive training-only median imputation. CIC web-label
-spelling variants are normalized. UNSW nominal inputs use ordinal encoding,
-whereas NSL-KDD uses one-hot encoding. Comparisons across datasets therefore
-retain their original preprocessing differences.
+## Evidence and manuscript
 
-Gas uses adjacent batches. CORAL uses unlabeled target features for covariance
-alignment and still predicts only source labels. Row-bootstrap intervals
-condition on fixed predictions and the selected batches. Pair fits share test
-rows and withheld labels, so they are dependent. Oracle-normalized scores are
-not comparable across different inventories or test cohorts.
+- paper/main.tex and paper/supplementary.tex contain editable LaTeX.
+- paper/TBench-Submission.tex and paper/TBench-Anonymous-Submission.tex use the publisher class.
+- All six CIC configurations have fresh records in results/cic_full_replication.csv; RESULTS_PARSED.csv contains the corresponding archived aggregates.
+- results/unsw_complete_pairs/runs.csv contains the 180 pair/seed scores plus official/path controls. results/rank_audit adds newly refitted covered/unavailable matrices for all 180 pair/seed conditions; full scores match the earlier grid to 1e-12.
+- results/nsl_families and results/nsl_model_comparison support natural-split pipeline and seed comparisons.
+- audit/protocol.md was locally frozen before collecting the literature frame. audit/crossref_20261108 contains 385 candidates, the fixed sample of 50, coding and checksums. This is a screening pilot: 3 eligible, 14 excluded, 33 unresolved. It does not estimate field prevalence or document a verified incompatible published score.
+- audit/nsl_family_plan.md fixes the additional pipelines before their results were examined. audit/AMENDMENTS.md records screening boundaries. audit/reference_verification.csv checks the cited 2026 records and distinguishes a web report from journal articles.
 
-Permanent DOI, external anonymous hosting and independent reproduction remain
-pending. The public repository and MIT copyright identify the author.
-Historical forced_assignment_gap fields mean the covered-row-first combined destination penalty C-R. New summaries name it explicitly.
+The public repository identifies the author. The anonymous manuscript omits the
+author and personal repository URL, but a blind review needs a separately hosted
+anonymous artifact. A permanent DOI and independent reproduction remain pending.
+The readable PDFs use a Pandoc/Typst conversion. Native publisher-class compilation
+and its final page count remain unverified in this environment.
 
-Dataset owner pages:
-- [CICIDS2017](https://www.unb.ca/cic/datasets/ids-2017.html)
-- [UNSW-NB15](https://research.unsw.edu.au/projects/unsw-nb15-dataset)
-- [NSL-KDD](https://www.unb.ca/cic/datasets/nsl.html)
-- [Gas sensor drift](https://doi.org/10.24432/C5RP6W)
+## Scope and reuse
 
-To refit the entire UNSW grid independently of archived predictions, use a new
-output folder:
+Code is MIT-licensed. Data owners retain their data terms. Manuscript copyright
+remains with the author. The included IEEE citation style retains its own
+Creative Commons license metadata. The publisher's class is obtained separately;
+its files are not relicensed as MIT. Generative-AI
+assistance in the research workflow is disclosed in the manuscript.
 
-    python code/run_unsw_extended.py PATH_TO_DATA results --fresh --outdir fresh_unsw
+CIC uses MachineLearningCVE files without timestamps. No local corrected
+Engelen/Lanvin release was found. Historical within-day row order is not a verified
+clock-time split. Numeric imputation uses training medians. UNSW uses ordinal
+nominal encoding; NSL forests use one-hot encoding; the additional NSL baselines
+also standardize numeric features. Pipeline comparisons do not isolate estimator
+effects from preprocessing. Gas CORAL uses unlabeled target features.
 
-Equivalently, make refit DATA=PATH_TO_DATA REFIT_OUT=fresh_unsw starts every fit.
-An existing output folder is rejected in fresh mode.
+Pair fits, model pipelines and seeds share test rows. Rank correlations and
+reversal counts are descriptive, without iid significance intervals. Historical
+forced_assignment_gap means the covered-row-first combined destination penalty
+C-R, which includes both unavoidable and model-dependent loss. It is not a claim
+that the split forces every part of that penalty. The old bootstrap correlation
+script is exploratory historical material, not an inferential analysis.
+
+Dataset sources: [CICIDS2017](https://www.unb.ca/cic/datasets/ids-2017.html),
+[UNSW-NB15](https://research.unsw.edu.au/projects/unsw-nb15-dataset),
+[NSL-KDD](https://www.unb.ca/cic/datasets/nsl.html),
+[gas drift](https://doi.org/10.24432/C5RP6W).

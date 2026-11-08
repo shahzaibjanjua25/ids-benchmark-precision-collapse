@@ -1,5 +1,9 @@
 # Illustrative source audit
 
+These targeted checks are separate from the release-0.5.0 frozen 50-candidate
+screening pilot in audit/crossref_20261108. They are retained as source-specific
+compatibility notes and are not the denominator of that pilot.
+
 Access date: 2026-11-08, Asia/Karachi. This is a targeted compatibility audit,
 not a systematic review and not a prevalence estimate. Four sources were carried
 forward from the preceding revision. The new search inspected the gas protocol

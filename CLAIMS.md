@@ -1,30 +1,46 @@
-# Manuscript claims and regeneration
+# Manuscript-to-evidence map, release 0.5.0
 
-Commands run from the repository root with Python 3.13 and code/requirements.txt.
-Fold-count files for an oracle must include every permitted training label, even
-when its test count is zero. Absence of a row means absence of that vocabulary entry.
+Run from the repository root with the pinned Python environment. The single
+saved-evidence command is `python code/reproduce_release.py --mode saved`.
 
-| Claim | Script | Recorded evidence |
+| Item | Regeneration/check | Released evidence |
 | --- | --- | --- |
-| CICIDS2017 six fitted configurations and 0.85347 vs 0.06030 | Fitting: code/clean_repo/ids_full_study.py; aggregate checks: code/reproduce_tbench.py and code/verify_cic_archive.py | results/cic_full_replication.csv and results/confusion |
-| Pooled, weighted, micro, balanced-accuracy, union and fold ceilings | code/audit_scoring_conventions.py | results/metric_conventions.csv and results/fold_metric_conventions.csv |
-| CIC and NSL label-granularity sensitivity | code/audit_scoring_conventions.py | results/granularity_sensitivity.csv and results/family_mapping.csv |
-| Minimum-support sensitivity under a restricted vocabulary | code/audit_scoring_conventions.py | results/threshold_sensitivity.csv |
-| Oracle and sandwich, both score conventions | code/check_availability.py and code/label_availability/core.py | deterministic row-level checks and results/metric_conventions.csv |
-| Solver shape comparison | code/run_solver_shapes.py and code/oracle_milp.py | results/solver_shapes.csv |
-| Original 15 deterministic pair fits | code/run_unsw_coverage_sensitivity.py | results/unsw_coverage_sensitivity/runs.csv |
-| Complete pair grid and official five-seed reference | code/run_unsw_extended.py | results/unsw_complete_pairs/runs.csv |
-| Five-seed gap decomposition | code/check_oracle_and_gaps.py | results/unsw_three_part_gap.csv |
-| Natural gas availability and original baselines | code/run_gas_drift.py | results/gas_drift_adjacent |
-| Gas model families and conditional row intervals | code/run_gas_models.py | results/gas_model_comparison |
-| Digits availability and fitted score | code/run_digits_fractional_coverage.py | results/digits_fractional_coverage |
-| External scoring comparisons | Manual source coding, no fitted values inferred | results/published_score_audit.csv and EXTERNAL-AUDIT.md |
+| Table 1: NSL seed rankings | code/summarize_rank_audit.py | results/nsl_model_comparison/confusion_seen_*.csv and confusion_unseen_*.csv; results/manuscript_tables/table_1_nsl_seed_rankings.csv |
+| Table 2: NSL pipeline ranking/winner change | code/run_nsl_families.py DATA OUT; code/build_main_tables.py | audit/nsl_family_plan.md; results/nsl_families/*.npz and *_fit.json; results/manuscript_tables/table_2_nsl_families.csv |
+| Same-cohort NSL routing winner change with unchanged TP counts | code/audit_nsl_destinations.py | results/nsl_destination_audit/*.npz and scores.csv; both support and inferred-union scoring |
+| Table 3: natural protocol scores and ceilings | code/build_main_tables.py | results/manuscript_tables/table_3_natural_protocols.csv; original count files and fresh CIC/NSL/gas metrics |
+| Figure 1: CIC observed/ceiling contrast | code/plot_cic_hero.py OUT | results/cic_full_replication.csv; figures/cic_hero.pdf in paper package |
+| 180-fit UNSW rank correlation and reversals | code/run_rank_audit.py DATA OUT; code/summarize_rank_audit.py | results/rank_audit/confusion/*.npz, runs.csv, rank_summary.csv; matches results/unsw_complete_pairs/runs.csv |
+| Gas null ranking result across 19 fits | code/run_gas_models.py ZIP OUT; code/summarize_rank_audit.py | results/gas_model_comparison, results/gas_coral, results/rank_audit/gas_ranks.csv |
+| Natural NSL 21/38 and union oracle | code/audit_scoring_conventions.py results; code/exact_fold_oracle.py results | results/nsl_kdd_official/label_counts.csv; results/metric_conventions.csv |
+| All six CIC archive/fresh matches | code/verify_cic_archive.py results | results/cic_full_replication.csv; results/RESULTS_PARSED.csv; results/confusion |
+| Legal heads and vocabulary-group reduction | code/check_vocabulary_groups.py | 100 seeded explicit-head row-level checks; 300-fold/two-assignment check |
+| Both score conventions and bounds | code/check_availability.py | 80 seeded exhaustive row-level cases |
+| Grouped exact search/MILP | code/run_solver_shapes.py OUT.csv; code/oracle_milp.py | results/solver_shapes_grouped.csv; exact or bounds with explicit status |
+| Literature sample and coding totals | code/build_literature_frame.py OUT; code/verify_release_evidence.py | audit/protocol.md; audit/crossref_20261108/raw, candidate_frame.csv, selected_sample.csv, coding.csv, summary.json |
+| Additional source compatibility checks | manual primary-source reading | EXTERNAL-AUDIT.md; audit/reference_verification.csv; supplement |
 
-`make verify` runs count/score correctness checks and checks archived CIC scores.
-`make reproduce DATA=/path/to/official/UNSW` also regenerates count audits,
-solver-shape checks and missing UNSW grid fits. It resumes completed conditions.
-Raw datasets must be obtained separately and retain their original licenses.
+The sampling builder reuses cached responses and preserves an existing coding
+sheet. Publisher abstracts/reference lists are redacted from public snapshots;
+the selection uses titles and DOIs only. The source screen is a single-reviewer,
+AI-assisted pilot, not an independently adjudicated systematic review.
 
-The Dockerfile is a build recipe. A published image, permanent DOI, and external
-anonymous mirror require their respective service accounts. Reproduction by a
-second investigator remains pending.
+Raw-data fitting for current main-paper comparisons is bundled by
+`python code/reproduce_release.py --mode refit --out NEW --data UNSW --cic CIC --nsl NSL --gas ZIP`.
+Outputs are separate and do not overwrite frozen manuscript results. For the
+supplementary/historical controls, individual commands are:
+
+    python code/run_unsw_coverage_sensitivity.py UNSW results_new
+    python code/run_unsw_partial_coverage.py --help
+    python code/run_digits_fractional_coverage.py digits_new
+    python code/check_oracle_and_gaps.py results
+    python code/audit_scoring_conventions.py results
+
+Consult `--help` for paths and supported flags. Rejection scoring and
+repair-order summaries remain historical controls; they are not used as evidence
+for the natural pipeline winner change. Conditional bootstrap intervals in the
+supplement condition on fixed predictions and assume exchangeable rows.
+
+The Dockerfile is an environment recipe, not a verified image. No Zenodo DOI,
+external anonymous mirror, PyPI publication, external adoption or independent
+clean-room reproduction is claimed.
