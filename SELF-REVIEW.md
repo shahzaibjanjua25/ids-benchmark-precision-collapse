@@ -20,9 +20,11 @@ Biyouki et al. report 0.9855 macro F1 for a CICIDS2017 leave-one-family-out
 experiment with Web Attack excluded from training. If the score averages all 15
 closed-set labels, the ceiling is at most 14/15 = 0.9333; if it excludes the
 unseen class or uses a binary task, that conclusion does not follow. The article
-does not identify the LOFO scoring vocabulary, so the paper does not label the
-score incompatible. This makes the diagnostic useful for specifying what a
-published zero-day score must disclose, while falling short of proving that a
+does not identify the LOFO scoring vocabulary, and its discussion does not map
+known-class performance and held-out-family ranking to separate metric cohorts,
+so the paper does not label the score incompatible. This makes the diagnostic
+useful for specifying what a published zero-day score must disclose, while
+falling short of proving that a
 published result is wrong or changing a literature-level conclusion.
 
 | Criterion | Internal score |
