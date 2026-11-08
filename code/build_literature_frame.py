@@ -59,17 +59,17 @@ for i, query in enumerate(QUERIES, 1):
                         "links": json.dumps(item.get("link", [])),
                         "published": json.dumps(item.get("published", {}))}
 frame = pd.DataFrame(records.values()).sort_values("doi").reset_index(drop=True)
-frame.to_csv(args.out / "candidate_frame.csv", index=False)
+frame.to_csv(args.out / "candidate_frame.csv", index=False, lineterminator='\n')
 selection = np.random.default_rng(20261108).choice(len(frame), size=min(50, len(frame)), replace=False)
 sample = frame.iloc[selection].copy().reset_index(drop=True)
 sample.insert(0, "record_id", [f"A{i:02d}" for i in range(1, len(sample)+1)])
-sample.to_csv(args.out / "selected_sample.csv", index=False)
+sample.to_csv(args.out / "selected_sample.csv", index=False, lineterminator='\n')
 for column in ["eligibility", "reason", "evidence_url", "evidence_location", "dataset", "split",
                "target", "vocabulary", "support", "pooling", "label_inventory", "metric", "reported_value",
                "ceiling", "audit_status", "retrieval_status", "notes"]:
     sample[column] = "pending"
 if not (args.out / "coding.csv").exists():
-    sample.to_csv(args.out / "coding.csv", index=False)
+    sample.to_csv(args.out / "coding.csv", index=False, lineterminator='\n')
 digest = hashlib.sha256((args.out / "candidate_frame.csv").read_bytes()).hexdigest()
 (args.out / "frame_sha256.txt").write_text(digest+"\n", encoding="ascii")
 print("Frame", len(frame), "sample", len(sample), "SHA256", digest, flush=True)
