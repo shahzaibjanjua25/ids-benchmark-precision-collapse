@@ -1,0 +1,5 @@
+folds,shape,sandwich_lower,sandwich_upper,coverage_ceiling,exact_oracle,vertex_assignments,grouped_assignments,vocabulary_types,visited,pruned,branch_status,branch_seconds,milp_status,milp_variables,milp_feasible_score,milp_score_upper,milp_seconds
+6,synthetic varied vocabulary,0.6489700775415062,0.8095238095238095,0.8571428571428571,0.7505597850425437,729.0,243.0,5.0,34.0,23.0,certified,0.0487288999993325,0,85,0.7505597850425436,0.7505597850425436,0.17786479999995208
+30,synthetic varied vocabulary,0.4995708535541596,0.836734693877551,,,,,,,,Branch-and-bound exceeded 10000 visited nodes,0.8521896999991441,0,385,0.6733659100462379,0.6733659100462379,9.317099300000336
+60,synthetic varied vocabulary,0.4877573105614099,0.8461538461538461,,,,,,,,Branch-and-bound exceeded 10000 visited nodes,0.832897199999934,1,724,0.6571912723404769,0.6875767866648805,10.226386199999979
+100,synthetic varied vocabulary,0.4763744971126676,0.8503401360544217,,,,,,,,Branch-and-bound exceeded 10000 visited nodes,0.9318212000016501,1,1237,,0.8571428571428571,10.591918000000078
