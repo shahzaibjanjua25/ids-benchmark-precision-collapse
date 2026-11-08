@@ -1,0 +1,26 @@
+resolution,class,test_support,coverage_fraction,f1
+fine attack label,BENIGN,2273097,1.0,0.9045642624384151
+fine attack label,Bot,1966,0.0,0.0
+fine attack label,DDoS,128027,0.0,0.0
+fine attack label,DoS GoldenEye,10293,0.0,0.0
+fine attack label,DoS Hulk,231073,0.0,0.0
+fine attack label,DoS Slowhttptest,5499,0.0,0.0
+fine attack label,DoS slowloris,5796,0.0,0.0
+fine attack label,FTP-Patator,7938,0.0,0.0
+fine attack label,Heartbleed,11,0.0,0.0
+fine attack label,Infiltration,36,0.0,0.0
+fine attack label,PortScan,158930,0.0,0.0
+fine attack label,SSH-Patator,5897,0.0,0.0
+fine attack label,Web Attack-Brute Force,1507,0.0,0.0
+fine attack label,Web Attack-SQL Injection,21,0.0,0.0
+fine attack label,Web Attack-XSS,652,0.0,0.0
+eight-family mapping,BENIGN,2273097,1.0,0.9045642624384151
+eight-family mapping,Bot,1966,0.0,0.0
+eight-family mapping,DoS,380688,1.0,0.34580472427343784
+eight-family mapping,Credential brute force,13835,0.0,0.0
+eight-family mapping,Heartbleed,11,0.0,0.0
+eight-family mapping,Infiltration,36,0.0,0.0
+eight-family mapping,PortScan,158930,0.0,0.0
+eight-family mapping,Web attack,2180,0.0,0.0
+binary benign/attack,BENIGN,2273097,1.0,0.9045642624384151
+binary benign/attack,ATTACK,557646,1.0,0.2548817672682016
