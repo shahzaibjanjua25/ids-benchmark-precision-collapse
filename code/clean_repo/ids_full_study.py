@@ -1,26 +1,11 @@
 #!/usr/bin/env python3
 """
-ids_full_study.py  --  one script for the whole evaluation study.
+Run the archived CIC and UNSW pipelines; see --help for settings.
 
-DATASETS   UNSW-NB15 (official train/test CSVs)  and  CIC-IDS2017 (MachineLearningCVE or TrafficLabelling CSVs)
-VARIANTS   raw  and  dedup (exact duplicate rows removed; test rows duplicating train rows removed)
-PROTOCOLS  UNSW: official (primary), cv (pooled 5-fold, secondary)
-           CIC : cv (pooled 5-fold), time (per day+class, first 70% in time -> train, rest -> test),
-                 lodo (leave-one-day-out; a ZERO-DAY test, not a temporal one)
-MODELS     rf (RandomForest), hgb (HistGradientBoosting), lr (LogisticRegression)
-ARMS       none | balanced | balanced_subsample | smote_none   (SMOTE only for UNSW, RF only)
-SEEDS      multi-seed for RF
-OUTPUTS    per-class precision/recall + 95% Wilson CIs, confusion matrices, false-positive sources,
-           seed mean/SD, base-rate projection, per-class threshold tuning (thresholds chosen on a
-           validation split carved from TRAIN only), cluster bootstrap by (day, source IP, label)
-           when the CIC files contain 'Source IP' (TrafficLabelling version), data audit
-           (duplicates / conflicting labels), and an auto-generated report.txt.
-
-USAGE
-  python ids_full_study.py --quick --unsw-dir . --cic-dir CICIDS2017 --out study_quick   # smoke test (minutes)
-  python ids_full_study.py --unsw-dir . --cic-dir CICIDS2017 --out study_full             # full run (hours)
-  python ids_full_study.py --datasets unsw --unsw-dir . --out study_unsw
-Re-running the same command resumes (finished settings are skipped); add --fresh to start over.
+CIC 'time' is a within-day/class ordered-row split. The local MachineLearningCVE
+files have no verified timestamps. LODO holds out a capture day and may remove
+fine-grained labels from the training vocabulary; it is not an open-set detector.
+Finished settings are skipped when resuming an output directory.
 """
 import argparse
 import glob
