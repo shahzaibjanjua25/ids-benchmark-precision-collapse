@@ -1,5 +1,5 @@
 {
-  "release": "0.9.1",
+  "release": "0.9.2",
   "date": "2026-11-09",
   "saved_evidence_regeneration": "passed",
   "evidence_checks": {
@@ -83,63 +83,62 @@
   "wheel": {
     "filename": null,
     "sha256": null,
-    "build": "not rebuilt for 0.9.1: local setuptools build backend unavailable; network install blocked",
-    "installed_api_smoke": "not rerun for 0.9.1"
+    "build": "not rebuilt for 0.9.2: local setuptools build backend unavailable; network install blocked",
+    "installed_api_smoke": "not rerun for 0.9.2"
   },
   "reading_pdf_qa": {
     "main": {
       "pages": 14,
       "author_present": true,
       "pipeline_tables_present": true,
-      "sha256": "a9282c05b86806b4a95dd3fa23b74200f6979c168dbc33f1b8b0503bae8feadb",
-      "new_cic_target_table": true,
+      "sha256": "cdf6c4dce6d954fb0cfb240ce03e16ecb272fdafc1704a08826cfbfebea6b1ef",
       "published_lofo_conditional_audit_present": true,
-      "biyouki_reference_present": true,
-      "abstract_mentions_conditional_audit": true
+      "abstract_conditional_audit_present": true
     },
     "anonymous": {
       "pages": 14,
-      "contribution_paragraph_present": true,
       "author_present": false,
       "title_present": true,
-      "sha256": "2eb0ee631626fb5c72383e39665206418fb25c94cff824dd268de4c74e3ce385",
-      "published_lofo_conditional_audit_present": true,
-      "biyouki_reference_present": true,
-      "abstract_mentions_conditional_audit": true
+      "sha256": "fc62f481cb2d0d52fa7b385eddbbe46b585a5404d30f0e86ebcbfa165ba104e8",
+      "published_lofo_conditional_audit_present": true
     },
     "supplement": {
       "pages": 5,
-      "routing_note_occurrences": 1,
-      "sha256": "3eea06ca354bfc653607198e026393332029f32979cb1b68e93c9d3f62097c93"
+      "sha256": "c7035f90bc8661fde3922117fcfd31a8fedad00bce0f59654a621e099b78c135"
     },
     "native_publisher_class_compiled": false,
-    "manuscript": {
-      "pages": 13,
-      "contribution_paragraph_present": true,
-      "author_present": true,
-      "title": "Label Coverage Bounds Pooled Macro F1: A Reporting Diagnostic for Closed-Set IDS Benchmarks"
-    },
     "pixel_page_inspection": {
       "status": "performed",
-      "reason": "All 14 manuscript pages, 14 anonymous pages and 5 supplement pages were rendered with Poppler at 90 dpi and reviewed in contact sheets; manuscript pages 8, 9 and 14 and anonymous page 1 were inspected at page scale. No clipping, overlap or unreadable table layout was observed. Native publisher-class compilation remains unverified.",
+      "reason": "Rendered all pages of the 14-page manuscript, 14-page anonymous copy and 5-page supplement with Poppler at 80 dpi; reviewed contact sheets and inspected the NSL and CIC result pages. No clipping, overlap or unreadable table layout was observed. Native publisher-class compilation remains unverified.",
       "native_publisher_class_compiled": false
     }
   },
   "remote_ci_run_verified": false,
   "permanent_doi": null,
   "paper_sha256": {
-    "manuscript.pdf": "a9282c05b86806b4a95dd3fa23b74200f6979c168dbc33f1b8b0503bae8feadb",
-    "anonymous.pdf": "2eb0ee631626fb5c72383e39665206418fb25c94cff824dd268de4c74e3ce385",
-    "supplement.pdf": "3eea06ca354bfc653607198e026393332029f32979cb1b68e93c9d3f62097c93"
+    "manuscript.pdf": "cdf6c4dce6d954fb0cfb240ce03e16ecb272fdafc1704a08826cfbfebea6b1ef",
+    "anonymous.pdf": "fc62f481cb2d0d52fa7b385eddbbe46b585a5404d30f0e86ebcbfa165ba104e8",
+    "supplement.pdf": "c7035f90bc8661fde3922117fcfd31a8fedad00bce0f59654a621e099b78c135"
   },
   "nsl_granularity_reanalysis": {
     "fine_label_ceiling": 0.5526315789473685,
     "fine_label_f1_mean": 0.23952666185118515,
     "fine_label_f1_sample_sd": 0.008778840059952478,
     "five_category_ceiling": 1.0,
-    "five_category_f1_mean": 0.4834893073427818,
+    "five_category_f1_mean": 0.4834893080881512,
     "five_category_f1_sample_sd": 0.00549371978691572,
-    "same_predictions_reaggregated": true
+    "five_category_inferred_union_f1_mean": 0.4834893080881512,
+    "five_category_inferred_union_f1_sample_sd": 0.00549371978691572,
+    "same_predictions_reaggregated": true,
+    "mixed_resolution_equals_five_category": true,
+    "train_test_union_label_count": 40,
+    "positive_test_support_label_count": 38,
+    "test_only_attack_families": [
+      "DoS",
+      "Probe",
+      "R2L",
+      "U2R"
+    ]
   },
   "cic_lodo_target_resolution": {
     "fine_label_ceiling": 0.06666666666666667,
@@ -154,8 +153,11 @@
   "published_lofo_conditional_check": {
     "doi": "10.1038/s41598-025-34166-1",
     "reported_macro_f1": 0.9855,
-    "conditional_15_label_ceiling": 0.9333333333333333,
+    "conditional_ceiling_15_fine_labels": 0.8,
+    "conditional_ceiling_13_labels_merged_web": 0.9230769230769231,
+    "conditional_ceiling_binary": 1.0,
     "label_inventory_specified": false,
+    "code_link_resolves_convention": false,
     "status": "unresolved; not counted as incompatible",
     "verifier": "passed"
   },
@@ -165,6 +167,8 @@
     "pooled_attack_recall": 0.14782317097226555,
     "friday_macro_f1": 0.6175363773535545,
     "friday_attack_recall": 0.278942832519391,
+    "seeds_completed": 1,
+    "five_seed_refit": "not completed; single-seed limitation stated beside Table 6",
     "source_hashes_in": "results/cic_binary_lodo_seed42/cic_binary_lodo_run.json",
     "verifier": "passed"
   }

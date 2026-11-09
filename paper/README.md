@@ -1,4 +1,4 @@
-# Manuscript sources for release 0.9.1
+# Manuscript sources for release 0.9.2
 
 main.tex is the editable primary manuscript source. Run
 `python paper/sync_tbench_sources.py` to regenerate the named and anonymous
@@ -16,10 +16,11 @@ bundle's README and class header contain different licensing statements; their
 original notices are retained in the local submission package.
 
 manuscript.pdf, anonymous.pdf and supplement.pdf are reading copies converted
-through Pandoc/Typst. Native publisher-class compilation and journal pagination
-have not been verified. The latest PDFs pass text extraction and hash checks, but
-pixel-level page inspection was not available because this environment has no
-local PDF rasterizer. To rebuild reading copies with Pandoc and Typst on PATH:
+through Pandoc/Typst. The current copies have 14, 14 and 5 pages. They were
+rendered with Poppler at 80 dpi; contact sheets and the NSL/CIC tables were
+visually checked for clipping, overlap and unreadable layout. Native
+publisher-class compilation and journal pagination have not been verified. To
+rebuild reading copies with Pandoc and Typst on PATH:
 
     python paper/build_reading.py
 

@@ -1,4 +1,4 @@
-# Release 0.9.1 artifact entry point
+# Release 0.9.2 artifact entry point
 
 README.md gives installation and one-command saved-table, solver and raw-data
 refit modes. CLAIMS.md maps the three result datasets (the NSL pipeline table is
@@ -7,10 +7,10 @@ to scripts and data. paper/ contains the exact manuscript
 sources for this release, including the supplement.
 
 The revised external audit includes a published CICIDS2017 leave-one-family-out
-score of 0.9855 whose scored label inventory is unspecified. Under the specific
-15-label closed-set convention including the withheld class, its ceiling would
-be at most 14/15; alternate scoring vocabularies remove the contradiction. The
-case is therefore recorded as unresolved and verified by
+score of 0.9855 whose scored label inventory is unspecified. Conditional
+ceilings are 12/15 for three separate withheld Web Attack labels, 12/13 if they
+are merged, and 1 for binary BENIGN/ATTACK scoring. The article's table does not
+identify its convention, so the case is recorded as unresolved and verified by
 code/verify_published_score_audit.py, not as a confirmed incompatible result.
 
 The current scope is a reporting diagnostic for vocabulary-constrained pooled
@@ -27,8 +27,11 @@ statement of the current replication scope.
 The NSL-KDD label-resolution analysis maps both truth and prediction axes from
 the same five forest confusion matrices to the five broad categories. It raises
 mean macro F1 from 0.23953 to 0.48349 while the ceiling changes from 0.55263 to
-1. This is a paired change in the scoring target, not a refit or a claim of
-improved fine-grained recognition.
+1. The release records the exact taxonomy. Since every attack family has a
+test-only subtype, the coherent mixed-resolution taxonomy is the same five
+categories; inferred-union and positive-support scores agree. This is a paired
+change in the scoring target, not a refit or a claim of improved fine-grained
+recognition.
 
 The CICIDS2017 day-holdout analysis likewise reaggregates a fixed forest
 prediction matrix at fine-label, eight-family, and binary resolution. Its
