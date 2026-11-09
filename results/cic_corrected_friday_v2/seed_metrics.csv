@@ -1,0 +1,10 @@
+model,seed,train_rows,test_rows,positive_support_labels,train_vocabulary_size,coverage_ceiling,macro_f1,binary_macro_f1,attack_recall,scoring
+random_forest,42,35603,547915,5,21,0.2,0.15609394888536365,0.6619034877156466,0.37683346199733314,pooled macro F1 over test-positive labels; unseen train labels cannot be predicted
+extra_trees,42,35603,547915,5,21,0.2,0.15619702633288146,0.6607404483141949,0.37270061836698093,pooled macro F1 over test-positive labels; unseen train labels cannot be predicted
+sgd_log_loss,42,35603,547915,5,21,0.2,0.16671587989415962,0.8059833284275617,0.7131650564172145,pooled macro F1 over test-positive labels; unseen train labels cannot be predicted
+random_forest,43,35603,547915,5,21,0.2,0.15318731438268987,0.6245590819402136,0.3217574722592619,pooled macro F1 over test-positive labels; unseen train labels cannot be predicted
+extra_trees,43,35603,547915,5,21,0.2,0.15400850448034753,0.6337196283093106,0.33355167224210663,pooled macro F1 over test-positive labels; unseen train labels cannot be predicted
+sgd_log_loss,43,35603,547915,5,21,0.2,0.1810346606758908,0.89705355176284,0.8746110838187475,pooled macro F1 over test-positive labels; unseen train labels cannot be predicted
+random_forest,44,35603,547915,5,21,0.2,0.15611394720982835,0.6620574838865934,0.376977721633487,pooled macro F1 over test-positive labels; unseen train labels cannot be predicted
+extra_trees,44,35603,547915,5,21,0.2,0.15604506010624936,0.661088817422006,0.37538696672670985,pooled macro F1 over test-positive labels; unseen train labels cannot be predicted
+sgd_log_loss,44,35603,547915,5,21,0.2,0.17616744055251096,0.8690017815615299,0.8328498686067638,pooled macro F1 over test-positive labels; unseen train labels cannot be predicted

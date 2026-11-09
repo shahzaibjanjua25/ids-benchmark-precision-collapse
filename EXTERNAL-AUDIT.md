@@ -130,3 +130,21 @@ outputs the ceiling is one because other attack families remain in training.
 We retain this as unresolved and do not allege a score violation.
 The case demonstrates which missing reporting choice determines whether a
 headline score evaluates known-family recognition or the withheld family.
+
+## Public prediction-artifact re-score: corrected CICIDS2017 five-superclass task
+
+Franco-Valiente et al. publish per-seed 5 by 5 confusion matrices for a
+connection-grouped CICIDS2017 evaluation, along with code and curated results:
+https://doi.org/10.3390/electronics15184074 and
+https://github.com/josemifv/distributed-nids-mlops. Their target is the five
+superclasses Normal, DoS, Probe, R2L and U2R. Table 2 reports nonzero training
+support for each, including 65 U2R rows. We downloaded the ten baseline
+connection-grouped matrices for seeds 42--51 and recomputed macro F1 from
+counts. The mean is 0.90002 (sample SD 0.05143; t-based 95% CI half-width
+0.03679), matching the reported 0.900 ± 0.037. All five test classes have
+support, and all five outputs have training support, so the applicable ceiling
+is 1. The result is compatible. It checks one published paper, one model and one
+protocol; it is not a re-score of 10--20 papers or a prevalence estimate.
+Matrices and recomputed seed values are archived in
+`audit/external/franco_valiente_2026/` and checked by
+`code/verify_external_artifact_audit.py`.

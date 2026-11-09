@@ -1,4 +1,4 @@
-# Release 0.9.2 artifact entry point
+# Release 0.9.4 artifact entry point
 
 README.md gives installation and one-command saved-table, solver and raw-data
 refit modes. CLAIMS.md maps the three result datasets (the NSL pipeline table is

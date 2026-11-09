@@ -1,0 +1,6 @@
+true_label,pred_Normal,pred_DoS,pred_Probe,pred_R2L,pred_U2R
+Normal,315573,52,11,2,0
+DoS,17,54428,0,0,0
+Probe,8,0,46138,1,0
+R2L,35,0,0,2583,0
+U2R,8,0,0,0,7

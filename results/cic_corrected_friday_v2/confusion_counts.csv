@@ -1,0 +1,1126 @@
+model,seed,true_label,predicted_label,count
+random_forest,42,BENIGN,BENIGN,288798
+random_forest,42,BENIGN,Bot,0
+random_forest,42,BENIGN,Bot - Attempted,0
+random_forest,42,BENIGN,DDoS,0
+random_forest,42,BENIGN,DoS GoldenEye,18
+random_forest,42,BENIGN,DoS GoldenEye - Attempted,0
+random_forest,42,BENIGN,DoS Hulk,15
+random_forest,42,BENIGN,DoS Hulk - Attempted,3
+random_forest,42,BENIGN,DoS Slowhttptest,22
+random_forest,42,BENIGN,DoS Slowhttptest - Attempted,81
+random_forest,42,BENIGN,DoS slowloris,21
+random_forest,42,BENIGN,DoS slowloris - Attempted,7
+random_forest,42,BENIGN,FTP-Patator,0
+random_forest,42,BENIGN,FTP-Patator - Attempted,30
+random_forest,42,BENIGN,Heartbleed,6
+random_forest,42,BENIGN,Infiltration,0
+random_forest,42,BENIGN,Infiltration - Attempted,2423
+random_forest,42,BENIGN,PortScan,0
+random_forest,42,BENIGN,SSH-Patator,2
+random_forest,42,BENIGN,SSH-Patator - Attempted,4
+random_forest,42,BENIGN,Web Attack - Brute Force,0
+random_forest,42,BENIGN,Web Attack - Brute Force - Attempted,1
+random_forest,42,BENIGN,Web Attack - Sql Injection,0
+random_forest,42,BENIGN,Web Attack - XSS,0
+random_forest,42,BENIGN,Web Attack - XSS - Attempted,2
+random_forest,42,Bot,BENIGN,738
+random_forest,42,Bot,Bot,0
+random_forest,42,Bot,Bot - Attempted,0
+random_forest,42,Bot,DDoS,0
+random_forest,42,Bot,DoS GoldenEye,0
+random_forest,42,Bot,DoS GoldenEye - Attempted,0
+random_forest,42,Bot,DoS Hulk,0
+random_forest,42,Bot,DoS Hulk - Attempted,0
+random_forest,42,Bot,DoS Slowhttptest,0
+random_forest,42,Bot,DoS Slowhttptest - Attempted,0
+random_forest,42,Bot,DoS slowloris,0
+random_forest,42,Bot,DoS slowloris - Attempted,0
+random_forest,42,Bot,FTP-Patator,0
+random_forest,42,Bot,FTP-Patator - Attempted,0
+random_forest,42,Bot,Heartbleed,0
+random_forest,42,Bot,Infiltration,0
+random_forest,42,Bot,Infiltration - Attempted,0
+random_forest,42,Bot,PortScan,0
+random_forest,42,Bot,SSH-Patator,0
+random_forest,42,Bot,SSH-Patator - Attempted,0
+random_forest,42,Bot,Web Attack - Brute Force,0
+random_forest,42,Bot,Web Attack - Brute Force - Attempted,0
+random_forest,42,Bot,Web Attack - Sql Injection,0
+random_forest,42,Bot,Web Attack - XSS,0
+random_forest,42,Bot,Web Attack - XSS - Attempted,0
+random_forest,42,Bot - Attempted,BENIGN,0
+random_forest,42,Bot - Attempted,Bot,0
+random_forest,42,Bot - Attempted,Bot - Attempted,0
+random_forest,42,Bot - Attempted,DDoS,0
+random_forest,42,Bot - Attempted,DoS GoldenEye,0
+random_forest,42,Bot - Attempted,DoS GoldenEye - Attempted,0
+random_forest,42,Bot - Attempted,DoS Hulk,0
+random_forest,42,Bot - Attempted,DoS Hulk - Attempted,0
+random_forest,42,Bot - Attempted,DoS Slowhttptest,0
+random_forest,42,Bot - Attempted,DoS Slowhttptest - Attempted,0
+random_forest,42,Bot - Attempted,DoS slowloris,0
+random_forest,42,Bot - Attempted,DoS slowloris - Attempted,0
+random_forest,42,Bot - Attempted,FTP-Patator,0
+random_forest,42,Bot - Attempted,FTP-Patator - Attempted,0
+random_forest,42,Bot - Attempted,Heartbleed,0
+random_forest,42,Bot - Attempted,Infiltration,0
+random_forest,42,Bot - Attempted,Infiltration - Attempted,1470
+random_forest,42,Bot - Attempted,PortScan,0
+random_forest,42,Bot - Attempted,SSH-Patator,0
+random_forest,42,Bot - Attempted,SSH-Patator - Attempted,0
+random_forest,42,Bot - Attempted,Web Attack - Brute Force,0
+random_forest,42,Bot - Attempted,Web Attack - Brute Force - Attempted,0
+random_forest,42,Bot - Attempted,Web Attack - Sql Injection,0
+random_forest,42,Bot - Attempted,Web Attack - XSS,0
+random_forest,42,Bot - Attempted,Web Attack - XSS - Attempted,0
+random_forest,42,DDoS,BENIGN,81
+random_forest,42,DDoS,Bot,0
+random_forest,42,DDoS,Bot - Attempted,0
+random_forest,42,DDoS,DDoS,0
+random_forest,42,DDoS,DoS GoldenEye,21
+random_forest,42,DDoS,DoS GoldenEye - Attempted,0
+random_forest,42,DDoS,DoS Hulk,95005
+random_forest,42,DDoS,DoS Hulk - Attempted,0
+random_forest,42,DDoS,DoS Slowhttptest,0
+random_forest,42,DDoS,DoS Slowhttptest - Attempted,0
+random_forest,42,DDoS,DoS slowloris,0
+random_forest,42,DDoS,DoS slowloris - Attempted,0
+random_forest,42,DDoS,FTP-Patator,0
+random_forest,42,DDoS,FTP-Patator - Attempted,0
+random_forest,42,DDoS,Heartbleed,0
+random_forest,42,DDoS,Infiltration,0
+random_forest,42,DDoS,Infiltration - Attempted,0
+random_forest,42,DDoS,PortScan,0
+random_forest,42,DDoS,SSH-Patator,16
+random_forest,42,DDoS,SSH-Patator - Attempted,0
+random_forest,42,DDoS,Web Attack - Brute Force,0
+random_forest,42,DDoS,Web Attack - Brute Force - Attempted,0
+random_forest,42,DDoS,Web Attack - Sql Injection,0
+random_forest,42,DDoS,Web Attack - XSS,0
+random_forest,42,DDoS,Web Attack - XSS - Attempted,0
+random_forest,42,PortScan,BENIGN,159012
+random_forest,42,PortScan,Bot,0
+random_forest,42,PortScan,Bot - Attempted,0
+random_forest,42,PortScan,DDoS,0
+random_forest,42,PortScan,DoS GoldenEye,28
+random_forest,42,PortScan,DoS GoldenEye - Attempted,0
+random_forest,42,PortScan,DoS Hulk,56
+random_forest,42,PortScan,DoS Hulk - Attempted,1
+random_forest,42,PortScan,DoS Slowhttptest,0
+random_forest,42,PortScan,DoS Slowhttptest - Attempted,0
+random_forest,42,PortScan,DoS slowloris,0
+random_forest,42,PortScan,DoS slowloris - Attempted,0
+random_forest,42,PortScan,FTP-Patator,0
+random_forest,42,PortScan,FTP-Patator - Attempted,0
+random_forest,42,PortScan,Heartbleed,0
+random_forest,42,PortScan,Infiltration,0
+random_forest,42,PortScan,Infiltration - Attempted,47
+random_forest,42,PortScan,PortScan,0
+random_forest,42,PortScan,SSH-Patator,0
+random_forest,42,PortScan,SSH-Patator - Attempted,0
+random_forest,42,PortScan,Web Attack - Brute Force,0
+random_forest,42,PortScan,Web Attack - Brute Force - Attempted,5
+random_forest,42,PortScan,Web Attack - Sql Injection,0
+random_forest,42,PortScan,Web Attack - XSS,0
+random_forest,42,PortScan,Web Attack - XSS - Attempted,2
+extra_trees,42,BENIGN,BENIGN,289790
+extra_trees,42,BENIGN,Bot,0
+extra_trees,42,BENIGN,Bot - Attempted,0
+extra_trees,42,BENIGN,DDoS,0
+extra_trees,42,BENIGN,DoS GoldenEye,18
+extra_trees,42,BENIGN,DoS GoldenEye - Attempted,0
+extra_trees,42,BENIGN,DoS Hulk,16
+extra_trees,42,BENIGN,DoS Hulk - Attempted,27
+extra_trees,42,BENIGN,DoS Slowhttptest,58
+extra_trees,42,BENIGN,DoS Slowhttptest - Attempted,79
+extra_trees,42,BENIGN,DoS slowloris,46
+extra_trees,42,BENIGN,DoS slowloris - Attempted,4
+extra_trees,42,BENIGN,FTP-Patator,0
+extra_trees,42,BENIGN,FTP-Patator - Attempted,15
+extra_trees,42,BENIGN,Heartbleed,0
+extra_trees,42,BENIGN,Infiltration,1
+extra_trees,42,BENIGN,Infiltration - Attempted,1230
+extra_trees,42,BENIGN,PortScan,0
+extra_trees,42,BENIGN,SSH-Patator,6
+extra_trees,42,BENIGN,SSH-Patator - Attempted,0
+extra_trees,42,BENIGN,Web Attack - Brute Force,1
+extra_trees,42,BENIGN,Web Attack - Brute Force - Attempted,133
+extra_trees,42,BENIGN,Web Attack - Sql Injection,8
+extra_trees,42,BENIGN,Web Attack - XSS,0
+extra_trees,42,BENIGN,Web Attack - XSS - Attempted,1
+extra_trees,42,Bot,BENIGN,738
+extra_trees,42,Bot,Bot,0
+extra_trees,42,Bot,Bot - Attempted,0
+extra_trees,42,Bot,DDoS,0
+extra_trees,42,Bot,DoS GoldenEye,0
+extra_trees,42,Bot,DoS GoldenEye - Attempted,0
+extra_trees,42,Bot,DoS Hulk,0
+extra_trees,42,Bot,DoS Hulk - Attempted,0
+extra_trees,42,Bot,DoS Slowhttptest,0
+extra_trees,42,Bot,DoS Slowhttptest - Attempted,0
+extra_trees,42,Bot,DoS slowloris,0
+extra_trees,42,Bot,DoS slowloris - Attempted,0
+extra_trees,42,Bot,FTP-Patator,0
+extra_trees,42,Bot,FTP-Patator - Attempted,0
+extra_trees,42,Bot,Heartbleed,0
+extra_trees,42,Bot,Infiltration,0
+extra_trees,42,Bot,Infiltration - Attempted,0
+extra_trees,42,Bot,PortScan,0
+extra_trees,42,Bot,SSH-Patator,0
+extra_trees,42,Bot,SSH-Patator - Attempted,0
+extra_trees,42,Bot,Web Attack - Brute Force,0
+extra_trees,42,Bot,Web Attack - Brute Force - Attempted,0
+extra_trees,42,Bot,Web Attack - Sql Injection,0
+extra_trees,42,Bot,Web Attack - XSS,0
+extra_trees,42,Bot,Web Attack - XSS - Attempted,0
+extra_trees,42,Bot - Attempted,BENIGN,695
+extra_trees,42,Bot - Attempted,Bot,0
+extra_trees,42,Bot - Attempted,Bot - Attempted,0
+extra_trees,42,Bot - Attempted,DDoS,0
+extra_trees,42,Bot - Attempted,DoS GoldenEye,0
+extra_trees,42,Bot - Attempted,DoS GoldenEye - Attempted,0
+extra_trees,42,Bot - Attempted,DoS Hulk,0
+extra_trees,42,Bot - Attempted,DoS Hulk - Attempted,0
+extra_trees,42,Bot - Attempted,DoS Slowhttptest,0
+extra_trees,42,Bot - Attempted,DoS Slowhttptest - Attempted,0
+extra_trees,42,Bot - Attempted,DoS slowloris,0
+extra_trees,42,Bot - Attempted,DoS slowloris - Attempted,0
+extra_trees,42,Bot - Attempted,FTP-Patator,0
+extra_trees,42,Bot - Attempted,FTP-Patator - Attempted,0
+extra_trees,42,Bot - Attempted,Heartbleed,0
+extra_trees,42,Bot - Attempted,Infiltration,0
+extra_trees,42,Bot - Attempted,Infiltration - Attempted,775
+extra_trees,42,Bot - Attempted,PortScan,0
+extra_trees,42,Bot - Attempted,SSH-Patator,0
+extra_trees,42,Bot - Attempted,SSH-Patator - Attempted,0
+extra_trees,42,Bot - Attempted,Web Attack - Brute Force,0
+extra_trees,42,Bot - Attempted,Web Attack - Brute Force - Attempted,0
+extra_trees,42,Bot - Attempted,Web Attack - Sql Injection,0
+extra_trees,42,Bot - Attempted,Web Attack - XSS,0
+extra_trees,42,Bot - Attempted,Web Attack - XSS - Attempted,0
+extra_trees,42,DDoS,BENIGN,404
+extra_trees,42,DDoS,Bot,0
+extra_trees,42,DDoS,Bot - Attempted,0
+extra_trees,42,DDoS,DDoS,0
+extra_trees,42,DDoS,DoS GoldenEye,24757
+extra_trees,42,DDoS,DoS GoldenEye - Attempted,0
+extra_trees,42,DDoS,DoS Hulk,69962
+extra_trees,42,DDoS,DoS Hulk - Attempted,0
+extra_trees,42,DDoS,DoS Slowhttptest,0
+extra_trees,42,DDoS,DoS Slowhttptest - Attempted,0
+extra_trees,42,DDoS,DoS slowloris,0
+extra_trees,42,DDoS,DoS slowloris - Attempted,0
+extra_trees,42,DDoS,FTP-Patator,0
+extra_trees,42,DDoS,FTP-Patator - Attempted,0
+extra_trees,42,DDoS,Heartbleed,0
+extra_trees,42,DDoS,Infiltration,0
+extra_trees,42,DDoS,Infiltration - Attempted,0
+extra_trees,42,DDoS,PortScan,0
+extra_trees,42,DDoS,SSH-Patator,0
+extra_trees,42,DDoS,SSH-Patator - Attempted,0
+extra_trees,42,DDoS,Web Attack - Brute Force,0
+extra_trees,42,DDoS,Web Attack - Brute Force - Attempted,0
+extra_trees,42,DDoS,Web Attack - Sql Injection,0
+extra_trees,42,DDoS,Web Attack - XSS,0
+extra_trees,42,DDoS,Web Attack - XSS - Attempted,0
+extra_trees,42,PortScan,BENIGN,159054
+extra_trees,42,PortScan,Bot,0
+extra_trees,42,PortScan,Bot - Attempted,0
+extra_trees,42,PortScan,DDoS,0
+extra_trees,42,PortScan,DoS GoldenEye,28
+extra_trees,42,PortScan,DoS GoldenEye - Attempted,0
+extra_trees,42,PortScan,DoS Hulk,56
+extra_trees,42,PortScan,DoS Hulk - Attempted,0
+extra_trees,42,PortScan,DoS Slowhttptest,0
+extra_trees,42,PortScan,DoS Slowhttptest - Attempted,0
+extra_trees,42,PortScan,DoS slowloris,0
+extra_trees,42,PortScan,DoS slowloris - Attempted,0
+extra_trees,42,PortScan,FTP-Patator,0
+extra_trees,42,PortScan,FTP-Patator - Attempted,0
+extra_trees,42,PortScan,Heartbleed,0
+extra_trees,42,PortScan,Infiltration,0
+extra_trees,42,PortScan,Infiltration - Attempted,0
+extra_trees,42,PortScan,PortScan,0
+extra_trees,42,PortScan,SSH-Patator,0
+extra_trees,42,PortScan,SSH-Patator - Attempted,0
+extra_trees,42,PortScan,Web Attack - Brute Force,4
+extra_trees,42,PortScan,Web Attack - Brute Force - Attempted,9
+extra_trees,42,PortScan,Web Attack - Sql Injection,0
+extra_trees,42,PortScan,Web Attack - XSS,0
+extra_trees,42,PortScan,Web Attack - XSS - Attempted,0
+sgd_log_loss,42,BENIGN,BENIGN,260847
+sgd_log_loss,42,BENIGN,Bot,0
+sgd_log_loss,42,BENIGN,Bot - Attempted,0
+sgd_log_loss,42,BENIGN,DDoS,0
+sgd_log_loss,42,BENIGN,DoS GoldenEye,516
+sgd_log_loss,42,BENIGN,DoS GoldenEye - Attempted,110
+sgd_log_loss,42,BENIGN,DoS Hulk,521
+sgd_log_loss,42,BENIGN,DoS Hulk - Attempted,735
+sgd_log_loss,42,BENIGN,DoS Slowhttptest,2254
+sgd_log_loss,42,BENIGN,DoS Slowhttptest - Attempted,653
+sgd_log_loss,42,BENIGN,DoS slowloris,3426
+sgd_log_loss,42,BENIGN,DoS slowloris - Attempted,692
+sgd_log_loss,42,BENIGN,FTP-Patator,37
+sgd_log_loss,42,BENIGN,FTP-Patator - Attempted,211
+sgd_log_loss,42,BENIGN,Heartbleed,103
+sgd_log_loss,42,BENIGN,Infiltration,1229
+sgd_log_loss,42,BENIGN,Infiltration - Attempted,44
+sgd_log_loss,42,BENIGN,PortScan,0
+sgd_log_loss,42,BENIGN,SSH-Patator,24
+sgd_log_loss,42,BENIGN,SSH-Patator - Attempted,0
+sgd_log_loss,42,BENIGN,Web Attack - Brute Force,175
+sgd_log_loss,42,BENIGN,Web Attack - Brute Force - Attempted,1820
+sgd_log_loss,42,BENIGN,Web Attack - Sql Injection,16322
+sgd_log_loss,42,BENIGN,Web Attack - XSS,1565
+sgd_log_loss,42,BENIGN,Web Attack - XSS - Attempted,149
+sgd_log_loss,42,Bot,BENIGN,74
+sgd_log_loss,42,Bot,Bot,0
+sgd_log_loss,42,Bot,Bot - Attempted,0
+sgd_log_loss,42,Bot,DDoS,0
+sgd_log_loss,42,Bot,DoS GoldenEye,0
+sgd_log_loss,42,Bot,DoS GoldenEye - Attempted,0
+sgd_log_loss,42,Bot,DoS Hulk,0
+sgd_log_loss,42,Bot,DoS Hulk - Attempted,0
+sgd_log_loss,42,Bot,DoS Slowhttptest,0
+sgd_log_loss,42,Bot,DoS Slowhttptest - Attempted,0
+sgd_log_loss,42,Bot,DoS slowloris,0
+sgd_log_loss,42,Bot,DoS slowloris - Attempted,0
+sgd_log_loss,42,Bot,FTP-Patator,0
+sgd_log_loss,42,Bot,FTP-Patator - Attempted,0
+sgd_log_loss,42,Bot,Heartbleed,0
+sgd_log_loss,42,Bot,Infiltration,33
+sgd_log_loss,42,Bot,Infiltration - Attempted,0
+sgd_log_loss,42,Bot,PortScan,0
+sgd_log_loss,42,Bot,SSH-Patator,0
+sgd_log_loss,42,Bot,SSH-Patator - Attempted,0
+sgd_log_loss,42,Bot,Web Attack - Brute Force,0
+sgd_log_loss,42,Bot,Web Attack - Brute Force - Attempted,0
+sgd_log_loss,42,Bot,Web Attack - Sql Injection,619
+sgd_log_loss,42,Bot,Web Attack - XSS,12
+sgd_log_loss,42,Bot,Web Attack - XSS - Attempted,0
+sgd_log_loss,42,Bot - Attempted,BENIGN,490
+sgd_log_loss,42,Bot - Attempted,Bot,0
+sgd_log_loss,42,Bot - Attempted,Bot - Attempted,0
+sgd_log_loss,42,Bot - Attempted,DDoS,0
+sgd_log_loss,42,Bot - Attempted,DoS GoldenEye,0
+sgd_log_loss,42,Bot - Attempted,DoS GoldenEye - Attempted,0
+sgd_log_loss,42,Bot - Attempted,DoS Hulk,0
+sgd_log_loss,42,Bot - Attempted,DoS Hulk - Attempted,0
+sgd_log_loss,42,Bot - Attempted,DoS Slowhttptest,0
+sgd_log_loss,42,Bot - Attempted,DoS Slowhttptest - Attempted,0
+sgd_log_loss,42,Bot - Attempted,DoS slowloris,980
+sgd_log_loss,42,Bot - Attempted,DoS slowloris - Attempted,0
+sgd_log_loss,42,Bot - Attempted,FTP-Patator,0
+sgd_log_loss,42,Bot - Attempted,FTP-Patator - Attempted,0
+sgd_log_loss,42,Bot - Attempted,Heartbleed,0
+sgd_log_loss,42,Bot - Attempted,Infiltration,0
+sgd_log_loss,42,Bot - Attempted,Infiltration - Attempted,0
+sgd_log_loss,42,Bot - Attempted,PortScan,0
+sgd_log_loss,42,Bot - Attempted,SSH-Patator,0
+sgd_log_loss,42,Bot - Attempted,SSH-Patator - Attempted,0
+sgd_log_loss,42,Bot - Attempted,Web Attack - Brute Force,0
+sgd_log_loss,42,Bot - Attempted,Web Attack - Brute Force - Attempted,0
+sgd_log_loss,42,Bot - Attempted,Web Attack - Sql Injection,0
+sgd_log_loss,42,Bot - Attempted,Web Attack - XSS,0
+sgd_log_loss,42,Bot - Attempted,Web Attack - XSS - Attempted,0
+sgd_log_loss,42,DDoS,BENIGN,32775
+sgd_log_loss,42,DDoS,Bot,0
+sgd_log_loss,42,DDoS,Bot - Attempted,0
+sgd_log_loss,42,DDoS,DDoS,0
+sgd_log_loss,42,DDoS,DoS GoldenEye,10676
+sgd_log_loss,42,DDoS,DoS GoldenEye - Attempted,0
+sgd_log_loss,42,DDoS,DoS Hulk,26943
+sgd_log_loss,42,DDoS,DoS Hulk - Attempted,0
+sgd_log_loss,42,DDoS,DoS Slowhttptest,1
+sgd_log_loss,42,DDoS,DoS Slowhttptest - Attempted,247
+sgd_log_loss,42,DDoS,DoS slowloris,0
+sgd_log_loss,42,DDoS,DoS slowloris - Attempted,0
+sgd_log_loss,42,DDoS,FTP-Patator,0
+sgd_log_loss,42,DDoS,FTP-Patator - Attempted,0
+sgd_log_loss,42,DDoS,Heartbleed,24481
+sgd_log_loss,42,DDoS,Infiltration,0
+sgd_log_loss,42,DDoS,Infiltration - Attempted,0
+sgd_log_loss,42,DDoS,PortScan,0
+sgd_log_loss,42,DDoS,SSH-Patator,0
+sgd_log_loss,42,DDoS,SSH-Patator - Attempted,0
+sgd_log_loss,42,DDoS,Web Attack - Brute Force,0
+sgd_log_loss,42,DDoS,Web Attack - Brute Force - Attempted,0
+sgd_log_loss,42,DDoS,Web Attack - Sql Injection,0
+sgd_log_loss,42,DDoS,Web Attack - XSS,0
+sgd_log_loss,42,DDoS,Web Attack - XSS - Attempted,0
+sgd_log_loss,42,PortScan,BENIGN,40229
+sgd_log_loss,42,PortScan,Bot,0
+sgd_log_loss,42,PortScan,Bot - Attempted,0
+sgd_log_loss,42,PortScan,DDoS,0
+sgd_log_loss,42,PortScan,DoS GoldenEye,0
+sgd_log_loss,42,PortScan,DoS GoldenEye - Attempted,0
+sgd_log_loss,42,PortScan,DoS Hulk,84
+sgd_log_loss,42,PortScan,DoS Hulk - Attempted,543
+sgd_log_loss,42,PortScan,DoS Slowhttptest,0
+sgd_log_loss,42,PortScan,DoS Slowhttptest - Attempted,0
+sgd_log_loss,42,PortScan,DoS slowloris,118179
+sgd_log_loss,42,PortScan,DoS slowloris - Attempted,0
+sgd_log_loss,42,PortScan,FTP-Patator,0
+sgd_log_loss,42,PortScan,FTP-Patator - Attempted,1
+sgd_log_loss,42,PortScan,Heartbleed,0
+sgd_log_loss,42,PortScan,Infiltration,0
+sgd_log_loss,42,PortScan,Infiltration - Attempted,0
+sgd_log_loss,42,PortScan,PortScan,0
+sgd_log_loss,42,PortScan,SSH-Patator,0
+sgd_log_loss,42,PortScan,SSH-Patator - Attempted,0
+sgd_log_loss,42,PortScan,Web Attack - Brute Force,0
+sgd_log_loss,42,PortScan,Web Attack - Brute Force - Attempted,9
+sgd_log_loss,42,PortScan,Web Attack - Sql Injection,106
+sgd_log_loss,42,PortScan,Web Attack - XSS,0
+sgd_log_loss,42,PortScan,Web Attack - XSS - Attempted,0
+random_forest,43,BENIGN,BENIGN,288850
+random_forest,43,BENIGN,Bot,0
+random_forest,43,BENIGN,Bot - Attempted,0
+random_forest,43,BENIGN,DDoS,0
+random_forest,43,BENIGN,DoS GoldenEye,15
+random_forest,43,BENIGN,DoS GoldenEye - Attempted,0
+random_forest,43,BENIGN,DoS Hulk,12
+random_forest,43,BENIGN,DoS Hulk - Attempted,1
+random_forest,43,BENIGN,DoS Slowhttptest,20
+random_forest,43,BENIGN,DoS Slowhttptest - Attempted,69
+random_forest,43,BENIGN,DoS slowloris,29
+random_forest,43,BENIGN,DoS slowloris - Attempted,4
+random_forest,43,BENIGN,FTP-Patator,0
+random_forest,43,BENIGN,FTP-Patator - Attempted,0
+random_forest,43,BENIGN,Heartbleed,3
+random_forest,43,BENIGN,Infiltration,1
+random_forest,43,BENIGN,Infiltration - Attempted,2426
+random_forest,43,BENIGN,PortScan,0
+random_forest,43,BENIGN,SSH-Patator,0
+random_forest,43,BENIGN,SSH-Patator - Attempted,0
+random_forest,43,BENIGN,Web Attack - Brute Force,0
+random_forest,43,BENIGN,Web Attack - Brute Force - Attempted,2
+random_forest,43,BENIGN,Web Attack - Sql Injection,0
+random_forest,43,BENIGN,Web Attack - XSS,0
+random_forest,43,BENIGN,Web Attack - XSS - Attempted,1
+random_forest,43,Bot,BENIGN,738
+random_forest,43,Bot,Bot,0
+random_forest,43,Bot,Bot - Attempted,0
+random_forest,43,Bot,DDoS,0
+random_forest,43,Bot,DoS GoldenEye,0
+random_forest,43,Bot,DoS GoldenEye - Attempted,0
+random_forest,43,Bot,DoS Hulk,0
+random_forest,43,Bot,DoS Hulk - Attempted,0
+random_forest,43,Bot,DoS Slowhttptest,0
+random_forest,43,Bot,DoS Slowhttptest - Attempted,0
+random_forest,43,Bot,DoS slowloris,0
+random_forest,43,Bot,DoS slowloris - Attempted,0
+random_forest,43,Bot,FTP-Patator,0
+random_forest,43,Bot,FTP-Patator - Attempted,0
+random_forest,43,Bot,Heartbleed,0
+random_forest,43,Bot,Infiltration,0
+random_forest,43,Bot,Infiltration - Attempted,0
+random_forest,43,Bot,PortScan,0
+random_forest,43,Bot,SSH-Patator,0
+random_forest,43,Bot,SSH-Patator - Attempted,0
+random_forest,43,Bot,Web Attack - Brute Force,0
+random_forest,43,Bot,Web Attack - Brute Force - Attempted,0
+random_forest,43,Bot,Web Attack - Sql Injection,0
+random_forest,43,Bot,Web Attack - XSS,0
+random_forest,43,Bot,Web Attack - XSS - Attempted,0
+random_forest,43,Bot - Attempted,BENIGN,0
+random_forest,43,Bot - Attempted,Bot,0
+random_forest,43,Bot - Attempted,Bot - Attempted,0
+random_forest,43,Bot - Attempted,DDoS,0
+random_forest,43,Bot - Attempted,DoS GoldenEye,0
+random_forest,43,Bot - Attempted,DoS GoldenEye - Attempted,0
+random_forest,43,Bot - Attempted,DoS Hulk,0
+random_forest,43,Bot - Attempted,DoS Hulk - Attempted,0
+random_forest,43,Bot - Attempted,DoS Slowhttptest,0
+random_forest,43,Bot - Attempted,DoS Slowhttptest - Attempted,0
+random_forest,43,Bot - Attempted,DoS slowloris,0
+random_forest,43,Bot - Attempted,DoS slowloris - Attempted,0
+random_forest,43,Bot - Attempted,FTP-Patator,0
+random_forest,43,Bot - Attempted,FTP-Patator - Attempted,0
+random_forest,43,Bot - Attempted,Heartbleed,0
+random_forest,43,Bot - Attempted,Infiltration,0
+random_forest,43,Bot - Attempted,Infiltration - Attempted,1470
+random_forest,43,Bot - Attempted,PortScan,0
+random_forest,43,Bot - Attempted,SSH-Patator,0
+random_forest,43,Bot - Attempted,SSH-Patator - Attempted,0
+random_forest,43,Bot - Attempted,Web Attack - Brute Force,0
+random_forest,43,Bot - Attempted,Web Attack - Brute Force - Attempted,0
+random_forest,43,Bot - Attempted,Web Attack - Sql Injection,0
+random_forest,43,Bot - Attempted,Web Attack - XSS,0
+random_forest,43,Bot - Attempted,Web Attack - XSS - Attempted,0
+random_forest,43,DDoS,BENIGN,14206
+random_forest,43,DDoS,Bot,0
+random_forest,43,DDoS,Bot - Attempted,0
+random_forest,43,DDoS,DDoS,0
+random_forest,43,DDoS,DoS GoldenEye,0
+random_forest,43,DDoS,DoS GoldenEye - Attempted,0
+random_forest,43,DDoS,DoS Hulk,80901
+random_forest,43,DDoS,DoS Hulk - Attempted,0
+random_forest,43,DDoS,DoS Slowhttptest,0
+random_forest,43,DDoS,DoS Slowhttptest - Attempted,0
+random_forest,43,DDoS,DoS slowloris,0
+random_forest,43,DDoS,DoS slowloris - Attempted,0
+random_forest,43,DDoS,FTP-Patator,0
+random_forest,43,DDoS,FTP-Patator - Attempted,0
+random_forest,43,DDoS,Heartbleed,0
+random_forest,43,DDoS,Infiltration,0
+random_forest,43,DDoS,Infiltration - Attempted,0
+random_forest,43,DDoS,PortScan,0
+random_forest,43,DDoS,SSH-Patator,16
+random_forest,43,DDoS,SSH-Patator - Attempted,0
+random_forest,43,DDoS,Web Attack - Brute Force,0
+random_forest,43,DDoS,Web Attack - Brute Force - Attempted,0
+random_forest,43,DDoS,Web Attack - Sql Injection,0
+random_forest,43,DDoS,Web Attack - XSS,0
+random_forest,43,DDoS,Web Attack - XSS - Attempted,0
+random_forest,43,PortScan,BENIGN,159013
+random_forest,43,PortScan,Bot,0
+random_forest,43,PortScan,Bot - Attempted,0
+random_forest,43,PortScan,DDoS,0
+random_forest,43,PortScan,DoS GoldenEye,28
+random_forest,43,PortScan,DoS GoldenEye - Attempted,0
+random_forest,43,PortScan,DoS Hulk,56
+random_forest,43,PortScan,DoS Hulk - Attempted,1
+random_forest,43,PortScan,DoS Slowhttptest,0
+random_forest,43,PortScan,DoS Slowhttptest - Attempted,0
+random_forest,43,PortScan,DoS slowloris,0
+random_forest,43,PortScan,DoS slowloris - Attempted,1
+random_forest,43,PortScan,FTP-Patator,0
+random_forest,43,PortScan,FTP-Patator - Attempted,0
+random_forest,43,PortScan,Heartbleed,0
+random_forest,43,PortScan,Infiltration,0
+random_forest,43,PortScan,Infiltration - Attempted,44
+random_forest,43,PortScan,PortScan,0
+random_forest,43,PortScan,SSH-Patator,0
+random_forest,43,PortScan,SSH-Patator - Attempted,0
+random_forest,43,PortScan,Web Attack - Brute Force,0
+random_forest,43,PortScan,Web Attack - Brute Force - Attempted,6
+random_forest,43,PortScan,Web Attack - Sql Injection,0
+random_forest,43,PortScan,Web Attack - XSS,0
+random_forest,43,PortScan,Web Attack - XSS - Attempted,2
+extra_trees,43,BENIGN,BENIGN,289474
+extra_trees,43,BENIGN,Bot,0
+extra_trees,43,BENIGN,Bot - Attempted,0
+extra_trees,43,BENIGN,DDoS,0
+extra_trees,43,BENIGN,DoS GoldenEye,18
+extra_trees,43,BENIGN,DoS GoldenEye - Attempted,0
+extra_trees,43,BENIGN,DoS Hulk,16
+extra_trees,43,BENIGN,DoS Hulk - Attempted,15
+extra_trees,43,BENIGN,DoS Slowhttptest,54
+extra_trees,43,BENIGN,DoS Slowhttptest - Attempted,78
+extra_trees,43,BENIGN,DoS slowloris,57
+extra_trees,43,BENIGN,DoS slowloris - Attempted,6
+extra_trees,43,BENIGN,FTP-Patator,0
+extra_trees,43,BENIGN,FTP-Patator - Attempted,0
+extra_trees,43,BENIGN,Heartbleed,5
+extra_trees,43,BENIGN,Infiltration,1
+extra_trees,43,BENIGN,Infiltration - Attempted,1594
+extra_trees,43,BENIGN,PortScan,0
+extra_trees,43,BENIGN,SSH-Patator,6
+extra_trees,43,BENIGN,SSH-Patator - Attempted,0
+extra_trees,43,BENIGN,Web Attack - Brute Force,1
+extra_trees,43,BENIGN,Web Attack - Brute Force - Attempted,97
+extra_trees,43,BENIGN,Web Attack - Sql Injection,8
+extra_trees,43,BENIGN,Web Attack - XSS,0
+extra_trees,43,BENIGN,Web Attack - XSS - Attempted,3
+extra_trees,43,Bot,BENIGN,738
+extra_trees,43,Bot,Bot,0
+extra_trees,43,Bot,Bot - Attempted,0
+extra_trees,43,Bot,DDoS,0
+extra_trees,43,Bot,DoS GoldenEye,0
+extra_trees,43,Bot,DoS GoldenEye - Attempted,0
+extra_trees,43,Bot,DoS Hulk,0
+extra_trees,43,Bot,DoS Hulk - Attempted,0
+extra_trees,43,Bot,DoS Slowhttptest,0
+extra_trees,43,Bot,DoS Slowhttptest - Attempted,0
+extra_trees,43,Bot,DoS slowloris,0
+extra_trees,43,Bot,DoS slowloris - Attempted,0
+extra_trees,43,Bot,FTP-Patator,0
+extra_trees,43,Bot,FTP-Patator - Attempted,0
+extra_trees,43,Bot,Heartbleed,0
+extra_trees,43,Bot,Infiltration,0
+extra_trees,43,Bot,Infiltration - Attempted,0
+extra_trees,43,Bot,PortScan,0
+extra_trees,43,Bot,SSH-Patator,0
+extra_trees,43,Bot,SSH-Patator - Attempted,0
+extra_trees,43,Bot,Web Attack - Brute Force,0
+extra_trees,43,Bot,Web Attack - Brute Force - Attempted,0
+extra_trees,43,Bot,Web Attack - Sql Injection,0
+extra_trees,43,Bot,Web Attack - XSS,0
+extra_trees,43,Bot,Web Attack - XSS - Attempted,0
+extra_trees,43,Bot - Attempted,BENIGN,498
+extra_trees,43,Bot - Attempted,Bot,0
+extra_trees,43,Bot - Attempted,Bot - Attempted,0
+extra_trees,43,Bot - Attempted,DDoS,0
+extra_trees,43,Bot - Attempted,DoS GoldenEye,0
+extra_trees,43,Bot - Attempted,DoS GoldenEye - Attempted,0
+extra_trees,43,Bot - Attempted,DoS Hulk,0
+extra_trees,43,Bot - Attempted,DoS Hulk - Attempted,0
+extra_trees,43,Bot - Attempted,DoS Slowhttptest,0
+extra_trees,43,Bot - Attempted,DoS Slowhttptest - Attempted,0
+extra_trees,43,Bot - Attempted,DoS slowloris,0
+extra_trees,43,Bot - Attempted,DoS slowloris - Attempted,0
+extra_trees,43,Bot - Attempted,FTP-Patator,0
+extra_trees,43,Bot - Attempted,FTP-Patator - Attempted,0
+extra_trees,43,Bot - Attempted,Heartbleed,0
+extra_trees,43,Bot - Attempted,Infiltration,0
+extra_trees,43,Bot - Attempted,Infiltration - Attempted,972
+extra_trees,43,Bot - Attempted,PortScan,0
+extra_trees,43,Bot - Attempted,SSH-Patator,0
+extra_trees,43,Bot - Attempted,SSH-Patator - Attempted,0
+extra_trees,43,Bot - Attempted,Web Attack - Brute Force,0
+extra_trees,43,Bot - Attempted,Web Attack - Brute Force - Attempted,0
+extra_trees,43,Bot - Attempted,Web Attack - Sql Injection,0
+extra_trees,43,Bot - Attempted,Web Attack - XSS,0
+extra_trees,43,Bot - Attempted,Web Attack - XSS - Attempted,0
+extra_trees,43,DDoS,BENIGN,10640
+extra_trees,43,DDoS,Bot,0
+extra_trees,43,DDoS,Bot - Attempted,0
+extra_trees,43,DDoS,DDoS,0
+extra_trees,43,DDoS,DoS GoldenEye,30374
+extra_trees,43,DDoS,DoS GoldenEye - Attempted,0
+extra_trees,43,DDoS,DoS Hulk,54109
+extra_trees,43,DDoS,DoS Hulk - Attempted,0
+extra_trees,43,DDoS,DoS Slowhttptest,0
+extra_trees,43,DDoS,DoS Slowhttptest - Attempted,0
+extra_trees,43,DDoS,DoS slowloris,0
+extra_trees,43,DDoS,DoS slowloris - Attempted,0
+extra_trees,43,DDoS,FTP-Patator,0
+extra_trees,43,DDoS,FTP-Patator - Attempted,0
+extra_trees,43,DDoS,Heartbleed,0
+extra_trees,43,DDoS,Infiltration,0
+extra_trees,43,DDoS,Infiltration - Attempted,0
+extra_trees,43,DDoS,PortScan,0
+extra_trees,43,DDoS,SSH-Patator,0
+extra_trees,43,DDoS,SSH-Patator - Attempted,0
+extra_trees,43,DDoS,Web Attack - Brute Force,0
+extra_trees,43,DDoS,Web Attack - Brute Force - Attempted,0
+extra_trees,43,DDoS,Web Attack - Sql Injection,0
+extra_trees,43,DDoS,Web Attack - XSS,0
+extra_trees,43,DDoS,Web Attack - XSS - Attempted,0
+extra_trees,43,PortScan,BENIGN,159056
+extra_trees,43,PortScan,Bot,0
+extra_trees,43,PortScan,Bot - Attempted,0
+extra_trees,43,PortScan,DDoS,0
+extra_trees,43,PortScan,DoS GoldenEye,28
+extra_trees,43,PortScan,DoS GoldenEye - Attempted,0
+extra_trees,43,PortScan,DoS Hulk,56
+extra_trees,43,PortScan,DoS Hulk - Attempted,0
+extra_trees,43,PortScan,DoS Slowhttptest,0
+extra_trees,43,PortScan,DoS Slowhttptest - Attempted,0
+extra_trees,43,PortScan,DoS slowloris,0
+extra_trees,43,PortScan,DoS slowloris - Attempted,1
+extra_trees,43,PortScan,FTP-Patator,0
+extra_trees,43,PortScan,FTP-Patator - Attempted,0
+extra_trees,43,PortScan,Heartbleed,0
+extra_trees,43,PortScan,Infiltration,0
+extra_trees,43,PortScan,Infiltration - Attempted,0
+extra_trees,43,PortScan,PortScan,0
+extra_trees,43,PortScan,SSH-Patator,0
+extra_trees,43,PortScan,SSH-Patator - Attempted,0
+extra_trees,43,PortScan,Web Attack - Brute Force,4
+extra_trees,43,PortScan,Web Attack - Brute Force - Attempted,6
+extra_trees,43,PortScan,Web Attack - Sql Injection,0
+extra_trees,43,PortScan,Web Attack - XSS,0
+extra_trees,43,PortScan,Web Attack - XSS - Attempted,0
+sgd_log_loss,43,BENIGN,BENIGN,267538
+sgd_log_loss,43,BENIGN,Bot,0
+sgd_log_loss,43,BENIGN,Bot - Attempted,0
+sgd_log_loss,43,BENIGN,DDoS,0
+sgd_log_loss,43,BENIGN,DoS GoldenEye,499
+sgd_log_loss,43,BENIGN,DoS GoldenEye - Attempted,296
+sgd_log_loss,43,BENIGN,DoS Hulk,489
+sgd_log_loss,43,BENIGN,DoS Hulk - Attempted,403
+sgd_log_loss,43,BENIGN,DoS Slowhttptest,1582
+sgd_log_loss,43,BENIGN,DoS Slowhttptest - Attempted,585
+sgd_log_loss,43,BENIGN,DoS slowloris,4001
+sgd_log_loss,43,BENIGN,DoS slowloris - Attempted,1227
+sgd_log_loss,43,BENIGN,FTP-Patator,32
+sgd_log_loss,43,BENIGN,FTP-Patator - Attempted,0
+sgd_log_loss,43,BENIGN,Heartbleed,506
+sgd_log_loss,43,BENIGN,Infiltration,553
+sgd_log_loss,43,BENIGN,Infiltration - Attempted,2818
+sgd_log_loss,43,BENIGN,PortScan,0
+sgd_log_loss,43,BENIGN,SSH-Patator,238
+sgd_log_loss,43,BENIGN,SSH-Patator - Attempted,335
+sgd_log_loss,43,BENIGN,Web Attack - Brute Force,214
+sgd_log_loss,43,BENIGN,Web Attack - Brute Force - Attempted,2150
+sgd_log_loss,43,BENIGN,Web Attack - Sql Injection,3925
+sgd_log_loss,43,BENIGN,Web Attack - XSS,3844
+sgd_log_loss,43,BENIGN,Web Attack - XSS - Attempted,198
+sgd_log_loss,43,Bot,BENIGN,668
+sgd_log_loss,43,Bot,Bot,0
+sgd_log_loss,43,Bot,Bot - Attempted,0
+sgd_log_loss,43,Bot,DDoS,0
+sgd_log_loss,43,Bot,DoS GoldenEye,0
+sgd_log_loss,43,Bot,DoS GoldenEye - Attempted,0
+sgd_log_loss,43,Bot,DoS Hulk,0
+sgd_log_loss,43,Bot,DoS Hulk - Attempted,0
+sgd_log_loss,43,Bot,DoS Slowhttptest,0
+sgd_log_loss,43,Bot,DoS Slowhttptest - Attempted,0
+sgd_log_loss,43,Bot,DoS slowloris,0
+sgd_log_loss,43,Bot,DoS slowloris - Attempted,0
+sgd_log_loss,43,Bot,FTP-Patator,0
+sgd_log_loss,43,Bot,FTP-Patator - Attempted,0
+sgd_log_loss,43,Bot,Heartbleed,0
+sgd_log_loss,43,Bot,Infiltration,28
+sgd_log_loss,43,Bot,Infiltration - Attempted,0
+sgd_log_loss,43,Bot,PortScan,0
+sgd_log_loss,43,Bot,SSH-Patator,0
+sgd_log_loss,43,Bot,SSH-Patator - Attempted,0
+sgd_log_loss,43,Bot,Web Attack - Brute Force,0
+sgd_log_loss,43,Bot,Web Attack - Brute Force - Attempted,0
+sgd_log_loss,43,Bot,Web Attack - Sql Injection,18
+sgd_log_loss,43,Bot,Web Attack - XSS,24
+sgd_log_loss,43,Bot,Web Attack - XSS - Attempted,0
+sgd_log_loss,43,Bot - Attempted,BENIGN,0
+sgd_log_loss,43,Bot - Attempted,Bot,0
+sgd_log_loss,43,Bot - Attempted,Bot - Attempted,0
+sgd_log_loss,43,Bot - Attempted,DDoS,0
+sgd_log_loss,43,Bot - Attempted,DoS GoldenEye,0
+sgd_log_loss,43,Bot - Attempted,DoS GoldenEye - Attempted,0
+sgd_log_loss,43,Bot - Attempted,DoS Hulk,0
+sgd_log_loss,43,Bot - Attempted,DoS Hulk - Attempted,0
+sgd_log_loss,43,Bot - Attempted,DoS Slowhttptest,0
+sgd_log_loss,43,Bot - Attempted,DoS Slowhttptest - Attempted,0
+sgd_log_loss,43,Bot - Attempted,DoS slowloris,0
+sgd_log_loss,43,Bot - Attempted,DoS slowloris - Attempted,0
+sgd_log_loss,43,Bot - Attempted,FTP-Patator,0
+sgd_log_loss,43,Bot - Attempted,FTP-Patator - Attempted,0
+sgd_log_loss,43,Bot - Attempted,Heartbleed,0
+sgd_log_loss,43,Bot - Attempted,Infiltration,0
+sgd_log_loss,43,Bot - Attempted,Infiltration - Attempted,1470
+sgd_log_loss,43,Bot - Attempted,PortScan,0
+sgd_log_loss,43,Bot - Attempted,SSH-Patator,0
+sgd_log_loss,43,Bot - Attempted,SSH-Patator - Attempted,0
+sgd_log_loss,43,Bot - Attempted,Web Attack - Brute Force,0
+sgd_log_loss,43,Bot - Attempted,Web Attack - Brute Force - Attempted,0
+sgd_log_loss,43,Bot - Attempted,Web Attack - Sql Injection,0
+sgd_log_loss,43,Bot - Attempted,Web Attack - XSS,0
+sgd_log_loss,43,Bot - Attempted,Web Attack - XSS - Attempted,0
+sgd_log_loss,43,DDoS,BENIGN,30845
+sgd_log_loss,43,DDoS,Bot,0
+sgd_log_loss,43,DDoS,Bot - Attempted,0
+sgd_log_loss,43,DDoS,DDoS,0
+sgd_log_loss,43,DDoS,DoS GoldenEye,8274
+sgd_log_loss,43,DDoS,DoS GoldenEye - Attempted,0
+sgd_log_loss,43,DDoS,DoS Hulk,55254
+sgd_log_loss,43,DDoS,DoS Hulk - Attempted,0
+sgd_log_loss,43,DDoS,DoS Slowhttptest,17
+sgd_log_loss,43,DDoS,DoS Slowhttptest - Attempted,733
+sgd_log_loss,43,DDoS,DoS slowloris,0
+sgd_log_loss,43,DDoS,DoS slowloris - Attempted,0
+sgd_log_loss,43,DDoS,FTP-Patator,0
+sgd_log_loss,43,DDoS,FTP-Patator - Attempted,0
+sgd_log_loss,43,DDoS,Heartbleed,0
+sgd_log_loss,43,DDoS,Infiltration,0
+sgd_log_loss,43,DDoS,Infiltration - Attempted,0
+sgd_log_loss,43,DDoS,PortScan,0
+sgd_log_loss,43,DDoS,SSH-Patator,0
+sgd_log_loss,43,DDoS,SSH-Patator - Attempted,0
+sgd_log_loss,43,DDoS,Web Attack - Brute Force,0
+sgd_log_loss,43,DDoS,Web Attack - Brute Force - Attempted,0
+sgd_log_loss,43,DDoS,Web Attack - Sql Injection,0
+sgd_log_loss,43,DDoS,Web Attack - XSS,0
+sgd_log_loss,43,DDoS,Web Attack - XSS - Attempted,0
+sgd_log_loss,43,PortScan,BENIGN,647
+sgd_log_loss,43,PortScan,Bot,0
+sgd_log_loss,43,PortScan,Bot - Attempted,0
+sgd_log_loss,43,PortScan,DDoS,0
+sgd_log_loss,43,PortScan,DoS GoldenEye,2
+sgd_log_loss,43,PortScan,DoS GoldenEye - Attempted,0
+sgd_log_loss,43,PortScan,DoS Hulk,81
+sgd_log_loss,43,PortScan,DoS Hulk - Attempted,484
+sgd_log_loss,43,PortScan,DoS Slowhttptest,0
+sgd_log_loss,43,PortScan,DoS Slowhttptest - Attempted,0
+sgd_log_loss,43,PortScan,DoS slowloris,80947
+sgd_log_loss,43,PortScan,DoS slowloris - Attempted,1
+sgd_log_loss,43,PortScan,FTP-Patator,0
+sgd_log_loss,43,PortScan,FTP-Patator - Attempted,0
+sgd_log_loss,43,PortScan,Heartbleed,0
+sgd_log_loss,43,PortScan,Infiltration,0
+sgd_log_loss,43,PortScan,Infiltration - Attempted,76896
+sgd_log_loss,43,PortScan,PortScan,0
+sgd_log_loss,43,PortScan,SSH-Patator,0
+sgd_log_loss,43,PortScan,SSH-Patator - Attempted,3
+sgd_log_loss,43,PortScan,Web Attack - Brute Force,0
+sgd_log_loss,43,PortScan,Web Attack - Brute Force - Attempted,20
+sgd_log_loss,43,PortScan,Web Attack - Sql Injection,18
+sgd_log_loss,43,PortScan,Web Attack - XSS,0
+sgd_log_loss,43,PortScan,Web Attack - XSS - Attempted,52
+random_forest,44,BENIGN,BENIGN,288835
+random_forest,44,BENIGN,Bot,0
+random_forest,44,BENIGN,Bot - Attempted,0
+random_forest,44,BENIGN,DDoS,0
+random_forest,44,BENIGN,DoS GoldenEye,15
+random_forest,44,BENIGN,DoS GoldenEye - Attempted,0
+random_forest,44,BENIGN,DoS Hulk,15
+random_forest,44,BENIGN,DoS Hulk - Attempted,1
+random_forest,44,BENIGN,DoS Slowhttptest,14
+random_forest,44,BENIGN,DoS Slowhttptest - Attempted,82
+random_forest,44,BENIGN,DoS slowloris,28
+random_forest,44,BENIGN,DoS slowloris - Attempted,4
+random_forest,44,BENIGN,FTP-Patator,0
+random_forest,44,BENIGN,FTP-Patator - Attempted,0
+random_forest,44,BENIGN,Heartbleed,7
+random_forest,44,BENIGN,Infiltration,0
+random_forest,44,BENIGN,Infiltration - Attempted,2423
+random_forest,44,BENIGN,PortScan,0
+random_forest,44,BENIGN,SSH-Patator,0
+random_forest,44,BENIGN,SSH-Patator - Attempted,0
+random_forest,44,BENIGN,Web Attack - Brute Force,2
+random_forest,44,BENIGN,Web Attack - Brute Force - Attempted,1
+random_forest,44,BENIGN,Web Attack - Sql Injection,4
+random_forest,44,BENIGN,Web Attack - XSS,0
+random_forest,44,BENIGN,Web Attack - XSS - Attempted,2
+random_forest,44,Bot,BENIGN,738
+random_forest,44,Bot,Bot,0
+random_forest,44,Bot,Bot - Attempted,0
+random_forest,44,Bot,DDoS,0
+random_forest,44,Bot,DoS GoldenEye,0
+random_forest,44,Bot,DoS GoldenEye - Attempted,0
+random_forest,44,Bot,DoS Hulk,0
+random_forest,44,Bot,DoS Hulk - Attempted,0
+random_forest,44,Bot,DoS Slowhttptest,0
+random_forest,44,Bot,DoS Slowhttptest - Attempted,0
+random_forest,44,Bot,DoS slowloris,0
+random_forest,44,Bot,DoS slowloris - Attempted,0
+random_forest,44,Bot,FTP-Patator,0
+random_forest,44,Bot,FTP-Patator - Attempted,0
+random_forest,44,Bot,Heartbleed,0
+random_forest,44,Bot,Infiltration,0
+random_forest,44,Bot,Infiltration - Attempted,0
+random_forest,44,Bot,PortScan,0
+random_forest,44,Bot,SSH-Patator,0
+random_forest,44,Bot,SSH-Patator - Attempted,0
+random_forest,44,Bot,Web Attack - Brute Force,0
+random_forest,44,Bot,Web Attack - Brute Force - Attempted,0
+random_forest,44,Bot,Web Attack - Sql Injection,0
+random_forest,44,Bot,Web Attack - XSS,0
+random_forest,44,Bot,Web Attack - XSS - Attempted,0
+random_forest,44,Bot - Attempted,BENIGN,0
+random_forest,44,Bot - Attempted,Bot,0
+random_forest,44,Bot - Attempted,Bot - Attempted,0
+random_forest,44,Bot - Attempted,DDoS,0
+random_forest,44,Bot - Attempted,DoS GoldenEye,0
+random_forest,44,Bot - Attempted,DoS GoldenEye - Attempted,0
+random_forest,44,Bot - Attempted,DoS Hulk,0
+random_forest,44,Bot - Attempted,DoS Hulk - Attempted,0
+random_forest,44,Bot - Attempted,DoS Slowhttptest,0
+random_forest,44,Bot - Attempted,DoS Slowhttptest - Attempted,0
+random_forest,44,Bot - Attempted,DoS slowloris,0
+random_forest,44,Bot - Attempted,DoS slowloris - Attempted,0
+random_forest,44,Bot - Attempted,FTP-Patator,0
+random_forest,44,Bot - Attempted,FTP-Patator - Attempted,0
+random_forest,44,Bot - Attempted,Heartbleed,0
+random_forest,44,Bot - Attempted,Infiltration,0
+random_forest,44,Bot - Attempted,Infiltration - Attempted,1470
+random_forest,44,Bot - Attempted,PortScan,0
+random_forest,44,Bot - Attempted,SSH-Patator,0
+random_forest,44,Bot - Attempted,SSH-Patator - Attempted,0
+random_forest,44,Bot - Attempted,Web Attack - Brute Force,0
+random_forest,44,Bot - Attempted,Web Attack - Brute Force - Attempted,0
+random_forest,44,Bot - Attempted,Web Attack - Sql Injection,0
+random_forest,44,Bot - Attempted,Web Attack - XSS,0
+random_forest,44,Bot - Attempted,Web Attack - XSS - Attempted,0
+random_forest,44,DDoS,BENIGN,49
+random_forest,44,DDoS,Bot,0
+random_forest,44,DDoS,Bot - Attempted,0
+random_forest,44,DDoS,DDoS,0
+random_forest,44,DDoS,DoS GoldenEye,26
+random_forest,44,DDoS,DoS GoldenEye - Attempted,0
+random_forest,44,DDoS,DoS Hulk,95027
+random_forest,44,DDoS,DoS Hulk - Attempted,0
+random_forest,44,DDoS,DoS Slowhttptest,0
+random_forest,44,DDoS,DoS Slowhttptest - Attempted,0
+random_forest,44,DDoS,DoS slowloris,0
+random_forest,44,DDoS,DoS slowloris - Attempted,0
+random_forest,44,DDoS,FTP-Patator,0
+random_forest,44,DDoS,FTP-Patator - Attempted,0
+random_forest,44,DDoS,Heartbleed,0
+random_forest,44,DDoS,Infiltration,0
+random_forest,44,DDoS,Infiltration - Attempted,0
+random_forest,44,DDoS,PortScan,0
+random_forest,44,DDoS,SSH-Patator,21
+random_forest,44,DDoS,SSH-Patator - Attempted,0
+random_forest,44,DDoS,Web Attack - Brute Force,0
+random_forest,44,DDoS,Web Attack - Brute Force - Attempted,0
+random_forest,44,DDoS,Web Attack - Sql Injection,0
+random_forest,44,DDoS,Web Attack - XSS,0
+random_forest,44,DDoS,Web Attack - XSS - Attempted,0
+random_forest,44,PortScan,BENIGN,159007
+random_forest,44,PortScan,Bot,0
+random_forest,44,PortScan,Bot - Attempted,0
+random_forest,44,PortScan,DDoS,0
+random_forest,44,PortScan,DoS GoldenEye,28
+random_forest,44,PortScan,DoS GoldenEye - Attempted,0
+random_forest,44,PortScan,DoS Hulk,56
+random_forest,44,PortScan,DoS Hulk - Attempted,1
+random_forest,44,PortScan,DoS Slowhttptest,0
+random_forest,44,PortScan,DoS Slowhttptest - Attempted,0
+random_forest,44,PortScan,DoS slowloris,0
+random_forest,44,PortScan,DoS slowloris - Attempted,1
+random_forest,44,PortScan,FTP-Patator,0
+random_forest,44,PortScan,FTP-Patator - Attempted,0
+random_forest,44,PortScan,Heartbleed,0
+random_forest,44,PortScan,Infiltration,0
+random_forest,44,PortScan,Infiltration - Attempted,45
+random_forest,44,PortScan,PortScan,0
+random_forest,44,PortScan,SSH-Patator,0
+random_forest,44,PortScan,SSH-Patator - Attempted,0
+random_forest,44,PortScan,Web Attack - Brute Force,4
+random_forest,44,PortScan,Web Attack - Brute Force - Attempted,7
+random_forest,44,PortScan,Web Attack - Sql Injection,0
+random_forest,44,PortScan,Web Attack - XSS,0
+random_forest,44,PortScan,Web Attack - XSS - Attempted,2
+extra_trees,44,BENIGN,BENIGN,288887
+extra_trees,44,BENIGN,Bot,0
+extra_trees,44,BENIGN,Bot - Attempted,0
+extra_trees,44,BENIGN,DDoS,0
+extra_trees,44,BENIGN,DoS GoldenEye,14
+extra_trees,44,BENIGN,DoS GoldenEye - Attempted,0
+extra_trees,44,BENIGN,DoS Hulk,12
+extra_trees,44,BENIGN,DoS Hulk - Attempted,12
+extra_trees,44,BENIGN,DoS Slowhttptest,6
+extra_trees,44,BENIGN,DoS Slowhttptest - Attempted,83
+extra_trees,44,BENIGN,DoS slowloris,23
+extra_trees,44,BENIGN,DoS slowloris - Attempted,5
+extra_trees,44,BENIGN,FTP-Patator,0
+extra_trees,44,BENIGN,FTP-Patator - Attempted,0
+extra_trees,44,BENIGN,Heartbleed,3
+extra_trees,44,BENIGN,Infiltration,0
+extra_trees,44,BENIGN,Infiltration - Attempted,2286
+extra_trees,44,BENIGN,PortScan,0
+extra_trees,44,BENIGN,SSH-Patator,19
+extra_trees,44,BENIGN,SSH-Patator - Attempted,0
+extra_trees,44,BENIGN,Web Attack - Brute Force,9
+extra_trees,44,BENIGN,Web Attack - Brute Force - Attempted,65
+extra_trees,44,BENIGN,Web Attack - Sql Injection,9
+extra_trees,44,BENIGN,Web Attack - XSS,0
+extra_trees,44,BENIGN,Web Attack - XSS - Attempted,0
+extra_trees,44,Bot,BENIGN,738
+extra_trees,44,Bot,Bot,0
+extra_trees,44,Bot,Bot - Attempted,0
+extra_trees,44,Bot,DDoS,0
+extra_trees,44,Bot,DoS GoldenEye,0
+extra_trees,44,Bot,DoS GoldenEye - Attempted,0
+extra_trees,44,Bot,DoS Hulk,0
+extra_trees,44,Bot,DoS Hulk - Attempted,0
+extra_trees,44,Bot,DoS Slowhttptest,0
+extra_trees,44,Bot,DoS Slowhttptest - Attempted,0
+extra_trees,44,Bot,DoS slowloris,0
+extra_trees,44,Bot,DoS slowloris - Attempted,0
+extra_trees,44,Bot,FTP-Patator,0
+extra_trees,44,Bot,FTP-Patator - Attempted,0
+extra_trees,44,Bot,Heartbleed,0
+extra_trees,44,Bot,Infiltration,0
+extra_trees,44,Bot,Infiltration - Attempted,0
+extra_trees,44,Bot,PortScan,0
+extra_trees,44,Bot,SSH-Patator,0
+extra_trees,44,Bot,SSH-Patator - Attempted,0
+extra_trees,44,Bot,Web Attack - Brute Force,0
+extra_trees,44,Bot,Web Attack - Brute Force - Attempted,0
+extra_trees,44,Bot,Web Attack - Sql Injection,0
+extra_trees,44,Bot,Web Attack - XSS,0
+extra_trees,44,Bot,Web Attack - XSS - Attempted,0
+extra_trees,44,Bot - Attempted,BENIGN,60
+extra_trees,44,Bot - Attempted,Bot,0
+extra_trees,44,Bot - Attempted,Bot - Attempted,0
+extra_trees,44,Bot - Attempted,DDoS,0
+extra_trees,44,Bot - Attempted,DoS GoldenEye,0
+extra_trees,44,Bot - Attempted,DoS GoldenEye - Attempted,0
+extra_trees,44,Bot - Attempted,DoS Hulk,0
+extra_trees,44,Bot - Attempted,DoS Hulk - Attempted,0
+extra_trees,44,Bot - Attempted,DoS Slowhttptest,0
+extra_trees,44,Bot - Attempted,DoS Slowhttptest - Attempted,0
+extra_trees,44,Bot - Attempted,DoS slowloris,0
+extra_trees,44,Bot - Attempted,DoS slowloris - Attempted,0
+extra_trees,44,Bot - Attempted,FTP-Patator,0
+extra_trees,44,Bot - Attempted,FTP-Patator - Attempted,0
+extra_trees,44,Bot - Attempted,Heartbleed,0
+extra_trees,44,Bot - Attempted,Infiltration,0
+extra_trees,44,Bot - Attempted,Infiltration - Attempted,1410
+extra_trees,44,Bot - Attempted,PortScan,0
+extra_trees,44,Bot - Attempted,SSH-Patator,0
+extra_trees,44,Bot - Attempted,SSH-Patator - Attempted,0
+extra_trees,44,Bot - Attempted,Web Attack - Brute Force,0
+extra_trees,44,Bot - Attempted,Web Attack - Brute Force - Attempted,0
+extra_trees,44,Bot - Attempted,Web Attack - Sql Injection,0
+extra_trees,44,Bot - Attempted,Web Attack - XSS,0
+extra_trees,44,Bot - Attempted,Web Attack - XSS - Attempted,0
+extra_trees,44,DDoS,BENIGN,347
+extra_trees,44,DDoS,Bot,0
+extra_trees,44,DDoS,Bot - Attempted,0
+extra_trees,44,DDoS,DDoS,0
+extra_trees,44,DDoS,DoS GoldenEye,25967
+extra_trees,44,DDoS,DoS GoldenEye - Attempted,0
+extra_trees,44,DDoS,DoS Hulk,68809
+extra_trees,44,DDoS,DoS Hulk - Attempted,0
+extra_trees,44,DDoS,DoS Slowhttptest,0
+extra_trees,44,DDoS,DoS Slowhttptest - Attempted,0
+extra_trees,44,DDoS,DoS slowloris,0
+extra_trees,44,DDoS,DoS slowloris - Attempted,0
+extra_trees,44,DDoS,FTP-Patator,0
+extra_trees,44,DDoS,FTP-Patator - Attempted,0
+extra_trees,44,DDoS,Heartbleed,0
+extra_trees,44,DDoS,Infiltration,0
+extra_trees,44,DDoS,Infiltration - Attempted,0
+extra_trees,44,DDoS,PortScan,0
+extra_trees,44,DDoS,SSH-Patator,0
+extra_trees,44,DDoS,SSH-Patator - Attempted,0
+extra_trees,44,DDoS,Web Attack - Brute Force,0
+extra_trees,44,DDoS,Web Attack - Brute Force - Attempted,0
+extra_trees,44,DDoS,Web Attack - Sql Injection,0
+extra_trees,44,DDoS,Web Attack - XSS,0
+extra_trees,44,DDoS,Web Attack - XSS - Attempted,0
+extra_trees,44,PortScan,BENIGN,159057
+extra_trees,44,PortScan,Bot,0
+extra_trees,44,PortScan,Bot - Attempted,0
+extra_trees,44,PortScan,DDoS,0
+extra_trees,44,PortScan,DoS GoldenEye,28
+extra_trees,44,PortScan,DoS GoldenEye - Attempted,0
+extra_trees,44,PortScan,DoS Hulk,56
+extra_trees,44,PortScan,DoS Hulk - Attempted,0
+extra_trees,44,PortScan,DoS Slowhttptest,0
+extra_trees,44,PortScan,DoS Slowhttptest - Attempted,0
+extra_trees,44,PortScan,DoS slowloris,0
+extra_trees,44,PortScan,DoS slowloris - Attempted,0
+extra_trees,44,PortScan,FTP-Patator,0
+extra_trees,44,PortScan,FTP-Patator - Attempted,0
+extra_trees,44,PortScan,Heartbleed,0
+extra_trees,44,PortScan,Infiltration,0
+extra_trees,44,PortScan,Infiltration - Attempted,0
+extra_trees,44,PortScan,PortScan,0
+extra_trees,44,PortScan,SSH-Patator,0
+extra_trees,44,PortScan,SSH-Patator - Attempted,0
+extra_trees,44,PortScan,Web Attack - Brute Force,4
+extra_trees,44,PortScan,Web Attack - Brute Force - Attempted,6
+extra_trees,44,PortScan,Web Attack - Sql Injection,0
+extra_trees,44,PortScan,Web Attack - XSS,0
+extra_trees,44,PortScan,Web Attack - XSS - Attempted,0
+sgd_log_loss,44,BENIGN,BENIGN,263114
+sgd_log_loss,44,BENIGN,Bot,0
+sgd_log_loss,44,BENIGN,Bot - Attempted,0
+sgd_log_loss,44,BENIGN,DDoS,0
+sgd_log_loss,44,BENIGN,DoS GoldenEye,476
+sgd_log_loss,44,BENIGN,DoS GoldenEye - Attempted,288
+sgd_log_loss,44,BENIGN,DoS Hulk,504
+sgd_log_loss,44,BENIGN,DoS Hulk - Attempted,739
+sgd_log_loss,44,BENIGN,DoS Slowhttptest,1761
+sgd_log_loss,44,BENIGN,DoS Slowhttptest - Attempted,595
+sgd_log_loss,44,BENIGN,DoS slowloris,1959
+sgd_log_loss,44,BENIGN,DoS slowloris - Attempted,616
+sgd_log_loss,44,BENIGN,FTP-Patator,35
+sgd_log_loss,44,BENIGN,FTP-Patator - Attempted,5
+sgd_log_loss,44,BENIGN,Heartbleed,842
+sgd_log_loss,44,BENIGN,Infiltration,2171
+sgd_log_loss,44,BENIGN,Infiltration - Attempted,2963
+sgd_log_loss,44,BENIGN,PortScan,0
+sgd_log_loss,44,BENIGN,SSH-Patator,46
+sgd_log_loss,44,BENIGN,SSH-Patator - Attempted,0
+sgd_log_loss,44,BENIGN,Web Attack - Brute Force,998
+sgd_log_loss,44,BENIGN,Web Attack - Brute Force - Attempted,2073
+sgd_log_loss,44,BENIGN,Web Attack - Sql Injection,10415
+sgd_log_loss,44,BENIGN,Web Attack - XSS,1429
+sgd_log_loss,44,BENIGN,Web Attack - XSS - Attempted,404
+sgd_log_loss,44,Bot,BENIGN,668
+sgd_log_loss,44,Bot,Bot,0
+sgd_log_loss,44,Bot,Bot - Attempted,0
+sgd_log_loss,44,Bot,DDoS,0
+sgd_log_loss,44,Bot,DoS GoldenEye,0
+sgd_log_loss,44,Bot,DoS GoldenEye - Attempted,0
+sgd_log_loss,44,Bot,DoS Hulk,0
+sgd_log_loss,44,Bot,DoS Hulk - Attempted,0
+sgd_log_loss,44,Bot,DoS Slowhttptest,0
+sgd_log_loss,44,Bot,DoS Slowhttptest - Attempted,0
+sgd_log_loss,44,Bot,DoS slowloris,0
+sgd_log_loss,44,Bot,DoS slowloris - Attempted,0
+sgd_log_loss,44,Bot,FTP-Patator,0
+sgd_log_loss,44,Bot,FTP-Patator - Attempted,0
+sgd_log_loss,44,Bot,Heartbleed,0
+sgd_log_loss,44,Bot,Infiltration,32
+sgd_log_loss,44,Bot,Infiltration - Attempted,0
+sgd_log_loss,44,Bot,PortScan,0
+sgd_log_loss,44,Bot,SSH-Patator,0
+sgd_log_loss,44,Bot,SSH-Patator - Attempted,0
+sgd_log_loss,44,Bot,Web Attack - Brute Force,0
+sgd_log_loss,44,Bot,Web Attack - Brute Force - Attempted,0
+sgd_log_loss,44,Bot,Web Attack - Sql Injection,25
+sgd_log_loss,44,Bot,Web Attack - XSS,13
+sgd_log_loss,44,Bot,Web Attack - XSS - Attempted,0
+sgd_log_loss,44,Bot - Attempted,BENIGN,0
+sgd_log_loss,44,Bot - Attempted,Bot,0
+sgd_log_loss,44,Bot - Attempted,Bot - Attempted,0
+sgd_log_loss,44,Bot - Attempted,DDoS,0
+sgd_log_loss,44,Bot - Attempted,DoS GoldenEye,0
+sgd_log_loss,44,Bot - Attempted,DoS GoldenEye - Attempted,0
+sgd_log_loss,44,Bot - Attempted,DoS Hulk,0
+sgd_log_loss,44,Bot - Attempted,DoS Hulk - Attempted,0
+sgd_log_loss,44,Bot - Attempted,DoS Slowhttptest,0
+sgd_log_loss,44,Bot - Attempted,DoS Slowhttptest - Attempted,0
+sgd_log_loss,44,Bot - Attempted,DoS slowloris,0
+sgd_log_loss,44,Bot - Attempted,DoS slowloris - Attempted,0
+sgd_log_loss,44,Bot - Attempted,FTP-Patator,0
+sgd_log_loss,44,Bot - Attempted,FTP-Patator - Attempted,0
+sgd_log_loss,44,Bot - Attempted,Heartbleed,0
+sgd_log_loss,44,Bot - Attempted,Infiltration,0
+sgd_log_loss,44,Bot - Attempted,Infiltration - Attempted,1470
+sgd_log_loss,44,Bot - Attempted,PortScan,0
+sgd_log_loss,44,Bot - Attempted,SSH-Patator,0
+sgd_log_loss,44,Bot - Attempted,SSH-Patator - Attempted,0
+sgd_log_loss,44,Bot - Attempted,Web Attack - Brute Force,0
+sgd_log_loss,44,Bot - Attempted,Web Attack - Brute Force - Attempted,0
+sgd_log_loss,44,Bot - Attempted,Web Attack - Sql Injection,0
+sgd_log_loss,44,Bot - Attempted,Web Attack - XSS,0
+sgd_log_loss,44,Bot - Attempted,Web Attack - XSS - Attempted,0
+sgd_log_loss,44,DDoS,BENIGN,41455
+sgd_log_loss,44,DDoS,Bot,0
+sgd_log_loss,44,DDoS,Bot - Attempted,0
+sgd_log_loss,44,DDoS,DDoS,0
+sgd_log_loss,44,DDoS,DoS GoldenEye,16263
+sgd_log_loss,44,DDoS,DoS GoldenEye - Attempted,0
+sgd_log_loss,44,DDoS,DoS Hulk,37401
+sgd_log_loss,44,DDoS,DoS Hulk - Attempted,0
+sgd_log_loss,44,DDoS,DoS Slowhttptest,0
+sgd_log_loss,44,DDoS,DoS Slowhttptest - Attempted,4
+sgd_log_loss,44,DDoS,DoS slowloris,0
+sgd_log_loss,44,DDoS,DoS slowloris - Attempted,0
+sgd_log_loss,44,DDoS,FTP-Patator,0
+sgd_log_loss,44,DDoS,FTP-Patator - Attempted,0
+sgd_log_loss,44,DDoS,Heartbleed,0
+sgd_log_loss,44,DDoS,Infiltration,0
+sgd_log_loss,44,DDoS,Infiltration - Attempted,0
+sgd_log_loss,44,DDoS,PortScan,0
+sgd_log_loss,44,DDoS,SSH-Patator,0
+sgd_log_loss,44,DDoS,SSH-Patator - Attempted,0
+sgd_log_loss,44,DDoS,Web Attack - Brute Force,0
+sgd_log_loss,44,DDoS,Web Attack - Brute Force - Attempted,0
+sgd_log_loss,44,DDoS,Web Attack - Sql Injection,0
+sgd_log_loss,44,DDoS,Web Attack - XSS,0
+sgd_log_loss,44,DDoS,Web Attack - XSS - Attempted,0
+sgd_log_loss,44,PortScan,BENIGN,748
+sgd_log_loss,44,PortScan,Bot,0
+sgd_log_loss,44,PortScan,Bot - Attempted,0
+sgd_log_loss,44,PortScan,DDoS,0
+sgd_log_loss,44,PortScan,DoS GoldenEye,2
+sgd_log_loss,44,PortScan,DoS GoldenEye - Attempted,0
+sgd_log_loss,44,PortScan,DoS Hulk,80
+sgd_log_loss,44,PortScan,DoS Hulk - Attempted,542
+sgd_log_loss,44,PortScan,DoS Slowhttptest,0
+sgd_log_loss,44,PortScan,DoS Slowhttptest - Attempted,0
+sgd_log_loss,44,PortScan,DoS slowloris,157382
+sgd_log_loss,44,PortScan,DoS slowloris - Attempted,70
+sgd_log_loss,44,PortScan,FTP-Patator,0
+sgd_log_loss,44,PortScan,FTP-Patator - Attempted,0
+sgd_log_loss,44,PortScan,Heartbleed,0
+sgd_log_loss,44,PortScan,Infiltration,2
+sgd_log_loss,44,PortScan,Infiltration - Attempted,229
+sgd_log_loss,44,PortScan,PortScan,0
+sgd_log_loss,44,PortScan,SSH-Patator,0
+sgd_log_loss,44,PortScan,SSH-Patator - Attempted,1
+sgd_log_loss,44,PortScan,Web Attack - Brute Force,0
+sgd_log_loss,44,PortScan,Web Attack - Brute Force - Attempted,5
+sgd_log_loss,44,PortScan,Web Attack - Sql Injection,23
+sgd_log_loss,44,PortScan,Web Attack - XSS,0
+sgd_log_loss,44,PortScan,Web Attack - XSS - Attempted,67

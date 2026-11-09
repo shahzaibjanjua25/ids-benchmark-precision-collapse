@@ -1,0 +1,46 @@
+model,seed,label,test_support,train_label_available,f1,recall
+random_forest,42,BENIGN,291433,1,0.7804697444268183,0.9909584707291212
+random_forest,42,Bot,738,0,0.0,0.0
+random_forest,42,Bot - Attempted,1470,0,0.0,0.0
+random_forest,42,DDoS,95123,0,0.0,0.0
+random_forest,42,PortScan,159151,0,0.0,0.0
+extra_trees,42,BENIGN,291433,1,0.7809851316644073,0.9943623405722756
+extra_trees,42,Bot,738,0,0.0,0.0
+extra_trees,42,Bot - Attempted,1470,0,0.0,0.0
+extra_trees,42,DDoS,95123,0,0.0,0.0
+extra_trees,42,PortScan,159151,0,0.0,0.0
+sgd_log_loss,42,BENIGN,291433,1,0.8335793994707981,0.8950496340496786
+sgd_log_loss,42,Bot,738,0,0.0,0.0
+sgd_log_loss,42,Bot - Attempted,1470,0,0.0,0.0
+sgd_log_loss,42,DDoS,95123,0,0.0,0.0
+sgd_log_loss,42,PortScan,159151,0,0.0,0.0
+random_forest,43,BENIGN,291433,1,0.7659365719134493,0.9911368993902544
+random_forest,43,Bot,738,0,0.0,0.0
+random_forest,43,Bot - Attempted,1470,0,0.0,0.0
+random_forest,43,DDoS,95123,0,0.0,0.0
+random_forest,43,PortScan,159151,0,0.0,0.0
+extra_trees,43,BENIGN,291433,1,0.7700425224017377,0.9932780433238515
+extra_trees,43,Bot,738,0,0.0,0.0
+extra_trees,43,Bot - Attempted,1470,0,0.0,0.0
+extra_trees,43,DDoS,95123,0,0.0,0.0
+extra_trees,43,PortScan,159151,0,0.0,0.0
+sgd_log_loss,43,BENIGN,291433,1,0.905173303379454,0.9180085988889385
+sgd_log_loss,43,Bot,738,0,0.0,0.0
+sgd_log_loss,43,Bot - Attempted,1470,0,0.0,0.0
+sgd_log_loss,43,DDoS,95123,0,0.0,0.0
+sgd_log_loss,43,PortScan,159151,0,0.0,0.0
+random_forest,44,BENIGN,291433,1,0.7805697360491418,0.9910854295841582
+random_forest,44,Bot,738,0,0.0,0.0
+random_forest,44,Bot - Attempted,1470,0,0.0,0.0
+random_forest,44,DDoS,95123,0,0.0,0.0
+random_forest,44,PortScan,159151,0,0.0,0.0
+extra_trees,44,BENIGN,291433,1,0.7802253005312468,0.9912638582452914
+extra_trees,44,Bot,738,0,0.0,0.0
+extra_trees,44,Bot - Attempted,1470,0,0.0,0.0
+extra_trees,44,DDoS,95123,0,0.0,0.0
+extra_trees,44,PortScan,159151,0,0.0,0.0
+sgd_log_loss,44,BENIGN,291433,1,0.8808372027625548,0.9028284374110002
+sgd_log_loss,44,Bot,738,0,0.0,0.0
+sgd_log_loss,44,Bot - Attempted,1470,0,0.0,0.0
+sgd_log_loss,44,DDoS,95123,0,0.0,0.0
+sgd_log_loss,44,PortScan,159151,0,0.0,0.0
