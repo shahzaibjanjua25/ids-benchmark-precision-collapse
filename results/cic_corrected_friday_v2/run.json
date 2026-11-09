@@ -1,0 +1,211 @@
+{
+  "source": "DistriNet corrected CICIDS2017 release (official archive)",
+  "source_url": "https://intrusion-detection.distrinet-research.be/WTMC2021/Dataset/dataset.zip",
+  "source_archive_sha256": "4d535da19795d85376ae1397d161329e3b06fc47d9a5a68cd9be2cd7ecee0f2a",
+  "split": "chronological day holdout: Monday-Thursday train, Friday test",
+  "timestamp_ranges": {
+    "Monday": [
+      "2017-07-03T13:55:58",
+      "2017-07-03T22:01:34"
+    ],
+    "Tuesday": [
+      "2017-07-04T13:53:44",
+      "2017-07-04T22:00:30"
+    ],
+    "Wednesday": [
+      "2017-07-05T13:42:42",
+      "2017-07-05T22:10:14"
+    ],
+    "Thursday": [
+      "2017-07-06T13:59:00",
+      "2017-07-06T22:04:36"
+    ],
+    "Friday": [
+      "2017-07-07T13:59:50",
+      "2017-07-07T22:02:40"
+    ]
+  },
+  "day_label_counts": {
+    "Monday": {
+      "BENIGN": 371749
+    },
+    "Tuesday": {
+      "BENIGN": 315031,
+      "FTP-Patator": 3973,
+      "FTP-Patator - Attempted": 11,
+      "SSH-Patator": 2980,
+      "SSH-Patator - Attempted": 8
+    },
+    "Wednesday": {
+      "BENIGN": 319216,
+      "DoS GoldenEye": 7567,
+      "DoS GoldenEye - Attempted": 80,
+      "DoS Hulk": 158469,
+      "DoS Hulk - Attempted": 593,
+      "DoS Slowhttptest": 1742,
+      "DoS Slowhttptest - Attempted": 3369,
+      "DoS slowloris": 4001,
+      "DoS slowloris - Attempted": 1731,
+      "Heartbleed": 11
+    },
+    "Thursday": {
+      "BENIGN": 360264,
+      "Infiltration": 32,
+      "Infiltration - Attempted": 16,
+      "Web Attack - Brute Force": 151,
+      "Web Attack - Brute Force - Attempted": 1214,
+      "Web Attack - Sql Injection": 12,
+      "Web Attack - XSS": 27,
+      "Web Attack - XSS - Attempted": 652
+    },
+    "Friday": {
+      "BENIGN": 291433,
+      "Bot": 738,
+      "Bot - Attempted": 1470,
+      "DDoS": 95123,
+      "PortScan": 159151
+    }
+  },
+  "train_rows": 1552899,
+  "test_rows": 547915,
+  "train_vocabulary": [
+    "BENIGN",
+    "DoS GoldenEye",
+    "DoS GoldenEye - Attempted",
+    "DoS Hulk",
+    "DoS Hulk - Attempted",
+    "DoS Slowhttptest",
+    "DoS Slowhttptest - Attempted",
+    "DoS slowloris",
+    "DoS slowloris - Attempted",
+    "FTP-Patator",
+    "FTP-Patator - Attempted",
+    "Heartbleed",
+    "Infiltration",
+    "Infiltration - Attempted",
+    "SSH-Patator",
+    "SSH-Patator - Attempted",
+    "Web Attack - Brute Force",
+    "Web Attack - Brute Force - Attempted",
+    "Web Attack - Sql Injection",
+    "Web Attack - XSS",
+    "Web Attack - XSS - Attempted"
+  ],
+  "test_positive_labels": [
+    "BENIGN",
+    "Bot",
+    "Bot - Attempted",
+    "DDoS",
+    "PortScan"
+  ],
+  "coverage_by_test_label": {
+    "BENIGN": 1,
+    "Bot": 0,
+    "Bot - Attempted": 0,
+    "DDoS": 0,
+    "PortScan": 0
+  },
+  "coverage_ceiling": 0.2,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "per_class_train_cap": 5000,
+  "feature_columns": [
+    "Protocol",
+    "Flow Duration",
+    "Total Fwd Packet",
+    "Total Bwd packets",
+    "Total Length of Fwd Packet",
+    "Total Length of Bwd Packet",
+    "Fwd Packet Length Max",
+    "Fwd Packet Length Min",
+    "Fwd Packet Length Mean",
+    "Fwd Packet Length Std",
+    "Bwd Packet Length Max",
+    "Bwd Packet Length Min",
+    "Bwd Packet Length Mean",
+    "Bwd Packet Length Std",
+    "Flow Bytes/s",
+    "Flow Packets/s",
+    "Flow IAT Mean",
+    "Flow IAT Std",
+    "Flow IAT Max",
+    "Flow IAT Min",
+    "Fwd IAT Total",
+    "Fwd IAT Mean",
+    "Fwd IAT Std",
+    "Fwd IAT Max",
+    "Fwd IAT Min",
+    "Bwd IAT Total",
+    "Bwd IAT Mean",
+    "Bwd IAT Std",
+    "Bwd IAT Max",
+    "Bwd IAT Min",
+    "Fwd PSH Flags",
+    "Bwd PSH Flags",
+    "Fwd URG Flags",
+    "Bwd URG Flags",
+    "Fwd Header Length",
+    "Bwd Header Length",
+    "Fwd Packets/s",
+    "Bwd Packets/s",
+    "Packet Length Min",
+    "Packet Length Max",
+    "Packet Length Mean",
+    "Packet Length Std",
+    "Packet Length Variance",
+    "FIN Flag Count",
+    "SYN Flag Count",
+    "RST Flag Count",
+    "PSH Flag Count",
+    "ACK Flag Count",
+    "URG Flag Count",
+    "CWR Flag Count",
+    "ECE Flag Count",
+    "Down/Up Ratio",
+    "Average Packet Size",
+    "Fwd Segment Size Avg",
+    "Bwd Segment Size Avg",
+    "Fwd Bytes/Bulk Avg",
+    "Fwd Packet/Bulk Avg",
+    "Fwd Bulk Rate Avg",
+    "Bwd Bytes/Bulk Avg",
+    "Bwd Packet/Bulk Avg",
+    "Bwd Bulk Rate Avg",
+    "Subflow Fwd Packets",
+    "Subflow Fwd Bytes",
+    "Subflow Bwd Packets",
+    "Subflow Bwd Bytes",
+    "FWD Init Win Bytes",
+    "Bwd Init Win Bytes",
+    "Fwd Act Data Pkts",
+    "Fwd Seg Size Min",
+    "Active Mean",
+    "Active Std",
+    "Active Max",
+    "Active Min",
+    "Idle Mean",
+    "Idle Std",
+    "Idle Max",
+    "Idle Min"
+  ],
+  "excluded_columns": [
+    "Dst IP",
+    "Dst Port",
+    "Flow ID",
+    "Label",
+    "Src IP",
+    "Src Port",
+    "Timestamp"
+  ],
+  "input_file_sha256": {
+    "Monday-WorkingHours.csv": "580bc5b3a48ccaa9b61d6936bb88adb00a6a069a02c974e946bd324bc09971bc",
+    "Tuesday-WorkingHours.csv": "59d60eff01526b511fa575a08a9a0e241674276adf1aa07471c947f7d733e19a",
+    "Wednesday-WorkingHours.csv": "820446eb19713031827a1893871e30fb9da4c3b21ad5cd15d9a2ef6686a37583",
+    "Thursday-WorkingHours.csv": "3db32a8e9a4da80aa15fd0bbf69733c8de8c6e6147fe279770eec1be6c263d65",
+    "Friday-WorkingHours.csv": "8bf5a79222d2a553b75fe1ee81cc3ddff89b87befaef52e62368fdb2e3a79def"
+  },
+  "interpretation": "Corrected-label, day-held-out closed-set audit. The per-class cap changes fitting data but retains each observed training label; reported ceiling uses the full Monday-Thursday training vocabulary."
+}

@@ -1,0 +1,24 @@
+{
+  "protocol": "official UNSW-NB15 train/test partition; benign-only training; benign-only calibration holdout",
+  "detector": "IsolationForest fitted only on BENIGN training rows",
+  "threshold": "lower 1.000% quantile of held-out benign training anomaly scores",
+  "target": "binary BENIGN versus ATTACK; attack subtypes used only for descriptive test breakdown",
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "trees": 200,
+  "legal_output_vocabulary": [
+    "BENIGN",
+    "ATTACK"
+  ],
+  "legal_output_ceiling": 1.0,
+  "not_a_fine_grained_attack_classifier": true,
+  "files": {
+    "E:\\Researcg]\\UNSW_NB15_training-set.csv": "bec7dd5ec88dc2a0ccc7a07879d338395ed7421750f675fd0339e07dfe0648fa",
+    "E:\\Researcg]\\UNSW_NB15_testing-set.csv": "734fe6642edf758f7c94d7d9149426b49d202fe8e7bf0bef47392489c3c0a559"
+  }
+}

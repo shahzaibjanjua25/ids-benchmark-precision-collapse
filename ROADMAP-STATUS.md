@@ -1,10 +1,11 @@
 # Historical revision v4 status (superseded)
 
-This file preserves the v4 roadmap and is historical. Current release 0.9.2 is
+This file preserves the v4 roadmap and is historical. Current release 0.9.4 is
 documented in README.md, CLAIMS.md, SELF-REVIEW.md and VALIDATION.json. It adds
 five-seed NSL pipeline results under both scoring conventions, adds a verified
-published target-resolution example and a same-prediction NSL granularity audit,
-and withdraws the seed-42 pipeline leader-change claim. The statements below about absent natural
+published target-resolution example, a same-prediction NSL granularity audit,
+and a five-seed benign-only UNSW-NB15 anomaly detector; it withdraws the seed-42
+pipeline leader-change claim. The statements below about absent natural
 inversions and main-paper layout describe v4 only. The current literature pilot
 is under audit/crossref_20261108.
 
@@ -26,9 +27,9 @@ is under audit/crossref_20261108.
 | Roadmap item | Outcome |
 | --- | --- |
 | Natural binding fractional IDS example | Remains an empirical gap. Natural gas coverage is weakly binding in the pooled score. No published ranking reversal claimed. |
-| Timestamped CIC blocks | Current files and Research.rar have no timestamps. Broader search of research folder, Documents and Downloads found no candidate release. |
+| Timestamped CIC blocks | Official corrected DistriNet per-day CSVs were downloaded, SHA-256 recorded, and timestamp order verified. Monday-Thursday train and Friday test results are reported separately from the original-release experiments. |
 | Granularity | CIC original/web-merged/declared-family/binary and NSL original/five-category ceilings regenerated. |
-| Corrected-label sensitivity | Corrected Engelen/Lanvin data absent locally. No corrected-version result synthesized. |
+| Corrected-label sensitivity | A three-model, three-seed fit was run on the corrected release. No old-vs-corrected paired comparison is claimed, so label correction's isolated effect remains unestimated. |
 | Full pair grid and official reference | Runner completes 36 pairs at five seeds, five official reference fits, and seed-42 alphabetical withholding sizes 1,3,4,5. summarize_revision.py asserts completed counts. |
 | Models | Gas forest, logistic, SVM, kNN, MLP, histogram boosting and CORAL/logistic; five NSL forest seeds. Archived IDS boosting comparisons distinguished from fresh fits. |
 | Uncertainty | Seed SDs, gas fold scores and conditional row-bootstrap intervals for gas and NSL. No inference across independent networks. |
@@ -47,7 +48,7 @@ is under audit/crossref_20261108.
 - Digits and historical splits defined in the main text, repair orders included, uncertainty targets named, broader impact separated, research questions answered.
 - Case summary, stacked repair components, withholding-size curve and reporting flowchart added. Gas unavailability uses pattern coding.
 - Official TBench class and style downloaded for the paper package. Native compilation and page-limit verification remain pending after TeX server HTTP errors. Automatic approval review rejected starting a local cache helper because its required approval category was disabled. Reading-copy PDFs are checked separately.
-- Permanent DOI, external anonymous hosting and independent reproduction remain pending. Public code and MIT notice identify the author.
+- One public published artifact with ten per-seed confusion matrices was independently re-scored. This remains one paper, not a 10--20-paper audit. Permanent DOI, external anonymous hosting and independent reproduction remain pending. Public code and MIT notice identify the author.
 
 ## Corrections to roadmap claims
 

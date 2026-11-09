@@ -4,6 +4,12 @@
 
 
 
+
+
+
+
+
+
 ## Install and use
 
     python -m pip install -r code/requirements.txt
@@ -11,7 +17,9 @@
     python -m label_availability results/nsl_kdd_official/label_counts.csv --oracle --convention union
 
 The small package needs NumPy and pandas. Python 3.13 and the pinned environment
-are used for the experiments. Install from source with the command above. A 0.9.2 wheel was not rebuilt in this environment because its setuptools build backend was unavailable and package downloads were blocked; see VALIDATION.json.
+are used for the experiments. Install from source with the command above. A
+0.9.4 wheel was built and installed into a clean temporary target; the package
+API smoke check passed. See VALIDATION.json for the wheel hash.
 
 ```python
 from label_availability import coverage_ceiling, count_folds, exact_oracle
