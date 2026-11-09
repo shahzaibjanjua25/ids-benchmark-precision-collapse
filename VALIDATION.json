@@ -1,5 +1,5 @@
 {
-  "release": "0.9.2",
+  "release": "0.9.4",
   "date": "2026-11-09",
   "saved_evidence_regeneration": "passed",
   "evidence_checks": {
@@ -18,7 +18,18 @@
     "cic_lodo_target_resolutions": 3,
     "cic_binary_lodo_days": 5,
     "cic_binary_lodo_seeds": 1,
-    "published_target_audit_cases": 3
+    "published_target_audit_cases": 3,
+    "published_prediction_artifact_rescored_papers": 1,
+    "published_prediction_confusion_matrices_rescored": 10,
+    "external_artifact_score_mean": 0.9000197011478338,
+    "external_artifact_score_ceiling": 1.0,
+    "corrected_cic_archive_sha256": "4d535da19795d85376ae1397d161329e3b06fc47d9a5a68cd9be2cd7ecee0f2a",
+    "corrected_cic_train_rows": 1552899,
+    "corrected_cic_friday_test_rows": 547915,
+    "corrected_cic_models": 3,
+    "corrected_cic_seeds_per_model": 3,
+    "corrected_cic_coverage_ceiling": 0.2,
+    "unsw_benign_ood_seeds": 5
   },
   "nsl_pipeline_review_revision": {
     "seed_set": [
@@ -81,44 +92,49 @@
     }
   ],
   "wheel": {
-    "filename": null,
-    "sha256": null,
-    "build": "not rebuilt for 0.9.2: local setuptools build backend unavailable; network install blocked",
-    "installed_api_smoke": "not rerun for 0.9.2"
+    "filename": "label_availability-0.9.4-py3-none-any.whl",
+    "sha256": "c36fe31846953db3e3acb9ee9a11bae284d90793d2ef889f1ea2c0b759f1b86b",
+    "build": "passed with isolated setuptools build dependencies",
+    "installed_api_smoke": "passed in temporary target; restricted coverage ceiling 0.5 and explicit global-head ceiling 1.0"
   },
   "reading_pdf_qa": {
     "main": {
-      "pages": 14,
+      "pages": 15,
       "author_present": true,
       "pipeline_tables_present": true,
-      "sha256": "cdf6c4dce6d954fb0cfb240ce03e16ecb272fdafc1704a08826cfbfebea6b1ef",
+      "sha256": "2f54ff99b3b498710af04c50a307361909b13166ced28132e825855904325da8",
       "published_lofo_conditional_audit_present": true,
-      "abstract_conditional_audit_present": true
+      "abstract_conditional_audit_present": true,
+      "corrected_cic_results_present": true,
+      "external_artifact_rescore_present": true
     },
     "anonymous": {
-      "pages": 14,
+      "pages": 15,
       "author_present": false,
       "title_present": true,
-      "sha256": "fc62f481cb2d0d52fa7b385eddbbe46b585a5404d30f0e86ebcbfa165ba104e8",
-      "published_lofo_conditional_audit_present": true
+      "sha256": "5a597fac1abe8c796df861ce50b0f2406b5898ee6a7c23db09d37dd6f4040387",
+      "published_lofo_conditional_audit_present": true,
+      "corrected_cic_results_present": true,
+      "external_artifact_rescore_present": true
     },
     "supplement": {
       "pages": 5,
-      "sha256": "c7035f90bc8661fde3922117fcfd31a8fedad00bce0f59654a621e099b78c135"
+      "sha256": "6321d075eb84b8a8c53dbcb2b7075d38f19bee4250c74bed4f9fa50a39b656a3"
     },
     "native_publisher_class_compiled": false,
     "pixel_page_inspection": {
       "status": "performed",
-      "reason": "Rendered all pages of the 14-page manuscript, 14-page anonymous copy and 5-page supplement with Poppler at 80 dpi; reviewed contact sheets and inspected the NSL and CIC result pages. No clipping, overlap or unreadable table layout was observed. Native publisher-class compilation remains unverified.",
+      "reason": "Rendered all 15 main pages, 15 anonymous pages and five supplement pages with Poppler at 80 dpi; inspected all contact sheets and pages 8, 9 and 12 at 160 dpi. No clipping or overlap observed. The local TBench-class compilation is not verified.",
       "native_publisher_class_compiled": false
-    }
+    },
+    "reading_copy_compiler": "Pandoc 3.13 + Typst 0.15.1"
   },
   "remote_ci_run_verified": false,
   "permanent_doi": null,
   "paper_sha256": {
-    "manuscript.pdf": "cdf6c4dce6d954fb0cfb240ce03e16ecb272fdafc1704a08826cfbfebea6b1ef",
-    "anonymous.pdf": "fc62f481cb2d0d52fa7b385eddbbe46b585a5404d30f0e86ebcbfa165ba104e8",
-    "supplement.pdf": "c7035f90bc8661fde3922117fcfd31a8fedad00bce0f59654a621e099b78c135"
+    "manuscript.pdf": "2f54ff99b3b498710af04c50a307361909b13166ced28132e825855904325da8",
+    "anonymous.pdf": "5a597fac1abe8c796df861ce50b0f2406b5898ee6a7c23db09d37dd6f4040387",
+    "supplement.pdf": "6321d075eb84b8a8c53dbcb2b7075d38f19bee4250c74bed4f9fa50a39b656a3"
   },
   "nsl_granularity_reanalysis": {
     "fine_label_ceiling": 0.5526315789473685,
@@ -171,5 +187,80 @@
     "five_seed_refit": "not completed; single-seed limitation stated beside Table 6",
     "source_hashes_in": "results/cic_binary_lodo_seed42/cic_binary_lodo_run.json",
     "verifier": "passed"
+  },
+  "corrected_cic_friday": {
+    "protocol": "DistriNet corrected CICIDS2017; Monday-Thursday train, Friday test",
+    "source_archive_sha256": "4d535da19795d85376ae1397d161329e3b06fc47d9a5a68cd9be2cd7ecee0f2a",
+    "rows": {
+      "train_full": 1552899,
+      "train_fit_sample": 35603,
+      "test": 547915
+    },
+    "coverage_ceiling": 0.2,
+    "summary": [
+      {
+        "model": "extra_trees",
+        "seeds": 3,
+        "macro_f1_mean": 0.15541686363982612,
+        "macro_f1_sd": 0.0012220393099547236,
+        "attack_recall_mean": 0.36054641911193247,
+        "attack_recall_sd": 0.023416690325533483,
+        "binary_macro_f1_mean": 0.6518496313485038,
+        "binary_macro_f1_sd": 0.01570200935898605,
+        "ceiling": 0.2
+      },
+      {
+        "model": "random_forest",
+        "seeds": 3,
+        "macro_f1_mean": 0.15513173682596063,
+        "macro_f1_sd": 0.0016839489189600123,
+        "attack_recall_mean": 0.35852288529669396,
+        "attack_recall_sd": 0.03183986337235751,
+        "binary_macro_f1_mean": 0.6495066845141512,
+        "binary_macro_f1_sd": 0.021605394797261136,
+        "ceiling": 0.2
+      },
+      {
+        "model": "sgd_log_loss",
+        "seeds": 3,
+        "macro_f1_mean": 0.1746393270408538,
+        "macro_f1_sd": 0.00728067434700939,
+        "attack_recall_mean": 0.8068753362809087,
+        "attack_recall_sd": 0.08379864072939555,
+        "binary_macro_f1_mean": 0.8573462205839771,
+        "binary_macro_f1_sd": 0.04664049175191501,
+        "ceiling": 0.2
+      }
+    ],
+    "results_dir": "results/cic_corrected_friday_v2",
+    "verifier": "code/verify_cic_corrected_friday.py passed"
+  },
+  "external_artifact_rescore": {
+    "paper_doi": "10.3390/electronics15184074",
+    "public_artifact": "https://github.com/josemifv/distributed-nids-mlops",
+    "papers_rescored": 1,
+    "seed_matrices_rescored": 10,
+    "macro_f1_mean": 0.9000197011478338,
+    "sample_sd": 0.05142685314589269,
+    "ci95_halfwidth": 0.03679,
+    "ceiling": 1.0,
+    "status": "compatible",
+    "limitation": "does not meet requested 10-20-paper audit"
+  },
+  "package_build": {
+    "wheel": "label_availability-0.9.4-py3-none-any.whl",
+    "size_bytes": 6936,
+    "sha256": "c36fe31846953db3e3acb9ee9a11bae284d90793d2ef889f1ea2c0b759f1b86b",
+    "build": "passed with isolated setuptools build dependencies",
+    "temporary_target_install": "passed",
+    "api_smoke": "coverage ceiling 0.5 for restricted output and 1.0 for explicit global head"
+  },
+  "other_verification": {
+    "saved_evidence_regeneration": "passed: python code/reproduce_release.py --mode saved",
+    "corrected_cic_confusion_and_score_check": "passed: code/verify_cic_corrected_friday.py",
+    "external_matrix_rescore": "passed: code/verify_external_artifact_audit.py",
+    "native_tex_compile": "unavailable: local Tectonic executable denied; no TeX Live found",
+    "literature_audit_limit": "one published study re-scored; requested 10-20-study audit not complete",
+    "verified_published_score_violations": 0
   }
 }

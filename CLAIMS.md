@@ -1,4 +1,4 @@
-# Manuscript-to-evidence map, revision 0.9.2
+# Manuscript-to-evidence map, revision 0.9.4
 
 Run from the repository root with the pinned Python environment. The single
 saved-evidence command is `python code/reproduce_release.py --mode saved`.
@@ -23,6 +23,9 @@ saved-evidence command is `python code/reproduce_release.py --mode saved`.
 | Literature sample and coding totals | code/build_literature_frame.py OUT; code/verify_release_evidence.py | audit/protocol.md; audit/crossref_20261108/raw, candidate_frame.csv, selected_sample.csv, coding.csv, summary.json |
 | Additional source compatibility checks, including the Ayantayo et al. NSL-KDD case and the published binary CICIDS2017 score | manual publisher-page and table review | EXTERNAL-AUDIT.md; results/published_score_audit.csv; audit/reference_verification.csv; supplement |
 | Conditional check of published CICIDS2017 LOFO macro F1 | code/verify_published_score_audit.py; publisher table/methods review | results/published_score_audit.csv; EXTERNAL-AUDIT.md; manuscript Results; ceilings depend on 15-label, 13-label or binary scoring |
+| Benign-only open-set UNSW-NB15 baseline, five seeds | code/run_unsw_benign_ood.py; code/verify_unsw_benign_ood.py | results/unsw_benign_ood; binary output vocabulary BENIGN/ATTACK; threshold calibrated on held-out benign training rows |
+| Corrected DistriNet CICIDS2017 temporal Friday holdout; three models, three seeds | code/run_cic_corrected_friday.py; code/verify_cic_corrected_friday.py | results/cic_corrected_friday_v2; official source archive and five per-day CSV hashes in run.json; 21 training labels, five Friday test labels, ceiling 0.20 |
+| Independent re-score of ten confusion matrices from one published IDS paper | code/verify_external_artifact_audit.py | audit/external/franco_valiente_2026; results/published_score_audit.csv; compatible score, ceiling 1; not a multi-paper prevalence estimate |
 
 The sampling builder reuses cached responses and preserves an existing coding
 sheet. Publisher abstracts/reference lists are redacted from public snapshots;

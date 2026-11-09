@@ -1,6 +1,6 @@
 # Label Coverage Bounds Pooled Macro F1: A Reporting Diagnostic for Closed-Set IDS Benchmarks
 
-Release 0.9.2: code, manuscript source and evidence for auditing fold-dependent
+Release 0.9.4: code, manuscript source and evidence for auditing fold-dependent
 legal prediction vocabularies. The repository URL retains its historical name.
 The reporting check concerns score attainability; the comparisons are tied to
 their declared fixed test cohorts.
@@ -21,6 +21,28 @@ ceilings are 12/15 if its three Web Attack labels are separate, 12/13 if merged,
 and 1 for a binary BENIGN/ATTACK task. The article's Table 4 does not identify
 which convention it uses, so this is not a verified score conflict.
 
+The corrected DistriNet CICIDS2017 release was evaluated with Monday through
+Thursday for training and Friday for testing. Three training-restricted models
+(Random Forest, Extra Trees and SGD log-loss) were run with three seeds each on
+the same 547,915-row Friday cohort. Only BENIGN occurs in both the training and
+Friday label inventories, so the fine-label ceiling is 0.20. Mean fine-label
+macro F1 was 0.155 (RF), 0.155 (Extra Trees) and 0.175 (SGD); mean binary attack
+recall was 0.359, 0.361 and 0.807. This separates attack detection from exact
+attribution of labels unavailable during training. The maximum 5,000-per-class
+training cap yielded 35,603 fit rows; the run manifest records each source hash.
+The dataset is not redistributed.
+
+One external published artifact was re-scored from ten saved confusion
+matrices. Its mean macro F1 (0.90002) matches the article's reported 0.900 ±
+0.037, and all five scored classes had training support, so its ceiling is 1.
+This is one paper, not the requested audit of 10–20 studies, and it verifies a
+compatible result rather than a ceiling violation.
+
+A five-seed benign-only Isolation Forest baseline on the official UNSW-NB15
+split is saved under `results/unsw_benign_ood`. It outputs only BENIGN/ATTACK;
+attack subtypes are not used in fitting or calibration. Its unit ceiling and
+low attack recall illustrate why output legality does not imply detection quality.
+
 ## Install and use
 
     python -m pip install -r code/requirements.txt
@@ -28,7 +50,9 @@ which convention it uses, so this is not a verified score conflict.
     python -m label_availability results/nsl_kdd_official/label_counts.csv --oracle --convention union
 
 The small package needs NumPy and pandas. Python 3.13 and the pinned environment
-are used for the experiments. Install from source with the command above. A 0.9.2 wheel was not rebuilt in this environment because its setuptools build backend was unavailable and package downloads were blocked; see VALIDATION.json.
+are used for the experiments. Install from source with the command above. A
+0.9.4 wheel was built and installed into a clean temporary target; the package
+API smoke check passed. See VALIDATION.json for the wheel hash.
 
 ```python
 from label_availability import coverage_ceiling, count_folds, exact_oracle
