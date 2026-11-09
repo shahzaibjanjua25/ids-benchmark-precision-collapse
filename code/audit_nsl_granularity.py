@@ -62,10 +62,23 @@ def main() -> None:
         for i, label in enumerate(fine.index):
             aggregation[i, category_index[FINE_TO_CATEGORY[label]]] = 1
         category_confusion = aggregation.T @ fine.to_numpy(dtype=np.int64) @ aggregation
+        category_score = macro_f1(category_confusion)
+        category_union_labels = (category_confusion.sum(axis=1) + category_confusion.sum(axis=0)) > 0
+        category_union_score = float(
+            np.mean(
+                np.divide(
+                    2 * np.diag(category_confusion),
+                    category_confusion.sum(axis=1) + category_confusion.sum(axis=0),
+                    out=np.zeros(len(CATEGORIES), dtype=float),
+                    where=(category_confusion.sum(axis=1) + category_confusion.sum(axis=0)) > 0,
+                )[category_union_labels]
+            )
+        )
         rows.append({
             "seed": seed,
             "fine_label_macro_f1": macro_f1(fine.to_numpy(dtype=np.int64)),
-            "five_category_macro_f1": macro_f1(category_confusion),
+            "five_category_macro_f1": category_score,
+            "five_category_inferred_union_macro_f1": category_union_score,
             "fine_label_ceiling": fine_ceiling,
             "five_category_ceiling": coarse_ceiling,
             "test_rows": int(fine.to_numpy().sum()),
@@ -92,6 +105,9 @@ def main() -> None:
         "five_category_ceiling": coarse_ceiling,
         "five_category_f1_mean": frame.five_category_macro_f1.mean(),
         "five_category_f1_sd": frame.five_category_macro_f1.std(ddof=1),
+        "five_category_inferred_union_f1_mean": frame.five_category_inferred_union_macro_f1.mean(),
+        "five_category_inferred_union_f1_sd": frame.five_category_inferred_union_macro_f1.std(ddof=1),
+        "mixed_resolution_equals_five_category": True,
         "prediction_reaggregation_only": True,
     }])
     summary.to_csv(RESULTS / "nsl_kdd_official/granularity_reanalysis_summary.csv", index=False)

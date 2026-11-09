@@ -118,10 +118,15 @@ methods identify the main CICIDS task as binary, while the LOFO table does not
 state the score's label inventory or whether the held-out family is included in
 the macro average. Its interpretation discusses known-class performance and
 held-out-family ranking without mapping each metric to its scored cohort.
-Conditional on a pooled 15-label closed-set macro F1 that includes the held-out
-label, the ceiling is at most 14/15 = 0.9333; 0.9855 would then be incompatible.
-If the score averages only seen labels, or the experiment uses a binary target,
-that inference does not apply. We retain this as an unresolved target-definition
-ambiguity and do not allege a score violation.
+Conditional on a pooled 15-label closed-set macro F1 that includes the three
+separate Web Attack subtypes, the ceiling is at most 12/15 = 0.80. If those
+subtypes are merged into one Web Attack class in a 13-label taxonomy, the
+ceiling is at most 12/13 = 0.9231. Either would be below 0.9855. The article's
+main CICIDS methods specify a binary BENIGN/ATTACK task and state that CICIDS
+metrics are binary unless noted otherwise. Table 4 does not label LOFO as
+multiclass, but does not state its scored cohort or whether held-out rows enter
+the score; the article provides no code link that resolves this. Under binary
+outputs the ceiling is one because other attack families remain in training.
+We retain this as unresolved and do not allege a score violation.
 The case demonstrates which missing reporting choice determines whether a
 headline score evaluates known-family recognition or the withheld family.
