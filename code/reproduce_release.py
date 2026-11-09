@@ -21,11 +21,11 @@ if args.mode=='saved':
     run('audit_nsl_destinations.py')
     run('audit_nsl_granularity.py')
     run('audit_cic_target_resolution.py')
+    run('build_main_tables.py')
     run('verify_release_evidence.py')
     run('verify_cic_binary_lodo.py')
     run('verify_published_score_audit.py')
     run('verify_cic_archive.py',root/'results')
-    run('build_main_tables.py')
     run('plot_cic_hero.py',args.out or root/'regenerated_figures')
 elif args.mode=='solvers':
     run('check_availability.py')

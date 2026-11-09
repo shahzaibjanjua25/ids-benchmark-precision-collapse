@@ -43,6 +43,9 @@ for row in natural:
     if 'observed_mean' not in row:
         row['observed_mean']=row.pop('observed')
         row['observed_sd']=np.nan
+    row['observed_over_oracle']=(row['observed_mean']/row['oracle']
+                                 if row['oracle'] and not np.isnan(row['observed_mean'])
+                                 else np.nan)
 pd.DataFrame(natural).to_csv(out/'table_3_natural_protocols.csv',index=False)
 seeded=pd.read_csv(r/'nsl_families/seed_metrics.csv')
 if not args.partial: assert len(seeded)==25

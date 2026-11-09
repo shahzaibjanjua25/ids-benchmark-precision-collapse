@@ -1,60 +1,48 @@
-# Internal review, release 0.9.1
+# Internal re-review, revision 0.9.2
 
-Assessment: **7/10**. Recommendation: major revision at a selective Q1 venue;
-potentially suitable for a focused evaluation-methods venue after independent
-review. This is an internal assessment, not an external referee report or a
-TBench decision.
+**Assessment: 6/10.** Major revision for a selective Q1 journal; plausible as a
+correctness-focused evaluation-methods note after independent review. This is
+an internal assessment, not a TBench decision.
 
-The manuscript now gives a more useful account of task choice on CICIDS2017.
-The same multiclass day-holdout predictions produce macro F1 0.06030 at 15
-labels, 0.15630 at eight declared families, and 0.57972 at binary resolution.
-The corresponding ceilings are 0.06667, 0.25 and 1; binary attack recall is
-only 0.14690. A separate binary refit on the Monday-to-Thursday/Friday split
-scores 0.61754 with attack recall 0.27894, close to a published binary score of
-0.619. The five-fold binary pooled refit still has only 0.14782 attack recall.
-This supports a practical point: changing the target removes the structural
-ceiling, but a more attainable score does not establish good detection.
+## Changes in this revision
 
-The external audit also identifies a concrete, unresolved reporting ambiguity.
-Biyouki et al. report 0.9855 macro F1 for a CICIDS2017 leave-one-family-out
-experiment with Web Attack excluded from training. If the score averages all 15
-closed-set labels, the ceiling is at most 14/15 = 0.9333; if it excludes the
-unseen class or uses a binary task, that conclusion does not follow. The article
-does not identify the LOFO scoring vocabulary, and its discussion does not map
-known-class performance and held-out-family ranking to separate metric cohorts,
-so the paper does not label the score incompatible. This makes the diagnostic
-useful for specifying what a published zero-day score must disclose, while
-falling short of proving that a
-published result is wrong or changing a literature-level conclusion.
+- The abstract is shorter and centers the NSL-KDD and CICIDS2017 findings.
+- The Biyouki LOFO result is no longer assigned an unsupported 14/15 ceiling.
+  The paper's methods say CICIDS metrics are binary unless stated otherwise;
+  its Table 4 does not define the LOFO scoring labels or cohort. Conditional
+  ceilings are given for separate Web Attack subtypes (12/15), a merged Web
+  Attack category (12/13), and binary BENIGN/ATTACK scoring (1). The result
+  remains unresolved rather than being called incompatible.
+- The NSL-KDD artifact now gives the 40-label train/test union mapping and
+  explains why a coherent mixed-resolution score equals the five-category
+  score: all four attack families have test-only subtypes. The inferred-union
+  and positive-support scores are both 0.48349 (SD 0.00549).
+- The natural-protocol table reports F/O, including 0.43343 for the NSL-KDD
+  forest mean, and the generator/verifier check the ratios.
+- The CIC binary day table states that it is seed 42 only and describes its
+  large per-day recall spread. A five-seed refit was not completed; no
+  seed-level uncertainty is claimed.
+- The binary analysis is explicitly framed as what a unit ceiling does not
+  guarantee.
 
-| Criterion | Internal score |
-|---|---:|
-| Mathematical soundness | 8/10 |
-| Novelty and significance | 6/10 |
-| Empirical evidence | 7/10 |
-| Reproducibility | 9/10 |
-| Clarity | 8/10 |
+## Remaining reasons for a major revision
 
-The central bound remains an elementary corollary of recall under a restricted
-output set. The exact oracle is more informative but has limited effect in the
-natural examples. The external audit is small and the new publication's scoring
-convention is unresolved. The broader 50-record search is a screening pilot
-(3 eligible, 14 excluded, 33 unresolved), not a confirmed survey of temporal
-IDS evaluations. No verified incompatible published score is established, and
-the analysis does not demonstrate field-wide prevalence or adoption. The
-manuscript should not be presented as a new learning method or as evidence that
-existing headline scores are generally invalid.
+The central inequality is an elementary consequence of recall under a
+restricted output set. The empirical work is reproducible and the label
+resolution examples are useful, but the literature audit still establishes no
+published score above its applicable legal-output ceiling. The Biyouki case
+does not establish a violation because its scoring convention is ambiguous and
+binary scoring is plausible. The broader 50-record screen remains a pilot with
+33 unresolved eligibility decisions, not a field-level survey. The manuscript
+therefore does not show that reported IDS conclusions are generally invalid or
+that the diagnostic has changed prior results.
 
-The revised result improves the practical significance over release 0.8.0, but
-the evidence does not justify a 9.5/10 claim or an accept recommendation at a
-selective Q1 journal. A verified published score with a fully specified target
-that exceeds its legal-output ceiling, or a broader preregistered audit that
-shows how often the missing vocabulary changes interpretation, would be needed
-for a substantial significance increase. Such evidence must be found, not
-inferred from an ambiguous report.
+The revisions improve accuracy, clarity and reproducibility. They do not
+justify a 9.5/10 claim or an acceptance recommendation at a selective Q1
+journal. The main path to a higher significance rating remains a larger,
+independently checked audit with fully specified published scoring targets,
+or another empirical finding that changes a defensible literature conclusion.
 
-Reading-copy page counts and text checks passed before this revision. Rebuild
-the reading PDFs and update VALIDATION.json after the current sources are final.
-Native publisher-class compilation, pixel-level page inspection, remote CI,
-permanent DOI, anonymous artifact hosting and independent reproduction remain
-unverified.
+Reading copies were rebuilt and visually checked. Native publisher-class
+compilation, independent reproduction, remote CI, permanent DOI and anonymous
+artifact hosting remain unverified.

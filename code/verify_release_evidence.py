@@ -59,9 +59,32 @@ assert len(granularity)==5 and set(granularity.seed)=={42,43,44,45,46}
 assert set(granularity.test_rows)=={22544} and set(granularity.test_rows_with_unavailable_fine_label)=={3750}
 assert np.allclose(granularity.fine_label_ceiling,21/38,rtol=0,atol=1e-12)
 assert np.allclose(granularity.five_category_ceiling,1,rtol=0,atol=1e-12)
+assert np.allclose(
+    granularity.five_category_macro_f1,
+    granularity.five_category_inferred_union_macro_f1,
+    rtol=0, atol=1e-12,
+)
 summary=pd.read_csv(r/'nsl_kdd_official/granularity_reanalysis_summary.csv').iloc[0]
 assert abs(summary.fine_label_f1_mean-granularity.fine_label_macro_f1.mean())<1e-12
 assert abs(summary.five_category_f1_mean-granularity.five_category_macro_f1.mean())<1e-12
+assert abs(summary.five_category_inferred_union_f1_mean-granularity.five_category_macro_f1.mean())<1e-12
+assert summary.mixed_resolution_equals_five_category
+family_map=pd.read_csv(r/'family_mapping.csv')
+nsl_map=family_map.loc[family_map.dataset.eq('NSL')].merge(
+    pd.read_csv(r/'nsl_kdd_official/label_counts.csv'),
+    left_on='original', right_on='class', validate='one_to_one',
+)
+assert len(nsl_map)==40 and nsl_map.original.nunique()==40
+unavailable_families=set(nsl_map.loc[
+    nsl_map.test_rows.gt(0) & nsl_map.training_rows.eq(0), 'family'
+])
+assert unavailable_families=={'DoS','Probe','R2L','U2R'}
+natural=pd.read_csv(r/'manuscript_tables/table_3_natural_protocols.csv')
+np.testing.assert_allclose(
+    natural.observed_over_oracle.to_numpy(dtype=float),
+    [0.4334291976354778, 0.9045642624384151, 0.592735822748516, 0.6437780261910188],
+    rtol=0, atol=1e-10,
+)
 target_resolution=pd.read_csv(r/'cic_lodo_target_resolution.csv').set_index('resolution')
 assert set(target_resolution.index)=={'fine attack label','eight-family mapping','binary benign/attack'}
 assert set(target_resolution.test_rows)=={2830743}
@@ -71,6 +94,7 @@ assert np.allclose(target_resolution.loc['binary benign/attack',['coverage_ceili
 assert abs(target_resolution.loc['fine attack label','ceiling_attainment']-0.90456427)<1e-8
 print('Frozen 50-record sample, 180 pair/seed matrices and 25 NSL pipeline/seed outputs verified')
 print('NSL-KDD fine-label and five-category scores verified from the same five confusion matrices')
+print('NSL-KDD mapping verifies test-only labels in all four attack families; mixed score equals five categories')
 print('CICIDS2017 day-holdout fine, family and binary scores verified from the same prediction matrix')
 for path in (r/'nsl_destination_audit').glob('*.npz'):
     data=np.load(path,allow_pickle=False)
