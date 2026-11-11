@@ -1,6 +1,6 @@
 {
   "release": "0.9.4",
-  "date": "2026-11-09",
+  "date": "2026-11-11",
   "saved_evidence_regeneration": "passed",
   "evidence_checks": {
     "frozen_literature_sample": 50,
@@ -102,29 +102,32 @@
       "pages": 15,
       "author_present": true,
       "pipeline_tables_present": true,
-      "sha256": "2f54ff99b3b498710af04c50a307361909b13166ced28132e825855904325da8",
-      "published_lofo_conditional_audit_present": true,
-      "abstract_conditional_audit_present": true,
+      "sha256": "f58fa7a5aa677ca39ca909fedd852e1f2427412e2835e046db9a6b3a903ce133",
       "corrected_cic_results_present": true,
-      "external_artifact_rescore_present": true
+      "external_artifact_rescore_present": true,
+      "unit_ceiling_summary_table_present": true,
+      "bibliography_entry_spacing_verified": true,
+      "published_lofo_binary_interpretation_present": true
     },
     "anonymous": {
       "pages": 15,
       "author_present": false,
       "title_present": true,
-      "sha256": "5a597fac1abe8c796df861ce50b0f2406b5898ee6a7c23db09d37dd6f4040387",
-      "published_lofo_conditional_audit_present": true,
+      "sha256": "7be86aead761d1426c2badf57f1eceab95bae7f4ec3f39bc47d549beb56419ca",
       "corrected_cic_results_present": true,
-      "external_artifact_rescore_present": true
+      "external_artifact_rescore_present": true,
+      "unit_ceiling_summary_table_present": true,
+      "bibliography_entry_spacing_verified": true,
+      "published_lofo_binary_interpretation_present": true
     },
     "supplement": {
       "pages": 5,
-      "sha256": "6321d075eb84b8a8c53dbcb2b7075d38f19bee4250c74bed4f9fa50a39b656a3"
+      "sha256": "da0593c60436380f0399c139ab294781315b176b16de918dd72db2e5fad22ff2"
     },
     "native_publisher_class_compiled": false,
     "pixel_page_inspection": {
       "status": "performed",
-      "reason": "Rendered all 15 main pages, 15 anonymous pages and five supplement pages with Poppler at 80 dpi; inspected all contact sheets and pages 8, 9 and 12 at 160 dpi. No clipping or overlap observed. The local TBench-class compilation is not verified.",
+      "reason": "Rendered all 15 main pages, all 15 anonymous pages and five supplement pages at 55 dpi for contact-sheet inspection. Inspected revised result/table pages 8-10 and reference pages 14-15 at higher resolution. Binary summary table fits, bibliography entries are separated, and no overlap or clipping was observed. Native TBench-class compilation remains unverified.",
       "native_publisher_class_compiled": false
     },
     "reading_copy_compiler": "Pandoc 3.13 + Typst 0.15.1"
@@ -132,9 +135,9 @@
   "remote_ci_run_verified": false,
   "permanent_doi": null,
   "paper_sha256": {
-    "manuscript.pdf": "2f54ff99b3b498710af04c50a307361909b13166ced28132e825855904325da8",
-    "anonymous.pdf": "5a597fac1abe8c796df861ce50b0f2406b5898ee6a7c23db09d37dd6f4040387",
-    "supplement.pdf": "6321d075eb84b8a8c53dbcb2b7075d38f19bee4250c74bed4f9fa50a39b656a3"
+    "manuscript.pdf": "f58fa7a5aa677ca39ca909fedd852e1f2427412e2835e046db9a6b3a903ce133",
+    "anonymous.pdf": "7be86aead761d1426c2badf57f1eceab95bae7f4ec3f39bc47d549beb56419ca",
+    "supplement.pdf": "da0593c60436380f0399c139ab294781315b176b16de918dd72db2e5fad22ff2"
   },
   "nsl_granularity_reanalysis": {
     "fine_label_ceiling": 0.5526315789473685,
@@ -165,17 +168,6 @@
     "binary_macro_f1": 0.5797230148533083,
     "binary_attack_recall": 0.14690143926433616,
     "same_saved_predictions": true
-  },
-  "published_lofo_conditional_check": {
-    "doi": "10.1038/s41598-025-34166-1",
-    "reported_macro_f1": 0.9855,
-    "conditional_ceiling_15_fine_labels": 0.8,
-    "conditional_ceiling_13_labels_merged_web": 0.9230769230769231,
-    "conditional_ceiling_binary": 1.0,
-    "label_inventory_specified": false,
-    "code_link_resolves_convention": false,
-    "status": "unresolved; not counted as incompatible",
-    "verifier": "passed"
   },
   "cic_binary_lodo": {
     "seed": 42,
@@ -256,11 +248,24 @@
     "api_smoke": "coverage ceiling 0.5 for restricted output and 1.0 for explicit global head"
   },
   "other_verification": {
-    "saved_evidence_regeneration": "passed: python code/reproduce_release.py --mode saved",
+    "saved_evidence_regeneration": "passed: python code/reproduce_release.py --mode saved on 2026-11-11",
     "corrected_cic_confusion_and_score_check": "passed: code/verify_cic_corrected_friday.py",
     "external_matrix_rescore": "passed: code/verify_external_artifact_audit.py",
     "native_tex_compile": "unavailable: local Tectonic executable denied; no TeX Live found",
     "literature_audit_limit": "one published study re-scored; requested 10-20-study audit not complete",
-    "verified_published_score_violations": 0
+    "verified_published_score_violations": 0,
+    "published_score_audit": "passed: source-based Biyouki binary target and ceiling check; Nuako 0.0435 is below comparison ceiling 0.25"
+  },
+  "published_lofo_target_check": {
+    "doi": "10.1038/s41598-025-34166-1",
+    "reported_macro_f1": 0.9855,
+    "stated_target": "binary Normal/Attack unless otherwise specified",
+    "ceiling": 1.0,
+    "status": "compatible under Methods default",
+    "independent_rescore": false,
+    "predictions_released": false,
+    "counterfactual_fine_ceiling_15_labels": 0.8,
+    "counterfactual_merged_web_ceiling_13_labels": 0.9230769230769231,
+    "verifier": "passed"
   }
 }

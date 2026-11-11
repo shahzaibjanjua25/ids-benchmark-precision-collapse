@@ -16,10 +16,11 @@ not fine-grained attribution. A matching Friday-fold binary refit scores
 0.61754 but detects only 27.9% of attack rows; the five-day pooled refit detects
 14.8%. No incompatible fine-label score is verified, so field-wide impact is
 still unestablished. A separate published CICIDS2017 leave-one-family-out result
-reports 0.9855 macro F1 without specifying the scored vocabulary. Conditional
-ceilings are 12/15 if its three Web Attack labels are separate, 12/13 if merged,
-and 1 for a binary BENIGN/ATTACK task. The article's Table 4 does not identify
-which convention it uses, so this is not a verified score conflict.
+reports 0.9855 macro F1. Its Methods specify binary BENIGN/ATTACK scoring for
+CICIDS2017 unless noted otherwise, and Table 4 gives no alternative target, so
+the result is compatible with a ceiling of 1. It was not independently re-scored
+because predictions are unavailable. Fine-label ceilings of 12/15 or 12/13
+would concern a different, unstated task.
 
 The corrected DistriNet CICIDS2017 release was evaluated with Monday through
 Thursday for training and Friday for testing. Three training-restricted models
@@ -121,7 +122,7 @@ points documented in CLAIMS.md. Read the source flags before a large refit.
 - code/run_cic_binary_lodo.py refits a binary forest on the same five held-out-day folds. The release contains seed 42 only under results/cic_binary_lodo_seed42; per-day variation is shown descriptively, and no seed-level uncertainty is claimed. The full five-seed rerun was not completed.
 - The seed-42 routing control is a scoring-convention illustration in the supplement, not evidence that model rankings change in practice.
 - audit/protocol.md was locally frozen before collecting the literature frame. audit/crossref_20261108 contains 385 candidates, the fixed sample of 50, coding and checksums. This is a screening pilot: 3 eligible, 14 excluded, 33 unresolved. It does not estimate field prevalence or document a verified incompatible published score.
-- EXTERNAL-AUDIT.md records published target-resolution examples for NSL-KDD and CICIDS2017. Alsaadi et al. explicitly report 0.619 for a binary CICIDS2017 whole-day task. Biyouki et al. report 0.9855 macro F1 for leave-one-family-out but do not state the scored vocabulary; `code/verify_published_score_audit.py` checks the conditional 12/15, 12/13 and binary ceilings and retains the case as unresolved, not a verified violation.
+- EXTERNAL-AUDIT.md records published target-resolution examples for NSL-KDD and CICIDS2017. Alsaadi et al. explicitly report 0.619 for a binary CICIDS2017 whole-day task. Biyouki et al. report 0.9855 macro F1 for leave-one-family-out; their Methods define CICIDS metrics as binary unless otherwise stated, making the published result compatible with a ceiling of one. Predictions are unavailable, so this is a source-based interpretation rather than an independent re-score. The Nuako technical report's 0.0435 score is below its conservative 0.25 ceiling and is not a violation.
 - audit/nsl_family_plan.md fixes the additional pipelines before their results were examined. audit/AMENDMENTS.md records screening boundaries. audit/reference_verification.csv checks the cited 2026 records and distinguishes a web report from journal articles.
 
 The public repository identifies the author. The anonymous manuscript omits the
