@@ -237,7 +237,7 @@
     "ci95_halfwidth": 0.03679,
     "ceiling": 1.0,
     "status": "compatible",
-    "limitation": "does not meet requested 10-20-paper audit"
+    "limitation": "a 10-20-paper re-score was not completed"
   },
   "package_build": {
     "wheel": "label_availability-0.9.4-py3-none-any.whl",
@@ -252,16 +252,16 @@
     "corrected_cic_confusion_and_score_check": "passed: code/verify_cic_corrected_friday.py",
     "external_matrix_rescore": "passed: code/verify_external_artifact_audit.py",
     "native_tex_compile": "unavailable: local Tectonic executable denied; no TeX Live found",
-    "literature_audit_limit": "one published study re-scored; requested 10-20-study audit not complete",
+    "literature_audit_limit": "one published study re-scored; a 10-20-paper re-score was not completed",
     "verified_published_score_violations": 0,
-    "published_score_audit": "passed: source-based Biyouki binary target and ceiling check; Nuako 0.0435 is below comparison ceiling 0.25"
+    "published_score_audit": "passed: Biyouki is compatible under the authors' stated binary target (source-based interpretation, not an independent re-score); Nuako 0.0435 is below comparison ceiling 0.25"
   },
   "published_lofo_target_check": {
     "doi": "10.1038/s41598-025-34166-1",
     "reported_macro_f1": 0.9855,
     "stated_target": "binary Normal/Attack unless otherwise specified",
     "ceiling": 1.0,
-    "status": "compatible under Methods default",
+    "status": "compatible under the authors' stated binary target; source-based interpretation, not independent re-score; author confirmation would resolve the table-level ambiguity",
     "independent_rescore": false,
     "predictions_released": false,
     "counterfactual_fine_ceiling_15_labels": 0.8,
