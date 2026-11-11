@@ -97,6 +97,26 @@ The supplementary digits control uses scikit-learn's 1,797 images, five stratifi
 \section*{External source compatibility checks}
 The historical targeted audit is separate from the frozen candidate sample. Nuako's public project report \cite{nuako2026} uses a capped CICIDS2017 Friday cohort with 5,688 benign and 30,704 unavailable attack rows. Its support-scored ceiling is 0.25. Reported macro F1 of 0.0435 cannot be assigned to that convention from the displayed counts and benign recall; a larger scored inventory is possible. This is unresolved scorer compatibility, not a verified score violation. Yang et al.'s day-holdout study \cite{yang2026} and Alnattaf and Mahmood's chronological study \cite{alnattaf2026} use binary targets. Ahmed et al. \cite{ahmed2026} harmonize seven shared labels in cross-year evaluation, giving legal ceiling one. These verified 2026 publisher records are identified in audit/reference\_verification.csv. Web project pages are labeled as technical reports, not peer-reviewed articles. A gas-protocol comparison with target calibration and the CICDDoS2019 schedule remain unresolved; neither is counted as a violation.
 
+\section*{Additional UNSW-NB15 analyses}
+The official UNSW-NB15 train and test partitions have complete label coverage for a training-restricted classifier \cite{moustafa2015}. The unweighted forest's five-seed macro F1 mean is 0.47144 (SD 0.00094); label availability does not explain this shortfall. In a controlled analysis, every pair of the nine attack labels is withheld in turn while all official test rows are retained. The 36 pairs are fit with five seeds. Full scores use all ten test labels; covered-row scores use only labels with positive support in the covered subset. Since the pair-seed conditions share the same underlying test rows, the changes are descriptive. The ranking order reverses in 2,577 of 16,110 pair-seed comparisons and in 97 of 630 pair-mean comparisons. For Analysis plus Backdoor at seed 42, the coverage ceiling is 0.8, the oracle is 0.79833 and the observed score is 0.47067. Confusion counts and pair-level summaries are in the release results.
+
+The benign-only Isolation Forest is an open-set binary baseline on the official split. Attack rows are absent from fitting and calibration; the threshold is set to the lower one-percent calibration-score quantile. On the 82,332-row test partition, five-seed macro F1 is 0.48327 (SD 0.02080), attack recall is 0.18128 (SD 0.02488), and false-positive rate is 0.00881 (SD 0.00262). The calibration false-positive rate is 0.991\%. The model emits only BENIGN or ATTACK, so its legal-output ceiling is one. Attack categories are a descriptive breakdown, not model outputs.
+
+\section*{Gas-sensor fractional-coverage analysis}
+The UCI gas-sensor drift archive is evaluated using adjacent-batch transfer: fit batch \(t\), test batch \(t+1\), for nine folds, following a published drift protocol \cite{gasdata,gasprotocol}. The 19 fitted models include forests, MLPs, histogram boosting, logistic regression, SVM, kNN and CORAL logistic regression \cite{coral2016}. CORAL uses unlabeled target features and remains transductive. Predictions and scores are fixed within each saved fit; overlapping rows and training conditions prevent iid significance claims.
+
+All six labels occur somewhere in training, but toluene is unavailable in the batch-6 test fold. That fold contains 467 toluene rows, while pooled test support is 1,759; 1,292 rows are in folds where toluene is available, so \(\rho=1292/1759\). The other five labels have full coverage. For the forest and logistic fits, the coverage ceiling is 0.97449, the vocabulary oracle is 0.96222, and observed macro F1 is 0.57034 and 0.61946, respectively.
+
+\begin{table}[h]\centering
+\caption{Gas-sensor adjacent-batch results. Each row is one saved fit. \(F/O\) is cohort-specific attainment, not a model-quality measure.}
+\begin{tabular}{lrrrr}
+Model & C & O & F & F/O \\
+Random Forest & 0.97449 & 0.96222 & 0.57034 & 0.59274 \\
+Logistic regression & 0.97449 & 0.96222 & 0.61946 & 0.64378 \\
+\end{tabular}\end{table}
+
+The oracle is 0.01227 below the ceiling. This is 3.0\% of the forest's gap \(C-F\) and 3.5\% of logistic regression's gap, using each model's shortfall from \(C\) as the denominator. The vocabulary constraint explains zero toluene hits in batch 6 but only a small part of the pooled shortfall. Across the 19 fits, full and covered-only rankings agree (Spearman and Kendall both one; 161 concordant pairs and ten ties). The natural fractional-coverage example therefore does not show a family-ranking reversal.
+
 \bibliographystyle{IEEEtran}
 \bibliography{references}
 \end{document}

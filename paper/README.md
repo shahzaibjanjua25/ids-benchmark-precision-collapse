@@ -16,11 +16,11 @@ bundle's README and class header contain different licensing statements; their
 original notices are retained in the local submission package.
 
 manuscript.pdf, anonymous.pdf and supplement.pdf are reading copies converted
-through Pandoc 3.13 and Typst 0.15.1. The current copies have 15, 15 and 5 pages.
-All pages were rendered with Poppler for contact-sheet inspection. The revised
-binary summary and corrected-Friday tables, the published-score discussion and
-the bibliography were also inspected at higher resolution. Entries now have
-visible spacing; no clipping or overlap was observed.
+through Pandoc 3.13 and Typst 0.15.1. The current copies have 13, 13 and 7 pages.
+All pages were rendered with Poppler for contact-sheet inspection. The NSL-KDD
+paired-resolution table, CICIDS2017 binary summary, Biyouki discussion, added
+UNSW and gas-sensor supplement sections, and bibliographies were inspected at
+higher resolution. No clipping or overlap was observed.
 Native publisher-class compilation and journal pagination have not been verified. To
 rebuild reading copies with Pandoc and Typst on PATH:
 
