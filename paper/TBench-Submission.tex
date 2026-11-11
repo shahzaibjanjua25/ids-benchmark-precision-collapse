@@ -12,7 +12,7 @@
 \authormark{Sajid}
 \address[1]{\orgname{Independent Researcher}}
 \corresp[$\ast$]{Correspondence: shahzaibjanjua25@gmail.com}
-\abstract{We present a pre-fit audit of the label outputs a benchmark split permits. On the original-label NSL-KDD split, 17 of 38 test labels are unavailable to a training-restricted classifier, giving a macro-F1 ceiling of 0.55263. In a corrected CICIDS2017 Friday holdout, three models across three seeds share a fine-label ceiling of 0.20; mean fine-label macro F1 ranges from 0.155 to 0.175, while binary attack recall ranges from 0.359 to 0.807. A benign-only detector on UNSW-NB15 has a legal binary ceiling of one but mean attack recall of 0.181 across five seeds. We also re-score ten published confusion matrices from one openly released study; its five-class score is compatible with a ceiling of one. No incompatible published score is verified. The results support reporting output labels and scoring conventions but do not establish field-wide impact. Code, counts and split manifests accompany the paper.}
+\abstract{We present a pre-fit audit of the label outputs a benchmark split permits. On the original-label NSL-KDD split, 17 of 38 test labels are unavailable to a training-restricted classifier, giving a macro-F1 ceiling of 0.55263. A corrected CICIDS2017 Friday holdout has five supported labels but only one available in training, giving a fine-label ceiling of 0.20. Binary detection scores vary across capped fitting settings, illustrating that the fine-label ceiling and attack detection answer different questions; these settings are not a model ranking. A benign-only UNSW-NB15 detector likewise has a binary ceiling of one and mean attack recall of 0.181. We re-score ten confusion matrices from one openly released study and find its reported score compatible with a ceiling of one. No incompatible published score is verified. These results motivate reporting legal outputs and scoring conventions but do not establish field-wide impact. Code, counts and split manifests accompany the paper.}
 \keywords{Macro F1, label coverage, benchmark protocols, intrusion detection, reproducibility}
 \maketitle
 
@@ -137,55 +137,57 @@ Every attack class appears on one day. Benign traffic remains available whenever
 The day-held-out unweighted forest has benign recall 0.99858. Of the 557,646 unavailable attack rows, 475,727 are sent to benign and the remainder to other attack labels. Those other attack labels have zero covered support in the pooled score, so they provide free oracle destinations. This explains why the exact oracle equals the coverage ceiling here. The micro ceiling is 0.80300 because benign dominates the cohort. Merging web labels gives a 13-label ceiling of 0.07692; the declared eight-family mapping gives 0.25; binary attack detection has ceiling one. These are different evaluation targets.
 
 \subsection{Corrected CICIDS2017: Friday labels are unavailable after earlier-day training}
-The corrected release contains 1,552,899 Monday--Thursday training rows and 547,915 Friday test rows. Its five test-positive labels are BENIGN, Bot, Bot - Attempted, DDoS, and PortScan. Only BENIGN occurs in the training vocabulary, so all four attack-label recalls are zero for any classifier restricted to observed training labels; the fine-label ceiling is (C=1/5=0.20). This is a result on the corrected, timestamped release and a separate split from the original-release LODO analysis above.
+The corrected release contains 1,552,899 Monday--Thursday training rows and 547,915 Friday test rows. Its five test-positive labels are BENIGN, Bot, Bot - Attempted, DDoS, and PortScan. Only BENIGN occurs in the training vocabulary, so all four attack-label recalls are zero for any classifier restricted to observed training labels; the fine-label ceiling is C = 1/5 = 0.20. This is a result on the corrected, timestamped release and a separate split from the original-release LODO analysis above.
 
-On the fixed Friday cohort, mean positive-support macro F1 is 0.15513 (SD 0.00168) for Random Forest, 0.15542 (SD 0.00122) for Extra Trees, and 0.17464 (SD 0.00728) for SGD log loss. When each model's outputs are collapsed to BENIGN/ATTACK, the mean binary macro F1 values are 0.64951, 0.65185, and 0.85735; attack recall is 0.35852, 0.36055, and 0.80688, respectively. These binary detection scores are not exact-label recognition and do not conflict with the 0.20 fine-label ceiling. The per-class training cap and released label variants affect fitting; this experiment does not estimate the isolated effect of relabeling because no matched old-release fit is included.
+On the fixed Friday cohort, mean positive-support macro F1 is 0.15513 (SD 0.00168) for Random Forest, 0.15542 (SD 0.00122) for Extra Trees, and 0.17464 (SD 0.00728) for SGD log loss. The per-class training cap changes class priors, and model-specific calibration and thresholds also differ. We report these as fixed settings, not as a model-quality comparison. The cap and label variants affect fitting; this experiment does not estimate the isolated effect of relabeling because no matched old-release fit is included.
 
 \begin{table}[h]\centering
-\caption{Corrected CICIDS2017 Friday holdout: means and sample SDs over three seeds on one fixed test cohort. The fine-label ceiling applies to the five positive-support labels; binary scores use a different target.}
-\begin{tabular}{lrrrr}
-Model & Fine macro F1 & Ceiling & Binary macro F1 & Attack recall \\
-Random Forest & 0.15513 (0.00168) & 0.20000 & 0.64951 (0.02161) & 0.35852 (0.03184) \\
-Extra Trees & 0.15542 (0.00122) & 0.20000 & 0.65185 (0.01570) & 0.36055 (0.02342) \\
-SGD log loss & 0.17464 (0.00728) & 0.20000 & 0.85735 (0.04664) & 0.80688 (0.08380) \\
+\caption{Corrected CICIDS2017 Friday holdout: means and sample SDs over three seeds on one fixed test cohort. The attainment ratio F/C is about 0.78--0.87 but mostly reflects benign-class F1; it is not attack-detection quality. Binary scores appear in the summary table below.}
+\label{tab:corrected-cic}
+\begin{tabular}{lrrr}
+Model setting & Fine macro F1 & Ceiling (C) & (F/C) \\
+Random Forest & 0.15513 (0.00168) & 0.20000 & 0.77566 \\
+Extra Trees & 0.15542 (0.00122) & 0.20000 & 0.77708 \\
+SGD log loss & 0.17464 (0.00728) & 0.20000 & 0.87320 \\
 \end{tabular}\end{table}
 
-To show what that target choice changes on the saved day-holdout predictions, we map both truth and predicted labels to the declared eight-family taxonomy and to benign-versus-attack. The same matrix scores 0.06030 at 15 fine labels, 0.15630 at eight families, and 0.57972 as a binary task; the corresponding ceilings are 0.06667, 0.25, and 1. The fine-label score is 90.5\% of its ceiling because benign F1 is 0.90456 while all 14 attack-class F1 terms are zero. This attainment ratio is not a measure of attack detection. Binary attack recall is 0.14690, so collapsing labels removes the structural ceiling but does not make this fitted multiclass forest a useful detector. This post-hoc reaggregation is a task comparison on fixed predictions, not a refit or an estimate for a separately trained binary model.
+The same unit ceiling can accompany very different attack detection. The summary table collects the binary results once; C = 1 in each row because BENIGN and ATTACK are legal outputs. Corrected-Friday scores use binary-collapsed predictions from the fine-label fits. Comparisons across fixed settings and datasets are descriptive.
 
 \begin{table}[h]\centering
-\caption{CICIDS2017 day-holdout predictions re-scored at three label resolutions. The same pooled confusion matrix is reaggregated on both axes.}
+\caption{Binary detection results with legal-output ceiling one. Parentheses give sample SD across seeds where available. The published Alsaadi score is not our reproduction.}
+\label{tab:unit-ceiling}
+\begin{tabular}{lrrr}
+Case / setting & Model & Macro F1 & Attack recall \\
+CIC LODO, binary re-score & RF, one saved fit & 0.57972 & 0.14690 \\
+CIC LODO, binary refit & RF, seed 42 & 0.58063 & 0.14782 \\
+CIC Friday, original release & RF, seed 42 & 0.61754 & 0.27894 \\
+Corrected Friday & RF, 3 seeds & 0.64951 (0.02161) & 0.35852 (0.03184) \\
+Corrected Friday & Extra Trees, 3 seeds & 0.65185 (0.01570) & 0.36055 (0.02342) \\
+Corrected Friday & SGD log loss, 3 seeds & 0.85735 (0.04664) & 0.80688 (0.08380) \\
+UNSW-NB15 & Isolation Forest, 5 seeds & 0.48327 (0.02080) & 0.18128 (0.02488) \\
+CIC day holdout & Alsaadi et al. \cite{alsaadi2026binary} & 0.619 & not reported \\
+\end{tabular}\end{table}
+
+To show what target choice changes on the saved day-holdout predictions, we map truth and predicted labels to the declared eight-family taxonomy. The same matrix scores 0.06030 at 15 fine labels and 0.15630 at eight families, with ceilings 0.06667 and 0.25. The fine-label score is 90.5\% of its ceiling because benign F1 is 0.90456 while all 14 attack-class F1 terms are zero. This attainment ratio is not a measure of attack detection. The binary re-score appears in the summary table; it removes the structural ceiling but retains low attack recall. This is a task comparison on fixed predictions, not a refit or estimate for a separately trained binary model.
+
+\begin{table}[h]\centering
+\caption{CICIDS2017 day-holdout predictions re-scored at two multiclass label resolutions using the same pooled confusion matrix. The binary result appears in the summary table above.}
 \begin{tabular}{lrrrr}
 Target & Classes & Ceiling & Macro F1 & $F/C$ \\
 Fine attack labels & 15 & 0.06667 & 0.06030 & 0.90456 \\
 Declared attack families & 8 & 0.25000 & 0.15630 & 0.62518 \\
-Benign versus attack & 2 & 1.00000 & 0.57972 & 0.57972 \\
 \end{tabular}\end{table}
 
-\paragraph{A unit ceiling does not guarantee detection.} Alsaadi et al. report macro F1 = 0.619 for a CICIDS2017 whole-day holdout, and their Table 2 explicitly labels the task as binary \cite{alsaadi2026binary}. The legal outputs are BENIGN and ATTACK, both present in training, so the ceiling for that reported task is 1 even though fine-grained attack names on the held-out day are absent. On the matching Monday-through-Thursday-to-Friday split, our seed-42 100-tree binary forest scores 0.61754, with attack recall 0.27894. This close result is a cross-study check, not an exact reproduction: we do not claim identical preprocessing or hyperparameters. Neither binary result measures attack-type attribution, and neither conflicts with the 15-label ceiling above.
+Alsaadi et al. explicitly label their whole-day CICIDS2017 result as binary. Both binary outputs occur in training, so its ceiling is one despite the held-out fine-grained attack names. The matching Monday-through-Thursday-to-Friday result in the summary table is a cross-study check, not an exact reproduction: preprocessing and hyperparameters may differ. Neither result evaluates attack-type attribution.
 
-The five-day binary refit makes a different point. For seed 42, pooled macro F1 is 0.58063 and attack recall is 0.14782, close to the post-hoc binary score of the original multiclass predictions (0.57972 macro F1 and 0.14690 attack recall). The pooled ceiling is one, but the binary forest still misses many attacks. Per-day scores vary sharply; the published Friday result should not be read as evidence for all five held-out days.
+A second published example illustrates how methods text resolves a headline score. Biyouki et al. report macro F1 = 98.55\% for CICIDS2017 leave-one-family-out with Web Attack excluded from training \cite{biyouki2026}. Their experimental setup defines CICIDS2017 as a binary Normal/Attack task and says CICIDS metrics are binary unless otherwise stated. Table 4 does not state a different inventory, so the reported result is compatible with a ceiling of one: BENIGN and ATTACK remain available because other attack families occur in training. This is a source-based interpretation, not an independent re-score; the paper does not release predictions. A 15-label or 13-label ceiling would apply only under a different multiclass target that the article does not specify.
 
-A second published example shows why naming the scored vocabulary is part of the result. Biyouki et al. report macro F1 = 98.55\% for a CICIDS2017 leave-one-family-out experiment that excludes Web Attack from training \cite{biyouki2026}. Their methods say CICIDS metrics are binary unless stated otherwise; Table 4 does not state that LOFO uses a multiclass inventory, identify the labels in the macro average, or say whether withheld-family rows are included. Binary scoring is therefore plausible but not confirmed. The implications are conditional. For a 15-label score that includes the three separate Web Attack subtypes, the ceiling is at most 12/15 = 0.80. If those subtypes are first merged into one Web Attack class, the 13-label ceiling is at most 12/13 = 0.9231. Either value is below 0.9855. Under a binary BENIGN/ATTACK task, both outputs can remain available during family withholding and the ceiling is one; if withheld-family rows are excluded, the fine-label ceiling also does not apply to the scored cohort. The article supplies no code link that resolves the table's scoring convention. We retain this as an unresolved target-definition ambiguity, not a verified incompatible score.
-
-We also re-scored one published artifact with saved predictions available. Franco-Valiente et al. release ten per-seed confusion matrices for a five-superclass CICIDS2017 connection-grouped evaluation \cite{francovaliente2026}. Recomputing macro F1 from those matrices gives a mean of 0.90002 (sample SD 0.05143; 95\% t-interval half-width 0.0368), matching the reported 0.900 ± 0.037. The study reports training support for all five classes, including 65 U2R flows, so the closed-set ceiling is 1 for each split. This is one independently checked paper and one compatible result, not the 10--20-paper survey needed to estimate how often published scores sit near their ceilings.
-
-\begin{table}[h]\centering
-\caption{Binary random-forest results for CICIDS2017 capture-day folds, seed 42. Each row holds out one day and trains on the others. Macro F1 averages labels with positive test support in that row.}
-\begin{tabular}{lrrr}
-Held-out day & Attack support & Macro F1 & Attack recall \\
-Friday & 288923 & 0.61754 & 0.27894 \\
-Monday & 0 & 0.99991 & -- \\
-Thursday & 2216 & 0.50888 & 0.01625 \\
-Tuesday & 13835 & 0.49172 & 0.00043 \\
-Wednesday & 252672 & 0.39615 & 0.00712 \\
-Pooled LODO & 557646 & 0.58063 & 0.14782 \\
-\end{tabular}\end{table}
-Monday contains no attack rows, so its near-one macro F1 is a benign-only score and says nothing about attack detection. All values in Table 6 use seed 42; no seed-level uncertainty is available for this refit. Across attack-bearing days, attack recall ranges from 0.00043 to 0.27894, so the pooled value should not be read as representative of every day.
+We also re-scored one published artifact with saved predictions available. Franco-Valiente et al. release ten per-seed confusion matrices for a five-superclass CICIDS2017 connection-grouped evaluation \cite{francovaliente2026}. Recomputing macro F1 from those matrices gives a mean of 0.90002 (sample SD 0.05143; 95\% t-interval half-width 0.0368), matching the reported 0.900 ± 0.037. The study reports training support for all five classes, including 65 U2R flows, so the closed-set ceiling is 1 for each split. This is one independently checked paper and one compatible result, not the 10--20-paper survey needed to estimate how often published scores sit near their ceilings. The Nuako technical report lists macro F1 0.0435 against a conservative comparison ceiling of 0.25. Because its score is below that ceiling, it is not a violation; its denominator and target inventory remain unresolved.
 
 \subsection{Fixed-cohort withholding and rankings}
 The official UNSW-NB15 split has complete coverage. The unweighted forest's five-seed mean is 0.47144, with seed SD 0.00094. Training-label availability cannot explain that shortfall. Withholding two labels creates \(C=0.8\), but its oracle depends on their support and legal destinations. For Analysis plus Backdoor at seed 42, \(O=0.79833\) and \(F=0.47067\).
 
-\paragraph{Open-set detection has a different target.} The benign-only Isolation Forest never sees attack rows during fitting or threshold calibration. It emits only BENIGN or ATTACK, so both legal outputs are declared in advance and the binary ceiling is 1. Across five seeds on the official test set (82,332 rows; 45,332 attacks), mean macro F1 is 0.48327 (SD 0.02080), attack recall is 0.18128 (SD 0.02488), and test false-positive rate is 0.00881 (SD 0.00262). The benign calibration false-positive rate is 0.991\%. This is an open-set binary detection example: attack categories are reported only as a descriptive breakdown, not as predicted classes. The unit ceiling captures the legal binary outputs; it does not imply that the anomaly detector finds most attacks.
+The benign-only Isolation Forest is a separate open-set binary detector. It sees no attack rows during fitting or calibration and predicts BENIGN/ATTACK; attack categories are only a descriptive breakdown. Its mean test false-positive rate is 0.00881 (SD 0.00262), with calibration false-positive rate 0.991\%. Its macro F1 and attack recall appear in the summary table alongside the other binary settings.
 
 The covered-row calculations use a different label inventory for each withheld pair, while full scoring retains all test labels. On this finite grid, 2,577 of 16,110 pair-seed comparisons and 97 of 630 pair-mean comparisons reverse order between the two scoring definitions. These counts are descriptive; they do not establish that either ranking is wrong. All 180 full scores match the earlier grid to absolute tolerance $10^{-12}$, and the saved confusion matrices permit reconstruction of covered-row scores.
 

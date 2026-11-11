@@ -18,8 +18,11 @@ acceptance.
 - Ten per-seed confusion matrices from one public published IDS artifact were
   independently re-scored. The recomputed mean macro F1 (0.90002) matches the
   paper's 0.900 +/- 0.037 and is compatible with the unit ceiling.
-- The Biyouki LOFO report remains conditional because its scored vocabulary and
-  cohort are not specified. No incompatible published score is verified.
+- The Biyouki article's Methods specify binary Normal/Attack scoring for
+  CICIDS2017 unless otherwise stated, and Table 4 gives no different target.
+  Its LOFO score is compatible with a ceiling of one; predictions are not
+  released, so this is a source-based interpretation rather than a re-score.
+  No incompatible published score is verified.
 
 ## Remaining reasons for major revision
 
