@@ -4,7 +4,7 @@ These targeted checks are separate from the release-0.5.0 frozen 50-candidate
 screening pilot in audit/crossref_20261108. They are retained as source-specific
 compatibility notes and are not the denominator of that pilot.
 
-Access dates: 2026-11-08 and 2026-11-09, Asia/Karachi. This is a targeted compatibility audit,
+Access dates: 2026-11-08 through 2026-11-11, Asia/Karachi. This is a targeted compatibility audit,
 not a systematic review and not a prevalence estimate. Four sources were carried
 forward from the preceding revision. The new search inspected the gas protocol,
 official CICDDoS2019 documentation, and published CICIDS2017 target definitions.
@@ -106,30 +106,28 @@ consistency check, not an exact reproduction: the original paper's complete
 preprocessing and hyperparameters are not asserted to match this pipeline.
 This case shows why protocol reports must name both the split and output target.
 
-## Published CICIDS2017 leave-one-family-out result: unresolved label inventory
+## Published CICIDS2017 leave-one-family-out result: binary task is stated in methods
 
 Source: Biyouki et al., *An Enhanced Deep Learning Framework for Intrusion
 Classification Enterprise Network Using Multi-Branch CNN-Attention Architecture*,
 Scientific Reports 16, 3962 (2026), https://doi.org/10.1038/s41598-025-34166-1.
 
-The article says that Web Attack is excluded from training in a CICIDS2017
-leave-one-family-out experiment and reports 98.55% macro F1 in Table 4. Its
-methods identify the main CICIDS task as binary, while the LOFO table does not
-state the score's label inventory or whether the held-out family is included in
-the macro average. Its interpretation discusses known-class performance and
-held-out-family ranking without mapping each metric to its scored cohort.
-Conditional on a pooled 15-label closed-set macro F1 that includes the three
-separate Web Attack subtypes, the ceiling is at most 12/15 = 0.80. If those
-subtypes are merged into one Web Attack class in a 13-label taxonomy, the
-ceiling is at most 12/13 = 0.9231. Either would be below 0.9855. The article's
-main CICIDS methods specify a binary BENIGN/ATTACK task and state that CICIDS
-metrics are binary unless noted otherwise. Table 4 does not label LOFO as
-multiclass, but does not state its scored cohort or whether held-out rows enter
-the score; the article provides no code link that resolves this. Under binary
-outputs the ceiling is one because other attack families remain in training.
-We retain this as unresolved and do not allege a score violation.
-The case demonstrates which missing reporting choice determines whether a
-headline score evaluates known-family recognition or the withheld family.
+Table 4 reports 98.55% macro F1 for the CICIDS2017 leave-one-family-out
+experiment, with Web Attack withheld from training. The Methods section states
+that CICIDS2017 is evaluated as binary Normal/Attack and that its metrics use
+that configuration unless otherwise stated. Table 4 does not specify a
+different label inventory, so we interpret its target as binary. Both legal
+outputs remain in training because other attack families are retained. The
+reported score is therefore compatible with a ceiling of 1. This is a
+source-based target interpretation, not an independent re-score; predictions
+are not released. A 15-label ceiling of 0.80 or 13-label ceiling of 0.9231
+would apply only under an unstated multiclass target and is not the reading
+supported by the methods.
+
+The Nuako technical report lists macro F1 0.0435 against the conservative
+comparison ceiling 0.25. That score is below the ceiling and therefore cannot
+be a ceiling violation. The scored denominator and target inventory remain
+unresolved.
 
 ## Public prediction-artifact re-score: corrected CICIDS2017 five-superclass task
 
