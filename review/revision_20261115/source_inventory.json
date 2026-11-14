@@ -1,0 +1,895 @@
+{
+  "original_commit": "33f16a6cd72506f5c9fe816af36f9f6908331ad4",
+  "original_tracked_file_count": 536,
+  "python_sources": [
+    {
+      "path": "code/audit_cic_day_coverage.py",
+      "sha256": "f670250103d6d1f54d583c0716adc626dfa9558fc078f1cd05dfaff89a9321bd",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "clean_repo.ids_full_study",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/audit_cic_target_resolution.py",
+      "sha256": "04fb180bc9cedc6387229e1f3083b666cbf40bad78f3d998596148bf9894f1cb",
+      "functions": 2,
+      "classes": 0,
+      "imports": [
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/audit_ciciot2023_published.py",
+      "sha256": "c113c9a87ef1e9e103e848db46ed134931c09e1bdd2dda91e54d91deabd39d0a",
+      "functions": 1,
+      "classes": 0,
+      "imports": [
+        "pathlib",
+        "pypdf"
+      ]
+    },
+    {
+      "path": "code/audit_nsl_destinations.py",
+      "sha256": "9e4cf310ad296693a2ba7244cff65b47ba5c626f179fe7d8f19c6a7e110e8870",
+      "functions": 1,
+      "classes": 0,
+      "imports": [
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/audit_nsl_granularity.py",
+      "sha256": "2d51171f21e964ed5d71cdb5891e1e36c2ee6a149a5b6399176dc88e7ba684d2",
+      "functions": 2,
+      "classes": 0,
+      "imports": [
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/audit_nsl_kdd_coverage.py",
+      "sha256": "65f657b8fb6ea8b91abc93c7450fca40f28ea21df6280e2404a6bef64db31a7f",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "label_coverage_bound",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/audit_revision_inventory.py",
+      "sha256": "12ef7ac5b654a86c885b6b8d62a9da51eae694ef75f1a684aeb43b507dc949e7",
+      "functions": 1,
+      "classes": 0,
+      "imports": [
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/audit_scoring_conventions.py",
+      "sha256": "0868855bde019c3eead0cb45bc0f5202a8bca53c05364bb0b3c3b585a138ad9b",
+      "functions": 1,
+      "classes": 0,
+      "imports": [
+        "label_availability",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/audit_unsw_overlap.py",
+      "sha256": "4f6f5325edf61cc587254212af2f7698af7d595eb67e42e72506c98285b874ea",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "clean_repo.ids_full_study",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/bootstrap_pair_correlation.py",
+      "sha256": "cd7b1515d5b6d102fe68851c0df3ca7bbf755518e0b22b0fa83c182a39b2fce6",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "pathlib",
+        "scipy.stats"
+      ]
+    },
+    {
+      "path": "code/build_literature_frame.py",
+      "sha256": "19f1029dbc61243cce16a38ba5bb5eb699dbe2b113f1032831d9d09db623a98b",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "datetime",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/build_main_tables.py",
+      "sha256": "ef0b1221b42129bb8e46ef88cf7765d4257471fbd496008c7bfe1e6c5cb8c165",
+      "functions": 1,
+      "classes": 0,
+      "imports": [
+        "label_availability",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/build_revision_figures.py",
+      "sha256": "2fecbd31d95b6d990b6b2af11ecb6abcf1e2803ca714a12976c05ea5b98d4cfa",
+      "functions": 1,
+      "classes": 0,
+      "imports": [
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/build_revision_paper.py",
+      "sha256": "7c2ed1147431d92cb72e680ca2bad9165a11d9769802b0f638a368f373f1a9f4",
+      "functions": 3,
+      "classes": 0,
+      "imports": [
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/check_availability.py",
+      "sha256": "968d6a7cd1d190e64b0d3b26101e0c0652abe8e78e51ae5e7a57331cdbb5084f",
+      "functions": 1,
+      "classes": 0,
+      "imports": [
+        "label_availability",
+        "sklearn.metrics"
+      ]
+    },
+    {
+      "path": "code/check_branch_oracle.py",
+      "sha256": "e79471dbd37156b362887a1efbca6629c8bc7196ded4d223d90cef09bfe04ac0",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "exact_fold_oracle",
+        "pathlib",
+        "time"
+      ]
+    },
+    {
+      "path": "code/check_certified.py",
+      "sha256": "ec056550e48ae900a5e98cb2033c26eba04d1f0f76fcb8964d96d60d386704db",
+      "functions": 2,
+      "classes": 0,
+      "imports": [
+        "fractions",
+        "label_availability",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/check_destination_example.py",
+      "sha256": "ed63bba40e72128c7c26e90e045018eda20c4a171b9be9f43e3e709279d8da26",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "label_availability",
+        "sklearn.metrics"
+      ]
+    },
+    {
+      "path": "code/check_oracle_and_gaps.py",
+      "sha256": "394d807556fc7924004f2f7dc8fde6de030ba7053fefa4930472d2fd6e8845c0",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "exact_fold_oracle",
+        "pathlib",
+        "sklearn.metrics"
+      ]
+    },
+    {
+      "path": "code/check_vocabulary_groups.py",
+      "sha256": "132855c4276a59c1133456e3adf6e759fed3694aca8a38fbd9d61631d4a40f21",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "label_availability",
+        "sklearn.metrics"
+      ]
+    },
+    {
+      "path": "code/clean_repo/cic_ids_pipeline.py",
+      "sha256": "255c2b73acec05c1b8500f1e20641bd521386de7a9a3964bac688e7d12aeb83b",
+      "functions": 8,
+      "classes": 0,
+      "imports": [
+        "__future__",
+        "pathlib",
+        "sklearn.ensemble",
+        "sklearn.impute",
+        "sklearn.metrics",
+        "sklearn.model_selection",
+        "sklearn.pipeline",
+        "sklearn.preprocessing",
+        "typing"
+      ]
+    },
+    {
+      "path": "code/clean_repo/ids_full_study.py",
+      "sha256": "d545472010d5934db7951f27ee2890fb8b55908e3805d694781dc5c1e453994f",
+      "functions": 27,
+      "classes": 1,
+      "imports": [
+        "imblearn.over_sampling",
+        "imblearn.pipeline",
+        "sklearn.compose",
+        "sklearn.ensemble",
+        "sklearn.impute",
+        "sklearn.linear_model",
+        "sklearn.metrics",
+        "sklearn.model_selection",
+        "sklearn.pipeline",
+        "sklearn.preprocessing"
+      ]
+    },
+    {
+      "path": "code/clean_repo/unsw_ablation.py",
+      "sha256": "78b389bc9e63566ec45d0bbb0e52653a945420638242eb383a6f908c1e26c7cd",
+      "functions": 9,
+      "classes": 0,
+      "imports": [
+        "imblearn.over_sampling",
+        "imblearn.pipeline",
+        "sklearn.compose",
+        "sklearn.ensemble",
+        "sklearn.impute",
+        "sklearn.metrics",
+        "sklearn.model_selection",
+        "sklearn.pipeline",
+        "sklearn.preprocessing"
+      ]
+    },
+    {
+      "path": "code/clean_repo/unsw_nb15_pipeline.py",
+      "sha256": "c8afc728eadacd8971ada172e8eb1417c8b08774feac0b9894d79c3200696ac4",
+      "functions": 6,
+      "classes": 0,
+      "imports": [
+        "__future__",
+        "pathlib",
+        "scipy",
+        "sklearn.compose",
+        "sklearn.ensemble",
+        "sklearn.impute",
+        "sklearn.metrics",
+        "sklearn.model_selection",
+        "sklearn.pipeline",
+        "sklearn.preprocessing",
+        "typing"
+      ]
+    },
+    {
+      "path": "code/dataset_manifest.py",
+      "sha256": "68471b3ded009d9e05554935b8e840b14679b841e6dbe45a37f0b5406544aa5f",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/decompose_cic_lodo.py",
+      "sha256": "2efa093dd44cc74acb7c46202a98a946b6dca4a1cd7aebeafc6dc8159a1f0a48",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/exact_fold_oracle.py",
+      "sha256": "17c2ec7c5ebca4c391733985e3a344099403f3aed34350d82e3fe18664025fab",
+      "functions": 1,
+      "classes": 0,
+      "imports": [
+        "label_availability",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/export_cic_coverage_confusion.py",
+      "sha256": "87c5ee7bffb163a5cf918fd654e2b810ecf8e75ae18688fc607a08eebf84dba3",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/export_cic_membership.py",
+      "sha256": "7f0d23f5ffa3e0c80079ef6e2241f60d02c9e69c3747248988b0db015b87852f",
+      "functions": 1,
+      "classes": 0,
+      "imports": [
+        "clean_repo.ids_full_study",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/label_availability/__init__.py",
+      "sha256": "3d3dfb38db1c683d357b1caca337da33a49344b5cced14bee5fbfaa674155cd8",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "certified",
+        "core"
+      ]
+    },
+    {
+      "path": "code/label_availability/__main__.py",
+      "sha256": "78f227a9292bc9cc97a56f21f7b831778ea53c23dc8d506b481ab98561106d1c",
+      "functions": 1,
+      "classes": 0,
+      "imports": [
+        "certified",
+        "core"
+      ]
+    },
+    {
+      "path": "code/label_availability/certified.py",
+      "sha256": "139c70ec0a2a78291c58d366735d958577b30c46c015551195ab440bfead0c6a",
+      "functions": 3,
+      "classes": 0,
+      "imports": [
+        "core",
+        "fractions",
+        "itertools",
+        "math"
+      ]
+    },
+    {
+      "path": "code/label_availability/core.py",
+      "sha256": "29a13c29787c5af95f5a3edf5c72b2b2c79838a1045557e9718dd35ef6d9170b",
+      "functions": 10,
+      "classes": 0,
+      "imports": []
+    },
+    {
+      "path": "code/label_coverage_bound.py",
+      "sha256": "e5e14f904cee8817f6196a675aebe41da1db25e317df9e4c53496eddf608e4a3",
+      "functions": 2,
+      "classes": 0,
+      "imports": [
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/oracle_milp.py",
+      "sha256": "8318283731965be6e453e70ef39b959c89ea7f34bdef09f54cf41ebab9b02d7d",
+      "functions": 1,
+      "classes": 0,
+      "imports": [
+        "label_availability.core",
+        "scipy.optimize",
+        "scipy.sparse"
+      ]
+    },
+    {
+      "path": "code/plot_cic_hero.py",
+      "sha256": "35c0e9614c3f4fc20ea8e6fa4b3e9cfe83b1ac592d421df68c6de15201205a83",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/plot_revision_targets.py",
+      "sha256": "94c420fdb816746a15ebec9540925b25a5e1aa77f3d1140e7ba0918160722b95",
+      "functions": 1,
+      "classes": 0,
+      "imports": [
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/plot_unsw_overlap_seeds.py",
+      "sha256": "966c8dec7c7f3adc8ca63a22a2c752718ba410f76cbd4a12d41176385c4ff47c",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/plot_unsw_pair_distribution.py",
+      "sha256": "661df6d96825375bf5bbf066aa6f2a330212f14af9cbe377f747f097abc86a98",
+      "functions": 1,
+      "classes": 0,
+      "imports": [
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/qa_revision_pdfs.py",
+      "sha256": "513885e84f6b47453b98204ba9de8cfafbe44c069296f5428cb0b086c93dfe78",
+      "functions": 1,
+      "classes": 0,
+      "imports": [
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/rebuild_gas_figure.py",
+      "sha256": "5ce321f16bed94057a6cde8d7c87d1a3f793b03e6944ed6a42d4b82d4786dc1a",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "exact_fold_oracle",
+        "matplotlib.colors",
+        "matplotlib.patches",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/release_figures.py",
+      "sha256": "57d1d5ed882cb447c521c4f94762a837618a5638b56cff55a68aab780cc7b1bd",
+      "functions": 2,
+      "classes": 0,
+      "imports": [
+        "datetime",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/reproduce_release.py",
+      "sha256": "5dde28fa5c037e69c7acfbe764fbf709c6cd3211102db4e17ad7feff0329e072",
+      "functions": 1,
+      "classes": 0,
+      "imports": [
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/reproduce_revision.py",
+      "sha256": "2527798d6f5740c801df54f1aaf57a30ed2dd42a60dd77fcd70cdee7881bece6",
+      "functions": 1,
+      "classes": 0,
+      "imports": [
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/reproduce_tbench.py",
+      "sha256": "038a72d4e113f9399f473d59777b6fc32dbfbf7438099245c4c65a2b7605a17b",
+      "functions": 1,
+      "classes": 0,
+      "imports": [
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/rerun_unsw_official.py",
+      "sha256": "36d538b83349197a75d63f14813dc88c0753a64b3d56826b0ec42998ec70eb19",
+      "functions": 1,
+      "classes": 0,
+      "imports": [
+        "clean_repo.ids_full_study",
+        "pathlib",
+        "sklearn.metrics"
+      ]
+    },
+    {
+      "path": "code/run_cic_binary_lodo.py",
+      "sha256": "644384add20f650f3949324ea5f2803c5057c20a758c787819e90bfcd05ec017",
+      "functions": 1,
+      "classes": 0,
+      "imports": [
+        "ids_full_study",
+        "pathlib",
+        "sklearn.metrics"
+      ]
+    },
+    {
+      "path": "code/run_cic_corrected_friday.py",
+      "sha256": "59ee40caf5f07c274d8c89eaad30ad949f2006c57cf5e50262de7d2c07f243cf",
+      "functions": 3,
+      "classes": 0,
+      "imports": [
+        "__future__",
+        "pathlib",
+        "sklearn.compose",
+        "sklearn.ensemble",
+        "sklearn.impute",
+        "sklearn.linear_model",
+        "sklearn.metrics",
+        "sklearn.pipeline",
+        "sklearn.preprocessing"
+      ]
+    },
+    {
+      "path": "code/run_digits_fractional_coverage.py",
+      "sha256": "1ead9b80aeb9c1377c9b04495f3ac26b9147a2782d22cbb2ccc628a86836841a",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "label_coverage_bound",
+        "pathlib",
+        "sklearn.datasets",
+        "sklearn.ensemble",
+        "sklearn.metrics",
+        "sklearn.model_selection"
+      ]
+    },
+    {
+      "path": "code/run_gas_drift.py",
+      "sha256": "666e0e0b5a56e638dacd82bcc1f30b4af63fb837e49b678278de1da55a7191ca",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "exact_fold_oracle",
+        "pathlib",
+        "sklearn.datasets",
+        "sklearn.ensemble",
+        "sklearn.linear_model",
+        "sklearn.metrics",
+        "sklearn.pipeline",
+        "sklearn.preprocessing",
+        "zipfile"
+      ]
+    },
+    {
+      "path": "code/run_gas_models.py",
+      "sha256": "6c1076a68606015cebc0906aaf4e7848d4e31eb7cc6ebead3cb385ca5ce69170",
+      "functions": 2,
+      "classes": 0,
+      "imports": [
+        "pathlib",
+        "sklearn.datasets",
+        "sklearn.ensemble",
+        "sklearn.linear_model",
+        "sklearn.metrics",
+        "sklearn.neighbors",
+        "sklearn.neural_network",
+        "sklearn.pipeline",
+        "sklearn.preprocessing",
+        "sklearn.svm",
+        "threadpoolctl",
+        "zipfile"
+      ]
+    },
+    {
+      "path": "code/run_nsl_families.py",
+      "sha256": "b8aef94f0c5fdfb4a91866f94f5eff89be2bf011800b9e90e31d5b48ee2a62a6",
+      "functions": 1,
+      "classes": 0,
+      "imports": [
+        "pathlib",
+        "sklearn.compose",
+        "sklearn.ensemble",
+        "sklearn.linear_model",
+        "sklearn.metrics",
+        "sklearn.naive_bayes",
+        "sklearn.neighbors",
+        "sklearn.pipeline",
+        "sklearn.preprocessing",
+        "sklearn.tree",
+        "threadpoolctl",
+        "time"
+      ]
+    },
+    {
+      "path": "code/run_nsl_family_seeds.py",
+      "sha256": "abf0510a41860f103a1c010f141d885dfdd876526d5d443be1a7e5e125e01de8",
+      "functions": 2,
+      "classes": 0,
+      "imports": [
+        "pathlib",
+        "sklearn.compose",
+        "sklearn.ensemble",
+        "sklearn.linear_model",
+        "sklearn.metrics",
+        "sklearn.naive_bayes",
+        "sklearn.neighbors",
+        "sklearn.pipeline",
+        "sklearn.preprocessing",
+        "sklearn.tree",
+        "threadpoolctl",
+        "time"
+      ]
+    },
+    {
+      "path": "code/run_nsl_kdd_forest.py",
+      "sha256": "937a374c1cf64274fb2a23a1ba7f5af912f47c94a26136742b7253afd22625ab",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "pathlib",
+        "sklearn.compose",
+        "sklearn.ensemble",
+        "sklearn.metrics",
+        "sklearn.pipeline",
+        "sklearn.preprocessing"
+      ]
+    },
+    {
+      "path": "code/run_rank_audit.py",
+      "sha256": "7d877494c5ac5fd45ff31cdd93f75b844cf4ba29c8f8e81a4f35d1007ca62adc",
+      "functions": 1,
+      "classes": 0,
+      "imports": [
+        "clean_repo.ids_full_study",
+        "itertools",
+        "pathlib",
+        "sklearn.metrics"
+      ]
+    },
+    {
+      "path": "code/run_revision_nsl.py",
+      "sha256": "31753bf80fedd01b1563757fc0f7b8bd2b789677b8de429869054cd94f995bf4",
+      "functions": 1,
+      "classes": 0,
+      "imports": [
+        "label_availability",
+        "pathlib",
+        "sklearn.compose",
+        "sklearn.ensemble",
+        "sklearn.metrics",
+        "sklearn.pipeline",
+        "sklearn.preprocessing"
+      ]
+    },
+    {
+      "path": "code/run_solver_shapes.py",
+      "sha256": "9b279fad1194c44de4f4bc28b61f325abaea336894fc399905f355ec631d9409",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "label_availability",
+        "oracle_milp"
+      ]
+    },
+    {
+      "path": "code/run_unsw_benign_ood.py",
+      "sha256": "d595f87aa7b14cc8ed5302e3f68bdc84915cb90ef5477b11814af7b9f8a40325",
+      "functions": 2,
+      "classes": 0,
+      "imports": [
+        "__future__",
+        "pathlib",
+        "sklearn.compose",
+        "sklearn.ensemble",
+        "sklearn.impute",
+        "sklearn.metrics",
+        "sklearn.model_selection",
+        "sklearn.pipeline",
+        "sklearn.preprocessing"
+      ]
+    },
+    {
+      "path": "code/run_unsw_coverage_sensitivity.py",
+      "sha256": "9f9957f68d138ad3fd2b48ec341b97b1b6de66dc1af6330211fe45e218b27481",
+      "functions": 2,
+      "classes": 0,
+      "imports": [
+        "clean_repo.ids_full_study",
+        "itertools",
+        "label_coverage_bound",
+        "pathlib",
+        "sklearn.metrics"
+      ]
+    },
+    {
+      "path": "code/run_unsw_extended.py",
+      "sha256": "a8bae57930ccfb69ef2a09163614aa89abb1e210dd51483552c3b0558c0f46e1",
+      "functions": 1,
+      "classes": 0,
+      "imports": [
+        "clean_repo.ids_full_study",
+        "itertools",
+        "pathlib",
+        "sklearn.metrics"
+      ]
+    },
+    {
+      "path": "code/run_unsw_overlap_control.py",
+      "sha256": "bc1d817711a9e84f11c647819b525eaafb02b337fd25d66e4f02dbabdc565f86",
+      "functions": 1,
+      "classes": 0,
+      "imports": [
+        "clean_repo.ids_full_study",
+        "pathlib",
+        "sklearn.metrics"
+      ]
+    },
+    {
+      "path": "code/run_unsw_partial_coverage.py",
+      "sha256": "829a4251a08d53a983faa8dfdbf54854548e436bbec00c2e626f8c0c2d1e69a5",
+      "functions": 1,
+      "classes": 0,
+      "imports": [
+        "clean_repo.ids_full_study",
+        "label_coverage_bound",
+        "pathlib",
+        "sklearn.metrics"
+      ]
+    },
+    {
+      "path": "code/summarize_nsl_seeds.py",
+      "sha256": "4723a913df62d67cf177a0137fe144766dbce259ffd09e0ed81ec68677a3b30f",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/summarize_pair_variation.py",
+      "sha256": "628aae1669bef6f4c56b66e6dee52243cc41877e0b10c1bdab7b5ea29e09eed8",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "pathlib",
+        "scipy.stats"
+      ]
+    },
+    {
+      "path": "code/summarize_rank_audit.py",
+      "sha256": "195b9782fb52b7b12f516848eccacc95c3e45eebe7e8309d2328acba7606a985",
+      "functions": 2,
+      "classes": 0,
+      "imports": [
+        "itertools",
+        "pathlib",
+        "scipy.stats"
+      ]
+    },
+    {
+      "path": "code/summarize_revision.py",
+      "sha256": "b7cb1dd85b20cf879b3672d887353653eb94ee2ee31d2f65ff1040a4cc3575bd",
+      "functions": 1,
+      "classes": 0,
+      "imports": [
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/summarize_unsw_coverage_random_pairs.py",
+      "sha256": "e95b3fb8f12027e141d20bedeb26a3ad61302efda7664ed1aef8929d27a873d2",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/summarize_unsw_coverage_sensitivity.py",
+      "sha256": "5570978ace99306cf7a9b1fa740a3aec9443e6c73ea65e7625d912bf61b67177",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/summarize_unsw_overlap_seeds.py",
+      "sha256": "9e87b41100e2a70674b16f549211c3e59cf175c56c3063bac7a3378648d3f3f8",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "itertools",
+        "pathlib",
+        "scipy.stats"
+      ]
+    },
+    {
+      "path": "code/verify_cic_archive.py",
+      "sha256": "9685fcecaec3046e4bb0f211cf44060ac8019865c791106e0e80e7f42f0a4a90",
+      "functions": 1,
+      "classes": 0,
+      "imports": [
+        "clean_repo.ids_full_study",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/verify_cic_binary_lodo.py",
+      "sha256": "df705bacc336339cb112eda41af5df4b262eedef986e3fcdd1b11ed3ac3e8d93",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/verify_cic_corrected_friday.py",
+      "sha256": "2dcb9cf9ff5768eac8e14256a5b175ed921c59b4ea892d4a1f5eea2e491bd61f",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "__future__",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/verify_external_artifact_audit.py",
+      "sha256": "38b40cd0ca9de98007b57fd45f4c22f6248d392cebcf816451073a85e2ce50e1",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "__future__",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/verify_published_score_audit.py",
+      "sha256": "f4481e6370ef7a9f258586db29956096b9f27ca5aca9c91a8b1df60877a6bcf4",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/verify_release_evidence.py",
+      "sha256": "b89a4c60509d90e16f09784712c22fc6b4d78b9926288eb98cb3c736f058e3f0",
+      "functions": 1,
+      "classes": 0,
+      "imports": [
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/verify_revision_references.py",
+      "sha256": "aff8a56713eb36a6f5fbff4373830f0f54cc6b1e67680fb8d67c9baf6cf334b7",
+      "functions": 2,
+      "classes": 0,
+      "imports": [
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/verify_revision_results.py",
+      "sha256": "d0c548bd29b5cbf515ff19768667b82e7c035cafda3730cc43bbc42b99d6c650",
+      "functions": 2,
+      "classes": 0,
+      "imports": [
+        "label_availability",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "code/verify_unsw_benign_ood.py",
+      "sha256": "7db5abb4a823e827bb1b5b09c411903cdc8da8b5921146d46409385678eaaf9f",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "pathlib"
+      ]
+    },
+    {
+      "path": "paper/build_reading.py",
+      "sha256": "68664d0339345a4362ecf36b02f776b495409858ed6707b9214f735fdde2c2c0",
+      "functions": 0,
+      "classes": 0,
+      "imports": [
+        "pathlib"
+      ]
+    },
+    {
+      "path": "paper/sync_tbench_sources.py",
+      "sha256": "10257a37bb877691503018dea1d5ae1604dd276fb2d240979277f410e636a909",
+      "functions": 1,
+      "classes": 0,
+      "imports": [
+        "pathlib"
+      ]
+    }
+  ],
+  "syntax_errors": [],
+  "scope": "Complete path and Python syntax inventory; semantic inspection focused on metrics, oracle, reproduction, new refit and manuscript evidence. Not an execution of every historical script.",
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26300-SP0"
+}

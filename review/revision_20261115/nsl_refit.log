@@ -1,0 +1,6 @@
+{'model': 'random_forest', 'seed': 42, 'fine_macro_f1': 0.25456384527559195, 'union_macro_f1': 0.2480365671916024, 'category_macro_f1': 0.4882494229734718, 'unavailable_hits': 0}
+{'model': 'random_forest', 'seed': 43, 'fine_macro_f1': 0.2348759515591771, 'union_macro_f1': 0.22885349126278795, 'category_macro_f1': 0.4819971870365575, 'unavailable_hits': 0}
+{'model': 'random_forest', 'seed': 44, 'fine_macro_f1': 0.2376407056264168, 'union_macro_f1': 0.23154735420009842, 'category_macro_f1': 0.47481712318419556, 'unavailable_hits': 0}
+{'model': 'extra_trees', 'seed': 42, 'fine_macro_f1': 0.2227237359282469, 'union_macro_f1': 0.21701287090444568, 'category_macro_f1': 0.4803479141012142, 'unavailable_hits': 0}
+{'model': 'extra_trees', 'seed': 43, 'fine_macro_f1': 0.22430590648000484, 'union_macro_f1': 0.21855447298051756, 'category_macro_f1': 0.47833661914878, 'unavailable_hits': 0}
+{'model': 'extra_trees', 'seed': 44, 'fine_macro_f1': 0.22399153964064525, 'union_macro_f1': 0.21824816682934667, 'category_macro_f1': 0.48556626855883944, 'unavailable_hits': 0}

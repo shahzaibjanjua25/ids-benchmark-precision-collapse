@@ -1,0 +1,3 @@
+model,source_table,test_rows,classes,recomputed_macro_f1,published_f1,absolute_difference,recomputed_weighted_f1,recomputed_accuracy,legal_output_ceiling,classification,score_agreement_1e_7
+dnn,7,10340161,8,0.704954494373192,0.69726491,0.007689584373192004,0.99058752217703,0.9910859221631075,1.0,Verified compatible,False
+rf,8,10340161,8,0.7195788360414597,0.71928904,0.00028979604145962234,0.9940447152769767,0.9944384811803221,1.0,Verified compatible,False

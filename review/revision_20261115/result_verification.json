@@ -1,0 +1,20 @@
+{
+  "fresh_predictions_recomputed": [
+    "nsl_matched/random_forest/42",
+    "nsl_matched/random_forest/43",
+    "nsl_matched/random_forest/44",
+    "nsl_matched/extra_trees/42",
+    "nsl_matched/extra_trees/43",
+    "nsl_matched/extra_trees/44",
+    "nsl_no_feature_overlap/random_forest/42",
+    "nsl_no_feature_overlap/random_forest/43",
+    "nsl_no_feature_overlap/random_forest/44",
+    "nsl_no_feature_overlap/extra_trees/42",
+    "nsl_no_feature_overlap/extra_trees/43",
+    "nsl_no_feature_overlap/extra_trees/44"
+  ],
+  "historical_forest_matrix_matches": 3,
+  "feature_overlap_control": "zero exact feature overlap after removing 658 training rows",
+  "external_reconciliation": "Two mismatches retained as unresolved, not ceiling violations",
+  "passed": true
+}

@@ -1,0 +1,16 @@
+{
+  "doi": "10.3390/s23135941",
+  "url": "https://www.mdpi.com/1424-8220/23/13/5941",
+  "retrieved": "2026-11-15",
+  "tables": [
+    7,
+    8
+  ],
+  "row_axis": "true labels",
+  "verification": "Each integer cell checked against publisher HTML; metrics independently recomputed",
+  "publisher_pdf_sha256": "64221187de542233dd7e2d11f2101de581d305ca5b8d5b5459658b04dcc902e9",
+  "pdf_cells_automatically_verified": true,
+  "pdf_check_record": "pdf_cell_verification.json",
+  "training_counts": "Not reconstructed; all eight legal outputs evidenced by nonzero diagonal cells",
+  "limitations": "One paper; two settings; no refit; source does not explicitly name F1 averaging in Eq. 4"
+}

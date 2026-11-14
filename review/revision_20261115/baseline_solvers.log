@@ -1,0 +1,15 @@
+Running check_availability.py
+80 row-level cases: both conventions, both solvers, sandwich and array API passed
+Running check_vocabulary_groups.py
+100 explicit-head brute-force cases passed; 300 folds reduced to two assignments
+Running exact_fold_oracle.py
+            case  coverage_ceiling  exact_oracle  vertex_assignments  grouped_assignments  vocabulary_types  visited  pruned  uncovered_folds  runtime_seconds  traced_peak_bytes
+ CICIDS2017 LODO          0.066667      0.066667                   1                    1                 2        1       1                4         0.037678              52222
+NSL-KDD official          0.552632      0.552632                   1                    1                 1        1       1                1         0.023119              40066
+ UNSW-NB15 mixed          0.800000      0.798326                   8                    8                 1        9       8                1         0.023984              36073
+  Digits partial          0.949990      0.921755                  64                    8                 1        9       8                2         0.031365              42155
+Running run_solver_shapes.py
+{'folds': 6, 'shape': 'synthetic varied vocabulary', 'sandwich_lower': np.float64(0.6489700775415062), 'sandwich_upper': np.float64(0.8095238095238095), 'coverage_ceiling': 0.8571428571428571, 'exact_oracle': 0.7505597850425437, 'vertex_assignments': 729, 'grouped_assignments': 243, 'vocabulary_types': 5, 'visited': 34, 'pruned': 23, 'branch_status': 'certified', 'branch_seconds': 0.0238709000000199, 'milp_status': 0, 'milp_variables': 85, 'milp_feasible_score': 0.7505597850425436, 'milp_score_upper': 0.7505597850425436, 'milp_seconds': 0.06101079999984904}
+{'folds': 30, 'shape': 'synthetic varied vocabulary', 'sandwich_lower': np.float64(0.4995708535541596), 'sandwich_upper': np.float64(0.836734693877551), 'branch_status': 'Branch-and-bound exceeded 10000 visited nodes', 'branch_seconds': 0.35855609999998705, 'milp_status': 0, 'milp_variables': 385, 'milp_feasible_score': 0.6733659100462379, 'milp_score_upper': 0.6733659100462379, 'milp_seconds': 5.47229040000002}
+{'folds': 60, 'shape': 'synthetic varied vocabulary', 'sandwich_lower': np.float64(0.4877573105614099), 'sandwich_upper': np.float64(0.8461538461538461), 'branch_status': 'Branch-and-bound exceeded 10000 visited nodes', 'branch_seconds': 0.3113134000000173, 'milp_status': 1, 'milp_variables': 724, 'milp_feasible_score': 0.6571912723404769, 'milp_score_upper': 0.6863055813835925, 'milp_seconds': 10.102534599999899}
+{'folds': 100, 'shape': 'synthetic varied vocabulary', 'sandwich_lower': np.float64(0.4763744971126676), 'sandwich_upper': np.float64(0.8503401360544217), 'branch_status': 'Branch-and-bound exceeded 10000 visited nodes', 'branch_seconds': 0.3595593000000008, 'milp_status': 1, 'milp_variables': 1237, 'milp_feasible_score': 0.6517674915996526, 'milp_score_upper': 0.687937706894946, 'milp_seconds': 10.147687700000006}
