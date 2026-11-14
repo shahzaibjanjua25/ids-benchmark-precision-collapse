@@ -21,7 +21,7 @@ def main():
     for path in python_paths:
         if ".git" in path.parts:
             continue
-        record = {"path": path.relative_to(ROOT).as_posix(), "sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
+        record = {"path": path.relative_to(ROOT).as_posix(), "sha256": hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest()}
         try:
             tree = ast.parse(path.read_text(encoding="utf-8-sig"), filename=str(path))
             record.update(functions=sum(isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef)) for n in ast.walk(tree)),
@@ -37,10 +37,16 @@ def main():
         "original_commit": "33f16a6cd72506f5c9fe816af36f9f6908331ad4",
         "original_tracked_file_count": len(files), "python_sources": records,
         "syntax_errors": syntax_errors,
+        "source_hash_normalization": "SHA-256 after CRLF-to-LF normalization of Python text",
         "scope": "Complete path and Python syntax inventory; semantic inspection focused on metrics, oracle, reproduction, new refit and manuscript evidence. Not an execution of every historical script.",
         "python": platform.python_version(), "platform": platform.platform()}, indent=2), encoding="utf8")
     paths = sorted(p for p in (ROOT / "results/revision_20261115").rglob("*") if p.is_file())
-    (out / "result_hashes.json").write_text(json.dumps({p.relative_to(ROOT).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}, indent=2), encoding="utf8")
+    def result_digest(path):
+        content = path.read_bytes()
+        if path.suffix in {".csv", ".json"}:
+            content = content.replace(b"\r\n", b"\n")
+        return hashlib.sha256(content).hexdigest()
+    (out / "result_hashes.json").write_text(json.dumps({p.relative_to(ROOT).as_posix(): result_digest(p) for p in paths}, indent=2), encoding="utf8")
     assert not syntax_errors, syntax_errors
     print(f"Parsed {len(records)} Python sources; original tracked inventory {len(files)} files")
 
