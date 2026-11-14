@@ -23,3 +23,11 @@ it is not evidence that any experiment or peer review has already occurred.
 
 No conclusion is drawn about why a specific editor rejected the manuscript beyond
 the supplied letter. The issues above are this workflow's own assessment.
+
+Delivery testing exposed two packaging issues that were repaired before the final
+bundle: generated PDF files needed explicit binary attributes, and broad text
+line-ending rules made inherited CRLF CSV blobs appear dirty in a fresh checkout.
+The text rules were restricted, while portable evidence hashes normalize text
+explicitly. The final offline import and artifact hashes are checked separately
+in the delivery package. A stale pre-rebuild PDF QA hash was refreshed only after
+all twelve page images were confirmed pixel-identical to the inspected layout.
