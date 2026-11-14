@@ -4,7 +4,7 @@
   "python_sources": [
     {
       "path": "code/audit_cic_day_coverage.py",
-      "sha256": "f670250103d6d1f54d583c0716adc626dfa9558fc078f1cd05dfaff89a9321bd",
+      "sha256": "112b110818aaf72d6ab1afb42ac3bedcdeb283bd5f28d6eca85d6218174e4465",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -14,7 +14,7 @@
     },
     {
       "path": "code/audit_cic_target_resolution.py",
-      "sha256": "04fb180bc9cedc6387229e1f3083b666cbf40bad78f3d998596148bf9894f1cb",
+      "sha256": "b94bcc93e7071fcd66411c918b933ac0fa49eca54bf8f21ab06f008821108cc3",
       "functions": 2,
       "classes": 0,
       "imports": [
@@ -33,7 +33,7 @@
     },
     {
       "path": "code/audit_nsl_destinations.py",
-      "sha256": "9e4cf310ad296693a2ba7244cff65b47ba5c626f179fe7d8f19c6a7e110e8870",
+      "sha256": "7bfddbd96392fca0e80469a8e09e45ff9d9e610113fc9d44511dfa0669154d69",
       "functions": 1,
       "classes": 0,
       "imports": [
@@ -42,7 +42,7 @@
     },
     {
       "path": "code/audit_nsl_granularity.py",
-      "sha256": "2d51171f21e964ed5d71cdb5891e1e36c2ee6a149a5b6399176dc88e7ba684d2",
+      "sha256": "b3fa1291337d326e276be4ae73a6d59fdb7027c4e49fadc87fb2d4210191e608",
       "functions": 2,
       "classes": 0,
       "imports": [
@@ -51,7 +51,7 @@
     },
     {
       "path": "code/audit_nsl_kdd_coverage.py",
-      "sha256": "65f657b8fb6ea8b91abc93c7450fca40f28ea21df6280e2404a6bef64db31a7f",
+      "sha256": "c429503581d32c7462c2ff849eeb1de51b82391890539413145f7976274ce5ad",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -61,8 +61,8 @@
     },
     {
       "path": "code/audit_revision_inventory.py",
-      "sha256": "12ef7ac5b654a86c885b6b8d62a9da51eae694ef75f1a684aeb43b507dc949e7",
-      "functions": 1,
+      "sha256": "d2e592f904999e575ed22bce3a4448a8a9465852903410e168486138f9e994fa",
+      "functions": 2,
       "classes": 0,
       "imports": [
         "pathlib"
@@ -70,7 +70,7 @@
     },
     {
       "path": "code/audit_scoring_conventions.py",
-      "sha256": "0868855bde019c3eead0cb45bc0f5202a8bca53c05364bb0b3c3b585a138ad9b",
+      "sha256": "05f88537ad939de7c236830ef486d904f1277e8026f3d22ee32317ffb349c113",
       "functions": 1,
       "classes": 0,
       "imports": [
@@ -80,7 +80,7 @@
     },
     {
       "path": "code/audit_unsw_overlap.py",
-      "sha256": "4f6f5325edf61cc587254212af2f7698af7d595eb67e42e72506c98285b874ea",
+      "sha256": "510956e1816e5ba787543df920c2fd005323c11e37fa5fbcb7f2f083b2ce6bd2",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -90,7 +90,7 @@
     },
     {
       "path": "code/bootstrap_pair_correlation.py",
-      "sha256": "cd7b1515d5b6d102fe68851c0df3ca7bbf755518e0b22b0fa83c182a39b2fce6",
+      "sha256": "aead67666d3001a449011a8ab92192dde41abe799198a88b4979164f2a82edca",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -100,7 +100,7 @@
     },
     {
       "path": "code/build_literature_frame.py",
-      "sha256": "19f1029dbc61243cce16a38ba5bb5eb699dbe2b113f1032831d9d09db623a98b",
+      "sha256": "0f390cac59f070ed0be212632d448a699fd674586dfdd00c0e02a332f3059bed",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -110,7 +110,7 @@
     },
     {
       "path": "code/build_main_tables.py",
-      "sha256": "ef0b1221b42129bb8e46ef88cf7765d4257471fbd496008c7bfe1e6c5cb8c165",
+      "sha256": "5ff45ff579fa3adb8a14e63914a550a3c7a8bd3d98c4f445fcc5de0740a3be7c",
       "functions": 1,
       "classes": 0,
       "imports": [
@@ -120,7 +120,7 @@
     },
     {
       "path": "code/build_revision_figures.py",
-      "sha256": "2fecbd31d95b6d990b6b2af11ecb6abcf1e2803ca714a12976c05ea5b98d4cfa",
+      "sha256": "41000149201ef6f98dca278a15d81e6eb9a2dd272c3363381daff94d0b3fc1fd",
       "functions": 1,
       "classes": 0,
       "imports": [
@@ -138,7 +138,7 @@
     },
     {
       "path": "code/check_availability.py",
-      "sha256": "968d6a7cd1d190e64b0d3b26101e0c0652abe8e78e51ae5e7a57331cdbb5084f",
+      "sha256": "2ce96c0113452fcc31e798dc4fabcbc5b9fd4512d6a159664afa76ad7d64332e",
       "functions": 1,
       "classes": 0,
       "imports": [
@@ -148,7 +148,7 @@
     },
     {
       "path": "code/check_branch_oracle.py",
-      "sha256": "e79471dbd37156b362887a1efbca6629c8bc7196ded4d223d90cef09bfe04ac0",
+      "sha256": "9ecf6d8316811c7665990e60aaf4c3b90ee4bca9f96dc78fcdd6ab9614e0a1d2",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -170,7 +170,7 @@
     },
     {
       "path": "code/check_destination_example.py",
-      "sha256": "ed63bba40e72128c7c26e90e045018eda20c4a171b9be9f43e3e709279d8da26",
+      "sha256": "c6e99715124b4d69f71dd2ce36e57ef1343f2a1df6251ced3eba2452fcac003c",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -180,7 +180,7 @@
     },
     {
       "path": "code/check_oracle_and_gaps.py",
-      "sha256": "394d807556fc7924004f2f7dc8fde6de030ba7053fefa4930472d2fd6e8845c0",
+      "sha256": "666c03c59fffc9155e801b0f7b7d1dace2a8c0e1b71d3a692e3d9fa84ca0fd76",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -191,7 +191,7 @@
     },
     {
       "path": "code/check_vocabulary_groups.py",
-      "sha256": "132855c4276a59c1133456e3adf6e759fed3694aca8a38fbd9d61631d4a40f21",
+      "sha256": "490f13dacc2a93d792ec61add41e64ea5e85e99f190680438df031f4fbe10b61",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -201,7 +201,7 @@
     },
     {
       "path": "code/clean_repo/cic_ids_pipeline.py",
-      "sha256": "255c2b73acec05c1b8500f1e20641bd521386de7a9a3964bac688e7d12aeb83b",
+      "sha256": "4b98ece490cc52f41196cdfc4424933b7540a57579eaab7b6333b2debe7048c0",
       "functions": 8,
       "classes": 0,
       "imports": [
@@ -218,7 +218,7 @@
     },
     {
       "path": "code/clean_repo/ids_full_study.py",
-      "sha256": "d545472010d5934db7951f27ee2890fb8b55908e3805d694781dc5c1e453994f",
+      "sha256": "9708d9aba85216ba004b2fe1f71ba3b51090ccbe6e3cfb2ccde8016d8e81135f",
       "functions": 27,
       "classes": 1,
       "imports": [
@@ -236,7 +236,7 @@
     },
     {
       "path": "code/clean_repo/unsw_ablation.py",
-      "sha256": "78b389bc9e63566ec45d0bbb0e52653a945420638242eb383a6f908c1e26c7cd",
+      "sha256": "f840b0e2dd86dc8374d6781c05ed2433278a0ca4e49b1fc451d1a6ff4742731f",
       "functions": 9,
       "classes": 0,
       "imports": [
@@ -253,7 +253,7 @@
     },
     {
       "path": "code/clean_repo/unsw_nb15_pipeline.py",
-      "sha256": "c8afc728eadacd8971ada172e8eb1417c8b08774feac0b9894d79c3200696ac4",
+      "sha256": "e40aa29e6172af6eaaddda6ff2ef73563f8afc1c0bc68e8a9a4abe97b209c2df",
       "functions": 6,
       "classes": 0,
       "imports": [
@@ -272,7 +272,7 @@
     },
     {
       "path": "code/dataset_manifest.py",
-      "sha256": "68471b3ded009d9e05554935b8e840b14679b841e6dbe45a37f0b5406544aa5f",
+      "sha256": "dbf2c506291ee61ca8a2786105aee6aa0a195cb2da3689e9e74e035bc84fd445",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -281,7 +281,7 @@
     },
     {
       "path": "code/decompose_cic_lodo.py",
-      "sha256": "2efa093dd44cc74acb7c46202a98a946b6dca4a1cd7aebeafc6dc8159a1f0a48",
+      "sha256": "b0cac24e15fb760b20f8d109cb9a812395c5168e461397522c0209b462d86bad",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -290,7 +290,7 @@
     },
     {
       "path": "code/exact_fold_oracle.py",
-      "sha256": "17c2ec7c5ebca4c391733985e3a344099403f3aed34350d82e3fe18664025fab",
+      "sha256": "f4b59c6e6bbabf4d14c64e5b2c99350061cda44f17e3a71fa896702be4ae4929",
       "functions": 1,
       "classes": 0,
       "imports": [
@@ -300,7 +300,7 @@
     },
     {
       "path": "code/export_cic_coverage_confusion.py",
-      "sha256": "87c5ee7bffb163a5cf918fd654e2b810ecf8e75ae18688fc607a08eebf84dba3",
+      "sha256": "a82ee6ea6885899bbf16648f7bbcadbc49f5e2397ad8f855d994f4f1cc61f719",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -309,7 +309,7 @@
     },
     {
       "path": "code/export_cic_membership.py",
-      "sha256": "7f0d23f5ffa3e0c80079ef6e2241f60d02c9e69c3747248988b0db015b87852f",
+      "sha256": "2e874c106db8675bc442c26c3139f37fa60705b1f1c888ef8256dc77978ee60f",
       "functions": 1,
       "classes": 0,
       "imports": [
@@ -319,7 +319,7 @@
     },
     {
       "path": "code/label_availability/__init__.py",
-      "sha256": "3d3dfb38db1c683d357b1caca337da33a49344b5cced14bee5fbfaa674155cd8",
+      "sha256": "820fb3e521df427046da2a1506797845accd14734119265824a2477c0dc9dd8e",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -329,7 +329,7 @@
     },
     {
       "path": "code/label_availability/__main__.py",
-      "sha256": "78f227a9292bc9cc97a56f21f7b831778ea53c23dc8d506b481ab98561106d1c",
+      "sha256": "3622844e53bfff0590321f143dae741735e446854922434dfb1dc2eb39aabfd8",
       "functions": 1,
       "classes": 0,
       "imports": [
@@ -351,14 +351,14 @@
     },
     {
       "path": "code/label_availability/core.py",
-      "sha256": "29a13c29787c5af95f5a3edf5c72b2b2c79838a1045557e9718dd35ef6d9170b",
+      "sha256": "34cba2aaa1df194968eb0b5a382d04ba876972858e4380c4600db4496498a2af",
       "functions": 10,
       "classes": 0,
       "imports": []
     },
     {
       "path": "code/label_coverage_bound.py",
-      "sha256": "e5e14f904cee8817f6196a675aebe41da1db25e317df9e4c53496eddf608e4a3",
+      "sha256": "51c570d7f7b9f563f732f6d2856807765d6d67f06e98e9475fb0f5efa94c7a53",
       "functions": 2,
       "classes": 0,
       "imports": [
@@ -367,7 +367,7 @@
     },
     {
       "path": "code/oracle_milp.py",
-      "sha256": "8318283731965be6e453e70ef39b959c89ea7f34bdef09f54cf41ebab9b02d7d",
+      "sha256": "f8303e54bcd807ec05138451206de803e84e6eaf6d4b37e6a40be363849097e5",
       "functions": 1,
       "classes": 0,
       "imports": [
@@ -378,7 +378,7 @@
     },
     {
       "path": "code/plot_cic_hero.py",
-      "sha256": "35c0e9614c3f4fc20ea8e6fa4b3e9cfe83b1ac592d421df68c6de15201205a83",
+      "sha256": "250a60bee157e4c569bf621fed3ea4f6fe0cc776d52cda6687f9990f7e810c19",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -396,7 +396,7 @@
     },
     {
       "path": "code/plot_unsw_overlap_seeds.py",
-      "sha256": "966c8dec7c7f3adc8ca63a22a2c752718ba410f76cbd4a12d41176385c4ff47c",
+      "sha256": "76ca702e9ef2717fcfbcc527f8afad5a3ab5477b8f7791f6efd2b09b0212b3cc",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -405,7 +405,7 @@
     },
     {
       "path": "code/plot_unsw_pair_distribution.py",
-      "sha256": "661df6d96825375bf5bbf066aa6f2a330212f14af9cbe377f747f097abc86a98",
+      "sha256": "ddfd6bab100d7f3366d8fa2824684c14d75f7f63766cbc8fc20620de538a76e5",
       "functions": 1,
       "classes": 0,
       "imports": [
@@ -423,7 +423,7 @@
     },
     {
       "path": "code/rebuild_gas_figure.py",
-      "sha256": "5ce321f16bed94057a6cde8d7c87d1a3f793b03e6944ed6a42d4b82d4786dc1a",
+      "sha256": "1d38e90bf52c41d471780cc766470d000fe23f0625d9a8fdf68039f63dcc65df",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -435,7 +435,7 @@
     },
     {
       "path": "code/release_figures.py",
-      "sha256": "57d1d5ed882cb447c521c4f94762a837618a5638b56cff55a68aab780cc7b1bd",
+      "sha256": "2e303f77769080e86b8e2653c1108897a5159fe21880f812ec9e878340f5e22a",
       "functions": 2,
       "classes": 0,
       "imports": [
@@ -445,7 +445,7 @@
     },
     {
       "path": "code/reproduce_release.py",
-      "sha256": "5dde28fa5c037e69c7acfbe764fbf709c6cd3211102db4e17ad7feff0329e072",
+      "sha256": "566b99dd483318ef326d8ab3d10d979ae05a343553ecf752f74bf27ce2b6830b",
       "functions": 1,
       "classes": 0,
       "imports": [
@@ -463,7 +463,7 @@
     },
     {
       "path": "code/reproduce_tbench.py",
-      "sha256": "038a72d4e113f9399f473d59777b6fc32dbfbf7438099245c4c65a2b7605a17b",
+      "sha256": "449daecc06bd3b1d4e1a9f06aae4e0a643e4412643a96b9f49b349abb433df41",
       "functions": 1,
       "classes": 0,
       "imports": [
@@ -472,7 +472,7 @@
     },
     {
       "path": "code/rerun_unsw_official.py",
-      "sha256": "36d538b83349197a75d63f14813dc88c0753a64b3d56826b0ec42998ec70eb19",
+      "sha256": "c6a0bce0f702a3ac427adee967278cc37dfe7cb75a7ff5d68e3851afaa38bc67",
       "functions": 1,
       "classes": 0,
       "imports": [
@@ -483,7 +483,7 @@
     },
     {
       "path": "code/run_cic_binary_lodo.py",
-      "sha256": "644384add20f650f3949324ea5f2803c5057c20a758c787819e90bfcd05ec017",
+      "sha256": "c087aee814f80920039fc2e4a379d6c19942b4d6e5fe5fa51d8e24001abd609c",
       "functions": 1,
       "classes": 0,
       "imports": [
@@ -494,7 +494,7 @@
     },
     {
       "path": "code/run_cic_corrected_friday.py",
-      "sha256": "59ee40caf5f07c274d8c89eaad30ad949f2006c57cf5e50262de7d2c07f243cf",
+      "sha256": "e8ca6151041b3ebaf6248107e1b62e5f7992f4c99390730ee5bc2c9883664e58",
       "functions": 3,
       "classes": 0,
       "imports": [
@@ -511,7 +511,7 @@
     },
     {
       "path": "code/run_digits_fractional_coverage.py",
-      "sha256": "1ead9b80aeb9c1377c9b04495f3ac26b9147a2782d22cbb2ccc628a86836841a",
+      "sha256": "965044c679ec808b4bba1d2b509770306c4f0394774a81e63483ab71f5fc41fb",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -525,7 +525,7 @@
     },
     {
       "path": "code/run_gas_drift.py",
-      "sha256": "666e0e0b5a56e638dacd82bcc1f30b4af63fb837e49b678278de1da55a7191ca",
+      "sha256": "54fd379634dde5fed8624d6f54eca48b10638ee0ee2aecbe7d3a3c1b182f403a",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -542,7 +542,7 @@
     },
     {
       "path": "code/run_gas_models.py",
-      "sha256": "6c1076a68606015cebc0906aaf4e7848d4e31eb7cc6ebead3cb385ca5ce69170",
+      "sha256": "665ee0f6471382b810bc5c7577c39faa6009693105719dd27fc6b2ad9628579b",
       "functions": 2,
       "classes": 0,
       "imports": [
@@ -562,7 +562,7 @@
     },
     {
       "path": "code/run_nsl_families.py",
-      "sha256": "b8aef94f0c5fdfb4a91866f94f5eff89be2bf011800b9e90e31d5b48ee2a62a6",
+      "sha256": "e7a5ee2163501aff5cabef49b985d1e2592ffa20f1b2360c25ce69311fd91ede",
       "functions": 1,
       "classes": 0,
       "imports": [
@@ -582,7 +582,7 @@
     },
     {
       "path": "code/run_nsl_family_seeds.py",
-      "sha256": "abf0510a41860f103a1c010f141d885dfdd876526d5d443be1a7e5e125e01de8",
+      "sha256": "b92879d154a9ac1c562ad8067c385856a764f0338922efa560e10388d015d09a",
       "functions": 2,
       "classes": 0,
       "imports": [
@@ -602,7 +602,7 @@
     },
     {
       "path": "code/run_nsl_kdd_forest.py",
-      "sha256": "937a374c1cf64274fb2a23a1ba7f5af912f47c94a26136742b7253afd22625ab",
+      "sha256": "1bc2b74d573eaa215efdd90a2ef54994cf93d2d845f5091f79d00ef1380bdb44",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -616,7 +616,7 @@
     },
     {
       "path": "code/run_rank_audit.py",
-      "sha256": "7d877494c5ac5fd45ff31cdd93f75b844cf4ba29c8f8e81a4f35d1007ca62adc",
+      "sha256": "cd1b6d48acf92ccf536b1b2fa2bb09938724b5a8c43c5f7ba1287b0e7bc2d961",
       "functions": 1,
       "classes": 0,
       "imports": [
@@ -643,7 +643,7 @@
     },
     {
       "path": "code/run_solver_shapes.py",
-      "sha256": "9b279fad1194c44de4f4bc28b61f325abaea336894fc399905f355ec631d9409",
+      "sha256": "0fbc3ac324241d207350af3a498110d18ca255c26140258b7d8b15b74794ef65",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -653,7 +653,7 @@
     },
     {
       "path": "code/run_unsw_benign_ood.py",
-      "sha256": "d595f87aa7b14cc8ed5302e3f68bdc84915cb90ef5477b11814af7b9f8a40325",
+      "sha256": "1c63bb7d7dd40c95b96ab265454c5b9098d9353e4811ebe5ae2fefc9b2b37d5b",
       "functions": 2,
       "classes": 0,
       "imports": [
@@ -670,7 +670,7 @@
     },
     {
       "path": "code/run_unsw_coverage_sensitivity.py",
-      "sha256": "9f9957f68d138ad3fd2b48ec341b97b1b6de66dc1af6330211fe45e218b27481",
+      "sha256": "cc789d78f9b83c4f05d9874ce94cb8f4a56e79b978f646b832941ddb8edf355f",
       "functions": 2,
       "classes": 0,
       "imports": [
@@ -683,7 +683,7 @@
     },
     {
       "path": "code/run_unsw_extended.py",
-      "sha256": "a8bae57930ccfb69ef2a09163614aa89abb1e210dd51483552c3b0558c0f46e1",
+      "sha256": "b3e1fd8a07dee54ff9df715e4098b6905ffc6f33896a5e314fca7ba06a12b4e7",
       "functions": 1,
       "classes": 0,
       "imports": [
@@ -695,7 +695,7 @@
     },
     {
       "path": "code/run_unsw_overlap_control.py",
-      "sha256": "bc1d817711a9e84f11c647819b525eaafb02b337fd25d66e4f02dbabdc565f86",
+      "sha256": "9a89779bdbc10197492ec6ccffbd7b78f94c94fb42718a0792f4d996c80276e8",
       "functions": 1,
       "classes": 0,
       "imports": [
@@ -706,7 +706,7 @@
     },
     {
       "path": "code/run_unsw_partial_coverage.py",
-      "sha256": "829a4251a08d53a983faa8dfdbf54854548e436bbec00c2e626f8c0c2d1e69a5",
+      "sha256": "aae809a1f8b3691635586ad3252fa99e3a3474e66bcceb56c1ec66bd5f147cab",
       "functions": 1,
       "classes": 0,
       "imports": [
@@ -718,7 +718,7 @@
     },
     {
       "path": "code/summarize_nsl_seeds.py",
-      "sha256": "4723a913df62d67cf177a0137fe144766dbce259ffd09e0ed81ec68677a3b30f",
+      "sha256": "b2cb084d1c0d714d09b1548de6ec3db021636d6e53daf17c197eef895fba49b4",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -727,7 +727,7 @@
     },
     {
       "path": "code/summarize_pair_variation.py",
-      "sha256": "628aae1669bef6f4c56b66e6dee52243cc41877e0b10c1bdab7b5ea29e09eed8",
+      "sha256": "fc8df9e6aa6a0820b9629bd00aa78f018fda64491938e5535cc0052f5e49192a",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -737,7 +737,7 @@
     },
     {
       "path": "code/summarize_rank_audit.py",
-      "sha256": "195b9782fb52b7b12f516848eccacc95c3e45eebe7e8309d2328acba7606a985",
+      "sha256": "7819f54277d2a38f1a2f06abf8ab6d20c9ed9dbd6b3792cc9b7299b3e223aa9f",
       "functions": 2,
       "classes": 0,
       "imports": [
@@ -748,7 +748,7 @@
     },
     {
       "path": "code/summarize_revision.py",
-      "sha256": "b7cb1dd85b20cf879b3672d887353653eb94ee2ee31d2f65ff1040a4cc3575bd",
+      "sha256": "baca3b2f76249b63c8f1d9abae0f46289fd5af2a42b61031539b85f75a9b7c90",
       "functions": 1,
       "classes": 0,
       "imports": [
@@ -757,7 +757,7 @@
     },
     {
       "path": "code/summarize_unsw_coverage_random_pairs.py",
-      "sha256": "e95b3fb8f12027e141d20bedeb26a3ad61302efda7664ed1aef8929d27a873d2",
+      "sha256": "d8f53c17c8b4f58663952d1afdcb23fe66b9484d216580220ed610ac81bd8b26",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -766,7 +766,7 @@
     },
     {
       "path": "code/summarize_unsw_coverage_sensitivity.py",
-      "sha256": "5570978ace99306cf7a9b1fa740a3aec9443e6c73ea65e7625d912bf61b67177",
+      "sha256": "0b424ed65cc6974ae61e3cf5818b4ff79b98064dee63c8870909f58781045448",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -775,7 +775,7 @@
     },
     {
       "path": "code/summarize_unsw_overlap_seeds.py",
-      "sha256": "9e87b41100e2a70674b16f549211c3e59cf175c56c3063bac7a3378648d3f3f8",
+      "sha256": "c5855feae9052f40f82d7a99c317b1d73fe380aee1b5d29d3cbb5b2635c58de3",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -786,7 +786,7 @@
     },
     {
       "path": "code/verify_cic_archive.py",
-      "sha256": "9685fcecaec3046e4bb0f211cf44060ac8019865c791106e0e80e7f42f0a4a90",
+      "sha256": "8a4dbcb4448feb8873ce4ffe9710fa5504fd64fa2faddceb2210e55e88403074",
       "functions": 1,
       "classes": 0,
       "imports": [
@@ -796,7 +796,7 @@
     },
     {
       "path": "code/verify_cic_binary_lodo.py",
-      "sha256": "df705bacc336339cb112eda41af5df4b262eedef986e3fcdd1b11ed3ac3e8d93",
+      "sha256": "580341fde18139b09f412728e49dde079d3bbd055ffe7b798322597f88f8b4a7",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -805,7 +805,7 @@
     },
     {
       "path": "code/verify_cic_corrected_friday.py",
-      "sha256": "2dcb9cf9ff5768eac8e14256a5b175ed921c59b4ea892d4a1f5eea2e491bd61f",
+      "sha256": "382116d483e8064ec10febee60b9f575a0d765363d4a7ca6ea1f415e3cef008d",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -815,7 +815,7 @@
     },
     {
       "path": "code/verify_external_artifact_audit.py",
-      "sha256": "38b40cd0ca9de98007b57fd45f4c22f6248d392cebcf816451073a85e2ce50e1",
+      "sha256": "360bbe9b0e87436406d1db259279cb10d52e4d9cfee214e3b7d31d761a9235c4",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -825,7 +825,7 @@
     },
     {
       "path": "code/verify_published_score_audit.py",
-      "sha256": "f4481e6370ef7a9f258586db29956096b9f27ca5aca9c91a8b1df60877a6bcf4",
+      "sha256": "9bf207590cf28633e5600ee45095310fce0b2267f49615f5052a48480432354b",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -834,7 +834,7 @@
     },
     {
       "path": "code/verify_release_evidence.py",
-      "sha256": "b89a4c60509d90e16f09784712c22fc6b4d78b9926288eb98cb3c736f058e3f0",
+      "sha256": "599d3723f9059923ed602660e056258a6a8e1a127c59343e0e54b1a9e4b536f3",
       "functions": 1,
       "classes": 0,
       "imports": [
@@ -862,7 +862,7 @@
     },
     {
       "path": "code/verify_unsw_benign_ood.py",
-      "sha256": "7db5abb4a823e827bb1b5b09c411903cdc8da8b5921146d46409385678eaaf9f",
+      "sha256": "bf1626e32cc2b6e2ef8b3f9b5fff05e8d37838f490ee5700318bbb71f6fdb30b",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -871,7 +871,7 @@
     },
     {
       "path": "paper/build_reading.py",
-      "sha256": "68664d0339345a4362ecf36b02f776b495409858ed6707b9214f735fdde2c2c0",
+      "sha256": "cdf87ab7b18eb8be31802e38587448c2367be6fe3d494af91b41c899b32719db",
       "functions": 0,
       "classes": 0,
       "imports": [
@@ -880,7 +880,7 @@
     },
     {
       "path": "paper/sync_tbench_sources.py",
-      "sha256": "10257a37bb877691503018dea1d5ae1604dd276fb2d240979277f410e636a909",
+      "sha256": "574b0b928e49b782c7083316907c66ed3dec6c1d930a53cd1840471e6623ca06",
       "functions": 1,
       "classes": 0,
       "imports": [
@@ -889,6 +889,7 @@
     }
   ],
   "syntax_errors": [],
+  "source_hash_normalization": "SHA-256 after CRLF-to-LF normalization of Python text",
   "scope": "Complete path and Python syntax inventory; semantic inspection focused on metrics, oracle, reproduction, new refit and manuscript evidence. Not an execution of every historical script.",
   "python": "3.12.14",
   "platform": "Windows-11-10.0.26300-SP0"

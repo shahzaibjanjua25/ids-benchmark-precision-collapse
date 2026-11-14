@@ -30,6 +30,12 @@ prerequisites. Portable commands use `PATH_TO_NSL` and `--source-pdf PATH_TO_PDF
 The saved audit re-scores without requiring raw data. The publisher PDF is not
 redistributed in this bundle; its URL, hash and verified cells are retained.
 
+The source inventory normalizes Python CRLF to LF before SHA-256 hashing.
+The result hash map similarly normalizes CSV/JSON text line endings; NPZ and PDF
+hashes use raw bytes. This permits Windows/Linux checkout verification without
+mistaking line-ending conversion for a scientific result change. Raw downloaded
+dataset hashes in fit manifests are always hashes of the original file bytes.
+
 The ordinary public data mirror was downloaded as requested. No raw data, tokens,
 browser state, credentials or source-paper full text is committed. The original
 datasets and published counts keep their attribution and usage conditions.
