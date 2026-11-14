@@ -1,0 +1,20 @@
+{
+  "python": "3.12.14",
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.0.1",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2",
+    "typst": "0.15.2",
+    "pypdf": "6.21.4",
+    "PyMuPDF": "2.1"
+  },
+  "wheel_sha256": "2c057b4b5c61a1a47f3fbabad5299bcb7187acaafea9c9c76c80ed50d0c883dd",
+  "wheel_api_smoke": "passed in clean target directory",
+  "wheel_cli_smoke": "support 5/9 and fixed 5/12 passed",
+  "original_saved_suite_exit": 0,
+  "original_solver_suite_exit": 0,
+  "raw_fits_in_revision": 12,
+  "fully_independent_human_reproduction": false
+}

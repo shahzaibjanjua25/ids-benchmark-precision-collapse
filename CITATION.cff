@@ -1,11 +1,11 @@
 cff-version: 1.2.0
 message: "Please cite the manuscript and identify the release tag used."
-title: "Label Coverage Bounds Pooled Macro F1: A Reporting Diagnostic for Closed-Set IDS Benchmarks"
+title: "Legal Label Vocabularies and Attainable Macro F1 in Intrusion Detection Benchmarks"
 type: software
 authors:
   - family-names: "Sajid"
     given-names: "Shah Zaib"
-version: 0.9.4
-date-released: 2026-11-09
+version: 0.10.0
+date-released: 2026-11-15
 license: MIT
 repository-code: "https://github.com/shahzaibjanjua25/ids-benchmark-precision-collapse"

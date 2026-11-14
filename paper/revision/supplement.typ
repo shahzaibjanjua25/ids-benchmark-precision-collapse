@@ -1,0 +1,72 @@
+#set document(title: "Supplement: Legal Label Vocabularies and Attainable Macro F1", author: "Shah Zaib Sajid")
+#set page(paper: "a4", margin: 23mm, numbering: "1")
+#set text(font: "Times New Roman", size: 10.5pt, lang: "en")
+#set par(justify: true, leading: 0.65em)
+#set heading(numbering: "S1.1")
+#set math.equation(numbering: "(S1)")
+#align(center)[#text(size: 17pt, weight: "bold")[Supplementary mathematical and reproducibility notes] \
+Shah Zaib Sajid]
+
+= Worst-case computational difficulty
+The grouped vertex result makes small-vocabulary instances tractable without making the unrestricted problem easy. We give a complete reduction for support-scored macro F1. It is a reduction to exact optimization; it does not establish membership of an associated threshold decision problem in a particular complexity class.
+
+Take a Set Cover instance with $K>=1$ candidate sets and a nonempty universe, assuming each element belongs to at least one set. Create a destination label for each candidate set and one additional label Z. For each destination create one anchor row with that true label in a fold whose vocabulary permits it. Thus each destination has $n_k=m_k=1$. For each universe element create a separate fold with $L=2K+1$ rows of true label Z and legal destinations equal to the sets containing the element. Z is never a legal output, so its F1 is always zero. Every fold permits at least one output.
+
+By the vertex theorem an optimum assigns each element's entire block to one incident set. Occupied destinations therefore form a set cover. If there are $q$ occupied destinations, their unaveraged loss relative to the coverage bound is
+$ ell = sum_(k:a_k>0) a_k/(2+a_k). $
+Every nonzero $a_k$ is at least $L$, giving
+$ q-1 < q L/(L+2) <= ell < q. $
+The strict left inequality holds because $q<=K$ and $2q<2K+3=L+2$. The intervals $(q-1,q)$ are disjoint and ordered, so an exact minimizer of loss uses a minimum-cardinality cover. Recover its size as $ceil(ell)$. The score denominator is always $K+1$, so loss is recoverable exactly from the optimal score. The construction has polynomially many rows, folds, and vocabulary entries. Thus computing the exact oracle for arbitrary legal vocabularies is NP-hard. This is a worst-case result; it says nothing about the empirical frequency of hard IDS instances.
+
+= Grouped enumeration and union scoring
+Let $Delta(V,U)$ be the simplex of nonnegative allocations of mass U to the destinations in V. For folds with a common vocabulary V,
+$ Delta(V,U_1)+Delta(V,U_2)=Delta(V,U_1+U_2). $
+For the nontrivial inclusion, any aggregate allocation can be split proportionally to the fold masses. Since a maximum of the convex objective has a vertex representative on this aggregate simplex, it suffices to send the total group mass to one destination. This vertex is also feasible for the original integer rows, since each original fold sends its own integral mass to that destination. No relaxation gap is introduced.
+
+For union scoring, take any optimal allocation and let W be its activated outside outputs. Restrict all folds to outputs in the true-support set or W. Its numerator is convex on the restricted allocation polytope, so a vertex maximizes that numerator. The vertex may activate fewer outside labels but never more. Hence its denominator is no larger and its score no lower than the original optimum. This proves a vertex optimum exists even though the unrestricted denominator is discontinuous. Apply the common-vocabulary grouping to these restricted simplexes and then retain the resulting legal allocation in the original problem.
+
+The production solver prunes equivalent states and free destinations using floating-point scores. The rational verifier does neither: it exhausts grouped vertices using Python Fraction arithmetic. Consequently agreement is a useful cross-check of search reductions and numerical arithmetic. Both implementations still call the same count preparer. The independent row-level score function and adversarial count tests address that shared dependency, but do not constitute an independent software-team audit.
+
+= Fixed inventories and weighting
+For a declared fixed inventory R containing every test-positive label, any extra absent label has zero F1 under the zero-division convention used here. The oracle and coverage bound therefore scale by $abs(S)/abs(R)$ relative to support scoring on the same predictions. The permitted destinations are not restricted to R. A label excluded from R can receive predictions without adding a denominator term, so the legal output inventory and the scored inventory are different inputs.
+
+Support-weighted F1 has nonnegative constant weights. Its repaired-row objective is still a nonnegative sum of convex reciprocal terms; vertex allocation and grouping therefore continue to hold. Tightness requires a zero-cost destination in every unavailable fold, where zero cost includes a zero-weight term. The released rational interface implements support, inferred union, and fixed equal-weight inventories. It does not implement a general custom-weight oracle; the manuscript's weighted result is an analytical bound.
+
+Balanced accuracy and all-label micro F1 require no destination optimization: available rows are repaired and unavailable rows are necessarily misses. Their respective bounds in the main text are attained. In contrast, micro F1 with a deliberately restricted labels argument can exclude predictions from accounting and need not equal accuracy. Our all-label qualification is therefore necessary.
+
+= Validation design
+The new random seed is 20261115. Each of 240 inputs has two folds, one or two test rows per fold, truth among three labels, and an independently supplied legal vocabulary of one to three outputs among four labels. A fifth label is added only to the fixed scoring inventory. Every legal row-level prediction vector is enumerated. The direct score uses integer counts and rational arithmetic, without scikit-learn or the count-based score function. Each resulting maximum is compared exactly with the rational grouped oracle for three conventions. Support and union results are also compared to the existing enumeration and branch solvers to tolerance $10^(-12)$.
+
+Witness checks reconstruct the optimal repaired prediction vector, verify each fold's legal outputs, and score it independently. Edge cases include all labels unavailable, output-only labels, a single unavoidable-cost fold, repeated vocabularies, insufficient enumeration budget, negative or fractional counts, duplicate count rows, empty legal heads, and integer-range limits. The count implementation uses signed 64-bit arrays and deliberately rejects total training or test counts above $2^60$. Large floating-point counts at or above $2^53$ are rejected rather than silently accepting lost precision. Integer values above $2^53$ remain supported within the total-count limit.
+
+The pre-existing 80-case and 100-case checks use scikit-learn scores and distinct seeds. A separate count-grid MILP checks support-scored problems with modest unavailable counts. Solver statuses, feasible values, dual bounds, and time limits must be interpreted together. A timeout is not a certified optimum. Timing measurements depend on the execution environment and are not complexity proofs.
+
+= Evidence map and reproduction
+Run commands from the repository root after installing a suitable Python environment. The historical requirements retain the original experimental versions. The revision-specific requirements list the actually used dependencies. A fresh environment avoids package ambiguity.
+
+```text
+python -m pip install -r requirements-revision.txt
+python -m pip install --no-deps .
+python code/reproduce_release.py --mode saved
+python code/reproduce_release.py --mode solvers
+python code/check_certified.py
+python code/audit_ciciot2023_published.py
+python code/run_revision_nsl.py PATH_TO_NSL NEW_OUTPUT_DIRECTORY
+python code/build_revision_paper.py
+```
+
+The saved mode regenerates results from released confusion counts; it does not train models. The NSL refit requires the two original named data files and refuses a nonempty output directory. A source-PDF option on the CICIoT2023 audit verifies transcribed cells against the publisher PDF. The PDF itself is downloaded separately using the provenance URL; it is not required for ordinary metric regeneration. Tables in the revision manuscript are generated from result CSVs, not manually maintained numerical arrays in the manuscript.
+
+The revision directory stores fresh fit predictions, confusion counts, rational certificates, source checks, and execution logs. The audit manifest records the original Git commit and file hashes. The main repository also retains historical outputs, manuscripts, and reviewer notes for provenance. They are not all claims of this revised article. Consult the revision evidence map when determining which source supports a current sentence.
+
+= Published matrix reconciliation
+The CICIoT2023 audit uses publisher Tables 7 and 8 for eight-class confusion counts and compares arithmetic mean class F1 with Table 6. Counts sum to 10,340,161 for each displayed matrix. Every cell was compared with the PDF as well as HTML. Therefore the numerical comparison is based on the printed source, rather than OCR estimates from a chart.
+
+The DNN matrix yields macro F1 approximately 0.70495 rather than the Table 6 value 0.69726; the RF matrix yields 0.71958 rather than 0.71929. Differences in matrix-generating runs, aggregation conventions, or table construction could explain the disagreement. Without the original predictions and a mapping from each table to its run, we cannot decide between these explanations. The matrix-derived and summary values all satisfy the legal ceiling. The discrepancy is recorded as a reproducibility limitation, without attributing it to output coverage or alleging a published impossible score.
+
+The earlier Franco-Valiente audit concerns ten random seeds in one paper. Its reproduced mean and published uncertainty are distinct: the published plus/minus quantity is a confidence-interval half-width, not a seed SD. The manuscript retains the mean and avoids treating ten matrices as ten studies. Likewise, multiple models or datasets in one article do not create independent literature samples. The new targeted ledger is not pooled with the earlier frozen sample to create an inflated screening denominator.
+
+= Research boundaries
+No causal claim is made that the diagnostic improves attack detection rates. Its demonstrated benefit is interpretive: identifying what cannot be attributed under a given output contract, separating target changes from model changes, and exposing which reported quantities can be reconciled from public evidence. No claim of a field-wide error rate is supported.
+
+The original general-purpose supplement remains in the repository for historical UNSW-NB15, gas-sensor, rejection, and routing controls. Those controls were not all refit in this revision. Their saved numerical consistency and the current manuscript's selected derived results are checked where described in the evidence map. Independent human replication, additional real temporal cohorts, a completed twenty-paper audit, and stronger external evidence of practical impact remain future validation requirements.

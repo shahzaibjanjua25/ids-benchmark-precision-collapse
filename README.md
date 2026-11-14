@@ -1,4 +1,61 @@
-# Label Coverage Bounds Pooled Macro F1: A Reporting Diagnostic for Closed-Set IDS Benchmarks
+# Legal Label Vocabularies and Attainable Macro F1 in IDS Benchmarks
+
+Revision 0.10.0, 15 November 2026. The current manuscript is
+[`paper/revision/manuscript.pdf`](paper/revision/manuscript.pdf), with editable
+Typst source, bibliography, generated tables and a mathematical supplement in
+the same directory. Historical manuscripts are retained for provenance.
+
+This revision adds a rational oracle with legal routing witnesses and fixed
+scoring inventories; 720 exact row-level comparisons; twelve fresh NSL-KDD fits
+with matched preprocessing; an exact-feature overlap control removing 658
+training rows while retaining the test cohort; and a second published-paper
+re-scoring audit using CICIoT2023 integer confusion matrices. Three fresh forest
+matrices exactly reproduce the historical artifact. The published CICIoT2023
+summary/matrix differences remain unresolved, and are **not** ceiling violations.
+
+```text
+python -m pip install -r requirements-revision.txt
+python -m pip install --no-deps .
+python code/reproduce_revision.py
+```
+
+This checks saved evidence and compiles the current PDF; it does not refit all
+historical models. For new raw-data fits:
+
+```text
+python code/run_revision_nsl.py PATH_TO_NSL NEW_OFFICIAL_OUTPUT
+python code/run_revision_nsl.py PATH_TO_NSL NEW_CONTROL_OUTPUT --remove-feature-overlap
+```
+
+The data directory needs KDDTrain+.txt and KDDTest+.txt. The run manifest records
+the mirror, hashes, parameters, cohorts and vocabulary. Both output directories
+must be new/empty. No test labels tune a model. The overlap control uses test
+features for split hygiene and is explicitly distinguished from deployment.
+
+```python
+from label_availability import count_folds, certified_oracle
+c = count_folds([["A", "B"]], [["A", "B", "C"]])
+assert certified_oracle(c)["exact_fraction"] == "5/9"
+certificate = certified_oracle(c, "fixed", scored_labels=["A", "B", "C", "D"])
+```
+
+The CLI supports `--certificate` and `--convention fixed --scored-labels ...`.
+Fixed inventories must include every true label. A budget exception is not an
+optimum. Full details: [`review/revision_20261115/EVIDENCE.md`](review/revision_20261115/EVIDENCE.md)
+and [`audit/revision_20261115/protocol.md`](audit/revision_20261115/protocol.md).
+
+**Readiness disclosure:** this is a strengthened research draft, not certified
+publication-ready. Automated adversarial assessment remains below 9/10. Priority
+of the exact characterization, a twenty-paper audit, broader external impact and
+native publisher submission compliance remain unresolved. No submission or
+GitHub push has been performed by this revision workflow.
+
+## Historical 0.9.4 artifact documentation
+
+The material below describes the preserved earlier release and its manuscript.
+Its stored validation metadata refer to that release, not the new revision.
+
+### Label Coverage Bounds Pooled Macro F1: A Reporting Diagnostic for Closed-Set IDS Benchmarks
 
 Release 0.9.4: code, manuscript source and evidence for auditing fold-dependent
 legal prediction vocabularies. The repository URL retains its historical name.

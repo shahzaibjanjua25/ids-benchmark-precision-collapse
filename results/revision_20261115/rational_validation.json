@@ -1,0 +1,48 @@
+{
+  "seed": 20261115,
+  "random_inputs": 240,
+  "row_enumeration_comparisons": 720,
+  "conventions": [
+    "support",
+    "union",
+    "fixed"
+  ],
+  "passed": true,
+  "minimal_all_cost": {
+    "convention": "support",
+    "exact_oracle": 0.5555555555555556,
+    "exact_fraction": "5/9",
+    "coverage_ceiling": 0.6666666666666666,
+    "ceiling_fraction": "2/3",
+    "ceiling_attainable": false,
+    "grouped_assignments": 2,
+    "enumerated_assignments": 2,
+    "routing": [
+      {
+        "fold": 0,
+        "unavailable_rows": 1,
+        "destination": 0
+      }
+    ],
+    "class_totals": [
+      {
+        "class": 0,
+        "test_rows": 1,
+        "covered_rows": 1,
+        "oracle_false_positives": 1
+      },
+      {
+        "class": 1,
+        "test_rows": 1,
+        "covered_rows": 1,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": 2,
+        "test_rows": 1,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      }
+    ]
+  }
+}
