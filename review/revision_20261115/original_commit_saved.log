@@ -1,0 +1,82 @@
+Running audit_nsl_destinations.py
+        model destination  original_support_f1  routed_support_f1  original_union_f1  routed_union_f1  true_positives_before  true_positives_after
+       forest         spy             0.254564           0.269144           0.248037         0.255687                  16287                 16287
+  extra_trees         spy             0.222724           0.248911           0.217013         0.236466                  16229                 16229
+decision_tree         spy             0.250516           0.281058           0.244093         0.267005                  16159                 16159
+  gaussian_nb         spy             0.179675           0.191825           0.175068         0.182234                  12247                 12247
+ sgd_logistic         spy             0.208062           0.224534           0.197659         0.213307                  15488                 15488
+          knn         spy             0.251604           0.298392           0.245153         0.283472                  15869                 15869
+Running audit_nsl_granularity.py
+ seeds  test_rows  test_rows_with_unavailable_fine_label  fine_label_ceiling  fine_label_f1_mean  fine_label_f1_sd  five_category_ceiling  five_category_f1_mean  five_category_f1_sd  five_category_inferred_union_f1_mean  five_category_inferred_union_f1_sd  mixed_resolution_equals_five_category  prediction_reaggregation_only
+     5      22544                                   3750            0.552632            0.239527          0.008779                    1.0               0.483489             0.005494                              0.483489                            0.005494                                   True                           True
+Running audit_cic_target_resolution.py
+          resolution  target_classes  coverage_ceiling  macro_f1  ceiling_attainment  accuracy  test_rows  attack_recall  prediction_reaggregation_only
+   fine attack label              15          0.066667  0.060304            0.904564  0.801861    2830743            NaN                           True
+eight-family mapping               8          0.250000  0.156296            0.625184  0.830150    2830743            NaN                           True
+binary benign/attack               2          1.000000  0.579723            0.579723  0.830800    2830743       0.146901                           True
+Running build_main_tables.py
+                            comparison   n  spearman   kendall  discordant  concordant  tied
+                 gas all fitted models  19  1.000000  1.000000           0         161    10
+             UNSW pair-seed conditions 180  0.848621  0.680074        2577       13533     0
+                       UNSW pair means  36  0.851737  0.692063          97         533     0
+       UNSW within Analysis + Backdoor   5  1.000000  1.000000           0          10     0
+            UNSW within Analysis + DoS   5  0.800000  0.600000           2           8     0
+       UNSW within Analysis + Exploits   5  0.800000  0.600000           2           8     0
+        UNSW within Analysis + Fuzzers   5  0.900000  0.800000           1           9     0
+        UNSW within Analysis + Generic   5  0.900000  0.800000           1           9     0
+ UNSW within Analysis + Reconnaissance   5  0.900000  0.800000           1           9     0
+      UNSW within Analysis + Shellcode   5  1.000000  1.000000           0          10     0
+          UNSW within Analysis + Worms   5  1.000000  1.000000           0          10     0
+            UNSW within Backdoor + DoS   5  1.000000  1.000000           0          10     0
+       UNSW within Backdoor + Exploits   5  0.100000  0.000000           5           5     0
+        UNSW within Backdoor + Fuzzers   5  0.900000  0.800000           1           9     0
+        UNSW within Backdoor + Generic   5  0.900000  0.800000           1           9     0
+ UNSW within Backdoor + Reconnaissance   5  1.000000  1.000000           0          10     0
+      UNSW within Backdoor + Shellcode   5  1.000000  1.000000           0          10     0
+          UNSW within Backdoor + Worms   5  1.000000  1.000000           0          10     0
+            UNSW within DoS + Exploits   5  1.000000  1.000000           0          10     0
+             UNSW within DoS + Fuzzers   5  1.000000  1.000000           0          10     0
+             UNSW within DoS + Generic   5  0.300000  0.200000           4           6     0
+      UNSW within DoS + Reconnaissance   5  1.000000  1.000000           0          10     0
+           UNSW within DoS + Shellcode   5  0.900000  0.800000           1           9     0
+               UNSW within DoS + Worms   5  0.900000  0.800000           1           9     0
+        UNSW within Exploits + Fuzzers   5  0.200000  0.200000           4           6     0
+        UNSW within Exploits + Generic   5  0.500000  0.200000           4           6     0
+ UNSW within Exploits + Reconnaissance   5  0.400000  0.400000           3           7     0
+      UNSW within Exploits + Shellcode   5 -0.200000 -0.200000           6           4     0
+          UNSW within Exploits + Worms   5  0.600000  0.400000           3           7     0
+         UNSW within Fuzzers + Generic   5  0.900000  0.800000           1           9     0
+  UNSW within Fuzzers + Reconnaissance   5  0.900000  0.800000           1           9     0
+       UNSW within Fuzzers + Shellcode   5  1.000000  1.000000           0          10     0
+           UNSW within Fuzzers + Worms   5  0.900000  0.800000           1           9     0
+  UNSW within Generic + Reconnaissance   5  0.700000  0.600000           2           8     0
+       UNSW within Generic + Shellcode   5  1.000000  1.000000           0          10     0
+           UNSW within Generic + Worms   5  0.600000  0.400000           3           7     0
+UNSW within Reconnaissance + Shellcode   5  1.000000  1.000000           0          10     0
+    UNSW within Reconnaissance + Worms   5  0.900000  0.800000           1           9     0
+         UNSW within Shellcode + Worms   5  1.000000  1.000000           0          10     0
+ seed  full_macro_f1  covered_macro_f1
+   42       0.254564          0.487022
+   43       0.234876          0.454910
+   44       0.237641          0.455476
+   45       0.238504          0.455661
+   46       0.232048          0.456118
+Saved main manuscript tables to C:\Users\shahz\Documents\Codex\2026-11-15\clo\work\baseline\results\manuscript_tables
+Running verify_release_evidence.py
+Frozen 50-record sample, 180 pair/seed matrices and 25 NSL pipeline/seed outputs verified
+NSL-KDD fine-label and five-category scores verified from the same five confusion matrices
+NSL-KDD mapping verifies test-only labels in all four attack families; mixed score equals five categories
+CICIDS2017 day-holdout fine, family and binary scores verified from the same prediction matrix
+NSL destination controls preserve every true-class support and true-positive count
+Running verify_cic_binary_lodo.py
+CICIDS2017 binary LODO outputs, row counts, target mapping and score checks passed
+Running verify_unsw_benign_ood.py
+UNSW benign-only OOD results, binary ceiling and saved confusion counts passed
+Running verify_cic_corrected_friday.py
+Corrected CICIDS2017 run: chronology, coverage, nine fits, confusion counts and binary/fine scores passed
+Running verify_external_artifact_audit.py
+Re-scored one published IDS study over 10 seeds: macro F1=0.90002, sample SD=0.05143, 95% CI half-width=0.03679; ceiling=1.00000
+Running verify_published_score_audit.py
+Published LOFO score is compatible with the stated binary task
+Running verify_cic_archive.py
+Running plot_cic_hero.py

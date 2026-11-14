@@ -1,0 +1,554 @@
+{
+  "files": {
+    "KDDTrain+.txt": "1b86d2f957b33082081bba410fe129b475efebcc13c9014c3f447c8271aadf95",
+    "KDDTest+.txt": "fa46b0935342616aa83b7c2578db355b6a7aaabbc492248172c7a1e8b7ab8f84"
+  },
+  "download_mirror": "https://github.com/jmnwong/NSL-KDD-Dataset",
+  "training_rows": 125315,
+  "test_rows": 22544,
+  "feature_count": 41,
+  "excluded_columns": [
+    "class (41)",
+    "difficulty (42)"
+  ],
+  "exact_feature_overlap_between_partitions": 0,
+  "original_feature_overlap": 654,
+  "original_training_rows": 125973,
+  "removed_training_rows": 658,
+  "feature_overlap_control": true,
+  "training_duplicate_feature_rows": 12,
+  "test_duplicate_feature_rows": 57,
+  "python": "3.12.14",
+  "sklearn": "1.9.1",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "preprocessing": "train-fitted one-hot nominal; numeric passthrough; same pipeline for both estimators",
+  "model_settings": {
+    "trees": 200,
+    "min_samples_leaf": 2,
+    "min_samples_split": 5
+  },
+  "oracle_support": {
+    "convention": "support",
+    "exact_oracle": 0.5526315789473685,
+    "exact_fraction": "21/38",
+    "coverage_ceiling": 0.5526315789473685,
+    "ceiling_fraction": "21/38",
+    "ceiling_attainable": true,
+    "grouped_assignments": 23,
+    "enumerated_assignments": 23,
+    "routing": [
+      {
+        "fold": 0,
+        "unavailable_rows": 3750,
+        "destination": "spy"
+      }
+    ],
+    "class_totals": [
+      {
+        "class": "apache2",
+        "test_rows": 737,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "back",
+        "test_rows": 359,
+        "covered_rows": 359,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "buffer_overflow",
+        "test_rows": 20,
+        "covered_rows": 20,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "ftp_write",
+        "test_rows": 3,
+        "covered_rows": 3,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "guess_passwd",
+        "test_rows": 1231,
+        "covered_rows": 1231,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "httptunnel",
+        "test_rows": 133,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "imap",
+        "test_rows": 1,
+        "covered_rows": 1,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "ipsweep",
+        "test_rows": 141,
+        "covered_rows": 141,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "land",
+        "test_rows": 7,
+        "covered_rows": 7,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "loadmodule",
+        "test_rows": 2,
+        "covered_rows": 2,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "mailbomb",
+        "test_rows": 293,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "mscan",
+        "test_rows": 996,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "multihop",
+        "test_rows": 18,
+        "covered_rows": 18,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "named",
+        "test_rows": 17,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "neptune",
+        "test_rows": 4657,
+        "covered_rows": 4657,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "nmap",
+        "test_rows": 73,
+        "covered_rows": 73,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "normal",
+        "test_rows": 9711,
+        "covered_rows": 9711,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "perl",
+        "test_rows": 2,
+        "covered_rows": 2,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "phf",
+        "test_rows": 2,
+        "covered_rows": 2,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "pod",
+        "test_rows": 41,
+        "covered_rows": 41,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "portsweep",
+        "test_rows": 157,
+        "covered_rows": 157,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "processtable",
+        "test_rows": 685,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "ps",
+        "test_rows": 15,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "rootkit",
+        "test_rows": 13,
+        "covered_rows": 13,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "saint",
+        "test_rows": 319,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "satan",
+        "test_rows": 735,
+        "covered_rows": 735,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "sendmail",
+        "test_rows": 14,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "smurf",
+        "test_rows": 665,
+        "covered_rows": 665,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "snmpgetattack",
+        "test_rows": 178,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "snmpguess",
+        "test_rows": 331,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "spy",
+        "test_rows": 0,
+        "covered_rows": 0,
+        "oracle_false_positives": 3750
+      },
+      {
+        "class": "sqlattack",
+        "test_rows": 2,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "teardrop",
+        "test_rows": 12,
+        "covered_rows": 12,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "udpstorm",
+        "test_rows": 2,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "warezclient",
+        "test_rows": 0,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "warezmaster",
+        "test_rows": 944,
+        "covered_rows": 944,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "worm",
+        "test_rows": 2,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "xlock",
+        "test_rows": 9,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "xsnoop",
+        "test_rows": 4,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "xterm",
+        "test_rows": 13,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      }
+    ]
+  },
+  "oracle_union": {
+    "convention": "union",
+    "exact_oracle": 0.5483728092888877,
+    "exact_fraction": "80477/146756",
+    "coverage_ceiling": 0.5526315789473685,
+    "ceiling_fraction": "21/38",
+    "ceiling_attainable": false,
+    "grouped_assignments": 23,
+    "enumerated_assignments": 23,
+    "routing": [
+      {
+        "fold": 0,
+        "unavailable_rows": 3750,
+        "destination": "normal"
+      }
+    ],
+    "class_totals": [
+      {
+        "class": "apache2",
+        "test_rows": 737,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "back",
+        "test_rows": 359,
+        "covered_rows": 359,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "buffer_overflow",
+        "test_rows": 20,
+        "covered_rows": 20,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "ftp_write",
+        "test_rows": 3,
+        "covered_rows": 3,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "guess_passwd",
+        "test_rows": 1231,
+        "covered_rows": 1231,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "httptunnel",
+        "test_rows": 133,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "imap",
+        "test_rows": 1,
+        "covered_rows": 1,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "ipsweep",
+        "test_rows": 141,
+        "covered_rows": 141,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "land",
+        "test_rows": 7,
+        "covered_rows": 7,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "loadmodule",
+        "test_rows": 2,
+        "covered_rows": 2,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "mailbomb",
+        "test_rows": 293,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "mscan",
+        "test_rows": 996,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "multihop",
+        "test_rows": 18,
+        "covered_rows": 18,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "named",
+        "test_rows": 17,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "neptune",
+        "test_rows": 4657,
+        "covered_rows": 4657,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "nmap",
+        "test_rows": 73,
+        "covered_rows": 73,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "normal",
+        "test_rows": 9711,
+        "covered_rows": 9711,
+        "oracle_false_positives": 3750
+      },
+      {
+        "class": "perl",
+        "test_rows": 2,
+        "covered_rows": 2,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "phf",
+        "test_rows": 2,
+        "covered_rows": 2,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "pod",
+        "test_rows": 41,
+        "covered_rows": 41,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "portsweep",
+        "test_rows": 157,
+        "covered_rows": 157,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "processtable",
+        "test_rows": 685,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "ps",
+        "test_rows": 15,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "rootkit",
+        "test_rows": 13,
+        "covered_rows": 13,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "saint",
+        "test_rows": 319,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "satan",
+        "test_rows": 735,
+        "covered_rows": 735,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "sendmail",
+        "test_rows": 14,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "smurf",
+        "test_rows": 665,
+        "covered_rows": 665,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "snmpgetattack",
+        "test_rows": 178,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "snmpguess",
+        "test_rows": 331,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "spy",
+        "test_rows": 0,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "sqlattack",
+        "test_rows": 2,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "teardrop",
+        "test_rows": 12,
+        "covered_rows": 12,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "udpstorm",
+        "test_rows": 2,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "warezclient",
+        "test_rows": 0,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "warezmaster",
+        "test_rows": 944,
+        "covered_rows": 944,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "worm",
+        "test_rows": 2,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "xlock",
+        "test_rows": 9,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "xsnoop",
+        "test_rows": 4,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      },
+      {
+        "class": "xterm",
+        "test_rows": 13,
+        "covered_rows": 0,
+        "oracle_false_positives": 0
+      }
+    ]
+  },
+  "protocol": "official split; no test tuning; fixed models and seeds recorded before execution",
+  "uncertainty": "Fit variation on one cohort; no population inference"
+}

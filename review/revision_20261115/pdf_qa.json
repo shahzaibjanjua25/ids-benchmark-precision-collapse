@@ -1,0 +1,78 @@
+[
+  {
+    "pdf": "paper/revision/manuscript.pdf",
+    "sha256": "0fd3053c7f17a7a1b6a3472a0e878cb1d609c47aed83c36cbdde669ecd6b3f9d",
+    "pages": [
+      {
+        "page": 1,
+        "characters": 4234,
+        "text_bounds_passed": true
+      },
+      {
+        "page": 2,
+        "characters": 3994,
+        "text_bounds_passed": true
+      },
+      {
+        "page": 3,
+        "characters": 3825,
+        "text_bounds_passed": true
+      },
+      {
+        "page": 4,
+        "characters": 4100,
+        "text_bounds_passed": true
+      },
+      {
+        "page": 5,
+        "characters": 3922,
+        "text_bounds_passed": true
+      },
+      {
+        "page": 6,
+        "characters": 3225,
+        "text_bounds_passed": true
+      },
+      {
+        "page": 7,
+        "characters": 4569,
+        "text_bounds_passed": true
+      },
+      {
+        "page": 8,
+        "characters": 4185,
+        "text_bounds_passed": true
+      },
+      {
+        "page": 9,
+        "characters": 5432,
+        "text_bounds_passed": true
+      }
+    ],
+    "all_pages_rendered": true,
+    "visual_review": "See review/revision_20261115/PDF_QA.md; rendering alone is not a visual pass"
+  },
+  {
+    "pdf": "paper/revision/supplement.pdf",
+    "sha256": "a4ac35f17740c2c959ebc1eb246339bbff32425f50e2fcbb6c8300000d9d6e96",
+    "pages": [
+      {
+        "page": 1,
+        "characters": 3532,
+        "text_bounds_passed": true
+      },
+      {
+        "page": 2,
+        "characters": 4036,
+        "text_bounds_passed": true
+      },
+      {
+        "page": 3,
+        "characters": 3395,
+        "text_bounds_passed": true
+      }
+    ],
+    "all_pages_rendered": true,
+    "visual_review": "See review/revision_20261115/PDF_QA.md; rendering alone is not a visual pass"
+  }
+]

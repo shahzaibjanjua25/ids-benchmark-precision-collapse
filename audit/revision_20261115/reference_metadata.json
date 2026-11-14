@@ -1,0 +1,1378 @@
+[
+  {
+    "doi": "10.1109/SP.2010.25",
+    "retrieved": "2026-11-15",
+    "status": "metadata verified",
+    "title": [
+      "Outside the Closed World: On Using Machine Learning for Network Intrusion Detection"
+    ],
+    "authors": [
+      {
+        "given": "Robin",
+        "family": "Sommer",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Vern",
+        "family": "Paxson",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "venue": [
+      "2010 IEEE Symposium on Security and Privacy"
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2010
+        ]
+      ]
+    },
+    "type": "proceedings-article",
+    "url": "https://doi.org/10.1109/sp.2010.25",
+    "scope": "Existence and metadata only; claim support requires article inspection"
+  },
+  {
+    "doi": "10.1162/tacl_a_00675",
+    "retrieved": "2026-11-15",
+    "status": "retrieval failed",
+    "error": "HTTP Error 429: Too Many Requests"
+  },
+  {
+    "doi": "10.1145/1882471.1882479",
+    "retrieved": "2026-11-15",
+    "status": "metadata verified",
+    "title": [
+      "Apples-to-apples in cross-validation studies"
+    ],
+    "authors": [
+      {
+        "given": "George",
+        "family": "Forman",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Hewlett-Packard Labs, Palo Alto, CA"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Martin",
+        "family": "Scholz",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Hewlett-Packard Labs, Palo Alto, CA"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "venue": [
+      "ACM SIGKDD Explorations Newsletter"
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2010,
+          11,
+          9
+        ]
+      ]
+    },
+    "type": "journal-article",
+    "url": "https://doi.org/10.1145/1882471.1882479",
+    "scope": "Existence and metadata only; claim support requires article inspection"
+  },
+  {
+    "doi": "10.1109/SPW53761.2021.00009",
+    "retrieved": "2026-11-15",
+    "status": "metadata verified",
+    "title": [
+      "Troubleshooting an Intrusion Detection Dataset: the CICIDS2017 Case Study"
+    ],
+    "authors": [
+      {
+        "given": "Gints",
+        "family": "Engelen",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Vera",
+        "family": "Rimmer",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Wouter",
+        "family": "Joosen",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "venue": [
+      "2021 IEEE Security and Privacy Workshops (SPW)"
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2021,
+          5
+        ]
+      ]
+    },
+    "type": "proceedings-article",
+    "url": "https://doi.org/10.1109/spw53761.2021.00009",
+    "scope": "Existence and metadata only; claim support requires article inspection"
+  },
+  {
+    "doi": "10.1007/978-3-031-31108-6_2",
+    "retrieved": "2026-11-15",
+    "status": "metadata verified",
+    "title": [
+      "Errors in the CICIDS2017 Dataset and the Significant Differences in Detection Performances It Makes"
+    ],
+    "authors": [
+      {
+        "given": "Maxime",
+        "family": "Lanvin",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Pierre-François",
+        "family": "Gimenez",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Yufei",
+        "family": "Han",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Frédéric",
+        "family": "Majorczyk",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Ludovic",
+        "family": "Mé",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Éric",
+        "family": "Totel",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "venue": [
+      "Lecture Notes in Computer Science",
+      "Risks and Security of Internet and Systems"
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "type": "book-chapter",
+    "url": "https://doi.org/10.1007/978-3-031-31108-6_2",
+    "scope": "Existence and metadata only; claim support requires article inspection"
+  },
+  {
+    "doi": "10.1109/CISDA.2009.5356528",
+    "retrieved": "2026-11-15",
+    "status": "metadata verified",
+    "title": [
+      "A detailed analysis of the KDD CUP 99 data set"
+    ],
+    "authors": [
+      {
+        "given": "Mahbod",
+        "family": "Tavallaee",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Ebrahim",
+        "family": "Bagheri",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Wei",
+        "family": "Lu",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Ali A.",
+        "family": "Ghorbani",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "venue": [
+      "2009 IEEE Symposium on Computational Intelligence for Security and Defense Applications"
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2009,
+          7
+        ]
+      ]
+    },
+    "type": "proceedings-article",
+    "url": "https://doi.org/10.1109/cisda.2009.5356528",
+    "scope": "Existence and metadata only; claim support requires article inspection"
+  },
+  {
+    "doi": "10.5220/0006639801080116",
+    "retrieved": "2026-11-15",
+    "status": "metadata verified",
+    "title": [
+      "Toward Generating a New Intrusion Detection Dataset and Intrusion Traffic Characterization"
+    ],
+    "authors": [
+      {
+        "given": "Iman",
+        "family": "Sharafaldin",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "University of New Brunswick (UNB), Canada"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Arash",
+        "family": "Habibi Lashkari",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "University of New Brunswick (UNB), Canada"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Ali A.",
+        "family": "Ghorbani",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "University of New Brunswick (UNB), Canada"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "venue": [
+      "Proceedings of the 4th International Conference on Information Systems Security and Privacy"
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
+    "type": "proceedings-article",
+    "url": "https://doi.org/10.5220/0006639801080116",
+    "scope": "Existence and metadata only; claim support requires article inspection"
+  },
+  {
+    "doi": "10.1186/s40537-023-00834-0",
+    "retrieved": "2026-11-15",
+    "status": "metadata verified",
+    "title": [
+      "Network intrusion detection using feature fusion with deep learning"
+    ],
+    "authors": [
+      {
+        "given": "Abiodun",
+        "family": "Ayantayo",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Amrit",
+        "family": "Kaur",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Anit",
+        "family": "Kour",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Xavier",
+        "family": "Schmoor",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Fayyaz",
+        "family": "Shah",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Ian",
+        "family": "Vickers",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Paul",
+        "family": "Kearney",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Mohammed M.",
+        "family": "Abdelsamea",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "venue": [
+      "Journal of Big Data"
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2023,
+          11,
+          8
+        ]
+      ]
+    },
+    "type": "journal-article",
+    "url": "https://doi.org/10.1186/s40537-023-00834-0",
+    "scope": "Existence and metadata only; claim support requires article inspection"
+  },
+  {
+    "doi": "10.1038/s41598-025-34166-1",
+    "retrieved": "2026-11-15",
+    "status": "metadata verified",
+    "title": [
+      "An enhanced deep learning framework for intrusion classification enterprise network using multi-branch CNN-attention architecture"
+    ],
+    "authors": [
+      {
+        "given": "AmirHossein",
+        "family": "Biyouki",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Saman",
+        "family": "Lotfipour",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Behnam",
+        "family": "Haghi",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "venue": [
+      "Scientific Reports"
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2025,
+          12,
+          29
+        ]
+      ]
+    },
+    "type": "journal-article",
+    "url": "https://doi.org/10.1038/s41598-025-34166-1",
+    "scope": "Existence and metadata only; claim support requires article inspection"
+  },
+  {
+    "doi": "10.3390/electronics15184074",
+    "retrieved": "2026-11-15",
+    "status": "metadata verified",
+    "title": [
+      "Scaling and Validating a Distributed Training and Retraining Pipeline for Network Intrusion Detection"
+    ],
+    "authors": [
+      {
+        "ORCID": "https://orcid.org/0000-0002-3880-6697",
+        "authenticated-orcid": false,
+        "given": "José M.",
+        "family": "Franco-Valiente",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Centro Extremeño de Tecnologías Avanzadas (CETA-CIEMAT), 10200 Trujillo, Spain"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          },
+          {
+            "role": "conceptualization",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "methodology",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "software",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "validation",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "formal-analysis",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "investigation",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "visualization",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "data-curation",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "writing-original-draft",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "writing-review-editing",
+            "vocabulary": "credit"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-1432-9002",
+        "authenticated-orcid": false,
+        "given": "Jesús",
+        "family": "Calle-Cancho",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Department of Computing and Telematics Engineering, University of Extremadura, 10003 Cáceres, Spain"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          },
+          {
+            "role": "conceptualization",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "methodology",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "validation",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "writing-review-editing",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "supervision",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "project-administration",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "funding-acquisition",
+            "vocabulary": "credit"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0009-0006-1437-1373",
+        "authenticated-orcid": false,
+        "given": "Asier",
+        "family": "Serrano-Martín",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Department of Computing and Telematics Engineering, University of Extremadura, 10003 Cáceres, Spain"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          },
+          {
+            "role": "validation",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "writing-review-editing",
+            "vocabulary": "credit"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-6701-961X",
+        "authenticated-orcid": false,
+        "given": "Juan M.",
+        "family": "Haut",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Department of Technology of Computers and Communications, University of Extremadura, 10003 Cáceres, Spain"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          },
+          {
+            "role": "project-administration",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "supervision",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "writing-review-editing",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "resources",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "methodology",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "conceptualization",
+            "vocabulary": "credit"
+          }
+        ]
+      }
+    ],
+    "venue": [
+      "Electronics"
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          9
+        ]
+      ]
+    },
+    "type": "journal-article",
+    "url": "https://doi.org/10.3390/electronics15184074",
+    "scope": "Existence and metadata only; claim support requires article inspection"
+  },
+  {
+    "doi": "10.3390/s23135941",
+    "retrieved": "2026-11-15",
+    "status": "retrieval failed",
+    "error": "HTTP Error 429: Too Many Requests"
+  },
+  {
+    "doi": "10.3390/technologies14100647",
+    "retrieved": "2026-11-15",
+    "status": "metadata verified",
+    "title": [
+      "Dataset-Calibrated Perturbation Budgets for Adversarial Robustness Evaluation of Machine-Learning Network Intrusion Detection Systems"
+    ],
+    "authors": [
+      {
+        "ORCID": "https://orcid.org/0000-0002-2588-3650",
+        "authenticated-orcid": false,
+        "given": "Mohsen S.",
+        "family": "Alsaadi",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Research and Development (R&D) Department, Ebttikar Technology Company Ltd., Riyadh 11573, Saudi Arabia"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          },
+          {
+            "role": "conceptualization",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "investigation",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "software",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "data-curation",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "writing-original-draft",
+            "vocabulary": "credit"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0009-0009-5441-0359",
+        "authenticated-orcid": false,
+        "given": "Muhammad",
+        "family": "Imran",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Computer Science Department, University of Bari, 70125 Bari, Italy"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          },
+          {
+            "role": "resources",
+            "vocabulary": "credit"
+          }
+        ]
+      },
+      {
+        "given": "Noora",
+        "family": "Fadhel",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Department of Electrical and Information Engineering, Polytechnic University of Bari, 70125 Bari, Italy"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          },
+          {
+            "role": "data-curation",
+            "vocabulary": "credit"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-0892-975X",
+        "authenticated-orcid": false,
+        "given": "Malik",
+        "family": "Al-Essa",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Department of Computer Science, The University of Jordan, Amman 11942, Jordan"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          },
+          {
+            "role": "investigation",
+            "vocabulary": "credit"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-7223-586X",
+        "authenticated-orcid": false,
+        "given": "Iulian Sorin",
+        "family": "Munteanu",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Theory of Mechanisms and Robots Department, National University of Science and Technology Politehnica of Bucharest, Splaiul Independentei No. 313, 060042 Bucharest, Romania"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          },
+          {
+            "role": "methodology",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "validation",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "formal-analysis",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "writing-review-editing",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "visualization",
+            "vocabulary": "credit"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-4602-461X",
+        "authenticated-orcid": false,
+        "given": "Wasim A.",
+        "family": "Ali",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Department of Electrical and Information Engineering, Polytechnic University of Bari, 70125 Bari, Italy"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          },
+          {
+            "role": "methodology",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "validation",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "formal-analysis",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "writing-review-editing",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "project-administration",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "supervision",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "resources",
+            "vocabulary": "credit"
+          }
+        ]
+      }
+    ],
+    "venue": [
+      "Technologies"
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2026,
+          10,
+          9
+        ]
+      ]
+    },
+    "type": "journal-article",
+    "url": "https://doi.org/10.3390/technologies14100647",
+    "scope": "Existence and metadata only; claim support requires article inspection"
+  },
+  {
+    "doi": "10.3390/math14183357",
+    "retrieved": "2026-11-15",
+    "status": "metadata verified",
+    "title": [
+      "A Leakage-Aware Evaluation of a Multi-Scale Attention Temporal Convolutional Network for Binary Network Intrusion Detection"
+    ],
+    "authors": [
+      {
+        "ORCID": "https://orcid.org/0000-0003-3308-3941",
+        "authenticated-orcid": false,
+        "given": "Yu",
+        "family": "Yang",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "College of Information Engineering, Chinese People’s Armed Police Force Engineering University, Xi’an 710086, China"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          },
+          {
+            "role": "conceptualization",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "methodology",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "software",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "investigation",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "data-curation",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "writing-original-draft",
+            "vocabulary": "credit"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0009-0006-9914-8444",
+        "authenticated-orcid": false,
+        "given": "Jinliang",
+        "family": "Yuan",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "College of Information Engineering, Chinese People’s Armed Police Force Engineering University, Xi’an 710086, China"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          },
+          {
+            "role": "conceptualization",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "formal-analysis",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "resources",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "writing-review-editing",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "project-administration",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "supervision",
+            "vocabulary": "credit"
+          }
+        ]
+      },
+      {
+        "given": "Minna",
+        "family": "Gao",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "College of Missile Engineering, PLA Rocket Force University of Engineering, Xi’an 710025, China"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          },
+          {
+            "role": "methodology",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "investigation",
+            "vocabulary": "credit"
+          }
+        ]
+      },
+      {
+        "given": "Mingmei",
+        "family": "Chen",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "College of Information Engineering, Chinese People’s Armed Police Force Engineering University, Xi’an 710086, China"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          },
+          {
+            "role": "validation",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "investigation",
+            "vocabulary": "credit"
+          }
+        ]
+      },
+      {
+        "given": "Dan",
+        "family": "Gong",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "College of Information Engineering, Chinese People’s Armed Police Force Engineering University, Xi’an 710086, China"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          },
+          {
+            "role": "software",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "investigation",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "visualization",
+            "vocabulary": "credit"
+          }
+        ]
+      },
+      {
+        "given": "Le",
+        "family": "Gao",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "College of Information Engineering, Chinese People’s Armed Police Force Engineering University, Xi’an 710086, China"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          },
+          {
+            "role": "validation",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "investigation",
+            "vocabulary": "credit"
+          },
+          {
+            "role": "visualization",
+            "vocabulary": "credit"
+          }
+        ]
+      }
+    ],
+    "venue": [
+      "Mathematics"
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          16
+        ]
+      ]
+    },
+    "type": "journal-article",
+    "url": "https://doi.org/10.3390/math14183357",
+    "scope": "Existence and metadata only; claim support requires article inspection"
+  },
+  {
+    "doi": "10.3390/electronics15143090",
+    "retrieved": "2026-11-15",
+    "status": "metadata verified",
+    "title": [
+      "Scenario-Aware Federated Intrusion Detection for V2X-Inspired Edge Security: Calibration, Heterogeneity, and Communication Analysis"
+    ],
+    "authors": [
+      {
+        "ORCID": "https://orcid.org/0000-0002-8872-5721",
+        "authenticated-orcid": false,
+        "given": "Manuel J. Cabral S.",
+        "family": "Reis",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Engineering Department and IEETA, University of Trás-os-Montes e Alto Douro, Quinta de Prados, 5000-801 Vila Real, Portugal"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "venue": [
+      "Electronics"
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          14
+        ]
+      ]
+    },
+    "type": "journal-article",
+    "url": "https://doi.org/10.3390/electronics15143090",
+    "scope": "Existence and metadata only; claim support requires article inspection"
+  },
+  {
+    "doi": "10.3390/electronics14224547",
+    "retrieved": "2026-11-15",
+    "status": "metadata verified",
+    "title": [
+      "CLAIRE: A Four-Layer Active Learning Framework for Enhanced IoT Intrusion Detection"
+    ],
+    "authors": [
+      {
+        "ORCID": "https://orcid.org/0000-0002-4389-1339",
+        "authenticated-orcid": false,
+        "given": "Abdulmohsen",
+        "family": "Almalawi",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "School of Computer Science & Information Technology, King Abdulaziz University, Jeddah 22254, Saudi Arabia"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "venue": [
+      "Electronics"
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2025,
+          11,
+          20
+        ]
+      ]
+    },
+    "type": "journal-article",
+    "url": "https://doi.org/10.3390/electronics14224547",
+    "scope": "Existence and metadata only; claim support requires article inspection"
+  },
+  {
+    "doi": "10.1109/TPAMI.2012.256",
+    "retrieved": "2026-11-15",
+    "status": "metadata verified",
+    "title": [
+      "Toward Open Set Recognition"
+    ],
+    "authors": [
+      {
+        "given": "W. J.",
+        "family": "Scheirer",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "A.",
+        "family": "de Rezende Rocha",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "A.",
+        "family": "Sapkota",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "T. E.",
+        "family": "Boult",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "venue": [
+      "IEEE Transactions on Pattern Analysis and Machine Intelligence"
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2013,
+          7
+        ]
+      ]
+    },
+    "type": "journal-article",
+    "url": "https://doi.org/10.1109/tpami.2012.256",
+    "scope": "Existence and metadata only; claim support requires article inspection"
+  }
+]

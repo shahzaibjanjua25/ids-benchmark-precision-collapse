@@ -4,6 +4,54 @@
 
 
 
+```text
+python -m pip install -r requirements-revision.txt
+python -m pip install --no-deps .
+python code/reproduce_revision.py
+```
+
+This checks saved evidence and compiles the current PDF; it does not refit all
+historical models. For new raw-data fits:
+
+```text
+python code/run_revision_nsl.py PATH_TO_NSL NEW_OFFICIAL_OUTPUT
+python code/run_revision_nsl.py PATH_TO_NSL NEW_CONTROL_OUTPUT --remove-feature-overlap
+```
+
+The data directory needs KDDTrain+.txt and KDDTest+.txt. The run manifest records
+the mirror, hashes, parameters, cohorts and vocabulary. Both output directories
+must be new/empty. No test labels tune a model. The overlap control uses test
+features for split hygiene and is explicitly distinguished from deployment.
+
+```python
+from label_availability import count_folds, certified_oracle
+c = count_folds([["A", "B"]], [["A", "B", "C"]])
+assert certified_oracle(c)["exact_fraction"] == "5/9"
+certificate = certified_oracle(c, "fixed", scored_labels=["A", "B", "C", "D"])
+```
+
+The CLI supports `--certificate` and `--convention fixed --scored-labels ...`.
+Fixed inventories must include every true label. A budget exception is not an
+optimum. Full details: [`review/revision_20261115/EVIDENCE.md`](review/revision_20261115/EVIDENCE.md)
+and [`audit/revision_20261115/protocol.md`](audit/revision_20261115/protocol.md).
+
+**Readiness disclosure:** this is a strengthened research draft, not certified
+publication-ready. Automated adversarial assessment remains below 9/10. Priority
+of the exact characterization, a twenty-paper audit, broader external impact and
+native publisher submission compliance remain unresolved. No submission or
+GitHub push has been performed by this revision workflow.
+
+## Historical 0.9.4 artifact documentation
+
+The material below describes the preserved earlier release and its manuscript.
+Its stored validation metadata refer to that release, not the new revision.
+
+# Label Availability Audit Toolkit
+
+
+
+
+
 
 
 

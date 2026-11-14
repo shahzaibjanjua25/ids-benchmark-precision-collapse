@@ -1,0 +1,10 @@
+# Actual revision environment: Python 3.12.14; no changes to historical pins.
+numpy==2.5.4
+pandas==3.0.1
+scipy==1.18.1
+scikit-learn==1.9.1
+matplotlib==3.11.2
+typst==0.15.2
+pypdf==6.21.4
+# Optional for visual PDF QA; not needed to reproduce metrics or compile Typst.
+PyMuPDF==2.1
