@@ -1,7 +1,7 @@
 [
   {
     "pdf": "paper/revision/manuscript.pdf",
-    "sha256": "0fd3053c7f17a7a1b6a3472a0e878cb1d609c47aed83c36cbdde669ecd6b3f9d",
+    "sha256": "e7ab2ab40b0558c1fd73eda37f26dd52b7fcde560f4879b0269076986d60ec84",
     "pages": [
       {
         "page": 1,
@@ -54,7 +54,7 @@
   },
   {
     "pdf": "paper/revision/supplement.pdf",
-    "sha256": "a4ac35f17740c2c959ebc1eb246339bbff32425f50e2fcbb6c8300000d9d6e96",
+    "sha256": "ab31d5bf24d220077c238111afb031da5052423ce23612db53f3d59c88f4dabc",
     "pages": [
       {
         "page": 1,
