@@ -1,6 +1,7 @@
 """Count-based bounds, including sklearn's inferred-label convention."""
 import itertools
 import math
+import numbers
 
 import numpy as np
 import pandas as pd
@@ -43,9 +44,24 @@ def _prepare(counts):
     if counts[required].isna().any().any() or counts.duplicated(["fold", "class"]).any():
         raise ValueError("Missing values and repeated fold/class records are unsupported")
     for column in ["training_rows", "test_rows"]:
-        values = counts[column].to_numpy(dtype=float)
-        if not np.isfinite(values).all() or (values < 0).any() or (values != np.floor(values)).any():
+        if not all(isinstance(value, numbers.Real) for value in counts[column]):
+            raise ValueError("Counts must be numeric finite nonnegative integers")
+        try:
+            integers = [int(value) for value in counts[column]]
+        except (ValueError, OverflowError) as exc:
+            raise ValueError("Counts must be finite nonnegative integers") from exc
+        if any(value < 0 or value != integer for value, integer in zip(counts[column], integers)):
             raise ValueError("Counts must be finite nonnegative integers")
+        # NumPy int64 arithmetic below needs room for sums and 2*m. Validate
+        # with Python integers before any int64 conversion to avoid wraparound.
+        if sum(integers) > 2 ** 60:
+            raise ValueError("Total counts exceed the supported integer range (2**60)")
+        if any(isinstance(value, (float, np.floating)) and value >= 2 ** 53
+               for value in counts[column]):
+            raise ValueError("Large counts must be supplied as integers, not floats")
+        # Normalize before groupby: summing individually exact float cells can
+        # otherwise round an aggregate above 2**53 before the rational oracle.
+        counts[column] = np.asarray(integers, dtype=np.int64)
     permitted = counts.training_rows.gt(0)
     if "allowed" in counts:
         if not counts.allowed.isin([0, 1, False, True]).all():

@@ -1,3 +1,15 @@
-code/run_all.sh text eol=lf
-audit/crossref_20261108/candidate_frame.csv -text
-paper/*.pdf binary
+*.pdf binary
+*.png binary
+*.npz binary
+*.whl binary
+*.bundle binary
+*.py text eol=lf
+*.typ text eol=lf
+*.svg text eol=lf
+*.log text eol=lf
+*.ps1 text eol=crlf
+paper/revision/native/*.tex text eol=lf
+paper/revision/native/*.cls -text
+paper/revision/native/*.clo -text
+paper/revision/native/*.bst -text
+paper/revision/native/readme.txt -text

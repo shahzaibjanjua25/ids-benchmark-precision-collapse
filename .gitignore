@@ -5,6 +5,8 @@ __pycache__/
 *.bbl
 *.blg
 *.synctex.gz
+*.out
+*.toc
 *.pcap*
 *.zip
 *.rar
@@ -23,3 +25,4 @@ results/reproduction.*/
 build/
 *.egg-info/
 /regenerated_figures/
+/.cache/

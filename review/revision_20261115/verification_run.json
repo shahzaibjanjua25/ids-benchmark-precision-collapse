@@ -1,0 +1,107 @@
+[
+  {
+    "command": "python code/check_availability.py",
+    "returncode": 0,
+    "seconds": 14.056770400002279,
+    "stdout": "80 row-level cases: both conventions, both solvers, sandwich and array API passed\n",
+    "stderr": ""
+  },
+  {
+    "command": "python code/check_vocabulary_groups.py",
+    "returncode": 0,
+    "seconds": 12.440628899999865,
+    "stdout": "100 explicit-head brute-force cases passed; 300 folds reduced to two assignments\n",
+    "stderr": ""
+  },
+  {
+    "command": "python code/check_certified.py",
+    "returncode": 0,
+    "seconds": 9.666277000000264,
+    "stdout": "720 exact rational row-enumeration comparisons passed; witnesses and edge cases passed\n",
+    "stderr": ""
+  },
+  {
+    "command": "python code/verify_revision_results.py",
+    "returncode": 0,
+    "seconds": 48.031379600000946,
+    "stdout": "12 fresh prediction sets verified; 3 old forest matrices reproduced exactly\n",
+    "stderr": ""
+  },
+  {
+    "command": "python code/audit_ciciot2023_published.py",
+    "returncode": 0,
+    "seconds": 4.021420100001706,
+    "stdout": "model  source_table  test_rows  classes  recomputed_macro_f1  published_f1  absolute_difference  recomputed_weighted_f1  recomputed_accuracy  legal_output_ceiling      classification  score_agreement_1e_7\n  dnn             7   10340161        8             0.704954      0.697265              0.00769                0.990588             0.991086                   1.0 Verified compatible                 False\n   rf             8   10340161        8             0.719579      0.719289              0.00029                0.994045             0.994438                   1.0 Verified compatible                 False\n",
+    "stderr": ""
+  },
+  {
+    "command": "python code/verify_rt_iot_audit.py",
+    "returncode": 0,
+    "seconds": 13.05849809999927,
+    "stdout": "{\n  \"prediction_vectors_verified\": 60,\n  \"confusion_matrices_verified\": 60,\n  \"matched_conditions_verified\": 30,\n  \"independent_oracle_checks\": 30,\n  \"raw_feature_groups_verified\": false,\n  \"status\": \"passed\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": "python code/audit_botiot_matrices.py",
+    "returncode": 0,
+    "seconds": 3.042630100000679,
+    "stdout": "    model  observations  accuracy  normal_f1  attack_f1  derived_macro_f1  legal_binary_ceiling\n   svm_10       3668522  0.883727   0.002232   0.938267          0.470249                   1.0\n svm_full       3668522  0.999887   0.236599   0.999944          0.618271                   1.0\n  lstm_10       3668522  0.997419   0.030517   0.998708          0.514613                   1.0\nlstm_full       3668522  0.980573   0.011923   0.990190          0.501057                   1.0\n   rnn_10       3668522  0.997405   0.025985   0.998701          0.512343                   1.0\n rnn_full       3668522  0.979061   0.009771   0.989419          0.499595                   1.0\n",
+    "stderr": ""
+  },
+  {
+    "command": "python code/verify_release_evidence.py",
+    "returncode": 0,
+    "seconds": 3.2226633000027505,
+    "stdout": "Frozen 50-record sample, 180 pair/seed matrices and 25 NSL pipeline/seed outputs verified\nNSL-KDD fine-label and five-category scores verified from the same five confusion matrices\nNSL-KDD mapping verifies test-only labels in all four attack families; mixed score equals five categories\nCICIDS2017 day-holdout fine, family and binary scores verified from the same prediction matrix\nNSL destination controls preserve every true-class support and true-positive count\n",
+    "stderr": ""
+  },
+  {
+    "command": "python code/verify_external_artifact_audit.py",
+    "returncode": 0,
+    "seconds": 4.949692599999253,
+    "stdout": "Re-scored one published IDS study over 10 seeds: macro F1=0.90002, sample SD=0.05143, 95% CI half-width=0.03679; ceiling=1.00000\n",
+    "stderr": ""
+  },
+  {
+    "command": "python code/verify_cic_corrected_friday.py",
+    "returncode": 0,
+    "seconds": 5.0611361999981455,
+    "stdout": "Corrected CICIDS2017 run: chronology, coverage, nine fits, confusion counts and binary/fine scores passed\n",
+    "stderr": ""
+  },
+  {
+    "command": "python code/verify_cic_binary_lodo.py",
+    "returncode": 0,
+    "seconds": 5.458027000000584,
+    "stdout": "CICIDS2017 binary LODO outputs, row counts, target mapping and score checks passed\n",
+    "stderr": ""
+  },
+  {
+    "command": "python code/verify_unsw_benign_ood.py",
+    "returncode": 0,
+    "seconds": 4.413810199999716,
+    "stdout": "UNSW benign-only OOD results, binary ceiling and saved confusion counts passed\n",
+    "stderr": ""
+  },
+  {
+    "command": "python code/verify_published_score_audit.py",
+    "returncode": 0,
+    "seconds": 3.026152100002946,
+    "stdout": "Published LOFO score is compatible with the stated binary task\n",
+    "stderr": ""
+  },
+  {
+    "command": "python code/verify_cic_archive.py results",
+    "returncode": 0,
+    "seconds": 8.008889000000636,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": "python code/audit_revision_inventory.py",
+    "returncode": 0,
+    "seconds": 1.8614749999978812,
+    "stdout": "Parsed 84 Python sources; original tracked inventory 536 files\n",
+    "stderr": ""
+  }
+]
