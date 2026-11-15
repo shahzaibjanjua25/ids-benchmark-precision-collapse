@@ -1,0 +1,22 @@
+[
+  {
+    "file": "balikas2015.pdf",
+    "sha256": "33b51c750b8a71a1a29cbe7c2c36e87f90de6b8721b4bd95ac36f9edd5f06c17",
+    "bytes": 522594
+  },
+  {
+    "file": "botiot2019.pdf",
+    "sha256": "d6e448ed19da48c6852d1d9c01af8e99d418be93d591a9efd196cb21c69dc079",
+    "bytes": 1117394
+  },
+  {
+    "file": "kitsune2018.pdf",
+    "sha256": "c1ce05f4bb158b6a8fdde52a1d73c4e561181f10cd2f2648c19f5723bcddc824",
+    "bytes": 4384530
+  },
+  {
+    "file": "vaemax2024.pdf",
+    "sha256": "47bb42df885f713eb19bb542065346cc6fea4d9daa0092847b4ebba23a7f6438",
+    "bytes": 715485
+  }
+]

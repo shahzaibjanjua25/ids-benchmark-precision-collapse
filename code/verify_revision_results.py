@@ -32,8 +32,9 @@ def main():
             ids = np.arange(len(training))
             if arm == "nsl_no_feature_overlap":
                 ids = np.setdiff1d(ids, excluded)
-            np.savez_compressed(ROOT / "results/revision_20261115" / arm / "split_membership.npz",
-                                training_source_rows=ids, test_source_rows=np.arange(len(testing)))
+            saved = np.load(ROOT / "results/revision_20261115" / arm / "split_membership.npz")
+            assert np.array_equal(saved['training_source_rows'], ids)
+            assert np.array_equal(saved['test_source_rows'], np.arange(len(testing)))
     verified = []
     mapping_frame = pd.read_csv(ROOT / "results/family_mapping.csv")
     mapping = dict(mapping_frame.loc[mapping_frame.dataset.eq("NSL"), ["original", "family"]].itertuples(index=False, name=None))

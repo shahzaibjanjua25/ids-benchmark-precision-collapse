@@ -54,6 +54,16 @@ def main():
     rows = [[r.model.upper(), f"{r.recomputed_macro_f1:.5f}", f"{r.published_f1:.5f}", f"{r.absolute_difference:.5f}"] for r in external.itertuples()]
     table("external_table.typ", ["Model", "Matrix macro F1", "Summary F1", "Absolute gap"], rows,
           "CICIoT2023 eight-class F1 computed from published Tables 7 and 8 versus the corresponding Table 6 entry. Both matrices contain 10,340,161 observations. Summary reconciliation is unresolved; these are not ceiling violations.", "tab-external")
+    rt = pd.read_csv(ROOT / 'results/continuation_20261115/rt_iot/runs.csv')
+    assert len(rt) == 30
+    rows = []
+    for name, group in rt.groupby('withheld', sort=False):
+        fmt = lambda col: f'{group[col].mean():.3f} ({group[col].std(ddof=1):.3f})'
+        rows.append([name.replace('_', ' '), f'{group.coverage_ceiling.iloc[0]:.3f}',
+                     f'{group.exact_oracle.iloc[0]:.3f}', fmt('fine_macro_f1'), fmt('binary_macro_f1'),
+                     '--' if name == 'NONE' else f'{group.binary_withheld_alarm_recall.mean():.3f}'])
+    table('rt_table.typ', ['Withheld label', 'Bound', 'Oracle', 'Fine F1', 'Binary F1', 'Held alarm recall'], rows,
+          'RT-IoT2022 feature-group holdout: 31,061 fixed test rows with no identical input vector shared with training. F1 is macro F1, shown as mean (sample SD) over three seeds. Held alarm recall is the separately fitted binary detector\'s mean recall on the withheld subtype. Fine and binary fits share capped training rows; NONE retains all labels. These are dependent variants on one cohort.', 'tab-rt')
     if args.tables_only:
         return
     subprocess.run([sys.executable, str(ROOT / "code/plot_revision_targets.py")], check=True)

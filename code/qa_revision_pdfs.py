@@ -15,11 +15,12 @@ ROOT = Path(__file__).resolve().parents[1]
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("render_dir", type=Path)
+    parser.add_argument("--native", action="store_true")
     args = parser.parse_args()
     args.render_dir.mkdir(parents=True, exist_ok=True)
     records = []
     for name in ["manuscript", "supplement"]:
-        path = ROOT / "paper/revision" / f"{name}.pdf"
+        path = ROOT / ("paper/revision/native" if args.native else "paper/revision") / f"{name}.pdf"
         doc = pymupdf.open(path)
         pages = []
         for i, page in enumerate(doc):
@@ -34,8 +35,10 @@ def main():
         records.append({"pdf": path.relative_to(ROOT).as_posix(),
                         "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
                         "pages": pages, "all_pages_rendered": True,
-                        "visual_review": "See review/revision_20261115/PDF_QA.md; rendering alone is not a visual pass"})
-    (ROOT / "review/revision_20261115/pdf_qa.json").write_text(json.dumps(records, indent=2), encoding="utf8")
+                        "visual_review": ("See review/continuation_20261115/NATIVE_PDF_QA.md" if args.native else "See review/revision_20261115/PDF_QA.md") + "; rendering alone is not a visual pass"})
+    record_path = ROOT / ("review/continuation_20261115/native_pdf_qa.json" if args.native else "review/revision_20261115/pdf_qa.json")
+    record_path.parent.mkdir(parents=True, exist_ok=True)
+    record_path.write_text(json.dumps(records, indent=2), encoding="utf8")
     print([(r["pdf"], len(r["pages"])) for r in records])
 
 

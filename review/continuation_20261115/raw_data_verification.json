@@ -1,0 +1,22 @@
+{
+  "record_type": "Curated record of observed command outputs and exit status",
+  "checks": [
+    {
+      "command": "python code/verify_rt_iot_audit.py --data PATH_TO_RT_IOT2022",
+      "returncode": 0,
+      "prediction_vectors_verified": 60,
+      "confusion_matrices_verified": 60,
+      "matched_conditions_verified": 30,
+      "independent_oracle_checks": 30,
+      "raw_feature_groups_verified": true,
+      "split_and_caps_reconstructed": true,
+      "status": "passed"
+    },
+    {
+      "command": "python code/verify_revision_results.py --data PATH_TO_NSL",
+      "returncode": 0,
+      "stdout": "12 fresh prediction sets verified; 3 old forest matrices reproduced exactly",
+      "saved_membership_assertions": "passed; no evidence files overwritten"
+    }
+  ]
+}

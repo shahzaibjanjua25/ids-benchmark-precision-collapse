@@ -1,0 +1,88 @@
+[
+  {
+    "pdf": "paper/revision/native/manuscript.pdf",
+    "sha256": "4ee9e082c608653f96db44c9a25315730bcbcb184ec2d8bb6f8f68911bd17822",
+    "pages": [
+      {
+        "page": 1,
+        "characters": 3797,
+        "text_bounds_passed": true
+      },
+      {
+        "page": 2,
+        "characters": 4896,
+        "text_bounds_passed": true
+      },
+      {
+        "page": 3,
+        "characters": 4739,
+        "text_bounds_passed": true
+      },
+      {
+        "page": 4,
+        "characters": 4948,
+        "text_bounds_passed": true
+      },
+      {
+        "page": 5,
+        "characters": 5024,
+        "text_bounds_passed": true
+      },
+      {
+        "page": 6,
+        "characters": 4577,
+        "text_bounds_passed": true
+      },
+      {
+        "page": 7,
+        "characters": 2941,
+        "text_bounds_passed": true
+      },
+      {
+        "page": 8,
+        "characters": 4855,
+        "text_bounds_passed": true
+      },
+      {
+        "page": 9,
+        "characters": 5118,
+        "text_bounds_passed": true
+      },
+      {
+        "page": 10,
+        "characters": 4662,
+        "text_bounds_passed": true
+      }
+    ],
+    "all_pages_rendered": true,
+    "visual_review": "See review/continuation_20261115/NATIVE_PDF_QA.md; rendering alone is not a visual pass"
+  },
+  {
+    "pdf": "paper/revision/native/supplement.pdf",
+    "sha256": "c099ab2edd4ba4cf5587dc1a16cd428e5698383e2244ee8018af4188adf6926a",
+    "pages": [
+      {
+        "page": 1,
+        "characters": 2049,
+        "text_bounds_passed": true
+      },
+      {
+        "page": 2,
+        "characters": 3240,
+        "text_bounds_passed": true
+      },
+      {
+        "page": 3,
+        "characters": 3006,
+        "text_bounds_passed": true
+      },
+      {
+        "page": 4,
+        "characters": 3009,
+        "text_bounds_passed": true
+      }
+    ],
+    "all_pages_rendered": true,
+    "visual_review": "See review/continuation_20261115/NATIVE_PDF_QA.md; rendering alone is not a visual pass"
+  }
+]
