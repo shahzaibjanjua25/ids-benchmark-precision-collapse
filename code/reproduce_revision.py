@@ -24,6 +24,7 @@ def main():
         ["code/check_availability.py"], ["code/check_vocabulary_groups.py"],
         ["code/check_certified.py"], ["code/verify_revision_results.py"],
         ["code/audit_ciciot2023_published.py"],
+        ["code/verify_rt_iot_audit.py"], ["code/audit_botiot_matrices.py"],
         ["code/verify_release_evidence.py"], ["code/verify_external_artifact_audit.py"],
         ["code/verify_cic_corrected_friday.py"], ["code/verify_cic_binary_lodo.py"],
         ["code/verify_unsw_benign_ood.py"], ["code/verify_published_score_audit.py"],

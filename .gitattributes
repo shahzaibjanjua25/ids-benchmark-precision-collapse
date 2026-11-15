@@ -8,3 +8,8 @@
 *.svg text eol=lf
 *.log text eol=lf
 *.ps1 text eol=crlf
+paper/revision/native/*.tex text eol=lf
+paper/revision/native/*.cls -text
+paper/revision/native/*.clo -text
+paper/revision/native/*.bst -text
+paper/revision/native/readme.txt -text

@@ -1,0 +1,16 @@
+{
+  "compiler": "pdfTeX 3.141592653-2.6-1.40.29 (TeX Live 2026)",
+  "documents": [
+    {
+      "name": "manuscript",
+      "commands": "pdflatex; bibtex; pdflatex; pdflatex",
+      "pdf_sha256": "4ee9e082c608653f96db44c9a25315730bcbcb184ec2d8bb6f8f68911bd17822"
+    },
+    {
+      "name": "supplement",
+      "commands": "pdflatex; pdflatex; pdflatex",
+      "pdf_sha256": "c099ab2edd4ba4cf5587dc1a16cd428e5698383e2244ee8018af4188adf6926a"
+    }
+  ],
+  "final_diagnostics": "No overfull boxes, undefined citations/references or missing characters"
+}
