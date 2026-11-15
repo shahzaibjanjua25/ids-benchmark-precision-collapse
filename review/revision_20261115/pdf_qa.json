@@ -1,61 +1,56 @@
 [
   {
     "pdf": "paper/revision/manuscript.pdf",
-    "sha256": "98c5ec473a8ff7cfef5b6f08318f32823fbd613b3017ff93a3dca8124bc09fc9",
+    "sha256": "b75c525f5040164f5b135d3ce5efbc7b76dc8be5c3429e3f17c1bf33083b7ae5",
     "pages": [
       {
         "page": 1,
-        "characters": 4222,
+        "characters": 4163,
         "text_bounds_passed": true
       },
       {
         "page": 2,
-        "characters": 4285,
+        "characters": 4319,
         "text_bounds_passed": true
       },
       {
         "page": 3,
-        "characters": 3946,
+        "characters": 3870,
         "text_bounds_passed": true
       },
       {
         "page": 4,
-        "characters": 3868,
+        "characters": 3754,
         "text_bounds_passed": true
       },
       {
         "page": 5,
-        "characters": 4556,
+        "characters": 4425,
         "text_bounds_passed": true
       },
       {
         "page": 6,
-        "characters": 4121,
+        "characters": 3324,
         "text_bounds_passed": true
       },
       {
         "page": 7,
-        "characters": 2375,
+        "characters": 3059,
         "text_bounds_passed": true
       },
       {
         "page": 8,
-        "characters": 3855,
+        "characters": 4277,
         "text_bounds_passed": true
       },
       {
         "page": 9,
-        "characters": 4861,
+        "characters": 4149,
         "text_bounds_passed": true
       },
       {
         "page": 10,
-        "characters": 4945,
-        "text_bounds_passed": true
-      },
-      {
-        "page": 11,
-        "characters": 3922,
+        "characters": 4968,
         "text_bounds_passed": true
       }
     ],
@@ -64,7 +59,7 @@
   },
   {
     "pdf": "paper/revision/supplement.pdf",
-    "sha256": "eae5bb9df7f71a18cfca1ed50858d3ac850f114b8be0bd258a3df357a8786e5f",
+    "sha256": "3516dfbeb56fd651d6766a648eadc4df8119c510f4fbf0247f7db41801440826",
     "pages": [
       {
         "page": 1,
