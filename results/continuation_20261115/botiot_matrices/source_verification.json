@@ -1,0 +1,21 @@
+{
+  "source_url": "https://arxiv.org/pdf/1811.00701",
+  "published_study_doi": "10.1016/j.future.2019.05.041",
+  "version_scope": "Author manuscript arXiv:1811.00701v1; journal PDF identity not asserted",
+  "source_sha256": "d6e448ed19da48c6852d1d9c01af8e99d418be93d591a9efd196cb21c69dc079",
+  "tables": [
+    10,
+    11,
+    12
+  ],
+  "matrices_verified": [
+    "svm_10",
+    "svm_full",
+    "lstm_10",
+    "lstm_full",
+    "rnn_10",
+    "rnn_full"
+  ],
+  "integer_cells_verified": 24,
+  "interpretation": "Derived macro F1 is our additional metric; the source does not claim these values as macro F1."
+}

@@ -73,6 +73,20 @@ def main():
     large = minimal.copy()
     large["test_rows"] = [2 ** 53 + 1, 1, 1]
     assert metric_bounds(large)["micro_f1_ceiling"] <= 1
+    large_float = pd.DataFrame({'fold':[0,1,1], 'class':['A','A','B'],
+        'training_rows':[1.,1.,0.], 'test_rows':[float(2**52), float(2**52+1), 1.]})
+    certificate = certified_oracle(large_float)
+    total = 2**53+1
+    assert certificate['class_totals'][0]['test_rows'] == total
+    assert Fraction(certificate['exact_fraction']) == Fraction(total, 2*total+1)
+    nonintegral = minimal.copy()
+    nonintegral['test_rows'] = pd.Series([Fraction(2**53+1,2),1,1],dtype=object)
+    try:
+        certified_oracle(nonintegral)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError('Nonintegral rational count accepted')
     try:
         certified_oracle(minimal, max_assignments=1)
     except ValueError:

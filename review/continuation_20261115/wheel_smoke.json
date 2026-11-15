@@ -1,0 +1,7 @@
+{
+  "wheel": "label_availability-0.10.1-py3-none-any.whl",
+  "sha256": "df8ffb2bf3cbc6525e8587ff7cec35f9fa793262124b36e8c64ffed7c067a92b",
+  "imported_installed_wheel": true,
+  "minimal_fraction": "5/9",
+  "large_float_aggregate_regression": "passed"
+}

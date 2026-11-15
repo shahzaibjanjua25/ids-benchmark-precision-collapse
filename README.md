@@ -1,9 +1,14 @@
 # Legal Label Vocabularies and Attainable Macro F1 in IDS Benchmarks
 
-Revision 0.10.0, 15 November 2026. The current manuscript is
-[`paper/revision/manuscript.pdf`](paper/revision/manuscript.pdf), with editable
+Revision 0.10.1, 15 November 2026. The current manuscript is
+[`paper/revision/native/manuscript.pdf`](paper/revision/native/manuscript.pdf), with publisher-native two-column LaTeX and editable
 Typst source, bibliography, generated tables and a mathematical supplement in
 the same directory. Historical manuscripts are retained for provenance.
+
+The continuation adds sixty RT-IoT2022 fits with exact-feature-group separation,
+a 23-record source ledger (20 completed published target classifications), six
+Bot-IoT author-version matrix re-scores, publisher-native LaTeX, and independently
+reviewed count-validation repairs. See review/continuation_20261115/EVIDENCE.md.
 
 This revision adds a rational oracle with legal routing witnesses and fixed
 scoring inventories; 720 exact row-level comparisons; twelve fresh NSL-KDD fits
@@ -19,10 +24,12 @@ python -m pip install --no-deps .
 python code/reproduce_revision.py
 ```
 
-This checks saved evidence and compiles the current PDF; it does not refit all
+This checks saved evidence and compiles the Typst PDFs; it does not refit all
 historical models. For new raw-data fits:
 
 ```text
+python code/run_rt_iot_audit.py PATH_TO_RT_IOT2022 NEW_RT_OUTPUT
+python code/verify_rt_iot_audit.py --data PATH_TO_RT_IOT2022
 python code/run_revision_nsl.py PATH_TO_NSL NEW_OFFICIAL_OUTPUT
 python code/run_revision_nsl.py PATH_TO_NSL NEW_CONTROL_OUTPUT --remove-feature-overlap
 ```
@@ -214,3 +221,9 @@ Dataset sources: [CICIDS2017](https://www.unb.ca/cic/datasets/ids-2017.html),
 [UNSW-NB15](https://research.unsw.edu.au/projects/unsw-nb15-dataset),
 [NSL-KDD](https://www.unb.ca/cic/datasets/nsl.html),
 [gas drift](https://doi.org/10.24432/C5RP6W).
+
+For the journal-native PDFs, install a TeX distribution with pdflatex and bibtex,
+then run `python code/build_native_revision.py` after the ordinary build.
+Run `python code/qa_revision_pdfs.py RENDER_DIRECTORY --native` for rendering;
+visual inspection remains a separate requirement. Publisher style provenance
+and third-party notices are in paper/revision/native/PROVENANCE.md.

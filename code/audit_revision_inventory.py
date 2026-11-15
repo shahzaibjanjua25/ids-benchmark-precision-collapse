@@ -40,7 +40,8 @@ def main():
         "source_hash_normalization": "SHA-256 after CRLF-to-LF normalization of Python text",
         "scope": "Complete path and Python syntax inventory; semantic inspection focused on metrics, oracle, reproduction, new refit and manuscript evidence. Not an execution of every historical script.",
         "python": platform.python_version(), "platform": platform.platform()}, indent=2), encoding="utf8")
-    paths = sorted(p for p in (ROOT / "results/revision_20261115").rglob("*") if p.is_file())
+    paths = sorted(p for folder in ['results/revision_20261115', 'results/continuation_20261115']
+                   for p in (ROOT / folder).rglob('*') if p.is_file())
     def result_digest(path):
         content = path.read_bytes()
         if path.suffix in {".csv", ".json"}:

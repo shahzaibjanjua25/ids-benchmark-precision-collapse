@@ -29,6 +29,6 @@ This clones and checks the local bundle. It does not test GitHub authentication
 or guarantee that a future push will be permitted. A successful real push prints
 the branch and commit URLs. No journal submission is performed.
 
-The final assessment of the research draft is 7.9/10 in a sequential automated
-review, below the requested 9/10 threshold. It is not an external peer review or
+The final assessment of the research draft is 8.8/10 (8.75 unrounded) after four internal reviewer-agent
+perspectives and repairs, below the requested 9/10 threshold. It is not an external peer review or
 a publication-readiness guarantee. See the committed review and evidence records.
