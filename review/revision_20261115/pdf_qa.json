@@ -1,31 +1,31 @@
 [
   {
     "pdf": "paper/revision/manuscript.pdf",
-    "sha256": "b75c525f5040164f5b135d3ce5efbc7b76dc8be5c3429e3f17c1bf33083b7ae5",
+    "sha256": "271ba83bc0da4a54a5f52de255cb216ac85e462df973158d9276ffe124ad833b",
     "pages": [
       {
         "page": 1,
-        "characters": 4163,
+        "characters": 4191,
         "text_bounds_passed": true
       },
       {
         "page": 2,
-        "characters": 4319,
+        "characters": 4364,
         "text_bounds_passed": true
       },
       {
         "page": 3,
-        "characters": 3870,
+        "characters": 3584,
         "text_bounds_passed": true
       },
       {
         "page": 4,
-        "characters": 3754,
+        "characters": 3830,
         "text_bounds_passed": true
       },
       {
         "page": 5,
-        "characters": 4425,
+        "characters": 4115,
         "text_bounds_passed": true
       },
       {
@@ -40,17 +40,17 @@
       },
       {
         "page": 8,
-        "characters": 4277,
+        "characters": 4439,
         "text_bounds_passed": true
       },
       {
         "page": 9,
-        "characters": 4149,
+        "characters": 4027,
         "text_bounds_passed": true
       },
       {
         "page": 10,
-        "characters": 4968,
+        "characters": 6060,
         "text_bounds_passed": true
       }
     ],
@@ -59,21 +59,26 @@
   },
   {
     "pdf": "paper/revision/supplement.pdf",
-    "sha256": "3516dfbeb56fd651d6766a648eadc4df8119c510f4fbf0247f7db41801440826",
+    "sha256": "7641083e25658fd6c185e5cde4c561cd3044043178ccd159577ba4e2998b5e88",
     "pages": [
       {
         "page": 1,
-        "characters": 3532,
+        "characters": 3843,
         "text_bounds_passed": true
       },
       {
         "page": 2,
-        "characters": 4036,
+        "characters": 4258,
         "text_bounds_passed": true
       },
       {
         "page": 3,
-        "characters": 3549,
+        "characters": 4253,
+        "text_bounds_passed": true
+      },
+      {
+        "page": 4,
+        "characters": 1249,
         "text_bounds_passed": true
       }
     ],
