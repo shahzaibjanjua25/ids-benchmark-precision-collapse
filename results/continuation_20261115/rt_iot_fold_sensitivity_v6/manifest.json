@@ -1,0 +1,19 @@
+{
+  "source_evidence": "results\\continuation_20261115\\rt_iot\\split.npz",
+  "python_version": "3.12.14",
+  "numpy_version": "2.5.4",
+  "pandas_version": "3.0.1",
+  "scikit_learn_version": "1.9.1",
+  "split_seed": 20261115,
+  "source_rows": 123117,
+  "unique_feature_groups": 18272,
+  "folds": 5,
+  "withholding_conditions": 10,
+  "structural_fold_cases": 50,
+  "analytically_certified_single_omission_fold_oracles": 50,
+  "group_weighted_model_refits": 0,
+  "saved_fold0_prediction_rescores": 30,
+  "group_weight_definition": "each test feature group has total sample weight one",
+  "total_structural_oracle_runtime_seconds": 40.66988440000023,
+  "warning": "Five-fold bounds use saved labels/groups only; model predictions exist only for fold 0. No five-fold refit or independent cohort is claimed."
+}
