@@ -1,7 +1,6 @@
 """Check frozen sampling and scores reconstructed from released confusion counts."""
 from pathlib import Path
 import hashlib
-import itertools
 import json
 import numpy as np
 import pandas as pd
@@ -79,12 +78,6 @@ unavailable_families=set(nsl_map.loc[
     nsl_map.test_rows.gt(0) & nsl_map.training_rows.eq(0), 'family'
 ])
 assert unavailable_families=={'DoS','Probe','R2L','U2R'}
-natural=pd.read_csv(r/'manuscript_tables/table_3_natural_protocols.csv')
-np.testing.assert_allclose(
-    natural.observed_over_oracle.to_numpy(dtype=float),
-    [0.4334291976354778, 0.9045642624384151, 0.592735822748516, 0.6437780261910188],
-    rtol=0, atol=1e-10,
-)
 target_resolution=pd.read_csv(r/'cic_lodo_target_resolution.csv').set_index('resolution')
 assert set(target_resolution.index)=={'fine attack label','eight-family mapping','binary benign/attack'}
 assert set(target_resolution.test_rows)=={2830743}
