@@ -1,0 +1,6 @@
+fold,train_rows,test_rows,test_groups,omitted
+1,92056,31061,3687,DOS_SYN_Hping
+2,96760,26357,3749,ARP_poisioning
+3,101840,21277,3567,DOS_SYN_Hping;NMAP_UDP_SCAN
+4,100753,22364,3560,NONE
+5,101059,22058,3709,ARP_poisioning;DDOS_Slowloris

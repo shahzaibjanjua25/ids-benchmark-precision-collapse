@@ -1,0 +1,10 @@
+{
+  "pooled_coverage_ceiling": 0.9434640012934672,
+  "pooled_exact_oracle": 0.8939707464331536,
+  "mean_single_fold_oracle": 0.8699257574794859,
+  "pooled_minus_mean_oracle": 0.02404498895366769,
+  "sandwich_lower": 0.86472032832364,
+  "sandwich_upper": 0.9012021587071614,
+  "sandwich_width": 0.036481830383521374,
+  "pooled_grouped_assignments": 12100
+}

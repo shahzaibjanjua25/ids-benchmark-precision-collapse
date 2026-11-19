@@ -1,0 +1,2 @@
+coverage_ceiling,weighted_f1_ceiling,micro_f1_ceiling,balanced_accuracy_ceiling,harmonic_macro_pr_ceiling,sandwich_lower,sandwich_upper,convention,exact_oracle,exact_fraction,ceiling_fraction,ceiling_attainable,grouped_assignments,enumerated_assignments
+0.9434640012934673,0.765822668269054,0.6337954953418293,0.9076865067994314,0.951609715290462,0.86472032832364,0.9012021587071614,support,0.8939707464331536,7825276061745479/8753391643929606,2680451594707/2841074583696,False,12100,12100

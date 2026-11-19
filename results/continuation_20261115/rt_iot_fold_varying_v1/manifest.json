@@ -1,0 +1,37 @@
+{
+  "source_url": "https://archive.ics.uci.edu/static/public/942/rt-iot2022.zip",
+  "source_doi": "10.24432/C5P338",
+  "csv_sha256": "956956c09c1764584fa08acd0f6876475626bcedcd6a6b1f8c492c2e9a2089ea",
+  "rows": 123117,
+  "features": 81,
+  "exact_feature_groups": 18272,
+  "fold_splitter": "StratifiedGroupKFold(n_splits=5, shuffle=True, random_state=20261115)",
+  "folds": {
+    "1": [
+      "DOS_SYN_Hping"
+    ],
+    "2": [
+      "ARP_poisioning"
+    ],
+    "3": [
+      "DOS_SYN_Hping",
+      "NMAP_UDP_SCAN"
+    ],
+    "4": [],
+    "5": [
+      "ARP_poisioning",
+      "DDOS_Slowloris"
+    ]
+  },
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "model": "ExtraTreesClassifier(n_estimators=100,min_samples_leaf=2)",
+  "per_class_cap": 1000,
+  "fits": 60,
+  "interpretation": "Exploratory controlled fold-dependent vocabulary intervention; not temporal validation or independent data replication.",
+  "pooled_aggregation": "pool fold predictions before macro F1",
+  "mean_fold_sensitivity": "unweighted mean of fixed-inventory fold macro F1"
+}

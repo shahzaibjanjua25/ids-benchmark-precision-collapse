@@ -1,0 +1,106 @@
+{
+  "convention": "support",
+  "exact_oracle": 0.8939707464331536,
+  "exact_fraction": "7825276061745479/8753391643929606",
+  "coverage_ceiling": 0.9434640012934673,
+  "ceiling_fraction": "2680451594707/2841074583696",
+  "ceiling_attainable": false,
+  "grouped_assignments": 12100,
+  "enumerated_assignments": 12100,
+  "routing": [
+    {
+      "fold": 0,
+      "unavailable_rows": 25894,
+      "destination": "ARP_poisioning"
+    },
+    {
+      "fold": 1,
+      "unavailable_rows": 1550,
+      "destination": "DOS_SYN_Hping"
+    },
+    {
+      "fold": 2,
+      "unavailable_rows": 15985,
+      "destination": "ARP_poisioning"
+    },
+    {
+      "fold": 4,
+      "unavailable_rows": 1657,
+      "destination": "DOS_SYN_Hping"
+    }
+  ],
+  "class_totals": [
+    {
+      "class": "ARP_poisioning",
+      "test_rows": 7750,
+      "covered_rows": 4650,
+      "oracle_false_positives": 41879
+    },
+    {
+      "class": "DDOS_Slowloris",
+      "test_rows": 534,
+      "covered_rows": 427,
+      "oracle_false_positives": 0
+    },
+    {
+      "class": "DOS_SYN_Hping",
+      "test_rows": 94659,
+      "covered_rows": 52953,
+      "oracle_false_positives": 3207
+    },
+    {
+      "class": "MQTT_Publish",
+      "test_rows": 4146,
+      "covered_rows": 4146,
+      "oracle_false_positives": 0
+    },
+    {
+      "class": "Metasploit_Brute_Force_SSH",
+      "test_rows": 37,
+      "covered_rows": 37,
+      "oracle_false_positives": 0
+    },
+    {
+      "class": "NMAP_FIN_SCAN",
+      "test_rows": 28,
+      "covered_rows": 28,
+      "oracle_false_positives": 0
+    },
+    {
+      "class": "NMAP_OS_DETECTION",
+      "test_rows": 2000,
+      "covered_rows": 2000,
+      "oracle_false_positives": 0
+    },
+    {
+      "class": "NMAP_TCP_scan",
+      "test_rows": 1002,
+      "covered_rows": 1002,
+      "oracle_false_positives": 0
+    },
+    {
+      "class": "NMAP_UDP_SCAN",
+      "test_rows": 2590,
+      "covered_rows": 2417,
+      "oracle_false_positives": 0
+    },
+    {
+      "class": "NMAP_XMAS_TREE_SCAN",
+      "test_rows": 2010,
+      "covered_rows": 2010,
+      "oracle_false_positives": 0
+    },
+    {
+      "class": "Thing_Speak",
+      "test_rows": 8108,
+      "covered_rows": 8108,
+      "oracle_false_positives": 0
+    },
+    {
+      "class": "Wipro_bulb",
+      "test_rows": 253,
+      "covered_rows": 253,
+      "oracle_false_positives": 0
+    }
+  ]
+}
