@@ -5,6 +5,8 @@
 *.bundle binary
 *.py text eol=lf
 audit/crossref_20261108/candidate_frame.csv text eol=lf
+code/requirements.txt text eol=lf
+code/environment.yml text eol=lf
 *.typ text eol=lf
 *.svg text eol=lf
 *.log text eol=lf
