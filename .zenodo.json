@@ -4,6 +4,6 @@
   "description": "Python package for count-based label-coverage bounds and attainable macro F1 under fold-specific legal output vocabularies.",
   "creators": [{"name": "Shah Zaib Sajid"}],
   "license": "MIT",
-  "version": "0.10.3",
+  "version": "0.10.5",
   "access_right": "open"
 }

@@ -38,3 +38,14 @@ python code/check_vocabulary_groups.py
 ```
 
 The MIT license applies to the software. Dataset and third-party source terms remain with their respective owners.
+
+## Saved evidence verification
+
+Install the analysis environment with `python -m pip install -r requirements.txt`,
+then run `python code/reproduce_revision.py`. This checks archived predictions,
+exact certificates and source syntax; it does not retrain every model.
+Run it in a disposable checkout because it regenerates derived output files.
+Manuscript files are held separately and are not required by the default command.
+
+Historical README research-summary paragraphs were removed while preserving
+commit topology, author attribution, code and numerical evidence.

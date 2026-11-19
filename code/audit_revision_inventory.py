@@ -10,14 +10,14 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def main():
-    files = subprocess.check_output(["git", "ls-tree", "-r", "--name-only",
-                                     "33f16a6cd72506f5c9fe816af36f9f6908331ad4"], cwd=ROOT, text=True).splitlines()
+    # A review ZIP has no Git database; never depend on an obsolete history SHA.
+    commit = None
+    if (ROOT / '.git').exists():
+        commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
     records = []
     syntax_errors = []
     # Include newly added Python sources as well as the original tracked tree.
-    python_files = subprocess.check_output(["git", "ls-files", "--cached", "--others",
-                                            "--exclude-standard", "--", "*.py"], cwd=ROOT, text=True).splitlines()
-    python_paths = sorted({ROOT / path for path in python_files})
+    python_paths = sorted((ROOT / 'code').rglob('*.py'))
     for path in python_paths:
         if ".git" in path.parts:
             continue
@@ -34,8 +34,7 @@ def main():
     out = ROOT / "review/revision_20261115"
     out.mkdir(parents=True, exist_ok=True)
     (out / "source_inventory.json").write_text(json.dumps({
-        "original_commit": "33f16a6cd72506f5c9fe816af36f9f6908331ad4",
-        "original_tracked_file_count": len(files), "python_sources": records,
+        "checked_commit": commit, "python_sources": records,
         "syntax_errors": syntax_errors,
         "source_hash_normalization": "SHA-256 after CRLF-to-LF normalization of Python text",
         "scope": "Complete path and Python syntax inventory; semantic inspection focused on metrics, oracle, reproduction, new refit and manuscript evidence. Not an execution of every historical script.",
@@ -49,7 +48,7 @@ def main():
         return hashlib.sha256(content).hexdigest()
     (out / "result_hashes.json").write_text(json.dumps({p.relative_to(ROOT).as_posix(): result_digest(p) for p in paths}, indent=2), encoding="utf8")
     assert not syntax_errors, syntax_errors
-    print(f"Parsed {len(records)} Python sources; original tracked inventory {len(files)} files")
+    print(f"Parsed {len(records)} Python sources; commit {commit or 'archive without Git metadata'}")
 
 
 if __name__ == "__main__":

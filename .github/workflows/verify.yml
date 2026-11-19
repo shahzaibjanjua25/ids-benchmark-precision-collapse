@@ -19,5 +19,7 @@ jobs:
       - run: python -m pip install --no-deps .
       - run: python code/check_availability.py
       - run: python code/check_vocabulary_groups.py
+      - run: python code/check_certified.py
+      - run: python code/audit_revision_inventory.py
       - run: python code/verify_release_evidence.py
       - run: python code/verify_cic_archive.py results

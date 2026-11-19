@@ -1,4 +1,4 @@
-"""Run current verification and PDF compilation with a machine-readable log.
+"""Run current verification with a machine-readable log.
 
 This verifies saved predictions; raw model training remains a separate command.
 """
@@ -16,7 +16,10 @@ ROOT = Path(__file__).resolve().parents[1]
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--skip-pdf", action="store_true")
+    parser.add_argument("--build-pdf", action="store_true", help="Requires separately held manuscript sources")
     args = parser.parse_args()
+    if args.build_pdf and not (ROOT / 'paper/revision/manuscript.typ').exists():
+        parser.error('PDF compilation requires the separately held manuscript source package')
     out = ROOT / "review/revision_20261115"
     out.mkdir(parents=True, exist_ok=True)
     os.environ.setdefault("MPLCONFIGDIR", str(ROOT / ".cache/matplotlib"))
@@ -25,11 +28,12 @@ def main():
         ["code/check_certified.py"], ["code/verify_revision_results.py"],
         ["code/audit_ciciot2023_published.py"],
         ["code/verify_rt_iot_audit.py"], ["code/audit_botiot_matrices.py"],
+        ["code/verify_rt_iot_fold_varying.py"],
         ["code/verify_release_evidence.py"], ["code/verify_external_artifact_audit.py"],
         ["code/verify_cic_corrected_friday.py"], ["code/verify_cic_binary_lodo.py"],
         ["code/verify_unsw_benign_ood.py"], ["code/verify_published_score_audit.py"],
         ["code/verify_cic_archive.py", "results"], ["code/audit_revision_inventory.py"]]
-    if not args.skip_pdf:
+    if args.build_pdf and not args.skip_pdf:
         commands.append(["code/build_revision_paper.py"])
     records = []
     for command in commands:

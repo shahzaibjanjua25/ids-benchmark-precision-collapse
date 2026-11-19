@@ -11,7 +11,9 @@ frame=pd.read_csv(p/'candidate_frame.csv').sort_values('doi').reset_index(drop=T
 sample=pd.read_csv(p/'selected_sample.csv')
 choice=np.random.default_rng(20261108).choice(len(frame),size=50,replace=False)
 assert sample.doi.tolist()==frame.iloc[choice].doi.tolist()
-assert hashlib.sha256((p/'candidate_frame.csv').read_bytes()).hexdigest()==(p/'frame_sha256.txt').read_text().strip()
+# Git may check text out with CRLF on Windows. The archived digest uses LF.
+frame_bytes=(p/'candidate_frame.csv').read_bytes().replace(b'\r\n',b'\n')
+assert hashlib.sha256(frame_bytes).hexdigest()==(p/'frame_sha256.txt').read_text().strip()
 coding=pd.read_csv(p/'coding.csv')
 assert coding.doi.tolist()==sample.doi.tolist() and not coding.doi.duplicated().any()
 assert not coding.astype(str).eq('pending').any().any()
