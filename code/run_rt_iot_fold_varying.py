@@ -1,7 +1,7 @@
 """Fit a five-fold RT-IoT2022 vocabulary-intervention sensitivity experiment.
 
 This is a controlled, non-temporal group-CV experiment. Each fold has a
-predeclared set of withheld fine labels; the fine model is fit only on the
+fixed set of withheld fine labels; the fine model is fit only on the
 remaining labels. A paired binary model uses the same retained examples.
 """
 from __future__ import annotations
@@ -28,7 +28,8 @@ BENIGN = {"Thing_Speak", "MQTT_Publish", "Wipro_bulb"}
 DROP = ["Unnamed: 0", "Attack_type", "id.orig_p", "id.resp_p"]
 SEEDS = (42, 43, 44)
 # Fold indices here are zero-based. This fixed scenario is a targeted
-# sensitivity design, not a chronology or a tuned protocol.
+# post hoc sensitivity design, not a prospective or temporal protocol.
+# Retained records do not establish when it was selected relative to earlier fits.
 WITHHELD = {
     0: ("DOS_SYN_Hping",),
     1: ("ARP_poisioning",),
